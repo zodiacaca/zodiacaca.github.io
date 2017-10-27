@@ -2,31 +2,21 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
-
-    // Positioning context for the mobile navigation icon
-    position: relative;
+    border-bottom: 1px solid black;
+    min-height: 72px;
+    background: rgba(0,0,0,0.4);
 }
 
 .site-title {
-    font-size: 26px;
-    font-weight: 300;
-    line-height: 56px;
+    font-size: 32px;
+    line-height: 72px;
     letter-spacing: -1px;
-    margin-bottom: 0;
     float: left;
-
-    &,
-    &:visited {
-        color: $grey-color-dark;
-    }
 }
 
 .site-nav {
     float: right;
-    line-height: 56px;
+    line-height: 72px;
 
     .menu-icon {
         display: none;
@@ -44,12 +34,12 @@
 
     @include media-query($on-palm) {
         position: absolute;
-        top: 9px;
+        top: 18px;
         right: $spacing-unit / 2;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
+        border: 1px solid white;
         border-radius: 5px;
         text-align: right;
+        background: rgba(0,0,0,0.4);
 
         .menu-icon {
             display: block;
@@ -65,7 +55,7 @@
                 height: 15px;
 
                 path {
-                    fill: $grey-color-dark;
+                    fill: white;
                 }
             }
         }
@@ -98,8 +88,9 @@
  * Site footer
  */
 .site-footer {
-    border-top: 1px solid $grey-color-light;
+    border-top: 1px solid black;
     padding: $spacing-unit 0;
+    background: rgba(0,0,0,0.4);
 }
 
 .footer-heading {
@@ -115,7 +106,7 @@
 
 .footer-col-wrapper {
     font-size: 15px;
-    color: $grey-color;
+    color: white;
     margin-left: -$spacing-unit / 2;
     @extend %clearfix;
 }
@@ -180,13 +171,15 @@
     list-style: none;
 
     > li {
+        margin-top: $spacing-unit;
         margin-bottom: $spacing-unit;
+        border: 1px solid rgba(0,0,0,0.2);
     }
 }
 
 .post-meta {
     font-size: $small-font-size;
-    color: $grey-color;
+    color: grey;
 }
 
 .post-link {
