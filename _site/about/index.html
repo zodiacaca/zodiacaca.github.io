@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://localhost:4000/about/">
   <link rel="alternate" type="application/rss+xml" title="Pointman" href="http://localhost:4000/feed.xml">
+  <script src="/js/live.js"></script>
 </head>
 
 
@@ -19,41 +20,89 @@
 
     <header class="site-header">
 
-  <div class="wrapper">
+  <!-- <div class="wrapper"> -->
 
-    <a class="site-title" href="/">Pointman</a>
+    <!-- <a class="site-title" href="/">Pointman</a> -->
 
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+    <!-- <nav class="site-nav"> -->
+      <!-- <a href="#" class="menu-icon"> -->
+        <!-- <svg viewBox="0 0 18 15"> -->
+          <!-- <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/> -->
+          <!-- <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/> -->
+          <!-- <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/> -->
+        <!-- </svg> -->
+      <!-- </a> -->
+
+      <!-- <div class="trigger"> -->
+        <!--  -->
+          <!--  -->
+        <!--  -->
+          <!--  -->
+            <!-- <a class="page-link" href="/about/">About</a> -->
+          <!--  -->
+        <!--  -->
+          <!--  -->
+            <!-- <a class="page-link" href="/about/">Contact</a> -->
+          <!--  -->
+        <!--  -->
+          <!--  -->
+        <!--  -->
+          <!--  -->
+        <!--  -->
+          <!--  -->
+        <!--  -->
+      <!-- </div> -->
+    <!-- </nav> -->
+
+  <!-- </div> -->
+    <div class="header-wrapper">
+    
+        <svg>
+            <defs>
+                <filter id="inset-shadow-hard" x="-50%" y="-50%" width="200%" height="200%">
+                    <feComponentTransfer in="SourceAlpha">
+                        <feFuncA type="table" tableValues="1 0"/>
+                    </feComponentTransfer>
+                    <feGaussianBlur stdDeviation="6"/>
+                    <feOffset dx="0" dy="0" result="offset-blur"/>
+                    <feFlood flood-color="rgba(255, 0, 0, 1)"/>
+                    <feComposite in2="offset-blur" operator="in"/>
+                    <feComposite in2="SourceAlpha" operator="in" result="shadow"/>
+                    <feComposite
+                        operator="over"
+                        in="shadow"
+                        in2="SourceGraphic"
+                    />
+                    <!-- <feMerge>
+                        <feMergeNode in="SourceGraphic" />
+                        <feMergeNode />
+                    </feMerge> -->
+                </filter>
+                
+                <filter id="inset-shadow-soft" x="-50%" y="-50%" width="200%" height="200%">
+                    <feOffset dx="0" dy="0"/>
+                    <feGaussianBlur stdDeviation="6" result="offset-blur"/>
+                    <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+                    <feFlood flood-color="rgb(255, 0, 0)" flood-opacity="1" result="color"/>
+                    <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+                    <feComposite
+                        operator="over"
+                        in="shadow"
+                        in2="SourceGraphic"
+                    />
+                </filter>
+            </defs>
         </svg>
-      </a>
-
-      <div class="trigger">
         
-          
+        <svg id="left-polygon" height="96" width="2000">
+            <polygon points="2000,0 1970,80 0,80, 0,0" fill="white" fill-opacity="1" filter="url(#inset-shadow-hard)" stroke="black" stroke-opacity="1" stroke-width="thin"/>
+        </svg>
         
-          
-            <a class="page-link" href="/about/">About</a>
-          
+        <svg id="right-polygon" height="96" width="2000">
+            <polygon points="2000,0 2000,80 30,80, 0,0" fill="white" fill-opacity="1" filter="url(#inset-shadow-hard)" stroke="black" stroke-opacity="1" stroke-width="thin"/>
+        </svg>
         
-          
-            <a class="page-link" href="/about/">Contact</a>
-          
-        
-          
-        
-          
-        
-          
-        
-      </div>
-    </nav>
-
-  </div>
+    </div>
 
 </header>
 
@@ -124,6 +173,8 @@
 
 </footer>
 
+    
+    <script src="/js/bkgd.js"></script>
 
   </body>
 

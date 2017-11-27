@@ -19,7 +19,8 @@ body {
   -moz-font-feature-settings: "kern" 1;
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
-  font-kerning: normal; }
+  font-kerning: normal;
+  background: rgba(0, 0, 0, 0); }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -143,15 +144,27 @@ pre {
  * Site header
  */
 .site-header {
-  border-bottom: 1px solid black;
-  min-height: 72px;
-  background: rgba(0, 0, 0, 0.4); }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  height: 120px;
+  position: relative;
+  overflow: hidden; }
+
+#left-polygon {
+  position: absolute;
+  left: calc(50% - 2150px);
+  left: -webkit-calc(50% - 2150px);
+  top: 10px; }
+
+#right-polygon {
+  position: absolute;
+  left: calc(50% + 150px);
+  left: -webkit-calc(50% + 150px);
+  top: 10px; }
 
 .site-title {
   font-size: 32px;
   line-height: 72px;
-  letter-spacing: -1px;
-  float: left; }
+  letter-spacing: -1px; }
 
 .site-nav {
   float: right;
