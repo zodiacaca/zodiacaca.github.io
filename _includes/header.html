@@ -25,49 +25,14 @@
   <!-- </div> -->
     <div class="header-wrapper">
     
-        <svg>
-            <defs>
-                <filter id="inset-shadow-hard" x="-50%" y="-50%" width="200%" height="200%">
-                    <feComponentTransfer in="SourceAlpha">
-                        <feFuncA type="table" tableValues="1 0"/>
-                    </feComponentTransfer>
-                    <feGaussianBlur stdDeviation="6"/>
-                    <feOffset dx="0" dy="0" result="offset-blur"/>
-                    <feFlood flood-color="rgba(255, 0, 0, 1)"/>
-                    <feComposite in2="offset-blur" operator="in"/>
-                    <feComposite in2="SourceAlpha" operator="in" result="shadow"/>
-                    <feComposite
-                        operator="over"
-                        in="shadow"
-                        in2="SourceGraphic"
-                    />
-                    <!-- <feMerge>
-                        <feMergeNode in="SourceGraphic" />
-                        <feMergeNode />
-                    </feMerge> -->
-                </filter>
-                
-                <filter id="inset-shadow-soft" x="-50%" y="-50%" width="200%" height="200%">
-                    <feOffset dx="0" dy="0"/>
-                    <feGaussianBlur stdDeviation="6" result="offset-blur"/>
-                    <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
-                    <feFlood flood-color="rgb(255, 0, 0)" flood-opacity="1" result="color"/>
-                    <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
-                    <feComposite
-                        operator="over"
-                        in="shadow"
-                        in2="SourceGraphic"
-                    />
-                </filter>
-            </defs>
-        </svg>
+        {% include defs.html %}
         
         <svg id="left-polygon" height="96" width="2000">
-            <polygon points="2000,0 1970,80 0,80, 0,0" fill="white" fill-opacity="1" filter="url(#inset-shadow-hard)" stroke="black" stroke-opacity="1" stroke-width="thin"/>
+            <polygon points="2000,0 1970,80 0,80, 0,0" fill="white" fill-opacity="1" filter="url(#inset-shadow-hard)" stroke="black" stroke-opacity="0" stroke-width="thin"/>
         </svg>
         
         <svg id="right-polygon" height="96" width="2000">
-            <polygon points="2000,0 2000,80 30,80, 0,0" fill="white" fill-opacity="1" filter="url(#inset-shadow-hard)" stroke="black" stroke-opacity="1" stroke-width="thin"/>
+            <polygon points="2000,0 2000,80 30,80, 0,0" fill="white" fill-opacity="1" filter="url(#inset-shadow-hard)" stroke="black" stroke-opacity="0" stroke-width="thin"/>
         </svg>
         
     </div>

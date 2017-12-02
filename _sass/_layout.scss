@@ -2,9 +2,8 @@
  * Site header
  */
 .site-header {
-    border-bottom: 1px solid rgba(0,0,0,0.5);
-    height: 120px;
-    // background: rgba(0,0,0,0.4);
+    height: 10em;
+    border-bottom: thin solid rgba(0,0,0,0.2);
     
     position: relative;
     
@@ -175,33 +174,96 @@
 /**
  * Page content
  */
-.page-content {
-    padding: $spacing-unit 0;
+.page-padding {
+    height: 1em;
+//    background: linear-gradient(to right, rgba(0,0,0,0) 0%, white 5%, white 95%, rgba(0,0,0,0) 100%);
+    background: white;
 }
 
-.page-heading {
-    font-size: 20px;
+.page-content {
+    
 }
 
 .post-list {
-    margin-left: 0;
+    margin: 0;
     list-style: none;
 
     > li {
-        margin-top: $spacing-unit;
-        margin-bottom: $spacing-unit;
-        border: 1px solid rgba(0,0,0,0.2);
+        margin: 0;
+        width: 100%;
+        height: $post-list-item-height;
+        border-bottom: thin solid rgba(0,0,0,0.1);
+        position: relative;
+//        background: linear-gradient(to right, rgba(0,0,0,0) 0%, white 5%, white 95%, rgba(0,0,0,0) 100%);
+//        background: white;
+        
+//        clip-path: url(#cp);
+//        mask: url(#cp);
+        
+        .post-list-wrapper {
+            margin: 0 12.5%; // center?
+            width: $post-list-item-content-width;
+            height: $post-list-item-content-height;
+            border: $post-list-item-content-border solid rgba(0,0,0,0);
+            border-radius: 1.5em;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            background-clip: padding-box;
+            box-shadow: 0 0 0 $post-list-item-padding-vertical rgba(255,255,255,1);
+        }
     }
 }
 
+.post-list-wrapper-top {
+    margin: 0;
+    width: 100%;
+    height: $post-list-item-padding-vertical;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+}
+
+.post-list-wrapper-bottom {
+    margin: 0;
+    width: 100%;
+    height: $post-list-item-padding-vertical;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+    left: 0;
+    background: white;
+}
+
+.post-list-wrapper-left {
+    margin: 0;
+    width: 12.5%; // center?
+    height: $post-list-item-height;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+}
+
+.post-list-wrapper-right {
+    margin: 0;
+    width: 10.5%; // center?
+    height: $post-list-item-height;
+    position: absolute;
+    top: 0;
+    transform: translateX(-100%);
+    left: 100%;
+    background: white;
+}
+
 .post-meta {
-    font-size: $small-font-size;
-    color: grey;
+    
 }
 
 .post-link {
-    display: block;
-    font-size: 24px;
+    
 }
 
 

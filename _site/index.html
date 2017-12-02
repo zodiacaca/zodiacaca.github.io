@@ -57,152 +57,237 @@
   <!-- </div> -->
     <div class="header-wrapper">
     
-        <svg>
-            <defs>
-                <filter id="inset-shadow-hard" x="-50%" y="-50%" width="200%" height="200%">
-                    <feComponentTransfer in="SourceAlpha">
-                        <feFuncA type="table" tableValues="1 0"/>
-                    </feComponentTransfer>
-                    <feGaussianBlur stdDeviation="6"/>
-                    <feOffset dx="0" dy="0" result="offset-blur"/>
-                    <feFlood flood-color="rgba(255, 0, 0, 1)"/>
-                    <feComposite in2="offset-blur" operator="in"/>
-                    <feComposite in2="SourceAlpha" operator="in" result="shadow"/>
-                    <feComposite
-                        operator="over"
-                        in="shadow"
-                        in2="SourceGraphic"
-                    />
-                    <!-- <feMerge>
-                        <feMergeNode in="SourceGraphic" />
-                        <feMergeNode />
-                    </feMerge> -->
-                </filter>
-                
-                <filter id="inset-shadow-soft" x="-50%" y="-50%" width="200%" height="200%">
-                    <feOffset dx="0" dy="0"/>
-                    <feGaussianBlur stdDeviation="6" result="offset-blur"/>
-                    <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
-                    <feFlood flood-color="rgb(255, 0, 0)" flood-opacity="1" result="color"/>
-                    <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
-                    <feComposite
-                        operator="over"
-                        in="shadow"
-                        in2="SourceGraphic"
-                    />
-                </filter>
-            </defs>
-        </svg>
+        
+<svg>
+  <defs>
+    <filter id="inset-shadow-hard" x="-50%" y="-50%" width="200%" height="200%">
+      <feComponentTransfer in="SourceAlpha">
+        <feFuncA type="table" tableValues="1 0"/>
+      </feComponentTransfer>
+      <feGaussianBlur stdDeviation="6"/>
+      <feOffset dx="0" dy="0" result="offset-blur"/>
+      <feFlood flood-color="rgba(0, 0, 0, 1)"/>
+      <feComposite in2="offset-blur" operator="in"/>
+      <feComposite in2="SourceAlpha" operator="in" result="shadow"/>
+      <feComposite
+        operator="over"
+        in="shadow"
+        in2="SourceGraphic"
+      />
+      <!-- <feMerge>
+        <feMergeNode in="SourceGraphic" />
+        <feMergeNode />
+      </feMerge> -->
+    </filter>
+    
+    <filter id="inset-shadow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur stdDeviation="6" result="offset-blur"/>
+      <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+      <feFlood flood-color="rgb(0, 0, 0)" flood-opacity="1" result="color"/>
+      <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+      <feComposite
+        operator="over"
+        in="shadow"
+        in2="SourceGraphic"
+      />
+    </filter>
+    
+    <clipPath id='cp' clipPathUnits='objectBoundingBox'>
+      <polygon points='0,0 1,0 1,1 0,1 
+                       0,0 
+                       .125,.1 .125,.9 .875,.9 .875,.1 
+                       .125,.1'/>
+    </clipPath>
+  </defs>
+</svg>
+
         
         <svg id="left-polygon" height="96" width="2000">
-            <polygon points="2000,0 1970,80 0,80, 0,0" fill="white" fill-opacity="1" filter="url(#inset-shadow-hard)" stroke="black" stroke-opacity="1" stroke-width="thin"/>
+            <polygon points="2000,0 1970,80 0,80, 0,0" fill="white" fill-opacity="1" filter="url(#inset-shadow-hard)" stroke="black" stroke-opacity="0" stroke-width="thin"/>
         </svg>
         
         <svg id="right-polygon" height="96" width="2000">
-            <polygon points="2000,0 2000,80 30,80, 0,0" fill="white" fill-opacity="1" filter="url(#inset-shadow-hard)" stroke="black" stroke-opacity="1" stroke-width="thin"/>
+            <polygon points="2000,0 2000,80 30,80, 0,0" fill="white" fill-opacity="1" filter="url(#inset-shadow-hard)" stroke="black" stroke-opacity="0" stroke-width="thin"/>
         </svg>
         
     </div>
 
 </header>
 
-
+      
+    <div class="page-padding">
+    </div>
     <div class="page-content">
-      <div class="wrapper">
-        <div class="home">
+        
 
+
+<ul class="post-list">
   
-
-    
-  <ul class="post-list">
-    
-      <li>
+    <li>
+      <div class="post-list-wrapper">
+<!--
         <span class="post-meta">January 10th - 2017</span>
 
         <h2>
           <a class="post-link" href="/post/2017/01/10/post-placehodler6.html">Post Placehodler</a>
         </h2>
-      </li>
-    
-      <li>
+-->
+      </div>
+      <div class="post-list-wrapper-top"></div>
+      <div class="post-list-wrapper-bottom"></div>
+      <div class="post-list-wrapper-left"></div>
+      <div class="post-list-wrapper-right"></div>
+    </li>
+  
+    <li>
+      <div class="post-list-wrapper">
+<!--
         <span class="post-meta">January 09th - 2017</span>
 
         <h2>
           <a class="post-link" href="/post/2017/01/09/post-placehodler5.html">Post Placehodler</a>
         </h2>
-      </li>
-    
-      <li>
+-->
+      </div>
+      <div class="post-list-wrapper-top"></div>
+      <div class="post-list-wrapper-bottom"></div>
+      <div class="post-list-wrapper-left"></div>
+      <div class="post-list-wrapper-right"></div>
+    </li>
+  
+    <li>
+      <div class="post-list-wrapper">
+<!--
         <span class="post-meta">January 08th - 2017</span>
 
         <h2>
           <a class="post-link" href="/post/2017/01/08/post-placehodler4.html">Post Placehodler</a>
         </h2>
-      </li>
-    
-      <li>
+-->
+      </div>
+      <div class="post-list-wrapper-top"></div>
+      <div class="post-list-wrapper-bottom"></div>
+      <div class="post-list-wrapper-left"></div>
+      <div class="post-list-wrapper-right"></div>
+    </li>
+  
+    <li>
+      <div class="post-list-wrapper">
+<!--
         <span class="post-meta">January 07th - 2017</span>
 
         <h2>
           <a class="post-link" href="/post/2017/01/07/post-placehodler3.html">Post Placehodler</a>
         </h2>
-      </li>
-    
-      <li>
+-->
+      </div>
+      <div class="post-list-wrapper-top"></div>
+      <div class="post-list-wrapper-bottom"></div>
+      <div class="post-list-wrapper-left"></div>
+      <div class="post-list-wrapper-right"></div>
+    </li>
+  
+    <li>
+      <div class="post-list-wrapper">
+<!--
         <span class="post-meta">January 06th - 2017</span>
 
         <h2>
           <a class="post-link" href="/post/2017/01/06/post-placehodler2.html">Post Placehodler</a>
         </h2>
-      </li>
-    
-      <li>
+-->
+      </div>
+      <div class="post-list-wrapper-top"></div>
+      <div class="post-list-wrapper-bottom"></div>
+      <div class="post-list-wrapper-left"></div>
+      <div class="post-list-wrapper-right"></div>
+    </li>
+  
+    <li>
+      <div class="post-list-wrapper">
+<!--
         <span class="post-meta">January 05th - 2017</span>
 
         <h2>
           <a class="post-link" href="/post/2017/01/05/post-placehodler1.html">Post Placehodler</a>
         </h2>
-      </li>
-    
-      <li>
+-->
+      </div>
+      <div class="post-list-wrapper-top"></div>
+      <div class="post-list-wrapper-bottom"></div>
+      <div class="post-list-wrapper-left"></div>
+      <div class="post-list-wrapper-right"></div>
+    </li>
+  
+    <li>
+      <div class="post-list-wrapper">
+<!--
         <span class="post-meta">January 04th - 2017</span>
 
         <h2>
           <a class="post-link" href="/post/2017/01/04/monitor-lifter.html">Mornitor Lifter</a>
         </h2>
-      </li>
-    
-      <li>
+-->
+      </div>
+      <div class="post-list-wrapper-top"></div>
+      <div class="post-list-wrapper-bottom"></div>
+      <div class="post-list-wrapper-left"></div>
+      <div class="post-list-wrapper-right"></div>
+    </li>
+  
+    <li>
+      <div class="post-list-wrapper">
+<!--
         <span class="post-meta">January 03th - 2017</span>
 
         <h2>
           <a class="post-link" href="/post/2017/01/03/cross-weight-mirror.html">Cross-weight Mirror Tool</a>
         </h2>
-      </li>
-    
-      <li>
+-->
+      </div>
+      <div class="post-list-wrapper-top"></div>
+      <div class="post-list-wrapper-bottom"></div>
+      <div class="post-list-wrapper-left"></div>
+      <div class="post-list-wrapper-right"></div>
+    </li>
+  
+    <li>
+      <div class="post-list-wrapper">
+<!--
         <span class="post-meta">January 02th - 2017</span>
 
         <h2>
           <a class="post-link" href="/post/2017/01/02/universal-convertor.html">Universal Convertor for Animations</a>
         </h2>
-      </li>
-    
-      <li>
+-->
+      </div>
+      <div class="post-list-wrapper-top"></div>
+      <div class="post-list-wrapper-bottom"></div>
+      <div class="post-list-wrapper-left"></div>
+      <div class="post-list-wrapper-right"></div>
+    </li>
+  
+    <li>
+      <div class="post-list-wrapper">
+<!--
         <span class="post-meta">January 01th - 2017</span>
 
         <h2>
           <a class="post-link" href="/post/2017/01/01/welcome-to-jekyll.html">Welcome to Jekyll!</a>
         </h2>
-      </li>
-    
-  </ul>
-
-  <!-- <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p> -->
-
-</div>
-
+-->
       </div>
+      <div class="post-list-wrapper-top"></div>
+      <div class="post-list-wrapper-bottom"></div>
+      <div class="post-list-wrapper-left"></div>
+      <div class="post-list-wrapper-right"></div>
+    </li>
+  
+</ul>
+
+<!--<p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p> -->
+
     </div>
 
     <footer class="site-footer">

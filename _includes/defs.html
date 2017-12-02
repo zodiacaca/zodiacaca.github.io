@@ -1,0 +1,44 @@
+
+<svg>
+  <defs>
+    <filter id="inset-shadow-hard" x="-50%" y="-50%" width="200%" height="200%">
+      <feComponentTransfer in="SourceAlpha">
+        <feFuncA type="table" tableValues="1 0"/>
+      </feComponentTransfer>
+      <feGaussianBlur stdDeviation="6"/>
+      <feOffset dx="0" dy="0" result="offset-blur"/>
+      <feFlood flood-color="rgba(0, 0, 0, 1)"/>
+      <feComposite in2="offset-blur" operator="in"/>
+      <feComposite in2="SourceAlpha" operator="in" result="shadow"/>
+      <feComposite
+        operator="over"
+        in="shadow"
+        in2="SourceGraphic"
+      />
+      <!-- <feMerge>
+        <feMergeNode in="SourceGraphic" />
+        <feMergeNode />
+      </feMerge> -->
+    </filter>
+    
+    <filter id="inset-shadow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur stdDeviation="6" result="offset-blur"/>
+      <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+      <feFlood flood-color="rgb(0, 0, 0)" flood-opacity="1" result="color"/>
+      <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+      <feComposite
+        operator="over"
+        in="shadow"
+        in2="SourceGraphic"
+      />
+    </filter>
+    
+    <clipPath id='cp' clipPathUnits='objectBoundingBox'>
+      <polygon points='0,0 1,0 1,1 0,1 
+                       0,0 
+                       .125,.1 .125,.9 .875,.9 .875,.1 
+                       .125,.1'/>
+    </clipPath>
+  </defs>
+</svg>
