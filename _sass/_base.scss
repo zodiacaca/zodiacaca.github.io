@@ -24,9 +24,49 @@ body {
     font-feature-settings: "kern" 1;
     font-kerning: normal;
     
-    // background: linear-gradient(45deg, rgba(0,0,255,1), rgba(0,255,0,1));
-    background: rgba(0,0,0,0);
+	// background: repeating-linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	// background-size: 100% 100%;
+	// -webkit-animation: 16s ease infinite gradient-animation;
+	// -moz-animation: 16s ease infinite gradient-animation;
+	// animation: 12s ease infinite gradient-animation;
+    // background-position: 280% 0%;
 }
+
+// @-webkit-keyframes gradient-animation {
+	// 0% {
+		// background-position: 0% 0%
+	// }
+	// 50% {
+		// background-position: 200% 0%
+	// }
+    // 100% {
+		// background-position: 0% 0%
+	// }
+// }
+
+// @-moz-keyframes gradient-animation {
+	// 0% {
+		// background-position: 0% 0%
+	// }
+	// 50% {
+		// background-position: 200% 0%
+	// }
+    // 100% {
+		// background-position: 0% 0%
+	// }
+// }
+
+// @keyframes gradient-animation {
+	// 0% {
+		// background-position: 0% 0%
+	// }
+	// 50% {
+		// background-position: 200% 0%
+	// }
+    // 100% {
+		// background-position: 0% 0%
+	// }
+// }
 
 
 

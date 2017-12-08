@@ -2,9 +2,9 @@
 
 // gradients
 var gradients = [
-    { start: { r: 128, g: 179, b: 171 }, stop: { r: 30, g: 41, b: 58 } },
-    { start: { r: 255, g: 207, b: 160 }, stop: { r: 234, g: 92, b: 68 } },
-    { start: { r: 212, g: 121, b: 121 }, stop: { r: 130, g: 105, b: 151 } }
+    { start: { r: 35, g: 166, b: 213 }, stop: { r: 231, g: 60, b: 126 } },
+    { start: { r: 133, g: 196, b: 170 }, stop: { r: 170, g: 196, b: 133 } },
+    { start: { r: 231, g: 60, b: 126 }, stop: { r: 35, g: 166, b: 213 } }
 ];
     
 // transition control variables
@@ -30,9 +30,9 @@ function getColorDelta(pos, chan, d) {
 }
 
 function getGradientIndexes() {
-    
+
     for (var index in gradient_indexes) {
-        if (gradient_indexes[index] === 2) {
+        if (gradient_indexes[index] === gradients.length - 1) {
             gradient_indexes[index] = 0;
         }
         else {
@@ -79,5 +79,5 @@ function updateGradient() {
     }
 }
 
-window.requestAnimationFrame(updateGradient);
+//window.requestAnimationFrame(updateGradient);
 }) ();

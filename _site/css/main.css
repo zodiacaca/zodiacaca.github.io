@@ -19,8 +19,7 @@ body {
   -moz-font-feature-settings: "kern" 1;
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
-  font-kerning: normal;
-  background: rgba(0, 0, 0, 0); }
+  font-kerning: normal; }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -143,24 +142,40 @@ pre {
 /**
  * Site header
  */
-.site-header {
-  height: 10em;
-  border-bottom: thin solid rgba(0, 0, 0, 0.2);
-  position: relative;
+.site-banner {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: 12s ease infinite gradient-animation;
+  -moz-animation: 12s ease infinite gradient-animation;
+  animation: 12s ease infinite gradient-animation;
   overflow: hidden; }
 
-#left-polygon {
-  position: absolute;
-  left: calc(50% - 2150px);
-  left: -webkit-calc(50% - 2150px);
-  top: 10px; }
-
-#right-polygon {
-  position: absolute;
-  left: calc(50% + 150px);
-  left: -webkit-calc(50% + 150px);
-  top: 10px; }
-
+@-webkit-keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+@-moz-keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
 .site-title {
   font-size: 32px;
   line-height: 72px;
@@ -268,8 +283,13 @@ pre {
  * Page content
  */
 .page-padding {
+  margin: 0;
+  margin-top: 20em;
   height: 1em;
   background: white; }
+
+.page-content {
+  margin: 0; }
 
 .post-list {
   margin: 0;
