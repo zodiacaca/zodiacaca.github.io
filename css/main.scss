@@ -5,22 +5,13 @@
 
 // Our variables
 $base-font-family: Verdana, Arial, sans-serif;
-$base-font-size: 16px;
+$base-font-size: 1em;
+$small-font-size: 0.85em;
 $base-font-weight: 500;
 $base-line-height: 1.5;
-$small-font-size: $base-font-size * 0.875;
 
-$spacing-unit: 32px;
-
-$text-color: #111;
+$text-color: #000;
 $brand-color: #222;
-
-// Width of the content area
-$content-width: 1200px;
-
-$on-palm: 600px;
-$on-laptop: 800px;
-
 
 $post-list-item-height: 22em;
 $post-list-item-content-width: 75%;
@@ -29,13 +20,9 @@ $post-list-item-content-border: 0.5em;
 $post-list-item-padding-vertical: ($post-list-item-height - $post-list-item-content-height - $post-list-item-content-border * 2) / 2;
 
 
-
 // Use media queries like this:
 // @include media-query($on-palm) {
-    // .wrapper {
-        // padding-right: $spacing-unit / 2;
-        // padding-left: $spacing-unit / 2;
-    // }
+    
 // }
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
@@ -44,11 +31,9 @@ $post-list-item-padding-vertical: ($post-list-item-height - $post-list-item-cont
 }
 
 
-
-// Import partials from `sass_dir` (defaults to `_sass`)
+// Import partials from `sass_dir` (default as `_sass`)
 @import
-        "base",
-        "effect",
-        "layout",
-        "syntax-highlighting"
+    "base",
+    "layout",
+    "syntax-highlighting"
 ;

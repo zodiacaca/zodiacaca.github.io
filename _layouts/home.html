@@ -1,25 +1,24 @@
 ---
 layout: default
 ---
-
-{{ content }}
+<div class="page-content-padding"></div>
 
 <ul class="post-list">
   {% for post in site.posts %}
     <li>
-      <div class="post-list-wrapper">
+      <div class="post-list-item-wrapper">
 <!--
-        <span class="post-meta">{{ post.date | date: "%B %dth - %Y" }}</span>
-
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
+
+        <span class="post-meta">{{ post.date | date: "%B %dth - %Y" }}</span>
 -->
       </div>
-      <div class="post-list-wrapper-top"></div>
-      <div class="post-list-wrapper-bottom"></div>
-      <div class="post-list-wrapper-left"></div>
-      <div class="post-list-wrapper-right"></div>
+      <div class="post-list-item-wrapper-top"></div>
+      <div class="post-list-item-wrapper-bottom"></div>
+      <div class="post-list-item-wrapper-left"></div>
+      <div class="post-list-item-wrapper-right"></div>
     </li>
   {% endfor %}
 </ul>
