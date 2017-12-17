@@ -10,8 +10,11 @@
   <meta name="description" content="Know the limitation, do the extreme.">
 
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
   <link rel="canonical" href="http://localhost:4000/about/">
   <link rel="alternate" type="application/rss+xml" title="Pointman" href="http://localhost:4000/feed.xml">
+  
   <script src="/js/live.js"></script>
 </head>
 
@@ -21,9 +24,15 @@
     <header class="site-banner">
 
   
-<svg>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  
   <defs>
-    <filter id="inset-shadow-hard" x="-50%" y="-50%" width="200%" height="200%">
+    
+<!--
+    **
+    * inset shadow hard
+    *
+-->    <filter id="inset-shadow-hard" x="-50%" y="-50%" width="200%" height="200%">
       <feComponentTransfer in="SourceAlpha">
         <feFuncA type="table" tableValues="1 0"/>
       </feComponentTransfer>
@@ -43,6 +52,11 @@
       </feMerge> -->
     </filter>
     
+<!--
+    **
+    * inset shadow soft
+    *
+-->
     <filter id="inset-shadow-soft" x="-50%" y="-50%" width="200%" height="200%">
       <feOffset dx="0" dy="0"/>
       <feGaussianBlur stdDeviation="6" result="offset-blur"/>
@@ -56,7 +70,35 @@
       />
     </filter>
     
+<!--
+    **
+    * goo
+    *
+-->
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"/>
+      <feBlend in="SourceGraphic" in2="goo"/>
+<!--      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>-->
+    </filter>
+    
+<!--
+    **
+    * shadowed goo
+    *
+-->
+    <filter id="shadowed-goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"/>
+      <feGaussianBlur in="goo" stdDeviation="3" result="shadow"/>
+      <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow"/>
+      <feOffset in="shadow" dx="1" dy="1" result="shadow"/>
+      <feComposite in2="shadow" in="goo" result="goo"/>
+      <feComposite in2="goo" in="SourceGraphic" result="mix"/>
+    </filter>
+    
   </defs>
+  
 </svg>
 
 
@@ -96,7 +138,25 @@
 </footer>
 
     
-    <script src="/js/bkgd.js"></script>
+    
+<nav class="menu">
+  
+  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+  <label class="menu-open-button" for="menu-open">
+    <span class="hamburger hamburger-1"></span>
+    <span class="hamburger hamburger-2"></span>
+    <span class="hamburger hamburger-3"></span>
+  </label>
+  
+  <a href="#" class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-plus"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-heart"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+  
+</nav>
+
+    
+<!--    <script src="/js/.js"></script>-->
 
   </body>
 

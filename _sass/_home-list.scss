@@ -1,0 +1,47 @@
+/**
+ * Home
+ */
+.page-content-margin {
+    margin-top: 20rem;
+    height: 1rem;
+    position: relative;
+    background: white;
+}
+
+.post-list {
+    list-style: none;
+
+    > li {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: $post-list-item-height;
+        border-bottom: thin solid rgba(0,0,0,0.1);
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+        
+        .post-list-item-wrapper {
+            display: inline-block;
+            margin: 0 auto;
+            width: $post-list-item-content-width;
+            height: $post-list-item-content-height;
+            border: $post-list-item-content-border solid rgba(0,0,0,0);
+            border-radius: 1.5rem;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            background-clip: padding-box;
+            box-shadow: 0 0 0 10000px white;
+        }
+    }
+}
+
+.post-link {
+    
+}
+
+.post-meta {
+    
+}

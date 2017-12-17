@@ -54,104 +54,11 @@
 
 
 /**
- * Page content
- */
-.page-content-padding {
-    margin: 0;
-    margin-top: 20em;
-    height: 1em;
-    position: relative;
-    background: white;
-}
-
-.post-list {
-    margin: 0;
-    list-style: none;
-
-    > li {
-        margin: 0;
-        width: 100%;
-        height: $post-list-item-height;
-        border-bottom: thin solid rgba(0,0,0,0.1);
-        position: relative;
-        text-align: center;
-        
-        .post-list-item-wrapper {
-            display: inline-block;
-            margin: 0 auto;
-            width: $post-list-item-content-width;
-            height: $post-list-item-content-height;
-            border: $post-list-item-content-border solid rgba(0,0,0,0);
-            border-radius: 1.5em;
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            background-clip: padding-box;
-            box-shadow: 0 0 0 $post-list-item-padding-vertical white;
-        }
-    }
-}
-
-.post-list-item-wrapper-top {
-    margin: 0;
-    width: 100%;
-    height: $post-list-item-padding-vertical;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: white;
-}
-
-.post-list-item-wrapper-bottom {
-    margin: 0;
-    width: 100%;
-    height: $post-list-item-padding-vertical;
-    position: absolute;
-    top: 100%;
-    transform: translate(0, -100%);
-    left: 0;
-    background: white;
-}
-
-.post-list-item-wrapper-left {
-    margin: 0;
-    width: 12%;
-    height: $post-list-item-height;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: white;
-}
-
-.post-list-item-wrapper-right {
-    margin: 0;
-    width: 12%;
-    height: $post-list-item-height;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    transform: translate(-98%, 0);
-    background: white;
-}
-
-.post-link {
-    
-}
-
-.post-meta {
-    
-}
-
-
-
-/**
  * Site footer
  */
 .site-footer {
-    margin: 0;
     width: 100%;
-    height: 30em;
+    height: 30rem;
     position: relative;
     background: rgba(0,0,0,0.4);
 }
@@ -159,6 +66,6 @@
 
 
 /**
- * Posts
+ * Page Content
  */
 

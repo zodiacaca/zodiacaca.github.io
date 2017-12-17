@@ -5,19 +5,32 @@
 
 // Our variables
 $base-font-family: Verdana, Arial, sans-serif;
-$base-font-size: 1em;
-$small-font-size: 0.85em;
+$base-font-size: 1rem;
+$small-font-size: 0.85rem;
 $base-font-weight: 500;
 $base-line-height: 1.5;
 
 $text-color: #000;
 $brand-color: #222;
 
-$post-list-item-height: 22em;
+$post-list-item-height: 22rem;
 $post-list-item-content-width: 75%;
-$post-list-item-content-height: 16em;
-$post-list-item-content-border: 0.5em;
-$post-list-item-padding-vertical: ($post-list-item-height - $post-list-item-content-height - $post-list-item-content-border * 2) / 2;
+$post-list-item-content-height: 16rem;
+$post-list-item-content-border: 0.5rem;
+
+$menu-items: 4;
+$blob-scale: 1;
+$blob-open-distance: 5.5rem * $blob-scale;
+$blob-diameter: 4rem * $blob-scale;
+$blob-radius: $blob-diameter / 2;
+$blob-font-size: $blob-diameter * 0.4;
+$blob-color: DeepSkyBlue;
+$menu-open-scale-normal: 1.1;
+$menu-open-scale-hover: 1.2;
+$menu-open-scale-checked: 0.8;
+$hamburger-width: $blob-diameter * 0.4;
+$hamburger-height: $blob-diameter * 0.05;
+$hamburger-spacing: $blob-diameter * 0.15;
 
 
 // Use media queries like this:
@@ -35,5 +48,7 @@ $post-list-item-padding-vertical: ($post-list-item-height - $post-list-item-cont
 @import
     "base",
     "layout",
+    "home-list",
+    "blobs",
     "syntax-highlighting"
 ;
