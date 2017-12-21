@@ -6,10 +6,13 @@
     height: 1rem;
     position: relative;
     background: white;
+    z-index: 1;
 }
 
 .post-list {
     list-style: none;
+    position: relative;
+    z-index: 1;
 
     > li {
         margin: 0;
