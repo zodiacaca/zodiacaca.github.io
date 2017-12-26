@@ -29,16 +29,16 @@
   }
 }
 
-.menu-open {
+.menu-trigger {
   display:none;
 }
 
-.menu-open-button {
+.menu-trigger-button {
   @extend %ball;
   
   transition-timing-function:cubic-bezier(0.175, 0.885, 0.320, 1.275);
   transition-duration:400ms;
-  transform:scale($menu-open-scale-normal,$menu-open-scale-normal);
+  transform:scale($menu-trigger-scale-normal,$menu-trigger-scale-normal);
   cursor:pointer;
   
   // hide the items
@@ -68,7 +68,7 @@
   transform:translate3d(0,$hamburger-spacing,0);
 }
 
-.menu-open:checked + .menu-open-button {
+.menu-trigger:checked + .menu-trigger-button {
   .hamburger-1 {
     transform:rotate(45deg); 
   }
@@ -80,8 +80,8 @@
   }
 }
 
-.menu-open-button:hover {
-  transform:scale($menu-open-scale-hover,$menu-open-scale-hover);
+.menu-trigger-button:hover {
+  transform:scale($menu-trigger-scale-hover,$menu-trigger-scale-hover);
 }
 
 .menu-item {
@@ -103,13 +103,13 @@
   }
 }
 
-.menu-open:checked + .menu-open-button {
+.menu-trigger:checked + .menu-trigger-button {
   transition-timing-function:linear;
   transition-duration:200ms;
-  transform:scale($menu-open-scale-checked,$menu-open-scale-checked);
+  transform:scale($menu-trigger-scale-checked,$menu-trigger-scale-checked);
 }
 
-.menu-open:checked ~ .menu-item {
+.menu-trigger:checked ~ .menu-item {
   transition-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000);
   
   @for $i from 1 through $menu-items {

@@ -13,6 +13,9 @@ $base-line-height: 1.5;
 $text-color: #000;
 $brand-color: #222;
 
+$site-header-height: 20rem;
+$site-header-decoration-offset: 20%;
+
 $post-list-item-height: 22rem;
 $post-list-item-content-width: 75%;
 $post-list-item-content-height: 16rem;
@@ -25,9 +28,9 @@ $blob-diameter: 4rem * $blob-scale;
 $blob-radius: $blob-diameter / 2;
 $blob-font-size: $blob-diameter * 0.4;
 $blob-color: DeepSkyBlue;
-$menu-open-scale-normal: 1.1;
-$menu-open-scale-hover: 1.2;
-$menu-open-scale-checked: 0.8;
+$menu-trigger-scale-normal: 1.1;
+$menu-trigger-scale-hover: 1.2;
+$menu-trigger-scale-checked: 0.8;
 $hamburger-width: $blob-diameter * 0.4;
 $hamburger-height: $blob-diameter * 0.05;
 $hamburger-spacing: $blob-diameter * 0.15;

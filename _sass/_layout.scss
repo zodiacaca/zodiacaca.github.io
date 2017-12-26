@@ -1,7 +1,7 @@
 /**
  * Site header
  */
-.site-banner {
+.site-header {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -52,17 +52,66 @@
     }
 }
 
+$strip-gap: 6rem;
+.site-header-decoration-ltbm {
+  width: 50%;
+  height: $site-header-height/2;
+  position: absolute;
+  top: $site-header-height/2;
+  left: -$site-header-decoration-offset;
+  background-image: repeating-linear-gradient(-90deg,
+      rgba(255,255,255,0.4),
+      transparent $strip-gap);
+  transform:skew(45deg,0);
+}
+
+.site-header-decoration-lttp {
+  width: 50%;
+  height: $site-header-height/2;
+  position: absolute;
+  top: 0;
+  left: -$site-header-decoration-offset;
+  background-image: repeating-linear-gradient(-90deg,
+      rgba(255,255,255,0.4),
+      transparent $strip-gap);
+  transform:skew(-45deg,0);
+}
+
+.site-header-decoration-rttp {
+  width: 50%;
+  height: $site-header-height/2;
+  position: absolute;
+  top: 0;
+  left: 50%+$site-header-decoration-offset;
+  background-image: repeating-linear-gradient(90deg,
+      rgba(255,255,255,0.4),
+      transparent $strip-gap);
+  transform:skew(45deg,0);
+}
+
+.site-header-decoration-rtbm {
+  width: 50%;
+  height: $site-header-height/2;
+  position: absolute;
+  top: $site-header-height/2;
+  left: 50%+$site-header-decoration-offset;
+  background-image: repeating-linear-gradient(90deg,
+      rgba(255,255,255,0.4),
+      transparent $strip-gap);
+  transform:skew(-45deg,0);
+}
+
 
 
 /**
  * Site footer
  */
 .site-footer {
-    width: 100%;
-    height: 30rem;
-    position: relative;
-    background: rgba(0,0,0,0.4);
-    z-index: 1;
+  width: 100%;
+  height: 30rem;
+  position: relative;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
 }
 
 

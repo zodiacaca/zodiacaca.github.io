@@ -2,11 +2,11 @@
  * Home
  */
 .page-content-margin {
-    margin-top: 20rem;
-    height: 1rem;
+    margin-top: $site-header-height;
+    height: 1em;
     position: relative;
     background: white;
-    box-shadow: 0 -1ex 1em rgba(black, 0.3);
+    box-shadow: 0 -1ex 1em rgba(0,0,0,0.3);
     z-index: 1;
 }
 
@@ -31,7 +31,7 @@
             width: $post-list-item-content-width;
             height: $post-list-item-content-height;
             border: $post-list-item-content-border solid rgba(0,0,0,0);
-            border-radius: 1.5rem;
+            border-radius: 1.5em;
             position: absolute;
             top: 50%;
             transform: translate(-50%, -50%);

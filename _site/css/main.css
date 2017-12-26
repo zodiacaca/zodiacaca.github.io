@@ -100,7 +100,7 @@ pre {
 /**
  * Site header
  */
-.site-banner {
+.site-header {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -135,6 +135,42 @@ pre {
     background-position: 100% 50%; }
   100% {
     background-position: 0% 50%; } }
+.site-header-decoration-ltbm {
+  width: 50%;
+  height: 10rem;
+  position: absolute;
+  top: 10rem;
+  left: -20%;
+  background-image: repeating-linear-gradient(-90deg, rgba(255, 255, 255, 0.4), transparent 6rem);
+  transform: skew(45deg, 0); }
+
+.site-header-decoration-lttp {
+  width: 50%;
+  height: 10rem;
+  position: absolute;
+  top: 0;
+  left: -20%;
+  background-image: repeating-linear-gradient(-90deg, rgba(255, 255, 255, 0.4), transparent 6rem);
+  transform: skew(-45deg, 0); }
+
+.site-header-decoration-rttp {
+  width: 50%;
+  height: 10rem;
+  position: absolute;
+  top: 0;
+  left: 70%;
+  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.4), transparent 6rem);
+  transform: skew(45deg, 0); }
+
+.site-header-decoration-rtbm {
+  width: 50%;
+  height: 10rem;
+  position: absolute;
+  top: 10rem;
+  left: 70%;
+  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.4), transparent 6rem);
+  transform: skew(-45deg, 0); }
+
 /**
  * Site footer
  */
@@ -153,7 +189,7 @@ pre {
  */
 .page-content-margin {
   margin-top: 20rem;
-  height: 1rem;
+  height: 1em;
   position: relative;
   background: white;
   box-shadow: 0 -1ex 1em rgba(0, 0, 0, 0.3);
@@ -178,7 +214,7 @@ pre {
       width: 75%;
       height: 16rem;
       border: 0.5rem solid rgba(0, 0, 0, 0);
-      border-radius: 1.5rem;
+      border-radius: 1.5em;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
@@ -189,7 +225,7 @@ pre {
 /**
  * Blobs
  */
-.menu-open-button, .menu-item {
+.menu-trigger-button, .menu-item {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
@@ -210,10 +246,10 @@ pre {
   .menu i {
     color: white; }
 
-.menu-open {
+.menu-trigger {
   display: none; }
 
-.menu-open-button {
+.menu-trigger-button {
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition-duration: 400ms;
   transform: scale(1.1, 1.1);
@@ -241,14 +277,14 @@ pre {
 .hamburger-3 {
   transform: translate3d(0, 0.6rem, 0); }
 
-.menu-open:checked + .menu-open-button .hamburger-1 {
+.menu-trigger:checked + .menu-trigger-button .hamburger-1 {
   transform: rotate(45deg); }
-.menu-open:checked + .menu-open-button .hamburger-2 {
+.menu-trigger:checked + .menu-trigger-button .hamburger-2 {
   transform: scale(0.1); }
-.menu-open:checked + .menu-open-button .hamburger-3 {
+.menu-trigger:checked + .menu-trigger-button .hamburger-3 {
   transform: rotate(-45deg); }
 
-.menu-open-button:hover {
+.menu-trigger-button:hover {
   transform: scale(1.2, 1.2); }
 
 .menu-item:hover {
@@ -268,38 +304,36 @@ pre {
   transition-duration: 180ms;
   z-index: 6; }
 
-.menu-open:checked + .menu-open-button {
+.menu-trigger:checked + .menu-trigger-button {
   transition-timing-function: linear;
   transition-duration: 200ms;
   transform: scale(0.8, 0.8); }
 
-.menu-open:checked ~ .menu-item {
+.menu-trigger:checked ~ .menu-item {
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
-  .menu-open:checked ~ .menu-item:nth-child(3) {
+  .menu-trigger:checked ~ .menu-item:nth-child(3) {
     transition-duration: 190ms;
     transform: translate3d(5.5rem, 0, 0); }
-  .menu-open:checked ~ .menu-item:nth-child(4) {
+  .menu-trigger:checked ~ .menu-item:nth-child(4) {
     transition-duration: 280ms;
     transform: translate3d(11rem, 0, 0); }
-  .menu-open:checked ~ .menu-item:nth-child(5) {
+  .menu-trigger:checked ~ .menu-item:nth-child(5) {
     transition-duration: 370ms;
     transform: translate3d(16.5rem, 0, 0); }
-  .menu-open:checked ~ .menu-item:nth-child(6) {
+  .menu-trigger:checked ~ .menu-item:nth-child(6) {
     transition-duration: 460ms;
     transform: translate3d(22rem, 0, 0); }
 
-.page-bottom-nav {
+nav.btn-bar {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   width: 100%;
   border: medium solid rgba(0, 0, 0, 0);
   box-sizing: border-box;
   box-shadow: 0 1ex 1em rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 1; }
-
-nav.btn-bar {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap; }
 
 .btn-prev {
   flex-grow: 1;
