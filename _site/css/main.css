@@ -100,7 +100,7 @@ pre {
 /**
  * Site header
  */
-.site-header {
+.site-banner {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -108,12 +108,26 @@ pre {
   left: 0;
   background-image: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background-size: 400% 400%;
+  overflow: hidden;
+  z-index: 0;
   -webkit-animation: 12s ease infinite gradient-animation;
   -moz-animation: 12s ease infinite gradient-animation;
-  animation: 12s ease infinite gradient-animation;
-  overflow: hidden;
-  z-index: 0; }
+  animation: 12s ease infinite gradient-animation; }
 
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: 6s ease infinite canvas-animation; }
+
+@keyframes canvas-animation {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 @-webkit-keyframes gradient-animation {
   0% {
     background-position: 0% 50%; }
@@ -135,42 +149,6 @@ pre {
     background-position: 100% 50%; }
   100% {
     background-position: 0% 50%; } }
-.site-header-decoration-ltbm {
-  width: 50%;
-  height: 10rem;
-  position: absolute;
-  top: 10rem;
-  left: -20%;
-  background-image: repeating-linear-gradient(-90deg, rgba(255, 255, 255, 0.4), transparent 6rem);
-  transform: skew(45deg, 0); }
-
-.site-header-decoration-lttp {
-  width: 50%;
-  height: 10rem;
-  position: absolute;
-  top: 0;
-  left: -20%;
-  background-image: repeating-linear-gradient(-90deg, rgba(255, 255, 255, 0.4), transparent 6rem);
-  transform: skew(-45deg, 0); }
-
-.site-header-decoration-rttp {
-  width: 50%;
-  height: 10rem;
-  position: absolute;
-  top: 0;
-  left: 70%;
-  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.4), transparent 6rem);
-  transform: skew(45deg, 0); }
-
-.site-header-decoration-rtbm {
-  width: 50%;
-  height: 10rem;
-  position: absolute;
-  top: 10rem;
-  left: 70%;
-  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.4), transparent 6rem);
-  transform: skew(-45deg, 0); }
-
 /**
  * Site footer
  */
@@ -188,7 +166,7 @@ pre {
  * Home
  */
 .page-content-margin {
-  margin-top: 20rem;
+  margin-top: 28rem;
   height: 1em;
   position: relative;
   background: white;
