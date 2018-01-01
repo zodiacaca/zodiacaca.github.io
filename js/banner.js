@@ -31,6 +31,12 @@ window.onload = function() {
     colorVariation: 50
   };
   
+  var current_time = 0,
+    last_time = 0,
+    time_interval = 0,
+    first_time = true,
+    stdFrameTime = 16;
+  
 
   // remove particles no longer in the view
   var cleanUpArray = function() {
@@ -49,8 +55,8 @@ window.onload = function() {
   
    // find matters' next positions
   var updateParticlePosition = function(p) {
-      p.x += p.s * Math.sin(p.d);
-      p.y += p.s * Math.cos(p.d);
+      p.x += p.s * Math.sin(p.d) * time_interval / stdFrameTime;
+      p.y += p.s * Math.cos(p.d) * time_interval / stdFrameTime;
       return p;
   };
   
@@ -96,9 +102,19 @@ window.onload = function() {
       ctx.fillStyle = "rgb(" + color.r + "," + color.g + "," + color.b + ")";
       ctx.fillRect(0,0,canvas.width,canvas.height);
   };
+  
+  var getFrameTime = function() {
+    var time = new Date();
+    current_time = time.getTime();
+    first_time ? time_interval = stdFrameTime : time_interval = current_time - last_time;
+    last_time = current_time;
+    first_time = false;
+  };
 
   
   var frame = function() {
+    // get frame time
+    getFrameTime();
     // draw background to cover old pixels
     drawBg(ctx, colorPalette.bg);
     // update particle models to new positions
