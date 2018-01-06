@@ -1,0 +1,38 @@
+
+.slider-container {
+    width: 40%;
+    position: absolute;
+    left: 1rem;
+    top: $site-banner-height - 2rem;
+    // border: thin solid blue;
+    z-index: 2;
+}
+
+#my_slider {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 0.2rem;
+    // border: thin solid red;
+    opacity: 0.8;
+    background: #fff;
+}
+
+#my_slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    width: 1rem; /* Set a specific slider handle width */
+    height: 1rem; /* Slider handle height */
+    // border: thin solid red;
+    border-radius: 50%; 
+    background: #fff; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+#slider_output {
+    text-align: center;
+    width: 10%;
+    position: absolute;
+    right: 0;
+    // border: thin solid red;
+    color: #fff;
+}
+

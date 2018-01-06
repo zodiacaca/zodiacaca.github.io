@@ -14,15 +14,12 @@
   
   <link rel="canonical" href="http://localhost:4000/">
   <link rel="alternate" type="application/rss+xml" title="Pointman" href="http://localhost:4000/feed.xml">
-  
-  <script src="/js/live.js"></script>
-  <script src="/js/banner.js"></script>
 </head>
 
 
   <body>
 
-    <header class="site-banner">
+    <header id="site-banner">
 
   
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -105,7 +102,13 @@
 
 </header>
 
-<canvas id="canvas"></canvas>
+<canvas id="banner"></canvas>
+<svg id="banner2"></svg>
+
+<div class="slider-container">
+  <input type="range" min="1" max="100" value="50" class="slider" id="my_slider">
+  <span id="slider_output"></span>
+</div>
 
       
     <!-- centered list items pad from center, leave it -->
@@ -277,7 +280,9 @@
 </nav>
 
     
-<!--    <script src="/js/.js"></script>-->
+    <script src="/js/live.js"></script>
+    <script src="/js/banner.js"></script>
+    <script src="/js/banner2.js"></script>
 
   </body>
 

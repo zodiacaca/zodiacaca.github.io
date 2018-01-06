@@ -1,7 +1,7 @@
 /**
  * Site header
  */
-.site-banner {
+#site-banner {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -12,12 +12,22 @@
   overflow: hidden;
   z-index: 0;
   
-  -webkit-animation: 12s ease infinite gradient-animation;
-  -moz-animation: 12s ease infinite gradient-animation;
-  animation: 12s ease infinite gradient-animation;
+  // animation: 12s ease infinite gradient-animation;
 }
 
-canvas {
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+#banner {
   position: fixed;
   top: 0;
   left: 0;
@@ -38,40 +48,19 @@ canvas {
   }
 }
 
-@-webkit-keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
+$logo-width: 20rem;
+$logo-height: 20rem;
 
-@-moz-keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
+#banner2 {
+  margin: 0;
+  margin-left: -$logo-width/2;
+  width: $logo-width;
+  height: $logo-height;
+  position: fixed;
+  top: 4rem;
+  left: 50%;
+  background: rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
 

@@ -2,7 +2,7 @@
 window.onload = function() {
 
   // canvas
-  var canvas = document.getElementById("canvas");
+  var canvas = document.getElementById("banner");
   ctx = canvas.getContext("2d");
 
   // set canvas to the window size
@@ -35,7 +35,7 @@ window.onload = function() {
     last_time = 0,
     time_interval = 0,
     first_time = true,
-    stdFrameTime = 16;
+    stdFrameTime = 1000/60;
   
 
   // remove particles no longer in the view
@@ -141,6 +141,10 @@ window.onload = function() {
       var x = event.clientX,
           y = event.clientY;
       cleanUpArray(); // clear a bit
-      initParticles(config.particleNumber, x, y);
+      var elementMouseIsOver = document.elementFromPoint(x, y);
+      var className = elementMouseIsOver.className;
+      if (!className) {
+        initParticles(config.particleNumber, x, y);
+      }
   });
 };

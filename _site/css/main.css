@@ -100,7 +100,7 @@ pre {
 /**
  * Site header
  */
-.site-banner {
+#site-banner {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -109,12 +109,16 @@ pre {
   background-image: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background-size: 400% 400%;
   overflow: hidden;
-  z-index: 0;
-  -webkit-animation: 12s ease infinite gradient-animation;
-  -moz-animation: 12s ease infinite gradient-animation;
-  animation: 12s ease infinite gradient-animation; }
+  z-index: 0; }
 
-canvas {
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+#banner {
   position: fixed;
   top: 0;
   left: 0;
@@ -128,27 +132,17 @@ canvas {
     opacity: 1; }
   100% {
     opacity: 0; } }
-@-webkit-keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-@-moz-keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
+#banner2 {
+  margin: 0;
+  margin-left: -10rem;
+  width: 20rem;
+  height: 20rem;
+  position: fixed;
+  top: 4rem;
+  left: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+
 /**
  * Site footer
  */
@@ -391,6 +385,40 @@ nav.btn-bar {
     background-color: #333333; }
   .nav-light .btn-next:active {
     box-shadow: 0 0 1em 0.5ex rgba(51, 51, 51, 0.5); }
+
+.slider-container {
+  width: 40%;
+  position: absolute;
+  left: 1rem;
+  top: 26rem;
+  z-index: 2; }
+
+#my_slider {
+  -webkit-appearance: none;
+  width: 90%;
+  height: 0.2rem;
+  opacity: 0.8;
+  background: #fff; }
+
+#my_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Override default look */
+  width: 1rem;
+  /* Set a specific slider handle width */
+  height: 1rem;
+  /* Slider handle height */
+  border-radius: 50%;
+  background: #fff;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */ }
+
+#slider_output {
+  text-align: center;
+  width: 10%;
+  position: absolute;
+  right: 0;
+  color: #fff; }
 
 /**
  * Syntax highlighting styles

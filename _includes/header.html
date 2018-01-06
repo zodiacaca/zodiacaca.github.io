@@ -1,7 +1,13 @@
-<header class="site-banner">
+<header id="site-banner">
 
   {% include defs.html %}
 
 </header>
 
-<canvas id="canvas"></canvas>
+<canvas id="banner"></canvas>
+<svg id="banner2"></svg>
+
+<div class="slider-container">
+  <input type="range" min="1" max="100" value="50" class="slider" id="my_slider">
+  <span id="slider_output"></span>
+</div>
