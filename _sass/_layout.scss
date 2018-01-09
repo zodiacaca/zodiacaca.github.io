@@ -12,7 +12,7 @@
   overflow: hidden;
   z-index: 0;
   
-  // animation: 12s ease infinite gradient-animation;
+  animation: 12s ease infinite gradient-animation;
 }
 
 @keyframes gradient-animation {
@@ -52,14 +52,13 @@ $logo-width: 20rem;
 $logo-height: 20rem;
 
 #banner2 {
-  margin: 0;
   margin-left: -$logo-width/2;
   width: $logo-width;
   height: $logo-height;
   position: fixed;
-  top: 4rem;
+  top: 3rem;
   left: 50%;
-  background: rgba(0,0,0,0.2);
+  // background: rgba(0,0,0,0.2);
   z-index: 1;
 }
 

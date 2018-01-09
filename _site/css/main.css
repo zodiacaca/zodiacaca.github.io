@@ -109,7 +109,8 @@ pre {
   background-image: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background-size: 400% 400%;
   overflow: hidden;
-  z-index: 0; }
+  z-index: 0;
+  animation: 12s ease infinite gradient-animation; }
 
 @keyframes gradient-animation {
   0% {
@@ -138,9 +139,8 @@ pre {
   width: 20rem;
   height: 20rem;
   position: fixed;
-  top: 4rem;
+  top: 3rem;
   left: 50%;
-  background: rgba(0, 0, 0, 0.2);
   z-index: 1; }
 
 /**
@@ -160,7 +160,8 @@ pre {
  * Home
  */
 .page-content-margin {
-  margin-top: 28rem;
+  margin: 0;
+  margin-top: 48vh;
   height: 1em;
   position: relative;
   background: white;
@@ -182,14 +183,17 @@ pre {
     overflow: hidden; }
     .post-list > li .post-list-item-wrapper {
       display: inline-block;
-      margin: 0 auto;
+      margin: 0;
+      margin-top: -8rem;
+      margin-left: -37.5%;
       width: 75%;
       height: 16rem;
+      box-sizing: border-box;
       border: 0.5rem solid rgba(0, 0, 0, 0);
       border-radius: 1.5em;
       position: absolute;
       top: 50%;
-      transform: translate(-50%, -50%);
+      left: 50%;
       background: white;
       background-clip: padding-box;
       box-shadow: 0 0 0 10000px white; }
@@ -229,8 +233,9 @@ pre {
   z-index: 10; }
 
 .hamburger {
-  margin-left: -0.8rem;
+  margin: 0;
   margin-top: -0.1rem;
+  margin-left: -0.8rem;
   width: 1.6rem;
   height: 0.2rem;
   position: absolute;
@@ -387,6 +392,7 @@ nav.btn-bar {
     box-shadow: 0 0 1em 0.5ex rgba(51, 51, 51, 0.5); }
 
 .slider-container {
+  display: none;
   width: 40%;
   position: absolute;
   left: 1rem;

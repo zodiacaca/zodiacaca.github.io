@@ -36,6 +36,11 @@ window.onload = function() {
     time_interval = 0,
     first_time = true,
     stdFrameTime = 1000/60;
+    
+  // x.clamp(0, 255)
+  Number.prototype.clamp = function(min, max) {
+    return Math.min(Math.max(this, min), max);
+  };
   
 
   // remove particles no longer in the view
@@ -87,7 +92,7 @@ window.onload = function() {
       // color of the matters, make some randomness
       this.c = colorVariation(colorPalette.matter[Math.floor(Math.random() * colorPalette.matter.length)], true);
       // speed of which the rock travels
-      this.s = Math.random() * config.maxSpeed;
+      this.s = (Math.random() * config.maxSpeed).clamp(0.001, config.maxSpeed);
       // direction the matter flies
       this.d = Math.random() * 2 * Math.PI;
   };
