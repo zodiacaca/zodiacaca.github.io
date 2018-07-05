@@ -7,283 +7,232 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Steven Lee</title>
-  <meta name="description" content="Know the limitation, do the extreme.">
+  <meta name="description" content="">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/fa/fontawesome-all.min.css">
   
-  <link rel="canonical" href="http://localhost:4000/">
-  <link rel="alternate" type="application/rss+xml" title="Pointman" href="http://localhost:4000/feed.xml">
+  <!-- <link rel="canonical" href="http://localhost:4000/"> -->
+  <!-- <link rel="alternate" type="application/rss+xml" title="Ozillia" href="http://localhost:4000/feed.xml"> -->
 </head>
 
 
   <body>
-
-    <header id="site-banner">
-
   
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  
-  <defs>
-    
-<!--
-    **
-    * inset shadow hard
-    *
--->    <filter id="inset-shadow-hard" x="-50%" y="-50%" width="200%" height="200%">
-      <feComponentTransfer in="SourceAlpha">
-        <feFuncA type="table" tableValues="1 0"/>
-      </feComponentTransfer>
-      <feGaussianBlur stdDeviation="6"/>
-      <feOffset dx="0" dy="0" result="offset-blur"/>
-      <feFlood flood-color="rgba(0, 0, 0, 1)"/>
-      <feComposite in2="offset-blur" operator="in"/>
-      <feComposite in2="SourceAlpha" operator="in" result="shadow"/>
-      <feComposite
-        operator="over"
-        in="shadow"
-        in2="SourceGraphic"
-      />
-      <!-- <feMerge>
-        <feMergeNode in="SourceGraphic" />
-        <feMergeNode />
-      </feMerge> -->
-    </filter>
-    
-<!--
-    **
-    * inset shadow soft
-    *
--->
-    <filter id="inset-shadow-soft" x="-50%" y="-50%" width="200%" height="200%">
-      <feOffset dx="0" dy="0"/>
-      <feGaussianBlur stdDeviation="6" result="offset-blur"/>
-      <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
-      <feFlood flood-color="rgb(0, 0, 0)" flood-opacity="1" result="color"/>
-      <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
-      <feComposite
-        operator="over"
-        in="shadow"
-        in2="SourceGraphic"
-      />
-    </filter>
-    
-<!--
-    **
-    * goo
-    *
--->
-    <filter id="goo">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
-      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"/>
-      <feBlend in="SourceGraphic" in2="goo"/>
-<!--      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>-->
-    </filter>
-    
-<!--
-    **
-    * shadowed goo
-    *
--->
-    <filter id="shadowed-goo">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
-      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"/>
-      <feGaussianBlur in="goo" stdDeviation="3" result="shadow"/>
-      <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow"/>
-      <feOffset in="shadow" dx="1" dy="1" result="shadow"/>
-      <feComposite in2="shadow" in="goo" result="goo"/>
-      <feComposite in2="goo" in="SourceGraphic" result="mix"/>
-    </filter>
-    
-  </defs>
-  
-</svg>
+    <div id="st-container" class="st-container">
+        <!-- 	
+          example menus 
+          these menus will be on top of the push wrapper
+        -->
+        <nav class="st-menu st-effect-1" id="menu-1">
+          <h2 class="icon icon-lab">Sidebar</h2>
+          <ul>
+            <li><a class="icon icon-data" href="#">Data Management</a></li>
+            <li><a class="icon icon-location" href="#">Location</a></li>
+            <li><a class="icon icon-study" href="#">Study</a></li>
+            <li><a class="icon icon-photo" href="#">Collections</a></li>
+            <li><a class="icon icon-wallet" href="#">Credits</a></li>
+          </ul>
+        </nav>
+        
+        <nav class="st-menu st-effect-2" id="menu-2">
+          <h2 class="icon icon-stack">Sidebar</h2>
+          <ul>
+            <li><a class="icon icon-data" href="#">Data Management</a></li>
+            <li><a class="icon icon-location" href="#">Location</a></li>
+            <li><a class="icon icon-study" href="#">Study</a></li>
+            <li><a class="icon icon-photo" href="#">Collections</a></li>
+            <li><a class="icon icon-wallet" href="#">Credits</a></li>
+          </ul>
+        </nav>
 
+        <nav class="st-menu st-effect-4" id="menu-4">
+          <h2 class="icon icon-lab">Sidebar</h2>
+          <ul>
+            <li><a class="icon icon-data" href="#">Data Management</a></li>
+            <li><a class="icon icon-location" href="#">Location</a></li>
+            <li><a class="icon icon-study" href="#">Study</a></li>
+            <li><a class="icon icon-photo" href="#">Collections</a></li>
+            <li><a class="icon icon-wallet" href="#">Credits</a></li>
+          </ul>
+        </nav>
 
-</header>
+        <nav class="st-menu st-effect-5" id="menu-5">
+          <h2 class="icon icon-stack">Sidebar</h2>
+          <ul>
+            <li><a class="icon icon-data" href="#">Data Management</a></li>
+            <li><a class="icon icon-location" href="#">Location</a></li>
+            <li><a class="icon icon-study" href="#">Study</a></li>
+            <li><a class="icon icon-photo" href="#">Collections</a></li>
+            <li><a class="icon icon-wallet" href="#">Credits</a></li>
+          </ul>
+        </nav>
+        
+        <nav class="st-menu st-effect-9" id="menu-9">
+          <h2 class="icon icon-lab">Sidebar</h2>
+          <ul>
+            <li><a class="icon icon-data" href="#">Data Management</a></li>
+            <li><a class="icon icon-location" href="#">Location</a></li>
+            <li><a class="icon icon-study" href="#">Study</a></li>
+            <li><a class="icon icon-photo" href="#">Collections</a></li>
+            <li><a class="icon icon-wallet" href="#">Credits</a></li>
+          </ul>
+        </nav>
+        
+        <nav class="st-menu st-effect-10" id="menu-10">
+          <h2 class="icon icon-stack">Sidebar</h2>
+          <ul>
+            <li><a class="icon icon-data" href="#">Data Management</a></li>
+            <li><a class="icon icon-location" href="#">Location</a></li>
+            <li><a class="icon icon-study" href="#">Study</a></li>
+            <li><a class="icon icon-photo" href="#">Collections</a></li>
+            <li><a class="icon icon-wallet" href="#">Credits</a></li>
+          </ul>
+        </nav>
+        
+        <nav class="st-menu st-effect-11" id="menu-11">
+          <h2 class="icon icon-lab">Sidebar</h2>
+          <ul>
+            <li><a class="icon icon-data" href="#">Data Management</a></li>
+            <li><a class="icon icon-location" href="#">Location</a></li>
+            <li><a class="icon icon-study" href="#">Study</a></li>
+            <li><a class="icon icon-photo" href="#">Collections</a></li>
+            <li><a class="icon icon-wallet" href="#">Credits</a></li>
+          </ul>
+        </nav>
 
-<canvas id="banner"></canvas>
-<!-- <svg id="banner2"></svg> -->
+        <nav class="st-menu st-effect-12" id="menu-12">
+          <h2 class="icon icon-stack">Sidebar</h2>
+          <ul>
+            <li><a class="icon icon-data" href="#">Data Management</a></li>
+            <li><a class="icon icon-location" href="#">Location</a></li>
+            <li><a class="icon icon-study" href="#">Study</a></li>
+            <li><a class="icon icon-photo" href="#">Collections</a></li>
+            <li><a class="icon icon-wallet" href="#">Credits</a></li>
+          </ul>
+        </nav>
 
-<div class="slider-container">
-  <input type="range" min="1" max="100" value="50" class="slider" id="my_slider">
-  <span id="slider_output"></span>
-</div>
+        <nav class="st-menu st-effect-13" id="menu-13">
+          <h2 class="icon icon-stack">Sidebar</h2>
+          <ul>
+            <li><a class="icon icon-data" href="#">Data Management</a></li>
+            <li><a class="icon icon-location" href="#">Location</a></li>
+            <li><a class="icon icon-study" href="#">Study</a></li>
+            <li><a class="icon icon-photo" href="#">Collections</a></li>
+            <li><a class="icon icon-wallet" href="#">Credits</a></li>
+          </ul>
+        </nav>
 
+        <!-- content push wrapper -->
+        <div class="st-pusher">
+          <!-- 	
+            example menus 
+            these menus will be under the push wrapper
+          -->
+          <nav class="st-menu st-effect-3" id="menu-3">
+            <h2 class="icon icon-lab">Sidebar</h2>
+            <ul>
+              <li><a class="icon icon-data" href="#">Data Management</a></li>
+              <li><a class="icon icon-location" href="#">Location</a></li>
+              <li><a class="icon icon-study" href="#">Study</a></li>
+              <li><a class="icon icon-photo" href="#">Collections</a></li>
+              <li><a class="icon icon-wallet" href="#">Credits</a></li>
+            </ul>
+          </nav>
+
+          <nav class="st-menu st-effect-6" id="menu-6">
+            <h2 class="icon icon-stack">Sidebar</h2>
+            <ul>
+              <li><a class="icon icon-data" href="#">Data Management</a></li>
+              <li><a class="icon icon-location" href="#">Location</a></li>
+              <li><a class="icon icon-study" href="#">Study</a></li>
+              <li><a class="icon icon-photo" href="#">Collections</a></li>
+              <li><a class="icon icon-wallet" href="#">Credits</a></li>
+            </ul>
+          </nav>
+
+          <nav class="st-menu st-effect-7" id="menu-7">
+            <h2 class="icon icon-lab">Sidebar</h2>
+            <ul>
+              <li><a class="icon icon-data" href="#">Data Management</a></li>
+              <li><a class="icon icon-location" href="#">Location</a></li>
+              <li><a class="icon icon-study" href="#">Study</a></li>
+              <li><a class="icon icon-photo" href="#">Collections</a></li>
+              <li><a class="icon icon-wallet" href="#">Credits</a></li>
+            </ul>
+          </nav>
+
+          <nav class="st-menu st-effect-8" id="menu-8">
+            <h2 class="icon icon-stack">Sidebar</h2>
+            <ul>
+              <li><a class="icon icon-data" href="#">Data Management</a></li>
+              <li><a class="icon icon-location" href="#">Location</a></li>
+              <li><a class="icon icon-study" href="#">Study</a></li>
+              <li><a class="icon icon-photo" href="#">Collections</a></li>
+              <li><a class="icon icon-wallet" href="#">Credits</a></li>
+            </ul>
+          </nav>
+
+          <nav class="st-menu st-effect-14" id="menu-14">
+            <h2 class="icon icon-stack">Sidebar</h2>
+            <ul>
+              <li><a class="icon icon-data" href="#">Data Management</a></li>
+              <li><a class="icon icon-location" href="#">Location</a></li>
+              <li><a class="icon icon-study" href="#">Study</a></li>
+              <li><a class="icon icon-photo" href="#">Collections</a></li>
+              <li><a class="icon icon-wallet" href="#">Credits</a></li>
+            </ul>
+          </nav>
+
+          <div class="st-content"><!-- this is the wrapper for the content -->
+            <div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+              <!-- Top Navigation -->
+              <div class="codrops-top clearfix">
+                <a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Tutorials/3DShadingWithBoxShadows/"><span>Previous Demo</span></a>
+                <span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=16292"><span>Back to the Codrops Article</span></a></span>
+              </div>
+              <header class="codrops-header">
+                <h1>Sidebar Transitions <span>Transition effects for off-canvas views</span></h1>
+              </header>
+              <div class="main clearfix">
+                <div id="st-trigger-effects" class="column">
+                  <button data-effect="st-effect-1">Slide in on top</button>
+                  <button data-effect="st-effect-2">Reveal</button>
+                  <button data-effect="st-effect-3">Push</button>
+                  <button data-effect="st-effect-4">Slide along</button>
+                  <button data-effect="st-effect-5">Reverse slide out</button>
+                  <button data-effect="st-effect-6">Rotate pusher</button>
+                  <button data-effect="st-effect-7">3D rotate in</button>
+                  <button data-effect="st-effect-8">3D rotate out</button>
+                  <button data-effect="st-effect-9">Scale down pusher</button>
+                  <button data-effect="st-effect-10">Scale Up</button>
+                  <button data-effect="st-effect-11">Scale &amp; rotate pusher</button>
+                  <button data-effect="st-effect-12">Open door</button>
+                  <button data-effect="st-effect-13">Fall down</button>
+                  <button data-effect="st-effect-14">Delayed 3D Rotate</button>
+                </div>
+                <div class="column">
+                  <p>Sidebar menus or off-canvas navigations can be revealed in many creative ways.</p>
+                  <p>Here is some inspiration for showing them in style using CSS transitions.</p>
+                </div>
+                <div class="info">
+                  <p>If you enjoyed this demo you might also like:</p>
+                  <p><a href="http://tympanus.net/Development/HeaderEffects/">On Scroll Header Effects</a></p>
+                  <p><a href="http://tympanus.net/Development/PageTransitions/">A Collection of Page Transitions</a></p>
+                </div>
+              </div><!-- /main -->
+            </div><!-- /st-content-inner -->
+          </div><!-- /st-content -->
+        </div><!-- /st-pusher -->
+      </div><!-- /st-container -->
       
-    <!-- centered list items pad from center, leave it -->
-<div class="page-content-margin"></div>
-
-<ul class="post-list">
-  
-    <li>
-      <div class="post-list-item-wrapper">
-<!--
-        <h2>
-          <a class="post-link" href="/post/2017/01/10/post-placehodler6.html">Post Placehodler</a>
-        </h2>
-
-        <span class="post-meta">January 10th - 2017</span>
--->
-      </div>
-    </li>
-  
-    <li>
-      <div class="post-list-item-wrapper">
-<!--
-        <h2>
-          <a class="post-link" href="/post/2017/01/09/post-placehodler5.html">Post Placehodler</a>
-        </h2>
-
-        <span class="post-meta">January 09th - 2017</span>
--->
-      </div>
-    </li>
-  
-    <li>
-      <div class="post-list-item-wrapper">
-<!--
-        <h2>
-          <a class="post-link" href="/post/2017/01/08/post-placehodler4.html">Post Placehodler</a>
-        </h2>
-
-        <span class="post-meta">January 08th - 2017</span>
--->
-      </div>
-    </li>
-  
-    <li>
-      <div class="post-list-item-wrapper">
-<!--
-        <h2>
-          <a class="post-link" href="/post/2017/01/07/post-placehodler3.html">Post Placehodler</a>
-        </h2>
-
-        <span class="post-meta">January 07th - 2017</span>
--->
-      </div>
-    </li>
-  
-    <li>
-      <div class="post-list-item-wrapper">
-<!--
-        <h2>
-          <a class="post-link" href="/post/2017/01/06/post-placehodler2.html">Post Placehodler</a>
-        </h2>
-
-        <span class="post-meta">January 06th - 2017</span>
--->
-      </div>
-    </li>
-  
-    <li>
-      <div class="post-list-item-wrapper">
-<!--
-        <h2>
-          <a class="post-link" href="/post/2017/01/05/post-placehodler1.html">Post Placehodler</a>
-        </h2>
-
-        <span class="post-meta">January 05th - 2017</span>
--->
-      </div>
-    </li>
-  
-    <li>
-      <div class="post-list-item-wrapper">
-<!--
-        <h2>
-          <a class="post-link" href="/post/2017/01/04/monitor-lifter.html">Mornitor Lifter</a>
-        </h2>
-
-        <span class="post-meta">January 04th - 2017</span>
--->
-      </div>
-    </li>
-  
-    <li>
-      <div class="post-list-item-wrapper">
-<!--
-        <h2>
-          <a class="post-link" href="/post/2017/01/03/cross-weight-mirror.html">Cross-weight Mirror Tool</a>
-        </h2>
-
-        <span class="post-meta">January 03th - 2017</span>
--->
-      </div>
-    </li>
-  
-    <li>
-      <div class="post-list-item-wrapper">
-<!--
-        <h2>
-          <a class="post-link" href="/post/2017/01/02/universal-convertor.html">Universal Convertor for Animations</a>
-        </h2>
-
-        <span class="post-meta">January 02th - 2017</span>
--->
-      </div>
-    </li>
-  
-    <li>
-      <div class="post-list-item-wrapper">
-<!--
-        <h2>
-          <a class="post-link" href="/post/2017/01/01/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-        </h2>
-
-        <span class="post-meta">January 01th - 2017</span>
--->
-      </div>
-    </li>
-  
-</ul>
-
-
-<nav class="btn-bar nav-light">
-  <a href="" class="btn-glass btn-prev">
-    <i class="fa fa-lg fa-fw fa-chevron-left"></i>Previous
-  </a>
-  <a href="" class="btn-glass btn-none">
-
-  </a>
-  <a href="" class="btn-glass btn-next">
-    Next<i class="fa fa-lg fa-fw fa-chevron-right"></i>
-  </a>
-</nav>
-
-
-<!--<p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p> -->
-
-
-    <footer class="site-footer">
-
-  
-
-</footer>
-
-    
-    
-<nav class="menu">
-  
-  <input type="checkbox" href="#" class="menu-trigger" name="menu-trigger" id="menu-trigger"/>
-  <label class="menu-trigger-button" for="menu-trigger">
-    <span class="hamburger hamburger-1"></span>
-    <span class="hamburger hamburger-2"></span>
-    <span class="hamburger hamburger-3"></span>
-  </label>
-  
-  <a href="#" class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
-  <a href="#" class="menu-item"> <i class="fa fa-plus"></i> </a>
-  <a href="#" class="menu-item"> <i class="fa fa-heart"></i> </a>
-  <a href="#" class="menu-item"> <i class="fa fa-envelope"></i> </a>
-  
-</nav>
-
-    
     <script src="/js/live.js"></script>
-    <script src="/js/banner.js"></script>
-    <!-- <script src="/js/banner2.js"></script> -->
-
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    
+    <script src="/js/classie.js"></script>
+    <script src="/js/modernizr.custom.js"></script>
+    <script src="/js/sidebarEffects.js"></script>
+    
   </body>
 
 </html>

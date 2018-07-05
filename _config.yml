@@ -6,13 +6,13 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Pointman
+title: Ozillia
 author: Steven Lee
 email: 121059464@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Know the limitation, do the extreme.
+
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://zodiacaca.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://fafa.tk" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username: zodiacaca
 
@@ -24,11 +24,12 @@ plugins:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - start.bat
