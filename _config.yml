@@ -1,18 +1,16 @@
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# which you expect to set up once and rarely needed to be edited after that.
+# Please restart the server process, after having changed this file.
 
 # Site settings
 title: Ozillia
 author: Steven Lee
 email: 121059464@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
-
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://fafa.tk" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://zodiacaca.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog/
 twitter_username: 
 github_username: zodiacaca
 

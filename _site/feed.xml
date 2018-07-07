@@ -3,10 +3,10 @@
   <channel>
     <title>Ozillia</title>
     <description></description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 05 Jul 2018 12:14:53 +0800</pubDate>
-    <lastBuildDate>Thu, 05 Jul 2018 12:14:53 +0800</lastBuildDate>
+    <link>http://localhost:4000</link>
+    <atom:link rel="self" type="application/rss+xml" href="http://localhost:4000/feed.xml"/>
+    <pubDate>Sat, 07 Jul 2018 15:26:44 +0800</pubDate>
+    <lastBuildDate>Sat, 07 Jul 2018 15:26:44 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -16,7 +16,6 @@
         <pubDate>Wed, 11 Jan 2017 05:00:00 +0800</pubDate>
         <link>http://localhost:4000/post/2017/01/10/post-placehodler6.html</link>
         <guid isPermaLink="true">http://localhost:4000/post/2017/01/10/post-placehodler6.html</guid>
-        
         
             <category>post</category>
         
@@ -30,7 +29,6 @@
         <link>http://localhost:4000/post/2017/01/09/post-placehodler5.html</link>
         <guid isPermaLink="true">http://localhost:4000/post/2017/01/09/post-placehodler5.html</guid>
         
-        
             <category>post</category>
         
       </item>
@@ -42,7 +40,6 @@
         <pubDate>Mon, 09 Jan 2017 05:00:00 +0800</pubDate>
         <link>http://localhost:4000/post/2017/01/08/post-placehodler4.html</link>
         <guid isPermaLink="true">http://localhost:4000/post/2017/01/08/post-placehodler4.html</guid>
-        
         
             <category>post</category>
         
@@ -56,7 +53,6 @@
         <link>http://localhost:4000/post/2017/01/07/post-placehodler3.html</link>
         <guid isPermaLink="true">http://localhost:4000/post/2017/01/07/post-placehodler3.html</guid>
         
-        
             <category>post</category>
         
       </item>
@@ -68,7 +64,6 @@
         <pubDate>Sat, 07 Jan 2017 05:00:00 +0800</pubDate>
         <link>http://localhost:4000/post/2017/01/06/post-placehodler2.html</link>
         <guid isPermaLink="true">http://localhost:4000/post/2017/01/06/post-placehodler2.html</guid>
-        
         
             <category>post</category>
         
@@ -82,7 +77,6 @@
         <link>http://localhost:4000/post/2017/01/05/post-placehodler1.html</link>
         <guid isPermaLink="true">http://localhost:4000/post/2017/01/05/post-placehodler1.html</guid>
         
-        
             <category>post</category>
         
       </item>
@@ -94,7 +88,6 @@
         <pubDate>Thu, 05 Jan 2017 05:00:00 +0800</pubDate>
         <link>http://localhost:4000/post/2017/01/04/monitor-lifter.html</link>
         <guid isPermaLink="true">http://localhost:4000/post/2017/01/04/monitor-lifter.html</guid>
-        
         
             <category>post</category>
         
@@ -108,7 +101,6 @@
         <link>http://localhost:4000/post/2017/01/03/cross-weight-mirror.html</link>
         <guid isPermaLink="true">http://localhost:4000/post/2017/01/03/cross-weight-mirror.html</guid>
         
-        
             <category>post</category>
         
       </item>
@@ -120,7 +112,6 @@
         <pubDate>Tue, 03 Jan 2017 05:00:00 +0800</pubDate>
         <link>http://localhost:4000/post/2017/01/02/universal-convertor.html</link>
         <guid isPermaLink="true">http://localhost:4000/post/2017/01/02/universal-convertor.html</guid>
-        
         
             <category>post</category>
         
@@ -146,7 +137,6 @@
         <pubDate>Mon, 02 Jan 2017 05:00:00 +0800</pubDate>
         <link>http://localhost:4000/post/2017/01/01/welcome-to-jekyll.html</link>
         <guid isPermaLink="true">http://localhost:4000/post/2017/01/01/welcome-to-jekyll.html</guid>
-        
         
             <category>post</category>
         
