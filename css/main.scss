@@ -12,7 +12,7 @@
 
 
 
-// Use media queries like this:
+// Example of including mixin:
 // @include media-query($on-palm) {
   
 // }
@@ -25,10 +25,6 @@
 
 // Import partials from `sass_dir` (default as `_sass`)
 @import
-  // "layout",
-  // "syntax-highlighting"
-  "component",
-  "demo",
-  "icons",
-  "normalize"
+  // "component",
+  // "demo"
 ;

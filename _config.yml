@@ -8,9 +8,9 @@
 title: Ozillia
 author: Steven Lee
 email: 121059464@qq.com
-description: >- # this means to ignore newlines until "baseurl:"
+description: >- # this means to ignore newlines until "url:"
 url: "https://zodiacaca.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog/
+subpath: "" # the subpath of your site, e.g. /blog/
 twitter_username: 
 github_username: zodiacaca
 
