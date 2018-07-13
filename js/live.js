@@ -3,7 +3,7 @@
   Written for Handcraft.com by Martin Kool (@mrtnkl).
 
   Version 4.
-  Recent change: Made stylesheet and mimetype checks case insensitive.
+  Recent change: Made stylesheet and mimetype check case insensitive.
 
   http://livejs.com
   http://livejs.com/license (MIT)  
