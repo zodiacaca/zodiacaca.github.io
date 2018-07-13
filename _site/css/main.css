@@ -13,25 +13,23 @@ body {
   position: relative;
   overflow: hidden;
   z-index: 0; }
-
-#nav-bar {
-  margin-top: 10vh;
-  margin-left: 3rem;
-  width: 20%;
-  height: 80vh;
-  background-color: #555;
-  position: absolute;
-  top: 0;
-  left: 20%;
-  transition: all 800ms ease-out;
-  z-index: -1; }
-
-#front-content {
-  width: 100%;
-  height: 100vh;
-  background-color: #222;
-  position: absolute;
-  top: 0;
-  left: 0%;
-  transition: all 800ms ease-out;
-  z-index: 10; }
+  #main-frame #nav-bar {
+    margin-top: 10vh;
+    margin-left: 3rem;
+    width: 20%;
+    height: 80vh;
+    background-color: #555;
+    position: absolute;
+    top: 0;
+    left: 20%;
+    transition: all 800ms ease-out;
+    z-index: 5; }
+  #main-frame #front-content {
+    width: 100%;
+    height: 100vh;
+    background-color: #222;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    transition: all 800ms ease-out;
+    z-index: 10; }
