@@ -31,3 +31,4 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - start.bat
+  - auto_pull.sh
