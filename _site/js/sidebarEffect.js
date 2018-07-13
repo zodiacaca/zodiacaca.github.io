@@ -5,7 +5,7 @@ var SidebarMenuEffect = (function(){
   
 })();
 
-$(window).on("load", function(){
+$(document).on("load", function(){
   $("#nav-bar").css("transform", "translateX(-100%)")
   $("#front-content").css("transform", "translateX(20%)")
   $("#front-content").css("background-color", "#333")
