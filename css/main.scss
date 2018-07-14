@@ -5,7 +5,12 @@
 
 @font-face {
   font-family: Quattrocento Sans;
-  src: url(/fonts/QuattrocentoSans-Regular.ttf);
+  src: url(/fonts/quattrocento/QuattrocentoSans-Regular.woff);
+}
+
+@font-face {
+  font-family: Lato;
+  src: url(/fonts/lato/Lato-Regular.woff);
 }
 
 // Our variables
