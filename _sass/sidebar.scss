@@ -24,6 +24,9 @@ body {
   }
   
   #front-content {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     width: 100%;
     min-height: 100vw * 9 / 16;
     background-color: #222;
@@ -34,13 +37,15 @@ body {
     z-index: 10;
     
     .left-side {
-      
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      width: 40%;
+      min-height: 100vw * 9 / 16 * 0.5;
+      border: thin solid #888;
       
       #tag-pool {
-        width: 35%;
-        min-height: 100vw * 9 / 16 * 0.5;
-        border: thin solid #888;
-        position: relative;
+        
         
         ol {
           list-style-type: none;
@@ -51,11 +56,17 @@ body {
       }
     }
     
-    #show-case {
-      width: 35%;
+    .right-side {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      width: 40%;
       min-height: 100vw * 9 / 16 * 0.5;
       border: thin solid #888;
-      position: relative;
+      
+      #show-case {
+        
+      }
     }
   }
 }
