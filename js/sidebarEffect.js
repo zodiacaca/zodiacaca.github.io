@@ -2,7 +2,7 @@
 /* before rendered */
 var adjustElementsAppearance = (function(){
 
-  $("#nav-bar").css("min-height", "80vh")
+  
   
 })();
 
