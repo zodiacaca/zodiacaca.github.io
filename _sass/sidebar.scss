@@ -25,9 +25,6 @@ body {
   }
   
   #front-content {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
     width: 100%;
     min-height: 100vw * 9 / 16;
     background-color: #222;
@@ -39,11 +36,10 @@ body {
     
     .left-side {
       display: inline-block;
-      margin: 0;
-      padding: 0;
       width: 40%;
       min-height: 100vw * 9 / 16 * 0.5;
       border: thin solid #888;
+      box-sizing: border-box;
       
       #tag-pool {
         
@@ -59,11 +55,10 @@ body {
     
     .right-side {
       display: inline-block;
-      margin: 0;
-      padding: 0;
       width: 40%;
       min-height: 100vw * 9 / 16 * 0.5;
       border: thin solid #888;
+      box-sizing: border-box;
       
       #show-case {
         
