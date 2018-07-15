@@ -1,13 +1,6 @@
 
-/* before rendered */
-var adjustElementsAppearance = (function(){
-
-  
-  
-})();
-
-/* after loaded */
-$(window).on("load", function(){
+/* after document loaded */
+$(document).("ready", function(){
   sceneOpen()
 });
 
