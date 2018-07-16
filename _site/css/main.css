@@ -4,6 +4,12 @@
 @font-face {
   font-family: Lato;
   src: url(/fonts/lato/Lato-Regular.woff); }
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 body {
   color: #48a770;
   margin: 0;
@@ -36,60 +42,39 @@ body {
     left: 20%;
     transition: transform 800ms ease-out;
     z-index: 5; }
-  #main-frame #front-content {
+  #main-frame #board-slider {
     width: 100%;
-    min-height: 56.25vw;
+    height: 100%;
     background-color: #222;
     position: absolute;
     top: 0;
     left: 0%;
     transition: all 800ms ease-out;
     z-index: 10; }
+    #main-frame #board-slider #board-content {
+      width: 80%;
+      height: 100%;
+      transition: transform 800ms ease-out; }
+      #main-frame #board-slider #board-content #tag-pool {
+        width: 50%;
+        height: auto;
+        position: absolute;
+        top: 40%;
+        left: 0%; }
 
-#tag-pool {
-  list-style-type: none;
-  margin: 20%;
-  padding: 20%;
-  width: 40%;
-  position: absolute;
-  left: 0;
-  top: 0; }
-
-.tag-item-button,
-.tag-item-bounce {
-  background: #f59393;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  margin-left: -40px;
-  margin-top: -40px;
-  height: 80px;
-  color: #fff;
-  border: none;
-  outline: none;
-  position: relative; }
+#tag-items {
+  list-style-type: none; }
 
 .tag-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0; }
-
-.tag-item-bounce {
-  position: absolute;
-  top: 0;
-  left: 0; }
+  display: inline-block; }
 
 .tag-item-button {
-  width: 60px;
-  height: 60px;
-  margin-left: -30px;
-  margin-top: -30px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #AD4C4C; }
-
-.tag-item-button:hover {
-  color: #fff; }
+  color: #fff;
+  width: 3rem;
+  height: 3rem;
+  background: #f59393;
+  border: none;
+  border-radius: 0.5rem; }
+  .tag-item-button:hover {
+    color: #f59393;
+    background: #fff; }

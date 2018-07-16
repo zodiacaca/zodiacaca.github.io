@@ -10,7 +10,8 @@
   <meta name="description" content="">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/fa/fontawesome-all.min.css">
+  <!-- <link rel="stylesheet" href="/css/fa/fontawesome-all.min.css"> -->
+  <link rel="stylesheet" href="/css/vicons/vicons-font.css">
   
   <link rel="canonical" href="http://localhost:4000/">
   <link rel="alternate" type="application/rss+xml" title="Ozilia" href="http://localhost:4000/feed.xml">
@@ -28,34 +29,37 @@
     
   </nav>
   
-  <div id="front-content">
+  <div id="board-slider">
+    <div id="board-content">
 
-    <div id="tag-pool">
-      <li class="tag-item">
-        <button class="tag-item-button">
-          <i class="tag-item-icon icon icon-reply"></i>
-        </button>
-        <div class="tag-item-bounce"></div>
-      </li>
-      <li class="tag-item">
-        <button class="tag-item-button">
-          <i class="tag-item-icon icon icon-box"></i>
-        </button>
-        <div class="tag-item-bounce"></div>
-      </li>
-      <li class="tag-item">
-        <button class="tag-item-button">
-          <i class="tag-item-icon icon icon-trash"></i>
-        </button>
-        <div class="tag-item-bounce"></div>
-      </li>
+      <div id="tag-pool">
+        <ul id="tag-items">
+          <li class="tag-item">
+            <button class="tag-item-button">
+              <i class="tag-item-icon icon icon-reply"></i>
+            </button>
+          </li>
+          <li class="tag-item">
+            <button class="tag-item-button">
+              <i class="tag-item-icon icon icon-box"></i>
+            </button>
+          </li>
+          <li class="tag-item">
+            <button class="tag-item-button">
+              <i class="tag-item-icon icon icon-trash"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      
     </div>
-    
   </div>
   
 </div><!-- /main-frame -->
 
-<script src="/js/sidebarEffect.js"></script>
+<!--<script src="/js/TweenMax.min.js"></script>-->
+<script src="/js/effect_sidebar.js"></script>
+<script src="/js/effect_tags.js"></script>
 
     
   </body>

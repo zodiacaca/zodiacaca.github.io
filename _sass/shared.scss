@@ -1,4 +1,11 @@
 
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 body {
   color: #48a770;
   margin: 0;

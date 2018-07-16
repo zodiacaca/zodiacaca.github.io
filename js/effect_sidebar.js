@@ -7,7 +7,7 @@ $(document).ready(function(){
 function sceneOpen() {
   // main parts
   $("#nav-bar").css("transform", "translateX(-100%)");
-  $("#front-content").css("background-color", "#333");
-  $("#front-content").css("transform", "translateX(20%)");
+  $("#board-slider").css("background-color", "#333");
+  $("#board-slider").css("transform", "translateX(20%)");
 };
 
