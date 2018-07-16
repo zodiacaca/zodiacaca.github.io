@@ -38,12 +38,14 @@ body {
     
     #board-content {
       width: 80%;
-      height: 100%;;
+      height: 100%;
+      position: relative;
       transition: transform 800ms ease-out;
       
       #tag-pool {
         width: 50%;
         height: auto;
+        border-right: medium solid grey;
         position: absolute;
         top: 40%;
         left: 0%;

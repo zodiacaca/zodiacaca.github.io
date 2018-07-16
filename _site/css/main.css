@@ -17,7 +17,7 @@ body {
   min-height: 100vh;
   background-color: #444; }
 
-div {
+div, ol, ul, li {
   margin: 0;
   padding: 0; }
 
@@ -54,10 +54,12 @@ body {
     #main-frame #board-slider #board-content {
       width: 80%;
       height: 100%;
+      position: relative;
       transition: transform 800ms ease-out; }
       #main-frame #board-slider #board-content #tag-pool {
         width: 50%;
         height: auto;
+        border-right: medium solid grey;
         position: absolute;
         top: 40%;
         left: 0%; }
@@ -66,7 +68,9 @@ body {
   list-style-type: none; }
 
 .tag-item {
-  display: inline-block; }
+  display: inline-block;
+  float: right;
+  margin-right: 0.5rem; }
 
 .tag-item-button {
   color: #fff;
