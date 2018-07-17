@@ -1,6 +1,23 @@
 
-#tag-items {
-	list-style-type: none;
+#tag-list {
+  list-style-type: none;
+  float: right;
+  width: auto;
+  height: auto;
+  background-image: linear-gradient(to right, map-get($bgColor, tag-button-actual), map-get($bgColor, tag-button-actual));
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: 800ms ease-out 0s 1 bgSlideIn;
+  overflow: hidden;
+}
+
+@keyframes bgSlideIn {
+  0% {
+    background-position: ($tag-button-width * 3 + 0.5rem * 3) 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .tag-item {
@@ -10,16 +27,17 @@
 }
 
 .tag-item-button {
-  color: #fff;
-  width: $tag-button-height;
+  font-size: $tag-button-font-size;
+  color: map-get($fontColor, tag-button);
+  width: $tag-button-width;
   height: $tag-button-height;
-  background: #f59393;
+  background-color: map-get($bgColor, tag-button);
   border: none;
   border-radius: 0.5rem;
 
   &:hover {
-    color: #f59393;
-    background: #fff;
+    color: map-get($fontColor, tag-button-hover);
+    background-color: map-get($bgColor, tag-button-hover);
   }
 }
 

@@ -64,21 +64,35 @@ body {
         top: 50vh;
         left: 0; }
 
-#tag-items {
-  list-style-type: none; }
+#tag-list {
+  list-style-type: none;
+  float: right;
+  width: auto;
+  height: auto;
+  background-image: linear-gradient(to right, #f59393, #f59393);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: 800ms ease-out 0s 1 bgSlideIn;
+  overflow: hidden; }
 
+@keyframes bgSlideIn {
+  0% {
+    background-position: 10.5rem 0; }
+  100% {
+    background-position: 0 0; } }
 .tag-item {
   display: inline-block;
   float: right;
   margin-right: 0.5rem; }
 
 .tag-item-button {
+  font-size: 1rem;
   color: #fff;
   width: 3rem;
   height: 3rem;
-  background: #f59393;
+  background-color: transparent;
   border: none;
   border-radius: 0.5rem; }
   .tag-item-button:hover {
     color: #f59393;
-    background: #fff; }
+    background-color: #fff; }

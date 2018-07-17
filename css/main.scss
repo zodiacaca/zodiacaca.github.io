@@ -14,7 +14,25 @@
 }
 
 // Our variables
+$fontColor: (
+  body: #48a770,
+  
+  tag-button: #fff,
+  tag-button-hover: #f59393
+);
+$bgColor: (
+  body: #444,
+  nav: #555,
+  slider: #222,
+  
+  tag-button: transparent,
+  tag-button-actual: #f59393,
+  tag-button-hover: #fff
+);
+
+$tag-button-width: 3rem;
 $tag-button-height: 3rem;
+$tag-button-font-size: 1rem;
 
 
 // Example of including mixin:
