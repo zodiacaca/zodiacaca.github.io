@@ -92,7 +92,8 @@ body {
   height: 3rem;
   background-color: transparent;
   border: none;
-  border-radius: 0.5rem; }
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 0.5rem #333; }
   .tag-item-button:hover {
     color: #f59393;
     background-color: #fff; }

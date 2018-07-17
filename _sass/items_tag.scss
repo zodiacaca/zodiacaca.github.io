@@ -34,6 +34,7 @@
   background-color: map-get($bgColor, tag-button);
   border: none;
   border-radius: 0.5rem;
+  box-shadow: 0 0 0 0.5rem map-get($bgColor, slider-alter);
 
   &:hover {
     color: map-get($fontColor, tag-button-hover);
