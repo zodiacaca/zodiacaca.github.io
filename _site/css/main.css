@@ -48,7 +48,7 @@ body {
     background-color: #222;
     position: absolute;
     top: 0;
-    left: 0%;
+    left: 0;
     transition: all 800ms ease-out;
     z-index: 10; }
     #main-frame #board-slider #board-content {
@@ -61,8 +61,8 @@ body {
         height: auto;
         border-right: medium solid grey;
         position: absolute;
-        top: 40%;
-        left: 0%; }
+        top: 50vh;
+        left: 0; }
 
 #tag-items {
   list-style-type: none; }
