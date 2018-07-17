@@ -69,10 +69,10 @@ body {
   float: right;
   width: auto;
   height: auto;
-  background-image: linear-gradient(to right, #f59393, #f59393);
+  background-image: linear-gradient(to right, transparent, transparent);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  animation: 800ms ease-out 0s 1 bgSlideIn;
+  animation: 600ms ease-out 800ms 1 bgSlideIn;
   overflow: hidden; }
 
 @keyframes bgSlideIn {
@@ -93,7 +93,8 @@ body {
   background-color: transparent;
   border: none;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0 0.5rem #333; }
+  box-shadow: 0 0 0 0.5rem #222;
+  transition: box-shadow 800ms ease-out; }
   .tag-item-button:hover {
     color: #f59393;
     background-color: #fff; }

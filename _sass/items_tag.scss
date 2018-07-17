@@ -4,10 +4,10 @@
   float: right;
   width: auto;
   height: auto;
-  background-image: linear-gradient(to right, map-get($bgColor, tag-button-actual), map-get($bgColor, tag-button-actual));
+  background-image: linear-gradient(to right, transparent, transparent);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  animation: 800ms ease-out 0s 1 bgSlideIn;
+  animation: 600ms ease-out 800ms 1 bgSlideIn;
   overflow: hidden;
 }
 
@@ -34,7 +34,8 @@
   background-color: map-get($bgColor, tag-button);
   border: none;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0 0.5rem map-get($bgColor, slider-alter);
+  box-shadow: 0 0 0 0.5rem map-get($bgColor, slider);
+  transition: box-shadow 800ms ease-out;
 
   &:hover {
     color: map-get($fontColor, tag-button-hover);
