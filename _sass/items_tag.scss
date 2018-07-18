@@ -13,7 +13,7 @@
 
 @keyframes bgSlideIn {
   0% {
-    background-position: ($tag-button-width * 3 + 0.5rem * 3) 0;
+    background-position: ($tag-item-width * 3 + 0.5rem * 3) 0;
   }
   100% {
     background-position: 0 0;
@@ -24,13 +24,18 @@
   display: inline-block;
   float: right;
   margin-right: 0.5rem;
+  width: $tag-item-width;
+  height: $tag-item-height;
+  position: relative;
+  box-shadow: 0 0 0 0.5rem map-get($bgColor, slider);
+  transition: box-shadow 800ms ease-out;
 }
 
 .tag-item-button {
-  font-size: $tag-button-font-size;
+  font-size: $tag-item-font-size;
   color: map-get($fontColor, tag-button);
-  width: $tag-button-width;
-  height: $tag-button-height;
+  width: 100%;
+  height: 100%;
   background-color: map-get($bgColor, tag-button);
   border: none;
   border-radius: 0.5rem;
