@@ -70,14 +70,6 @@ body {
   width: auto;
   height: auto;
   overflow: hidden; }
-  #tag-list label {
-    font-family: Lato;
-    font-size: 1.2rem;
-    line-height: 2.4rem;
-    color: #fff;
-    padding: 0 1rem; }
-    #tag-list label:hover {
-      color: #f59393; }
 
 .tag-item {
   display: inline-block;
@@ -89,5 +81,13 @@ body {
   position: relative; }
   .tag-item:hover {
     background-color: #fff; }
+    .tag-item:hover label {
+      color: #f59393; }
   .tag-item .tag-item-input {
     display: none; }
+  .tag-item label {
+    font-family: Lato;
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    color: #fff;
+    padding: 0 1rem; }

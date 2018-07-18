@@ -5,18 +5,6 @@
   width: auto;
   height: auto;
   overflow: hidden;
-  
-  label {
-    font-family: Lato;
-    font-size: $tag-item-font-size;
-    line-height: $tag-item-height;
-    color: map-get($fontColor, tag-button);
-    padding: 0 1rem;
-    
-    &:hover {
-      color: map-get($fontColor, tag-button-hover);
-    }
-  }
 }
 
 .tag-item {
@@ -30,10 +18,21 @@
 
   &:hover {
     background-color: map-get($bgColor, tag-button-hover);
+    label {
+      color: map-get($fontColor, tag-button-hover);
+    }
   }
   
   .tag-item-input {
     display: none;
+  }
+  
+  label {
+    font-family: Lato;
+    font-size: $tag-item-font-size;
+    line-height: $tag-item-height;
+    color: map-get($fontColor, tag-button);
+    padding: 0 1rem;
   }
 }
 
