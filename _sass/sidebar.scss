@@ -5,7 +5,7 @@ body {
 
 #main-frame {
   width: 100%;
-  min-height: 100vw * 9 / 16;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   z-index: 0;
@@ -14,8 +14,7 @@ body {
     margin-top: 10vh;
     margin-left: 3rem;
     width: 20%;
-    min-height: 80vh;
-    max-height: 100vw * 9 / 16 * 0.8;
+    min-height: 80%;
     background-color: map-get($bgColor, nav);
     position: absolute;
     top: 0;
