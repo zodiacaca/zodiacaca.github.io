@@ -53,6 +53,7 @@ body {
     #main-frame #board-slider #board-content {
       width: 80%;
       height: 100%;
+      background-color: transparent;
       position: relative;
       transition: transform 800ms ease-out; }
       #main-frame #board-slider #board-content #tag-pool {
@@ -68,10 +69,6 @@ body {
   float: right;
   width: auto;
   height: auto;
-  background-image: linear-gradient(to right, transparent, transparent);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  animation: 600ms ease-out 800ms 1 bgSlideIn;
   overflow: hidden; }
   #tag-list label {
     font-family: Lato;
@@ -82,22 +79,14 @@ body {
     #tag-list label:hover {
       color: #f59393; }
 
-@keyframes bgSlideIn {
-  0% {
-    background-position: 100% 0; }
-  100% {
-    background-position: 0 0; } }
 .tag-item {
   display: inline-block;
   float: right;
   margin-right: 0.6rem;
   width: auto;
   height: auto;
-  background-color: transparent;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0 0.6rem #222;
-  position: relative;
-  transition: box-shadow 800ms ease-out; }
+  position: relative; }
   .tag-item:hover {
     background-color: #fff; }
   .tag-item .tag-item-input {

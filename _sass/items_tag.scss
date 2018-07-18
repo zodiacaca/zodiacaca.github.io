@@ -4,10 +4,6 @@
   float: right;
   width: auto;
   height: auto;
-  background-image: linear-gradient(to right, transparent, transparent);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  animation: 600ms ease-out 800ms 1 bgSlideIn;
   overflow: hidden;
   
   label {
@@ -23,26 +19,14 @@
   }
 }
 
-@keyframes bgSlideIn {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
 .tag-item {
   display: inline-block;
   float: right;
   margin-right: 0.6rem;
   width: auto;
   height: auto;
-  background-color: map-get($bgColor, tag-button);
   border-radius: 0.5rem;
-  box-shadow: 0 0 0 0.6rem map-get($bgColor, slider);
   position: relative;
-  transition: box-shadow 800ms ease-out;
 
   &:hover {
     background-color: map-get($bgColor, tag-button-hover);
