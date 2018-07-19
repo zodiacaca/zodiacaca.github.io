@@ -5,7 +5,8 @@ $("#construct-helper-slider").slider({
   max: 100,
   values: [0,50],
   slide: function(event, ui) {
-//    $("#").left(ui.values[0]);
+    $(".TTT")[0].style.left = ui.values[0] + "%";
+    $(".TTT")[0].innerHTML = ui.values[0];
   }
 });
 
@@ -16,8 +17,8 @@ $(document).ready(function(){
 
 function sceneOpen() {
   // main parts
-  $("#nav-bar").css("transform", "translateX(-100%)");
-  $("#board-slider").css("background-color", "#333");
-  $("#board-slider").css("transform", "translateX(20%)");
+  $("#nav-bar")[0].style.transform = "translateX(-100%)";
+  $("#board-slider")[0].style.backgroundColor = "#333";
+  $("#board-slider")[0].style.transform = "translateX(20%)";
 }
 
