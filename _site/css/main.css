@@ -4,6 +4,23 @@
 @font-face {
   font-family: Lato;
   src: url(/fonts/lato/Lato-Regular.woff); }
+#helper-slider1 {
+  width: 50vw;
+  height: 2rem;
+  position: fixed;
+  top: 1rem;
+  left: 50vw;
+  z-index: 100; }
+
+.helper-TTT {
+  width: 1rem;
+  height: 1rem;
+  background-color: cyan;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100; }
+
 *,
 *:before,
 *:after {
@@ -62,23 +79,6 @@ body {
         top: 50%;
         left: 0; }
 
-#construct-helper-slider {
-  width: 50vw;
-  height: 2rem;
-  position: fixed;
-  top: 1rem;
-  left: 50vw;
-  z-index: 100; }
-
-.TTT {
-  width: 1rem;
-  height: 1rem;
-  background-color: cyan;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100; }
-
 #tag-list {
   list-style-type: none;
   float: right;
@@ -92,6 +92,11 @@ body {
   margin-right: 0.6rem;
   width: auto;
   height: auto;
+  background-image: linear-gradient(to right, #f59393, #f59393);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: 0 0;
   border-radius: 0.5rem;
   position: relative; }
   .tag-item:hover {
