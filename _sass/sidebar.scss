@@ -39,14 +39,13 @@ body {
       width: 80%;
       height: 100%;
       position: relative;
-      transition: transform 800ms ease-out;
       
       #tag-pool {
         width: 50%;
         height: auto;
         border-right: medium solid grey;
         position: absolute;
-        top: 50vh;
+        top: 50%;
         left: 0;
       }
     }

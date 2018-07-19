@@ -53,15 +53,13 @@ body {
     #main-frame #board-slider #board-content {
       width: 80%;
       height: 100%;
-      background-color: transparent;
-      position: relative;
-      transition: transform 800ms ease-out; }
+      position: relative; }
       #main-frame #board-slider #board-content #tag-pool {
         width: 50%;
         height: auto;
         border-right: medium solid grey;
         position: absolute;
-        top: 50vh;
+        top: 50%;
         left: 0; }
 
 #tag-list {
