@@ -1,4 +1,14 @@
 
+$("#construct-helper-slider").slider({
+  range: true,
+  min: 0,
+  max: 100,
+  values: [0,50,100],
+  slide: function(event, ui) {
+//    $("#").left(ui.values[0]);
+  }
+});
+
 /* after document loaded */
 $(document).ready(function(){
   sceneOpen();
