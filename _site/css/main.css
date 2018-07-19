@@ -64,9 +64,9 @@ body {
 
 #construct-helper-slider {
   width: 50vw;
-  height: 3rem;
+  height: 2rem;
   position: fixed;
-  top: 0;
+  top: 1rem;
   left: 50vw;
   z-index: 100; }
 
