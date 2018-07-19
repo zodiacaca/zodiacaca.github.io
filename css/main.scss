@@ -31,7 +31,7 @@ $bgColor: (
 );
 
 $tag-item-height: 2.4rem;
-$tag-item-font-size: 1.2rem;
+$tag-item-font-size: 1.1rem;
 
 
 // Example of including mixin:
@@ -48,6 +48,7 @@ $tag-item-font-size: 1.2rem;
 // Import partials from `sass_dir` (default as `_sass`)
 @import
   "helpers",
+  
   "shared",
   "sidebar",
   "items_tag"

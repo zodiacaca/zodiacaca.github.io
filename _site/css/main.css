@@ -4,6 +4,9 @@
 @font-face {
   font-family: Lato;
   src: url(/fonts/lato/Lato-Regular.woff); }
+.helper {
+  display: none; }
+
 #helper-slider1 {
   width: 50vw;
   height: 2rem;
@@ -83,6 +86,7 @@ body {
   list-style-type: none;
   float: right;
   width: auto;
+  max-width: 65%;
   height: auto;
   overflow: hidden; }
 
@@ -90,24 +94,27 @@ body {
   display: inline-block;
   float: right;
   margin-right: 0.6rem;
+  margin-bottom: 0.6rem;
   width: auto;
   height: auto;
   background-image: linear-gradient(to right, #f59393, #f59393);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-  background-position: 0 0;
+  background-position: 60vw 0;
   border-radius: 0.5rem;
-  position: relative; }
+  position: relative;
+  transition: background-position 800ms ease-out; }
   .tag-item:hover {
-    background-color: #fff; }
+    background-image: linear-gradient(to right, #fff, #fff); }
     .tag-item:hover label {
       color: #f59393; }
   .tag-item .tag-item-input {
     display: none; }
   .tag-item label {
     font-family: Lato;
-    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-size: 1.1rem;
     line-height: 2.4rem;
     color: #fff;
     padding: 0 1rem; }
