@@ -1,27 +1,36 @@
 
+(function(){
 
-
-/* after document loaded */
-$(document).ready(function(){
-  sceneOpen();
-});
-
-function sceneOpen() {
-  // main parts
-  $("#nav-bar")[0].style.transform = "translateX(-100%)";
-  $("#board-slider")[0].style.backgroundColor = "#333";
-  $("#board-slider")[0].style.transform = "translateX(20%)";
-  var left = getTagListLeftBorder();
-  setTimeout(function(){
-    $(".tag-item").each(function(){
-      this.style.backgroundPosition = left + "px 0";
-    });
-  }, 600);
-}
-
-function getTagListLeftBorder() {
+  function getTagListVerticalCenter() {
+    var bodyHeight = window.innerHeight;
+    var listHeight = $("#tag-list").height();
+    $("#tag-pool")[0].style.top = (bodyHeight / 2 - listHeight / 2) + "px";
+  }
+  getTagListVerticalCenter();
   
-  var left = $("#tag-list").offset().left;
-  
-  return left;
-}
+  /* after document loaded */
+  $(document).ready(function(){
+    sceneOpen();
+  });
+
+  function sceneOpen() {
+    // main parts
+    $("#nav-bar")[0].style.transform = "translateX(-100%)";
+    $("#board-slider")[0].style.backgroundColor = "#333";
+    $("#board-slider")[0].style.transform = "translateX(20%)";
+    var left = getTagListLeftBorder();
+    setTimeout(function(){
+      $(".tag-item").each(function(){
+        this.style.backgroundPosition = left + "px 0";
+      });
+    }, 600);
+  }
+
+  function getTagListLeftBorder() {
+
+    var left = $("#tag-list").offset().left;
+
+    return left;
+  }
+
+}());

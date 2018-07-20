@@ -17,7 +17,6 @@ body {
     min-height: 80%;
     background-color: map-get($bgColor, nav);
     position: absolute;
-    top: 0;
     left: 20%;
     transition: transform 800ms ease-out;
     z-index: 5;
@@ -30,8 +29,6 @@ body {
     height: 100%;
     background-color: map-get($bgColor, slider);
     position: absolute;
-    top: 0;
-    left: 0;
     transition: all 800ms ease-out;
     z-index: 10;
     
@@ -45,8 +42,6 @@ body {
         height: auto;
         border-right: medium solid #666;
         position: absolute;
-        top: 50%;
-        left: 0;
       }
     }
   }
