@@ -20,6 +20,7 @@
     $("#nav-bar")[0].style.transform = "translateX(-100%)";
     $("#board-slider")[0].style.backgroundColor = "#333";
     $("#board-slider")[0].style.transform = "translateX(20%)";
+    $("#board-content")[0].style.left = "0";
     var left = getTagListLeftBorder();
     setTimeout(function(){
       $(".tag-item").each(function(){

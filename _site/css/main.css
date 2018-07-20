@@ -70,7 +70,9 @@ body {
     #main-frame #board-slider #board-content {
       width: 80%;
       height: 100%;
-      position: relative; }
+      position: relative;
+      left: 10%;
+      transition: all 800ms ease-out; }
       #main-frame #board-slider #board-content #tag-pool {
         width: 50%;
         height: auto;

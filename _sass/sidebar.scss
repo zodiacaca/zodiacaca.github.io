@@ -13,11 +13,11 @@ body {
   #nav-bar {
     margin-top: 10vh;
     margin-left: 3rem;
-    width: 20%;
+    width: map-get($elementSize, nav-width);
     min-height: 80%;
     background-color: map-get($bgColor, nav);
     position: absolute;
-    left: 20%;
+    left: map-get($elementSize, nav-width);
     transition: transform 800ms ease-out;
     z-index: 5;
     
@@ -36,11 +36,14 @@ body {
       width: 80%;
       height: 100%;
       position: relative;
+      left: 10%;
+      transition: all 800ms ease-out;
       
       #tag-pool {
         width: 50%;
         height: auto;
         border-right: medium solid #666;
+//        lose height:auto if use position:relative
         position: absolute;
       }
     }
