@@ -15,7 +15,7 @@
   margin-bottom: 0.6rem;
   width: auto;
   height: auto;
-  background-image: linear-gradient(145deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%);
+  background-image: map-get($bgColor, tag-button);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -25,7 +25,7 @@
   transition: background-position 800ms ease-out;
 
   &:hover {
-    background-image: linear-gradient(to right, map-get($bgColor, tag-button-hover), map-get($bgColor, tag-button-hover));
+    background-image: map-get($bgColor, tag-button-hover);
     label {
       color: map-get($fontColor, tag-button-hover);
     }

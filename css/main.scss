@@ -26,8 +26,8 @@ $bgColor: (
   slider: #222,
   slider-alter: #333,
   
-  tag-button: #f59393,
-  tag-button-hover: #fff
+  tag-button: linear-gradient(145deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%),
+  tag-button-hover: linear-gradient(to right, #fff, #fff)
 );
 
 $tag-item-height: 2.4rem;
