@@ -1,8 +1,10 @@
 
 (function(){
+  
+  var bodyWidth = window.innerWidth;
+  var bodyHeight = window.innerHeight;
 
   function getTagListVerticalCenter() {
-    var bodyHeight = window.innerHeight;
     var listHeight = $("#tag-list").height();
     $("#tag-pool")[0].style.top = (bodyHeight / 2 - listHeight / 2) + "px";
   }
@@ -21,15 +23,16 @@
     var left = getTagListLeftBorder();
     setTimeout(function(){
       $(".tag-item").each(function(){
-        this.style.backgroundPosition = left + "px 0";
+        this.style.backgroundPosition = left + "vw 0";
       });
     }, 600);
   }
 
   function getTagListLeftBorder() {
 
-    var left = $("#tag-list").offset().left;
-
+    // x position has been translated
+    var left = ($("#tag-pool").width() - $("#tag-list").width()) / bodyWidth * 100;
+    
     return left;
   }
 
