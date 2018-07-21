@@ -15,7 +15,7 @@
   margin-bottom: 0.6rem;
   width: auto;
   height: auto;
-  background-image: map-get($bgColor, tag-button);
+  background-image: bgColor(tag-button);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -25,9 +25,9 @@
   transition: background-position 800ms ease-out;
 
   &:hover {
-    background-image: map-get($bgColor, tag-button-hover);
+    background-image: bgColor(tag-button-hover);
     label {
-      color: map-get($fontColor, tag-button-hover);
+      color: fontColor(tag-button-hover);
     }
   }
   
@@ -40,7 +40,7 @@
     text-transform: uppercase;
     font-size: $tag-item-font-size;
     line-height: $tag-item-height;
-    color: map-get($fontColor, tag-button);
+    color: fontColor(tag-button);
     padding: 0 1rem;
   }
 }

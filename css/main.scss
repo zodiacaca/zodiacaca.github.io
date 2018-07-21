@@ -14,9 +14,11 @@
 }
 
 // Our variables
+$sideWidth: 0.2;
 $elementSize: (
-  nav-width: 20%
-  
+  nav-width: percentage($sideWidth),
+  nav-height: 80%,
+  content-width: percentage(1 - $sideWidth)
 );
 $fontColor: (
   body: #48a770,
@@ -53,7 +55,9 @@ $tag-item-font-size: 1.1rem;
 @import
   "helpers",
   
+  "functions",
   "shared",
   "sidebar",
   "items_tag"
 ;
+
