@@ -94,7 +94,7 @@ body {
   margin-bottom: 0.6rem;
   width: auto;
   height: auto;
-  background-image: url(/images/tag-btn-bg.svg);
+  background-image: linear-gradient(to right, #333 0%, transparent 5%), linear-gradient(145deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;

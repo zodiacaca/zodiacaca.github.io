@@ -15,8 +15,7 @@
   margin-bottom: 0.6rem;
   width: auto;
   height: auto;
-//  background-image: bgColor(tag-button);
-  background-image: url(/images/tag-btn-bg.svg);
+  background-image: bgColor(tag-button-before), bgColor(tag-button);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;

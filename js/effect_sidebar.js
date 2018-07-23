@@ -24,7 +24,7 @@
     var left = getTagListLeftBorder();
     setTimeout(function(){
       $(".tag-item").each(function(){
-        this.style.backgroundPosition = left + "vw 0";
+        this.style.backgroundPosition = (left - 5) + "vw 0";
       });
     }, 600);
   }
