@@ -18,11 +18,15 @@ $sideWidth: 0.2;
 $elementSize: (
   nav-width: percentage($sideWidth),
   nav-height: 80%,
-  content-width: percentage(1 - $sideWidth)
+  board-content-width: percentage(1 - $sideWidth),
+  tag-pool-width: 40%,
+  tag-list-width: 90%,
+  tag-item-font: 1.1rem,
+  tag-item-line: 2.2
 );
+
 $fontColor: (
   body: #48a770,
-  
   tag-button: #fff,
   tag-button-hover: #f59393
 );
@@ -31,14 +35,13 @@ $bgColor: (
   nav: #555,
   slider: #222,
   slider-alter: #333,
-  
   tag-button-before: linear-gradient(to right, #333 0%, transparent 5%),
   tag-button: linear-gradient(145deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%),
   tag-button-hover: linear-gradient(to right, #fff, #fff)
 );
-
-$tag-item-height: 2.4rem;
-$tag-item-font-size: 1.1rem;
+$borderColor: (
+  tag-pool: #666
+);
 
 
 // Example of including mixin:

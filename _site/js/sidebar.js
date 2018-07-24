@@ -1,5 +1,5 @@
 
-(function(){
+(function () {
   
   var bodyWidth = window.innerWidth;
   var bodyHeight = window.innerHeight;
@@ -11,7 +11,7 @@
   getTagListVerticalCenter();
   
   /* after document loaded */
-  $(document).ready(function(){
+  $(document).ready(function () {
     sceneOpen();
   });
 
@@ -21,20 +21,20 @@
     $("#board-slider")[0].style.backgroundColor = "#333";
     $("#board-slider")[0].style.transform = "translateX(20%)";
     $("#board-content")[0].style.left = "0";
+    // tag
     var left = getTagListLeftBorder();
-    setTimeout(function(){
-      $(".tag-item").each(function(){
+    setTimeout(function () {
+      $(".tag-item").each(function () {
         this.style.backgroundPosition = (left - 5) + "vw 0";
       });
     }, 600);
   }
 
   function getTagListLeftBorder() {
-
     // x position has been translated
     var left = ($("#tag-pool").width() - $("#tag-list").width()) / bodyWidth * 100;
     
     return left;
   }
 
-}());
+} () );

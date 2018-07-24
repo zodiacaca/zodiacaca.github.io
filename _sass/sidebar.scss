@@ -33,17 +33,17 @@ body {
     z-index: 10;
     
     #board-content {
-      width: 80%;
+      width: elementSize(board-content-width);
       height: 100%;
       position: relative;
-      left: 10%;
+      left: elementSize(nav-width) / 2;
       transition: all 800ms ease-out;
       
       #tag-pool {
-        width: 50%;
+        width: elementSize(tag-pool-width);
         height: auto;
-        border-right: medium solid #666;
-//        lose height:auto if use position:relative
+        border-right: medium solid borderColor(tag-pool);
+        // lose height:auto if use position:relative
         position: absolute;
       }
     }

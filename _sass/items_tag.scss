@@ -2,10 +2,8 @@
 #tag-list {
   list-style-type: none;
   float: right;
-  width: auto;
-  max-width: 65%;
+  width: elementSize(tag-list-width);
   height: auto;
-  overflow: hidden;
 }
 
 .tag-item {
@@ -19,10 +17,10 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-  background-position: 60vw 0;
+  background-position: 40vw 0;  // depends on tag-pool-width
   border-radius: 0.5rem;
   position: relative;
-  transition: background-position 800ms ease-out;
+  transition: all 800ms ease-out;
 
   &:hover {
     background-image: bgColor(tag-button-hover);
@@ -38,8 +36,8 @@
   label {
     font-family: Lato;
     text-transform: uppercase;
-    font-size: $tag-item-font-size;
-    line-height: $tag-item-height;
+    font-size: elementSize(tag-item-font);
+    line-height: elementSize(tag-item-line);
     color: fontColor(tag-button);
     padding: 0 1rem;
   }

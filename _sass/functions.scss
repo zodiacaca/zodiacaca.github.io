@@ -12,3 +12,7 @@
   @return map-get($bgColor, $key);
 }
 
+@function borderColor($key) {
+  @return map-get($borderColor, $key);
+}
+
