@@ -19,7 +19,7 @@
     // main parts
     $("#nav-bar")[0].style.transform = "translateX(-100%)";
     $("#board-slider")[0].style.backgroundColor = "#333";
-    $("#board-slider")[0].style.transform = "translateX(20%)";
+    $("#board-slider")[0].style.transform = "translateX(" + $("#nav-bar").width() + "px)";
     $("#board-content")[0].style.left = "0";
     // tag
     var left = getTagListLeftBorder();

@@ -112,4 +112,5 @@ body {
     font-size: 1.1rem;
     line-height: 2.2;
     color: #fff;
-    padding: 0 1rem; }
+    padding: 0 1rem;
+    transition: all 200ms ease-out; }

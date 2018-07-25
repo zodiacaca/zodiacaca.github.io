@@ -11,7 +11,7 @@ body {
   z-index: 0;
   
   #nav-bar {
-    margin-top: 10vh;
+    margin-top: 10vh; // percentage uses parent's width
     margin-left: 2.5%;
     width: elementSize(nav-width);
     min-height: elementSize(nav-height);
