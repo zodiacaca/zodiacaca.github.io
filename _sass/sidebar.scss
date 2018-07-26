@@ -18,7 +18,7 @@ body {
     background-color: bgColor(nav);
     position: absolute;
     left: elementSize(nav-width);
-    transition: transform 800ms ease-out;
+    transition: transform #{ 800 * $durationMulti }ms ease-out;
     z-index: 5;
     
     
@@ -29,15 +29,16 @@ body {
     height: 100%;
     background-color: bgColor(slider);
     position: absolute;
-    transition: all 800ms ease-out;
+    transition: all #{ 800 * $durationMulti }ms ease-out;
     z-index: 10;
     
     #board-content {
       width: elementSize(board-content-width);
       height: 100%;
       position: relative;
+      // border: medium solid grey;
       left: elementSize(nav-width) / 2;
-      transition: all 800ms ease-out;
+      transition: all #{ 800 * $durationMulti }ms ease-out;
       
       #tag-pool {
         width: elementSize(tag-pool-width);

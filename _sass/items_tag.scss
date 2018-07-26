@@ -17,10 +17,10 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-  background-position: 40vw 0;
+  background-position: #{ $poolWidth*100 }vw 0;
   border-radius: 0.5rem;
   position: relative;
-  transition: all 800ms ease-out;
+  transition: all #{ 800 * $durationMulti }ms ease-out;
 
   &:hover {
     background-image: bgColor(tag-button-hover);
@@ -40,7 +40,7 @@
     line-height: elementSize(tag-item-line);
     color: fontColor(tag-button);
     padding: 0 1rem;
-    transition: all 200ms ease-out;
+    transition: all #{ 200 * $durationMulti }ms ease-out;
   }
 }
 
