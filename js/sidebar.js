@@ -17,9 +17,9 @@
 
   function sceneOpen() {
     // main parts
-    $("#nav-bar")[0].style.transform = "translateX(-100%)";
+    $("#nav-slider")[0].style.transform = "translateX(-100%)";
     $("#board-slider")[0].style.backgroundColor = "#333";
-    $("#board-slider")[0].style.transform = "translateX(" + $("#nav-bar").width() + "px)";
+    $("#board-slider")[0].style.transform = "translateX(" + $("#nav-slider").width() + "px)";
     $("#board-content")[0].style.left = "0";
     // tag
     var left = getTagListLeftBorder();

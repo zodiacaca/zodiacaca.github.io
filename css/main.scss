@@ -20,7 +20,6 @@ $sideWidth: 0.2;
 $poolWidth: 0.4;
 $elementSize: (
   nav-width: percentage($sideWidth),
-  nav-height: 80%,
   board-content-width: percentage(1 - $sideWidth),
   tag-pool-width: percentage($poolWidth),
   tag-list-width: 90%,

@@ -37,7 +37,7 @@ body {
   min-height: 100vh;
   background-color: #444; }
 
-div, ol, ul, li {
+div, menu, ol, ul, li {
   margin: 0;
   padding: 0; }
 
@@ -50,16 +50,20 @@ body {
   position: relative;
   overflow: hidden;
   z-index: 0; }
-  #main-frame #nav-bar {
-    margin-top: 10vh;
-    margin-left: 2.5%;
+  #main-frame #nav-slider {
+    padding: 10vh 0;
     width: 20%;
-    min-height: 80%;
-    background-color: #555;
+    height: 100%;
     position: absolute;
     left: 20%;
     transition: transform 800ms ease-out;
     z-index: 5; }
+    #main-frame #nav-slider #nav-menu {
+      margin-left: 18%;
+      width: 100%;
+      height: 100%;
+      background-color: #555;
+      z-index: 10; }
   #main-frame #board-slider {
     width: 100%;
     height: 100%;

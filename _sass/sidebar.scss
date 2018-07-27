@@ -10,18 +10,22 @@ body {
   overflow: hidden;
   z-index: 0;
   
-  #nav-bar {
-    margin-top: 10vh; // percentage uses parent's width
-    margin-left: 2.5%;
+  #nav-slider {
+    padding: 10vh 0; // percentage uses parent's width
     width: elementSize(nav-width);
-    min-height: elementSize(nav-height);
-    background-color: bgColor(nav);
+    height: 100%;
     position: absolute;
     left: elementSize(nav-width);
     transition: transform #{ 800 * $durationMulti }ms ease-out;
     z-index: 5;
     
-    
+    #nav-menu {
+      margin-left: 18%;
+      width: 100%;
+      height: 100%;
+      background-color: bgColor(nav);
+      z-index: 10;
+    }
   }
   
   #board-slider {
