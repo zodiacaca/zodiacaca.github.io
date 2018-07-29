@@ -6,7 +6,7 @@
 
   function getTagListVerticalCenter() {
     var listHeight = $("#tag-list").height();
-    $("#tag-pool")[0].style.top = (bodyHeight / 2 - listHeight / 2) + "px";
+    $("#tag-pool").css("top", bodyHeight / 2 - listHeight / 2);
   }
   getTagListVerticalCenter();
   
@@ -17,16 +17,14 @@
 
   function sceneOpen() {
     // main parts
-    $("#nav-slider")[0].style.transform = "translateX(-100%)";
-    $("#board-slider")[0].style.backgroundColor = "#333";
-    $("#board-slider")[0].style.transform = "translateX(" + $("#nav-slider").width() + "px)";
-    $("#board-content")[0].style.left = "0";
+    $("#nav-slider").css("transform", "translateX(-100%)");
+    $("#board-slider").css("background-color", "#333");
+    $("#board-slider").css("transform", "translateX(" + $("#nav-slider").width() + "px)");
+    $("#board-content").css("left", 0);
     // tag
     var left = getTagListLeftBorder();
     setTimeout(function () {
-      $(".tag-item").each(function () {
-        this.style.backgroundPosition = (left - 5) + "vw 0";
-      });
+      $(".tag-item").css("background-position", (left - 5) + "vw 0");
     }, 600);
   }
 

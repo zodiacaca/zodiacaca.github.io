@@ -35,10 +35,9 @@ $fontColor: (
 $bgColor: (
   body: #444,
   nav: #555,
-  slider: #222,
-  slider-alter: #333, // backgrounds of tag-button and board-slider depend on
-  tag-button-before: linear-gradient(to right, #333 0%, transparent 5%),
-  tag-button: linear-gradient(145deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%),
+  slider: #333, // tag-button below and board-slider in js same value
+  tag-button-layer1: linear-gradient(to right, #333 0%, transparent 5%),
+  tag-button-layer2: linear-gradient(145deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%),
   tag-button-hover: linear-gradient(to right, #fff, #fff)
 );
 $borderColor: (

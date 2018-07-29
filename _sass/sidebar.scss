@@ -16,7 +16,7 @@ body {
     height: 100%;
     position: absolute;
     left: elementSize(nav-width);
-    transition: transform #{ 800 * $durationMulti }ms ease-out;
+    transition: all #{ 800 * $durationMulti }ms ease-out;
     z-index: 5;
     
     #nav-menu {
@@ -31,7 +31,7 @@ body {
   #board-slider {
     width: 100%;
     height: 100%;
-    background-color: bgColor(slider);
+    background-color: darken(bgColor(slider), 10%);
     position: absolute;
     transition: all #{ 800 * $durationMulti }ms ease-out;
     z-index: 10;
@@ -48,7 +48,7 @@ body {
         width: elementSize(tag-pool-width);
         height: auto;
         border-right: medium solid borderColor(tag-pool);
-        // lose height:auto if use position:relative
+        // it seems height:auto needs position:relative elements have something below them
         position: absolute;
       }
     }
