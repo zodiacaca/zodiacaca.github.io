@@ -40,7 +40,7 @@ body {
       width: elementSize(board-content-width);
       height: 100%;
       position: relative;
-      // border: medium solid grey;
+      // @include show-border();
       left: elementSize(nav-width) / 2;
       transition: all #{ 800 * $durationMulti }ms ease-out;
       
@@ -50,6 +50,13 @@ body {
         border-right: medium solid borderColor(tag-pool);
         // it seems height:auto needs position:relative elements have something below them
         position: absolute;
+      }
+      
+      #displayer {
+        width: elementSize(displayer-width);
+        // @include show-border();
+        position: absolute;
+        left: elementSize(tag-pool-width);
       }
     }
   }

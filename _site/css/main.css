@@ -82,6 +82,10 @@ body {
         height: auto;
         border-right: medium solid #666;
         position: absolute; }
+      #main-frame #board-slider #board-content #displayer {
+        width: 51%;
+        position: absolute;
+        left: 40%; }
 
 #tag-list {
   list-style-type: none;
@@ -118,3 +122,11 @@ body {
     color: #fff;
     padding: 0 1rem;
     transition: all 200ms ease-out; }
+
+.displayer-article {
+  margin: 0 5%;
+  width: 90%;
+  height: 26rem;
+  background-color: #555;
+  position: absolute;
+  transition: all 800ms ease-out; }

@@ -1,0 +1,10 @@
+
+.displayer-article {
+  margin: 0 ((100% - elementSize(displayer-article-width)) / 2);
+  width: elementSize(displayer-article-width);
+  height: elementSize(displayer-article-height);
+  background-color: bgColor(displayer-article);
+  position: absolute;
+  transition: all #{ 800 * $durationMulti }ms ease-out;
+}
+

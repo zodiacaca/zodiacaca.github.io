@@ -13,6 +13,7 @@
   src: url(/fonts/lato/Lato-Regular.woff);
 }
 
+
 // Our variables
 $durationMulti: 1;
 
@@ -24,7 +25,10 @@ $elementSize: (
   tag-pool-width: percentage($poolWidth),
   tag-list-width: 90%,
   tag-item-font: 1.1rem,
-  tag-item-line: 2.2
+  tag-item-line: 2.2,
+  displayer-width: percentage((1 - $poolWidth) * 0.85),
+  displayer-article-width: 90%,
+  displayer-article-height: 26rem
 );
 
 $fontColor: (
@@ -38,31 +42,23 @@ $bgColor: (
   slider: #333, // tag-button below and board-slider in js same value
   tag-button-layer1: linear-gradient(to right, #333 0%, transparent 5%),
   tag-button-layer2: linear-gradient(145deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%),
-  tag-button-hover: linear-gradient(to right, #fff, #fff)
+  tag-button-hover: linear-gradient(to right, #fff, #fff),
+  displayer-article: #555
 );
 $borderColor: (
   tag-pool: #666
 );
 
 
-// Example of including mixin:
-// @include media-query($on-palm) {
-  
-// }
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
-}
-
-
 // Import partials from `sass_dir` (default as `_sass`)
 @import
   "helpers",
   
+  "mixins",
   "functions",
   "shared",
   "sidebar",
-  "items_tag"
+  "items_tag",
+  "displayer"
 ;
 
