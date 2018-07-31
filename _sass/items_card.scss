@@ -1,4 +1,9 @@
 
+#card-list {
+  width: elementSize(card-list-width);
+  position: relative;
+}
+
 .card-item {
   margin: 0 ((100% - elementSize(card-item-width)) / 2);
   width: elementSize(card-item-width);

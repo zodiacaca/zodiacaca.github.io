@@ -36,7 +36,6 @@
   }
   
   function popupCards() {
-    var cardWidth = $(".card-item").width();
     var cardHeight = $(".card-item").height();
     var foucsTop = bodyHeight / 2 - cardHeight / 2;
     var zIndex = 99;

@@ -83,7 +83,7 @@ body {
         border-right: medium solid #666;
         position: absolute; }
       #main-frame #board-slider #board-content #card-pool {
-        width: 51%;
+        width: 60%;
         position: absolute;
         left: 40%; }
 
@@ -122,6 +122,10 @@ body {
     color: #fff;
     padding: 0 1rem;
     transition: all 200ms ease-out; }
+
+#card-list {
+  width: 95%;
+  position: relative; }
 
 .card-item {
   margin: 0 5%;

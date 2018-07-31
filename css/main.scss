@@ -26,7 +26,8 @@ $elementSize: (
   tag-list-width: 90%,
   tag-item-font: 1.1rem,
   tag-item-line: 2.2,
-  card-pool-width: percentage((1 - $poolWidth) * 0.85),
+  card-pool-width: percentage(1 - $poolWidth),
+  card-list-width: 95%,
   card-item-width: 90%,
   card-item-height: 26rem
 );
