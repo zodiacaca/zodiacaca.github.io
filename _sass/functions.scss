@@ -16,3 +16,7 @@
   @return map-get($borderColor, $key);
 }
 
+@function shadowColor($key) {
+  @return map-get($shadowColor, $key);
+}
+

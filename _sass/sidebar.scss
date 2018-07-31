@@ -52,8 +52,8 @@ body {
         position: absolute;
       }
       
-      #displayer {
-        width: elementSize(displayer-width);
+      #card-pool {
+        width: elementSize(card-pool-width);
         // @include show-border();
         position: absolute;
         left: elementSize(tag-pool-width);

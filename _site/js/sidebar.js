@@ -34,5 +34,24 @@
     
     return left;
   }
+  
+  function popupCards() {
+    var cardWidth = $(".card-item").width();
+    var cardHeight = $(".card-item").height();
+    var foucsTop = bodyHeight / 2 - cardHeight / 2;
+    var zIndex = 99;
+    var selected = 0;
+    for (var i = 0; i < $(".card-item").length; i++) {
+      $(".card-item")[i].style.top = foucsTop + cardHeight * 0.1 * i + "px";
+      var scale = 1 - 0.02 * i;
+      $(".card-item")[i].style.transform = "scale(" + scale + ", " + scale + ")";
+      $(".card-item")[i].style.zIndex = zIndex - i;
+    }
+    $(".card-item").css("box-shadow", "0 0 1rem 0.4rem #222");
+    $(".card-item")[selected].style.boxShadow = "0 0 2rem 0.8rem #222";
+  }
+  setTimeout(function () {
+    popupCards();
+  }, 800);
 
 } () );

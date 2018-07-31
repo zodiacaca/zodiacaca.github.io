@@ -26,9 +26,9 @@ $elementSize: (
   tag-list-width: 90%,
   tag-item-font: 1.1rem,
   tag-item-line: 2.2,
-  displayer-width: percentage((1 - $poolWidth) * 0.85),
-  displayer-article-width: 90%,
-  displayer-article-height: 26rem
+  card-pool-width: percentage((1 - $poolWidth) * 0.85),
+  card-item-width: 90%,
+  card-item-height: 26rem
 );
 
 $fontColor: (
@@ -43,10 +43,13 @@ $bgColor: (
   tag-button-layer1: linear-gradient(to right, #333 0%, transparent 5%),
   tag-button-layer2: linear-gradient(145deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%),
   tag-button-hover: linear-gradient(to right, #fff, #fff),
-  displayer-article: #555
+  card-item: #555
 );
 $borderColor: (
   tag-pool: #666
+);
+$shadowColor: (
+  card-item: #222
 );
 
 
@@ -59,6 +62,6 @@ $borderColor: (
   "shared",
   "sidebar",
   "items_tag",
-  "displayer"
+  "items_card"
 ;
 

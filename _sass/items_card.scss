@@ -1,0 +1,15 @@
+
+.card-item {
+  margin: 0 ((100% - elementSize(card-item-width)) / 2);
+  width: elementSize(card-item-width);
+  height: elementSize(card-item-height);
+  background-color: bgColor(card-item);
+  box-shadow: 0 0 1rem 0.4rem shadowColor(card-item);
+  position: absolute;
+  top: 90vh;
+  transition:
+    top #{ 800 * $durationMulti }ms ease-out,
+    transform #{ 800 * $durationMulti }ms ease-out
+  ;
+}
+

@@ -82,7 +82,7 @@ body {
         height: auto;
         border-right: medium solid #666;
         position: absolute; }
-      #main-frame #board-slider #board-content #displayer {
+      #main-frame #board-slider #board-content #card-pool {
         width: 51%;
         position: absolute;
         left: 40%; }
@@ -123,10 +123,12 @@ body {
     padding: 0 1rem;
     transition: all 200ms ease-out; }
 
-.displayer-article {
+.card-item {
   margin: 0 5%;
   width: 90%;
   height: 26rem;
   background-color: #555;
+  box-shadow: 0 0 1rem 0.4rem #222;
   position: absolute;
-  transition: all 800ms ease-out; }
+  top: 90vh;
+  transition: top 800ms ease-out, transform 800ms ease-out; }
