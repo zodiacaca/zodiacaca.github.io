@@ -124,15 +124,17 @@ body {
     transition: all 200ms ease-out; }
 
 #card-list {
-  width: 95%;
+  list-style-type: none;
+  width: 90%;
   position: relative; }
 
 .card-item {
-  margin: 0 5%;
-  width: 90%;
+  transform: translate3d(0, 0, 0);
+  margin: 0 2.5%;
+  width: 95%;
   height: 26rem;
   background-color: #555;
   box-shadow: 0 0 1rem 0.4rem #222;
   position: absolute;
   top: 90vh;
-  transition: top 800ms ease-out, transform 800ms ease-out; }
+  transition: top 400ms ease-out, transform 400ms ease-out; }

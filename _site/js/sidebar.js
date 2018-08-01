@@ -1,9 +1,31 @@
 
 (function () {
   
+  var inCardPool;
+  var selected = 0;
+  
   var bodyWidth = window.innerWidth;
   var bodyHeight = window.innerHeight;
+  
+  window.onwheel = function (e) {
+    
+    if (inCardPool) {
+      
+      if (e.deltaY < 0) {
+        if (selected > 0) { selected -= 1 }
+      }
+      if (e.deltaY > 0) {
+        if (selected < $(".card-item").length - 1) { selected += 1 }
+      }
+      selectCard();
+      
+    }
+    
+  }
 
+  /*
+    tag-pool
+  */
   function getTagListVerticalCenter() {
     var listHeight = $("#tag-list").height();
     $("#tag-pool").css("top", bodyHeight / 2 - listHeight / 2);
@@ -35,22 +57,46 @@
     return left;
   }
   
-  function popupCards() {
+  /*
+    card-pool
+  */
+  function selectCard() {
+    
     var cardHeight = $(".card-item").height();
     var foucsTop = bodyHeight / 2 - cardHeight / 2;
+    var multi = 1.2;
     var zIndex = 99;
-    var selected = 0;
+    
     for (var i = 0; i < $(".card-item").length; i++) {
-      $(".card-item")[i].style.top = foucsTop + cardHeight * 0.1 * i + "px";
-      var scale = 1 - 0.02 * i;
+      
+      var foucsOffset = cardHeight * 0.05 * multi;
+      var foucsVertical = 0;
+      var foucs = 0;
+      if (i - selected != 0) {
+        foucsVertical = foucsOffset * (i - selected) / Math.abs(i - selected);
+        foucs = 0.05;
+      }
+      
+      $(".card-item")[i].style.top = foucsTop + cardHeight * 0.1 * multi * (i - selected) + foucsVertical + "px";
+      var scale = 1 - 0.02 * multi * Math.abs(i - selected) - foucs;
       $(".card-item")[i].style.transform = "scale(" + scale + ", " + scale + ")";
-      $(".card-item")[i].style.zIndex = zIndex - i;
+      $(".card-item")[i].style.zIndex = zIndex - Math.abs(i - selected);
+      if (i == selected) {
+        $(".card-item")[i].style.boxShadow = "0 0 2rem 0.8rem #222";
+      } else {
+        $(".card-item")[i].style.boxShadow = "0 0 1rem 0.4rem #222";
+      }
+      
     }
-    $(".card-item").css("box-shadow", "0 0 1rem 0.4rem #222");
-    $(".card-item")[selected].style.boxShadow = "0 0 2rem 0.8rem #222";
   }
   setTimeout(function () {
-    popupCards();
+    selectCard();
   }, 800);
+  
+  $("#card-pool").hover(function () {
+    inCardPool = true;
+    }, function () {
+    inCardPool = false;
+  });
 
 } () );
