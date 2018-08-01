@@ -75,8 +75,8 @@
         side = (i - selected) / Math.abs(i - selected);
       }
       
-      $(".card-item")[i].style.top = foucsTop + cardHeight * 0.1 * multi * Math.sqrt(Math.abs(step)) * side + "px";
-      var scale = 1 - 0.02 * multi * Math.sqrt(Math.abs(i - selected));
+      $(".card-item")[i].style.top = foucsTop + cardHeight * 0.12 * multi * Math.sqrt(Math.abs(step)) * side + "px";
+      var scale = 1 - 0.05 * multi * Math.sqrt(Math.abs(i - selected));
       $(".card-item")[i].style.transform = "scale(" + scale + ", " + scale + ")";
       $(".card-item")[i].style.zIndex = zIndex - Math.abs(i - selected);
       if (i == selected) {
