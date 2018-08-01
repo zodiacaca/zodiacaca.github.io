@@ -64,21 +64,19 @@
     
     var cardHeight = $(".card-item").height();
     var foucsTop = bodyHeight / 2 - cardHeight / 2;
-    var multi = 1.2;
+    var multi = 1;
     var zIndex = 99;
     
     for (var i = 0; i < $(".card-item").length; i++) {
       
-      var foucsOffset = cardHeight * 0.05 * multi;
-      var foucsVertical = 0;
-      var foucs = 0;
-      if (i - selected != 0) {
-        foucsVertical = foucsOffset * (i - selected) / Math.abs(i - selected);
-        foucs = 0.05;
+      var step = i - selected;
+      var side = 0;
+      if (step != 0) {
+        side = (i - selected) / Math.abs(i - selected);
       }
       
-      $(".card-item")[i].style.top = foucsTop + cardHeight * 0.1 * multi * (i - selected) + foucsVertical + "px";
-      var scale = 1 - 0.02 * multi * Math.abs(i - selected) - foucs;
+      $(".card-item")[i].style.top = foucsTop + cardHeight * 0.1 * multi * Math.sqrt(Math.abs(step)) * side + "px";
+      var scale = 1 - 0.02 * multi * Math.sqrt(Math.abs(i - selected));
       $(".card-item")[i].style.transform = "scale(" + scale + ", " + scale + ")";
       $(".card-item")[i].style.zIndex = zIndex - Math.abs(i - selected);
       if (i == selected) {
