@@ -45,17 +45,12 @@ layout: default
       
       <div id="card-pool">
         <ul id="card-list">
-          <li class="card-item">
-          </li>
-          <li class="card-item">
-          </li>
-          <li class="card-item">
-          </li>
-          <li class="card-item">
-          </li>
-          <li class="card-item">
-          </li>
-        </div>
+          {% for post in site.posts %}
+            <li class="card-item">
+              <img src={{ post.cover | prepend: site.subpath | prepend: site.url }} width="100%" height="auto"></img>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
       
     </div>
