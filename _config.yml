@@ -11,6 +11,7 @@ email: 121059464@qq.com
 description: >- # this means to ignore newlines until "url:"
 url: "https://zodiacaca.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 subpath: "" # the subpath of your site, e.g. /blog/
+permalink: /:categories/:title:output_ext
 twitter_username: 
 github_username: zodiacaca
 
