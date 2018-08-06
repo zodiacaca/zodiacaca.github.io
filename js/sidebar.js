@@ -69,16 +69,16 @@
     
     for (var i = 0; i < $(".card-item").length; i++) {
       
-      var step = i - selected;
+      var level = i - selected;
       var side = 0;
-      if (step != 0) {
-        side = (i - selected) / Math.abs(i - selected);
+      if (level != 0) {
+        side = level / Math.abs(level);
       }
       
-      $(".card-item")[i].style.top = foucsTop + cardHeight * 0.12 * multi * Math.sqrt(Math.abs(step)) * side + "px";
-      var scale = 1 - 0.05 * multi * Math.sqrt(Math.abs(i - selected));
+      $(".card-item")[i].style.top = foucsTop + cardHeight * 0.12 * multi * Math.sqrt(Math.abs(level)) * side + "px";
+      var scale = 1 - 0.05 * multi * Math.sqrt(Math.abs(level));
       $(".card-item")[i].style.transform = "scale(" + scale + ", " + scale + ")";
-      $(".card-item")[i].style.zIndex = zIndex - Math.abs(i - selected);
+      $(".card-item")[i].style.zIndex = zIndex - Math.abs(level);
       if (i == selected) {
         $(".card-item")[i].style.boxShadow = "0 0 2rem 0.8rem #222";
       } else {

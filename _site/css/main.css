@@ -137,4 +137,5 @@ body {
   box-shadow: 0 0 1rem 0.4rem #222;
   position: absolute;
   top: 90vh;
+  overflow: hidden;
   transition: top 400ms ease-out, transform 400ms ease-out; }
