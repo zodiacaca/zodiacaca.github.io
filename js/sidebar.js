@@ -98,3 +98,63 @@
   });
 
 } () );
+
+
+
+var PARTICLE = function (center, size) {
+  this.x = 0;
+  this.y = 0;
+  this.z = 0;
+  this.size = size;
+  this.color = 'hsl(60, 100%, 70%)';
+}
+
+var RENDERER = {
+  PARTICLE_COUNT : 500,
+  PARTICLE_SIZE : 2,
+
+	init : function () {
+		this.setupVariables();
+		this.initParticles();
+		this.drawFigure();
+	},
+	setupVariables : function () {
+    this.particles = [];
+    
+		this.$container = $($(".card-item")[0]);
+		this.width = this.$container.width();
+		this.height = this.$container.height();
+		
+		this.$canvas = $('<canvas />').attr({width : this.width, height : this.height}).appendTo(this.$container);
+		this.context = this.$canvas.get(0).getContext('2d');
+    
+		this.center = {x : this.width / 2, y : this.height / 2};
+	},
+	initParticles : function () {
+		for (var i = 0; i < this.PARTICLE_COUNT; i ++) {
+			this.particles.push(new PARTICLE(this.center, this.PARTICLE_SIZE));
+		}
+	},
+
+	drawFigure : function () {
+    
+		requestAnimationFrame(this.drawFigure.bind(this));
+		
+		this.context.fillStyle = 'rgba(0, 0, 0, 0.2)';
+		this.context.fillRect(0, 0, this.width, this.height);
+		
+		for (var i = 0; i < this.particles.length; i++) {
+      var point = this.particles[i];
+      
+			this.context.beginPath();
+			this.context.fillStyle = point.color;
+			this.context.arc(point.x, point.y, point.size, 0, 2 * Math.PI, false);
+			this.context.fill();
+		}
+	}
+};
+
+
+(function () {
+	RENDERER.init();
+} () );

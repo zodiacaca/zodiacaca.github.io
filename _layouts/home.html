@@ -45,6 +45,8 @@ layout: default
       
       <div id="card-pool">
         <ul id="card-list">
+          <li class="card-item">
+          </li>
           {% for post in site.posts %}
             <li class="card-item">
               <img src={{ post.cover | prepend: site.subpath | prepend: site.url }} width="100%" height="auto"></img>

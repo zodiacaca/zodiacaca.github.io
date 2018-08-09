@@ -78,14 +78,14 @@ body {
       left: 10%;
       transition: all 800ms ease-out; }
       #main-frame #board-slider #board-content #tag-pool {
-        width: 40%;
+        width: 35%;
         height: auto;
         border-right: medium solid #666;
         position: absolute; }
       #main-frame #board-slider #board-content #card-pool {
-        width: 60%;
+        width: 65%;
         position: absolute;
-        left: 40%; }
+        left: 35%; }
 
 #tag-list {
   list-style-type: none;
@@ -104,7 +104,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-  background-position: 40vw 0;
+  background-position: 35vw 0;
   border-radius: 0.5rem;
   position: relative;
   transition: all 800ms ease-out; }
@@ -132,7 +132,7 @@ body {
   transform: translate3d(0, 0, 0);
   margin: 0 2.5%;
   width: 95%;
-  height: 26rem;
+  height: 28rem;
   background-color: #555;
   box-shadow: 0 0 1rem 0.4rem #222;
   position: absolute;

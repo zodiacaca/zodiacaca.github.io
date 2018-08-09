@@ -6,19 +6,18 @@
   Recent change: Made stylesheet and mimetype check case insensitive.
 
   http://livejs.com
-  http://livejs.com/license (MIT)  
+  http://livejs.com/license (MIT)
   @livejs
 
   Include live.js#css to monitor css changes only.
   Include live.js#js to monitor js changes only.
   Include live.js#html to monitor html changes only.
-  Mix and match to monitor a preferred combination such as live.js#html,css  
+  Mix and match to monitor a preferred combination such as live.js#html,css
 
   By default, just include live.js to monitor all css, js and html changes.
   
-  Live.js can also be loaded as a bookmarklet. It is best to only use it for CSS then,
-  as a page reload due to a change in html or css would not re-include the bookmarklet.
-  To monitor CSS and be notified that it has loaded, include it as: live.js#css,notify
+  Live.js can also be loaded as a bookmarklet. It is best to only use it for CSS then, as a page reload due to a change in html or css would not re-include the bookmarklet.
+  To monitor CSS and be notified that it has been loaded, include it as: live.js#css,notify
 */
 (function () {
 
@@ -29,7 +28,7 @@
       oldLinkElements = {},
       interval = 500,
       loaded = false,
-      active = { "html": 1, "css": 1, "js": 1 };
+      active = { "html": 0, "css": 0, "js": 1 };
 
   var Live = {
 
@@ -71,7 +70,7 @@
         }
       }
       if (!active.js) uris = [];
-      if (active.html) uris.push(document.location.href);
+      if (active.js) uris.push(document.location.href);
 
       // track local css urls
       for (var i = 0; i < links.length && active.css; i++) {
