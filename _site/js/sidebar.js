@@ -100,13 +100,47 @@
 } () );
 
 
-
-var PARTICLE = function (size) {
-  this.x = 0;
-  this.y = 0;
-  this.z = 0;
+var fullCircle = 2 * Math.PI;
+var PARTICLE = function (position, center, size) {
+  this.origin = center;
+  this.x = center.x + position.x;
+  this.y = center.y + position.y;
+  this.z = position.z;
   this.size = size;
-  this.color = 'hsl(60, 100%, 70%)';
+  this.color = 'hsl(%hue, 100%, 70%)';
+  
+  this.init();
+}
+PARTICLE.prototype = {
+  init : function () {
+    this.color = this.color.replace('%hue', 60);
+  },
+  rotateY : function (delta) {
+    var old = {
+      x : this.x - this.origin.x,
+      y : this.y - this.origin.y,
+      z : this.z
+    }
+    
+    this.z = old.z * Math.cos(delta) - old.x * Math.sin(delta);
+    this.x = old.z * Math.sin(delta) + old.x * Math.cos(delta) + this.origin.x;
+  }
+}
+var FORM = {
+  sphere : function () {
+    var radius = 200;
+    
+    // xy
+    var alpha = Math.random() * fullCircle;
+    // vertical plane
+    var beta = Math.random() * fullCircle;
+    
+    return {
+			x : radius * Math.cos(beta) * Math.cos(alpha),
+			y : radius * Math.cos(beta) * Math.sin(alpha),
+			z : radius * Math.sin(beta)
+		}
+  }
 }
 
 var RENDERER = {
@@ -130,8 +164,8 @@ var RENDERER = {
 		this.context = this.$canvas.get(0).getContext('2d');
 	},
 	initParticles : function () {
-		for (var i = 0; i < this.PARTICLE_COUNT; i ++) {
-			this.particles.push(new PARTICLE(this.PARTICLE_SIZE));
+		for (var i = 0; i < this.PARTICLE_COUNT; i++) {
+			this.particles.push(new PARTICLE(FORM.sphere(), this.center, this.PARTICLE_SIZE));
 		}
 	},
 	drawFigure : function () {
@@ -141,11 +175,11 @@ var RENDERER = {
 		this.context.fillRect(0, 0, this.width, this.height);
 		
 		for (var i = 0; i < this.particles.length; i++) {
-      var p = this.particles[i];
+      this.particles[i].rotateY(0.005 * fullCircle);
       
 			this.context.beginPath();
-			this.context.fillStyle = p.color;
-			this.context.arc(p.x, p.y, p.size, 0, 2 * Math.PI, false);
+			this.context.fillStyle = this.particles[i].color;
+			this.context.arc(this.particles[i].x, this.particles[i].y, this.particles[i].size, 0, fullCircle, false);
 			this.context.fill();
 		}
 	}
