@@ -115,6 +115,16 @@ PARTICLE.prototype = {
   init : function () {
     this.color = this.color.replace('%hue', 60);
   },
+  rotateX : function (delta) {
+    var old = {
+      x : this.x - this.origin.x,
+      y : this.y - this.origin.y,
+      z : this.z
+    }
+    
+    this.y = old.y * Math.cos(delta) - old.z * Math.sin(delta) + this.origin.y;
+    this.z = old.y * Math.sin(delta) + old.z * Math.cos(delta);
+  },
   rotateY : function (delta) {
     var old = {
       x : this.x - this.origin.x,
@@ -124,6 +134,16 @@ PARTICLE.prototype = {
     
     this.z = old.z * Math.cos(delta) - old.x * Math.sin(delta);
     this.x = old.z * Math.sin(delta) + old.x * Math.cos(delta) + this.origin.x;
+  },
+  rotateZ : function (delta) {
+    var old = {
+      x : this.x - this.origin.x,
+      y : this.y - this.origin.y,
+      z : this.z
+    }
+    
+    this.x = old.x * Math.cos(delta) - old.y * Math.sin(delta) + this.origin.x;
+    this.y = old.x * Math.sin(delta) + old.y * Math.cos(delta) + this.origin.y;
   }
 }
 var FORM = {
@@ -175,7 +195,9 @@ var RENDERER = {
 		this.context.fillRect(0, 0, this.width, this.height);
 		
 		for (var i = 0; i < this.particles.length; i++) {
+      this.particles[i].rotateX(0.005 * fullCircle);
       this.particles[i].rotateY(0.005 * fullCircle);
+      this.particles[i].rotateZ(0.005 * fullCircle);
       
 			this.context.beginPath();
 			this.context.fillStyle = this.particles[i].color;
