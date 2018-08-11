@@ -41,6 +41,11 @@ div, nav, menu, ol, ul, li {
   margin: 0;
   padding: 0; }
 
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
 body {
   overflow: hidden; }
 

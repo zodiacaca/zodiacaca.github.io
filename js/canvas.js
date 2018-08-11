@@ -3,11 +3,13 @@ var CIRCLE = 2 * Math.PI;
 var CONFIG = {
   particle: {
     count: 500,
-    size: 2
+    size: 5
   }
 };
 var DIMENSION = {
-  center: { x: 0, y: 0 }
+  center: { x: 0, y: 0 },
+  distance: 750,
+  radius: 200
 };
 
 var PARTICLE = function (position) {
@@ -52,21 +54,22 @@ PARTICLE.prototype = {
     
     this.x = old.x * Math.cos(delta) - old.y * Math.sin(delta) + DIMENSION.center.x;
     this.y = old.x * Math.sin(delta) + old.y * Math.cos(delta) + DIMENSION.center.y;
+  },
+  getDepth : function () {
+    this.size = CONFIG.particle.size * (this.z + DIMENSION.distance) / DIMENSION.distance;
   }
 };
 var FORM = {
   sphere : function () {
-    var radius = 200;
-    
     // xy
     var alpha = Math.random() * CIRCLE;
     // vertical plane
     var beta = Math.random() * CIRCLE;
     
     return {
-			x : radius * Math.cos(beta) * Math.cos(alpha),
-			y : radius * Math.cos(beta) * Math.sin(alpha),
-			z : radius * Math.sin(beta)
+			x : DIMENSION.radius * Math.cos(beta) * Math.cos(alpha),
+			y : DIMENSION.radius * Math.cos(beta) * Math.sin(alpha),
+			z : DIMENSION.radius * Math.sin(beta)
 		}
   }
 };
@@ -100,9 +103,10 @@ var RENDERER = {
 		this.context.fillRect(0, 0, this.width, this.height);
 		
 		for (var i = 0; i < this.particles.length; i++) {
-      this.particles[i].rotateX(0.005 * CIRCLE);
-      this.particles[i].rotateY(0.005 * CIRCLE);
-      this.particles[i].rotateZ(0.005 * CIRCLE);
+      this.particles[i].rotateX(0.002 * CIRCLE);
+      this.particles[i].rotateY(0.002 * CIRCLE);
+      this.particles[i].rotateZ(0.002 * CIRCLE);
+      this.particles[i].getDepth();
       
 			this.context.beginPath();
 			this.context.fillStyle = this.particles[i].color;
