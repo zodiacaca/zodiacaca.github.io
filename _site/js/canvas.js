@@ -26,39 +26,35 @@ PARTICLE.prototype = {
     this.color = this.color.replace('%hue', 60);
   },
   rotateX : function (delta) {
-    var old = {
-      x : this.x - DIMENSION.center.x,
-      y : this.y - DIMENSION.center.y,
-      z : this.z
-    };
+    this.storePosition();
     
-    this.y = old.y * Math.cos(delta) - old.z * Math.sin(delta) + DIMENSION.center.y;
-    this.z = old.y * Math.sin(delta) + old.z * Math.cos(delta);
+    this.y = this.position.y * Math.cos(delta) - this.position.z * Math.sin(delta) + DIMENSION.center.y;
+    this.z = this.position.y * Math.sin(delta) + this.position.z * Math.cos(delta);
   },
   rotateY : function (delta) {
-    var old = {
-      x : this.x - DIMENSION.center.x,
-      y : this.y - DIMENSION.center.y,
-      z : this.z
-    };
+    this.storePosition();
     
-    this.z = old.z * Math.cos(delta) - old.x * Math.sin(delta);
-    this.x = old.z * Math.sin(delta) + old.x * Math.cos(delta) + DIMENSION.center.x;
+    this.z = this.position.z * Math.cos(delta) - this.position.x * Math.sin(delta);
+    this.x = this.position.z * Math.sin(delta) + this.position.x * Math.cos(delta) + DIMENSION.center.x;
   },
   rotateZ : function (delta) {
-    var old = {
+    this.storePosition();
+    
+    this.x = this.position.x * Math.cos(delta) - this.position.y * Math.sin(delta) + DIMENSION.center.x;
+    this.y = this.position.x * Math.sin(delta) + this.position.y * Math.cos(delta) + DIMENSION.center.y;
+  },
+  storePosition : function () {
+    this.position = {
       x: this.x - DIMENSION.center.x,
       y: this.y - DIMENSION.center.y,
       z: this.z
-    };
-    
-    this.x = old.x * Math.cos(delta) - old.y * Math.sin(delta) + DIMENSION.center.x;
-    this.y = old.x * Math.sin(delta) + old.y * Math.cos(delta) + DIMENSION.center.y;
+    }
   },
   getDepth : function () {
     this.size = CONFIG.particle.size * (this.z + DIMENSION.distance) / DIMENSION.distance;
   }
 };
+
 var FORM = {
   sphere : function () {
     // xy
