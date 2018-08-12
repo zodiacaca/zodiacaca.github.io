@@ -3,12 +3,14 @@ var CIRCLE = 2 * Math.PI;
 var CONFIG = {
   particle: {
     count: 500,
-    size: 5
+    size: 5 // the size of the particle what we see at the origin
+  },
+  camera: {
+    position: { x: 0, y: 0, z: -750 }
   }
 };
 var DIMENSION = {
-  center: { x: 0, y: 0 },
-  distance: 750,
+  center: { x: 0, y: 0, z: 0 },
   radius: 200
 };
 
@@ -23,6 +25,7 @@ var PARTICLE = function (position) {
 };
 PARTICLE.prototype = {
   init : function () {
+    this.viewPosition = { x: 0, y: 0, z: 0 };
     this.color = this.color.replace('%hue', 60);
   },
   rotateX : function (delta) {
@@ -50,8 +53,19 @@ PARTICLE.prototype = {
       z: this.z
     }
   },
+  getDistance : function () {
+    var sum = 0;
+    for (var key in CONFIG.camera.position) {
+      sum += Math.pow(this[key]  - DIMENSION.center[key] - CONFIG.camera.position[key], 2);
+    }
+    
+    return Math.sqrt(sum);
+  },
   getDepth : function () {
-    this.size = CONFIG.particle.size * (this.z + DIMENSION.distance) / DIMENSION.distance;
+    this.size = CONFIG.particle.size * Math.abs(CONFIG.camera.position.z) / this.getDistance();
+    for (var key in this.viewPosition) {
+      this.viewPosition[key] = (this[key]  - DIMENSION.center[key]) * Math.abs(CONFIG.camera.position.z) / this.getDistance() + DIMENSION.center[key];
+    }
   }
 };
 
@@ -82,7 +96,7 @@ var RENDERER = {
 		this.$container = $($('.card-item')[0]);
 		this.width = this.$container.width();
 		this.height = this.$container.height();
-    DIMENSION.center = { x: this.width / 2, y: this.height / 2 };
+    DIMENSION.center = { x: this.width / 2, y: this.height / 2, z: 0 };
 		
 		this.$canvas = $('<canvas />').attr({ width: this.width, height: this.height }).appendTo(this.$container);
 		this.context = this.$canvas.get(0).getContext('2d');
@@ -102,11 +116,13 @@ var RENDERER = {
       this.particles[i].rotateX(0.002 * CIRCLE);
       this.particles[i].rotateY(0.002 * CIRCLE);
       this.particles[i].rotateZ(0.002 * CIRCLE);
+      
       this.particles[i].getDepth();
+      var depthPos = this.particles[i].viewPosition;
       
 			this.context.beginPath();
 			this.context.fillStyle = this.particles[i].color;
-			this.context.arc(this.particles[i].x, this.particles[i].y, this.particles[i].size, 0, CIRCLE, false);
+			this.context.arc(depthPos.x, depthPos.y, this.particles[i].size, 0, CIRCLE, false);
 			this.context.fill();
 		}
 	}
