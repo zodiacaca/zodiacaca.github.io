@@ -26,7 +26,6 @@ var PARTICLE = function (position) {
 };
 PARTICLE.prototype = {
   init : function () {
-    this.viewPosition = { x: 0, y: 0, z: 0 };
     this.color = this.color.replace('%hue', 60);
   },
   rotateAroundAxis : function (ang, axis) {
@@ -50,12 +49,6 @@ PARTICLE.prototype = {
     }
     
     return Math.sqrt(sum);
-  },
-  getDepth : function () {
-    this.size = CONFIG.particle.size * Math.abs(CONFIG.camera.position.z) / this.getDistance();
-    for (var key in this.viewPosition) {
-      this.viewPosition[key] = this[key] * Math.abs(CONFIG.camera.position.z) / this.getDistance();
-    }
   }
 };
 
@@ -83,13 +76,15 @@ var RENDERER = {
   setupVariables : function () {
     this.particles = [];
     
-    this.$container = $($('.card-item')[0]);
+    this.$container = $($('.card-item').get(0));
     this.width = this.$container.width();
     this.height = this.$container.height();
     this.offset = { x: this.width * CONFIG.offset.xAxis, y: this.height * CONFIG.offset.yAxis };
     
     this.$canvas = $('<canvas />').attr({ width: this.width, height: this.height }).appendTo(this.$container);
     this.context = this.$canvas.get(0).getContext('2d');
+    
+    this.rotateAxis = this.normalize({ x: 1, y: 1, z: 1 });
     
     this.tick = 0;
   },
@@ -105,10 +100,9 @@ var RENDERER = {
     this.context.fillRect(0, 0, this.width, this.height);
     
     for (var i = 0; i < this.particles.length; i++) {
-      this.particles[i].rotateAroundAxis(0.002 * CIRCLE, this.normalize({ x: 1, y: 1, z: 1 }));
+      this.particles[i].rotateAroundAxis(0.002 * CIRCLE, this.rotateAxis);
       
-      this.particles[i].getDepth();
-      var depthPos = this.particles[i].viewPosition;
+      var depthPos = this.getDepth(this.particles[i]);
       
       this.context.beginPath();
       this.context.fillStyle = this.particles[i].color;
@@ -133,6 +127,18 @@ var RENDERER = {
     }
     
     return obj;
+  },
+  getDepth : function (point) {
+    var ratio = Math.abs(CONFIG.camera.position.z) / point.getDistance();
+    
+    point.size = CONFIG.particle.size * ratio;
+    
+    var viewPosition = { x: 0, y: 0, z: 0 };
+    for (var key in viewPosition) {
+      viewPosition[key] = point[key] * ratio;
+    }
+    
+    return viewPosition;
   }
 };
 
