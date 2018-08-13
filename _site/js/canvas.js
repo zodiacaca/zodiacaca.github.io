@@ -90,6 +90,8 @@ var RENDERER = {
     
     this.$canvas = $('<canvas />').attr({ width: this.width, height: this.height }).appendTo(this.$container);
     this.context = this.$canvas.get(0).getContext('2d');
+    
+    this.tick = 0;
   },
   initParticles : function () {
     for (var i = 0; i < CONFIG.particle.count; i++) {
@@ -103,7 +105,7 @@ var RENDERER = {
     this.context.fillRect(0, 0, this.width, this.height);
     
     for (var i = 0; i < this.particles.length; i++) {
-      this.particles[i].rotateAroundAxis(0.002 * CIRCLE, { x: 1, y: 1, z: 1 });
+      this.particles[i].rotateAroundAxis(0.002 * CIRCLE, this.normalize({ x: 1, y: 1, z: 1 }));
       
       this.particles[i].getDepth();
       var depthPos = this.particles[i].viewPosition;
@@ -112,7 +114,25 @@ var RENDERER = {
       this.context.fillStyle = this.particles[i].color;
       this.context.arc(depthPos.x + this.offset.x, depthPos.y + this.offset.y, this.particles[i].size, 0, CIRCLE, false);
       this.context.fill();
+      
+      this.tick++;
+      this.tick %= 300;
+      if (this.tick == 0) {
+        
+      }
     }
+  },
+  
+  normalize : function (obj) {
+    var sum = 0;
+    for (var key in obj) {
+      sum += Math.pow(obj[key], 2);
+    }
+    for (var key in obj) {
+      obj[key] = obj[key] / Math.sqrt(sum);
+    }
+    
+    return obj;
   }
 };
 
