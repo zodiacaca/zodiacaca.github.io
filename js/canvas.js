@@ -76,13 +76,13 @@ var RENDERER = {
   setupVariables : function () {
     this.particles = [];
     
-    this.$container = $($('.card-item').get(0));
+    this.$container = $($('.card-item')[0]);
     this.width = this.$container.width();
     this.height = this.$container.height();
-    this.offset = { x: this.width * CONFIG.offset.xAxis, y: this.height * CONFIG.offset.yAxis };
     
     this.$canvas = $('<canvas />').attr({ width: this.width, height: this.height }).appendTo(this.$container);
     this.context = this.$canvas.get(0).getContext('2d');
+    this.offset = { x: this.width * CONFIG.offset.xAxis, y: this.height * CONFIG.offset.yAxis };
     
     this.rotateAxis = this.normalize({ x: 1, y: 1, z: 1 });
     
