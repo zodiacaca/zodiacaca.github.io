@@ -29,30 +29,19 @@ PARTICLE.prototype = {
     this.viewPosition = { x: 0, y: 0, z: 0 };
     this.color = this.color.replace('%hue', 60);
   },
-  rotateX : function (delta) {
-    this.storePosition();
+  rotateAroundAxis : function (ang, axis) {
+    var x = this.x,
+          y = this.y,
+          z = this.z;
+    var u = axis.x,
+          v = axis.y,
+          w = axis.z;
+    var sinTheta = Math.sin(ang),
+          cosTheta = Math.cos(ang);
     
-    this.y = this.position.y * Math.cos(delta) - this.position.z * Math.sin(delta);
-    this.z = this.position.y * Math.sin(delta) + this.position.z * Math.cos(delta);
-  },
-  rotateY : function (delta) {
-    this.storePosition();
-    
-    this.z = this.position.z * Math.cos(delta) - this.position.x * Math.sin(delta);
-    this.x = this.position.z * Math.sin(delta) + this.position.x * Math.cos(delta);
-  },
-  rotateZ : function (delta) {
-    this.storePosition();
-    
-    this.x = this.position.x * Math.cos(delta) - this.position.y * Math.sin(delta);
-    this.y = this.position.x * Math.sin(delta) + this.position.y * Math.cos(delta);
-  },
-  storePosition : function () {
-    this.position = {
-      x: this.x,
-      y: this.y,
-      z: this.z
-    };
+    this.x = u * (u * x + v * y + w * z) * (1 - cosTheta) + x * cosTheta + (v * z - w * y) * sinTheta;
+    this.y = v * (u * x + v * y + w * z) * (1 - cosTheta) + y * cosTheta + (w * x - u * z) * sinTheta;
+    this.z = w * (u * x + v * y + w * z) * (1 - cosTheta) + z * cosTheta + (u * y - v * x) * sinTheta;
   },
   getDistance : function () {
     var sum = 0;
@@ -114,9 +103,7 @@ var RENDERER = {
     this.context.fillRect(0, 0, this.width, this.height);
     
     for (var i = 0; i < this.particles.length; i++) {
-      this.particles[i].rotateX(0.002 * CIRCLE);
-      this.particles[i].rotateY(0.002 * CIRCLE);
-      this.particles[i].rotateZ(0.002 * CIRCLE);
+      this.particles[i].rotateAroundAxis(0.002 * CIRCLE, { x: 1, y: 1, z: 1 });
       
       this.particles[i].getDepth();
       var depthPos = this.particles[i].viewPosition;
