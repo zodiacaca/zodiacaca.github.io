@@ -39,8 +39,8 @@ Point3.prototype = {
     var u = vector.x,
           v = vector.y,
           w = vector.z;
-    var sinTheta = Math.sin(ang),
-          cosTheta = Math.cos(ang);
+    var sinTheta = Math.sin(angle),
+          cosTheta = Math.cos(angle);
     
     this.x = u * (u * x + v * y + w * z) * (1 - cosTheta) + x * cosTheta + (v * z - w * y) * sinTheta;
     this.y = v * (u * x + v * y + w * z) * (1 - cosTheta) + y * cosTheta + (w * x - u * z) * sinTheta;
@@ -117,12 +117,14 @@ var Renderer = {
     this.context.fillRect(0, 0, this.width, this.height);
   },
   drawParticle : function (entity) {
-    var depthPos = entity.position.get2D();
-    
-    this.context.beginPath();
-    this.context.fillStyle = entity.color;
-    this.context.arc(depthPos.x + this.offset.x, depthPos.y + this.offset.y, entity.size, 0, Math.rad(360), false);
-    this.context.fill();
+    if (entity.position.z > this.camera.position.z) {
+      var depthPos = entity.position.get2D();
+      
+      this.context.beginPath();
+      this.context.fillStyle = entity.color;
+      this.context.arc(depthPos.x + this.offset.x, depthPos.y + this.offset.y, entity.size, 0, Math.rad(360), false);
+      this.context.fill();
+    }
   }
 };
 

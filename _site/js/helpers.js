@@ -8,6 +8,7 @@ $("#helper-slider1").slider({
     $(".helper-TTT")[0].innerHTML = ui.values[0];
     // x position has been translated
     // $(".tag-item").css("background-position", (ui.values[0] - 20) + "vw 0");
+    Renderer.camera.position.x = ui.values[0];
   }
 });
 

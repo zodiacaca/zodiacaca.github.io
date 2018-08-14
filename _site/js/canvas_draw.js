@@ -1,5 +1,5 @@
 
-function init() {
+var init = function () {
   setBackground('rgba(0, 0, 0, 0.2)');
   
   // for (var i = 0; i < 500; i++) {
@@ -18,18 +18,26 @@ function init() {
   
   for (var i = -5; i <= 5; i++) {
     for (var ii = -5; ii <= 5; ii++) {
-      for (var iii = 0; iii <= 5; iii++) {
-        entities.push(new Particle(i * 50, ii * 50, iii * 50, 5, iii * 10));
+      for (var iii = -5; iii <= 5; iii++) {
+        entities.push(new Particle(i * 50, ii * 50, iii * 50, 5, (iii + 5) * 5));
       }
     }
   }
-}
+};
 
-function render() {
+var render = function () {
+  requestAnimationFrame(render);
   
-}
+  var rotateAxis = Math.normalize({ x: 0, y: 1, z: 0 });
+  for (var i = 0; i < entities.length; i++) {
+    if (entities[i]) {
+      entities[i].position.rotateAroundAxis(rotateAxis, Math.rad(1));
+    }
+  }
+};
 
 (function () {
   init();
+  // render();
 } () );
 
