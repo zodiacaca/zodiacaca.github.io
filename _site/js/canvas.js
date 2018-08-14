@@ -1,40 +1,44 @@
 
-var CIRCLE = 2 * Math.PI;
-var CONFIG = {
-  particle: {
-    count: 500,
-    size: 5 // the size of the particle what we see at the origin
-  },
-  shape: {
-    sphere: { radius: 200 }
-  },
+var entities = [];
+
+Math.rad = function (degree) {
+  return degree / 360 * 2 * Math.PI;
+}
+Math.normalize = function (obj) {
+  var sum = 0;
+  for (var key in obj) {
+    sum += Math.pow(obj[key], 2);
+  }
+  for (var key in obj) {
+    obj[key] = obj[key] / Math.sqrt(sum);
+  }
   
-  camera: {
-    position: { x: 0, y: 0, z: -750 }
-  },
+  return obj;
+}
+
+var CONFIG = {
   offset: { xAxis: 0.5, yAxis: 0.5 }
 };
 
-var PARTICLE = function (position) {
-  this.x = position.x;
-  this.y = position.y;
-  this.z = position.z;
-  this.size = CONFIG.particle.size;
-  this.color = 'hsl(%hue, 100%, 70%)';
-  
-  this.init();
+
+var Point2 = function (x, y) {
+  this.x = x;
+  this.y = y;
+}
+
+var Point3 = function (x, y, z) {
+  this.x = x;
+  this.y = y;
+  this.z = z;
 };
-PARTICLE.prototype = {
-  init : function () {
-    this.color = this.color.replace('%hue', 60);
-  },
-  rotateAroundAxis : function (ang, axis) {
+Point3.prototype = {
+  rotateAroundAxis : function (vector, angle) {
     var x = this.x,
           y = this.y,
           z = this.z;
-    var u = axis.x,
-          v = axis.y,
-          w = axis.z;
+    var u = vector.x,
+          v = vector.y,
+          w = vector.z;
     var sinTheta = Math.sin(ang),
           cosTheta = Math.cos(ang);
     
@@ -44,105 +48,89 @@ PARTICLE.prototype = {
   },
   getDistance : function () {
     var sum = 0;
-    for (var key in CONFIG.camera.position) {
-      sum += Math.pow(this[key] - CONFIG.camera.position[key], 2);
+    for (var key in Renderer.camera.position) {
+      sum += Math.pow(this[key] - Renderer.camera.position[key], 2);
     }
     
     return Math.sqrt(sum);
-  }
-};
-
-var FORM = {
-  sphere : function () {
-    // xy
-    var alpha = Math.random() * CIRCLE;
-    // vertical plane
-    var beta = Math.random() * CIRCLE;
+  },
+  get2D: function () {
+    var point = new Point2(0, 0);
+    var ratio = Math.abs(Renderer.camera.position.z) / (this.z - Renderer.camera.position.z);
+    for (var key in point) {
+      point[key] = this[key] * ratio;
+    }
     
-    return {
-      x : CONFIG.shape.sphere.radius * Math.cos(beta) * Math.cos(alpha),
-      y : CONFIG.shape.sphere.radius * Math.cos(beta) * Math.sin(alpha),
-      z : CONFIG.shape.sphere.radius * Math.sin(beta)
-    };
+    return { x: point.x, y: point.y };
   }
 };
 
-var RENDERER = {
+var Particle = function (x, y, z, size, hue) {
+  this.class = 'Particle';
+  
+  this.position = new Point3(x, y, z);
+  this.size = size;
+  this.color = 'hsl(%hue, 100%, 70%)';
+  
+  this.init(hue);
+};
+Particle.prototype = {
+  init : function (hue) {
+    this.color = this.color.replace('%hue', hue);
+  }
+};
+
+var Renderer = {
   init : function () {
     this.setupVariables();
-    this.initParticles();
-    this.drawFigure();
+    this.initRender();
   },
   setupVariables : function () {
-    this.particles = [];
-    
     this.$container = $($('.card-item')[0]);
     this.width = this.$container.width();
     this.height = this.$container.height();
     
     this.$canvas = $('<canvas />').attr({ width: this.width, height: this.height }).appendTo(this.$container);
     this.context = this.$canvas.get(0).getContext('2d');
+    this.camera = {
+      position: { x: 0, y: 0, z: -this.width / 2 }
+    };
     this.offset = { x: this.width * CONFIG.offset.xAxis, y: this.height * CONFIG.offset.yAxis };
     
-    this.rotateAxis = this.normalize({ x: 1, y: 1, z: 1 });
+    this.background = 'rgba(0, 0, 255, 0)';
     
     this.tick = 0;
   },
-  initParticles : function () {
-    for (var i = 0; i < CONFIG.particle.count; i++) {
-      this.particles.push(new PARTICLE(FORM.sphere()));
-    }
-  },
-  drawFigure : function () {
-    requestAnimationFrame(this.drawFigure.bind(this));
+  initRender : function () {
+    requestAnimationFrame(this.initRender.bind(this));
     
-    this.context.fillStyle = 'rgba(0, 0, 0, 0.2)';
-    this.context.fillRect(0, 0, this.width, this.height);
-    
-    for (var i = 0; i < this.particles.length; i++) {
-      this.particles[i].rotateAroundAxis(0.002 * CIRCLE, this.rotateAxis);
-      
-      var depthPos = this.getDepth(this.particles[i]);
-      
-      this.context.beginPath();
-      this.context.fillStyle = this.particles[i].color;
-      this.context.arc(depthPos.x + this.offset.x, depthPos.y + this.offset.y, this.particles[i].size, 0, CIRCLE, false);
-      this.context.fill();
-      
-      this.tick++;
-      this.tick %= 300;
-      if (this.tick == 0) {
-        
+    this['drawBackground']();
+    for (var i = 0; i < entities.length; i++) {
+      if (entities[i]) {
+        this['draw' + entities[i].class](entities[i]);
       }
     }
   },
   
-  normalize : function (obj) {
-    var sum = 0;
-    for (var key in obj) {
-      sum += Math.pow(obj[key], 2);
-    }
-    for (var key in obj) {
-      obj[key] = obj[key] / Math.sqrt(sum);
-    }
-    
-    return obj;
+  drawBackground : function () {
+    this.context.fillStyle = this.background;
+    this.context.fillRect(0, 0, this.width, this.height);
   },
-  getDepth : function (point) {
-    var ratio = Math.abs(CONFIG.camera.position.z) / point.getDistance();
+  drawParticle : function (entity) {
+    var depthPos = entity.position.get2D();
     
-    point.size = CONFIG.particle.size * ratio;
-    
-    var viewPosition = { x: 0, y: 0, z: 0 };
-    for (var key in viewPosition) {
-      viewPosition[key] = point[key] * ratio;
-    }
-    
-    return viewPosition;
+    this.context.beginPath();
+    this.context.fillStyle = entity.color;
+    this.context.arc(depthPos.x + this.offset.x, depthPos.y + this.offset.y, entity.size, 0, Math.rad(360), false);
+    this.context.fill();
   }
 };
 
 (function () {
-  RENDERER.init();
+  Renderer.init();
 } () );
+
+function setBackground(color) {
+  Renderer.background = color;
+}
 
