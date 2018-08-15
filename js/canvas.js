@@ -3,7 +3,7 @@ var entities = [];
 
 Math.rad = function (degree) {
   return degree / 360 * 2 * Math.PI;
-}
+};
 Math.normalize = function (obj) {
   var sum = 0;
   for (var key in obj) {
@@ -14,7 +14,7 @@ Math.normalize = function (obj) {
   }
   
   return obj;
-}
+};
 
 var CONFIG = {
   offset: { xAxis: 0.5, yAxis: 0.5 }
@@ -24,7 +24,7 @@ var CONFIG = {
 var Point2 = function (x, y) {
   this.x = x;
   this.y = y;
-}
+};
 
 var Point3 = function (x, y, z) {
   this.x = x;
@@ -65,20 +65,21 @@ Point3.prototype = {
   }
 };
 
-var Particle = function (x, y, z, size, hue) {
+var Particle = function (x, y, z, size, color) {
   this.class = 'Particle';
   
   this.position = new Point3(x, y, z);
   this.size = size;
-  this.color = 'hsl(%hue, 100%, 70%)';
-  
-  this.init(hue);
+  this.color = color;
 };
 Particle.prototype = {
-  init : function (hue) {
-    this.color = this.color.replace('%hue', hue);
+  getPerceivedSize: function () {
+    var ratio = Math.abs(Renderer.camera.position.z) / (this.position.z - Renderer.camera.position.z);
+    var size = this.size * ratio;
+    
+    return size;
   }
-};
+}
 
 var Renderer = {
   init : function () {
@@ -92,6 +93,7 @@ var Renderer = {
     
     this.$canvas = $('<canvas />').attr({ width: this.width, height: this.height }).appendTo(this.$container);
     this.context = this.$canvas.get(0).getContext('2d');
+    
     this.camera = {
       position: { x: 0, y: 0, z: -this.width / 2 }
     };
@@ -104,27 +106,29 @@ var Renderer = {
   initRender : function () {
     requestAnimationFrame(this.initRender.bind(this));
     
+    entities.sort(function (a, b) { return b.position.z - a.position.z });
+    
     this['drawBackground']();
     for (var i = 0; i < entities.length; i++) {
       if (entities[i]) {
         this['draw' + entities[i].class](entities[i]);
       }
     }
-  },
-  
-  drawBackground : function () {
-    this.context.fillStyle = this.background;
-    this.context.fillRect(0, 0, this.width, this.height);
-  },
-  drawParticle : function (entity) {
-    if (entity.position.z > this.camera.position.z) {
-      var depthPos = entity.position.get2D();
-      
-      this.context.beginPath();
-      this.context.fillStyle = entity.color;
-      this.context.arc(depthPos.x + this.offset.x, depthPos.y + this.offset.y, entity.size, 0, Math.rad(360), false);
-      this.context.fill();
-    }
+  }
+};
+Renderer.drawBackground = function () {
+  this.context.fillStyle = this.background;
+  this.context.fillRect(0, 0, this.width, this.height);
+};
+Renderer.drawParticle = function (entity) {
+  if (entity.position.z > this.camera.position.z) {
+    var pos = entity.position.get2D();
+    var size = entity.getPerceivedSize();
+    
+    this.context.beginPath();
+    this.context.fillStyle = entity.color;
+    this.context.arc(pos.x + this.offset.x, pos.y + this.offset.y, size / 2, 0, Math.rad(360));
+    this.context.fill();
   }
 };
 
@@ -134,5 +138,5 @@ var Renderer = {
 
 function setBackground(color) {
   Renderer.background = color;
-}
+};
 

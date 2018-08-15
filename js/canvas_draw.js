@@ -2,6 +2,8 @@
 var init = function () {
   setBackground('rgba(0, 0, 0, 0.2)');
   
+  var hsl = 'hsl(%hue, 100%, 70%)';
+  
   // for (var i = 0; i < 500; i++) {
     // var alpha = Math.random() * Math.rad(360); // xy
     // var beta = Math.random() * Math.rad(360);  // vertical plane
@@ -13,13 +15,13 @@ var init = function () {
       // z : radius * Math.sin(beta)
     // };
     
-    // entities.push(new Particle(pos.x, pos.y, pos.z, 5, 60));
+    // entities.push(new Particle(pos.x, pos.y, pos.z, 10, hsl.replace('%hue', 60)));
   // }
   
-  for (var i = -5; i <= 5; i++) {
-    for (var ii = -5; ii <= 5; ii++) {
-      for (var iii = -5; iii <= 5; iii++) {
-        entities.push(new Particle(i * 50, ii * 50, iii * 50, 5, (iii + 5) * 5));
+  for (var i = -4; i <= 4; i++) {
+    for (var ii = -4; ii <= 4; ii++) {
+      for (var iii = -4; iii <= 4; iii++) {
+        entities.push(new Particle(i * 80, ii * 80, iii * 80, 10, hsl.replace('%hue', (iii + 5) * 5)));
       }
     }
   }
@@ -31,13 +33,13 @@ var render = function () {
   var rotateAxis = Math.normalize({ x: 0, y: 1, z: 0 });
   for (var i = 0; i < entities.length; i++) {
     if (entities[i]) {
-      entities[i].position.rotateAroundAxis(rotateAxis, Math.rad(1));
+      entities[i].position.rotateAroundAxis(rotateAxis, Math.rad(0.1));
     }
   }
 };
 
 (function () {
   init();
-  // render();
+  render();
 } () );
 
