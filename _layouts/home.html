@@ -49,7 +49,7 @@ layout: default
           </li>
           {% for post in site.posts %}
             <li class="card-item">
-              <img src={{ post.cover | prepend: site.subpath | prepend: site.url }} width="100%" height="auto"></img>
+              <img src={{ post.cover }} width="100%" height="auto"></img>
             </li>
           {% endfor %}
         </ul>
