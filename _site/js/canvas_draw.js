@@ -1,7 +1,7 @@
 
 Paint.init = function () {
   this.canvas = new Canvas($('.card-item')[0]);
-  this.canvas.background = 'rgba(0, 0, 0, 0.2)';
+  this.canvas.background = 'rgba(0, 0, 15, 0.2)';
   
   var hsl = 'hsl(%hue, 100%, 70%)';
   
@@ -16,7 +16,7 @@ Paint.init = function () {
       // z : radius * Math.sin(beta)
     // };
     
-    // entities.push(new Particle(pos.x, pos.y, pos.z, 10, hsl.replace('%hue', 60)));
+    // new Particle(pos.x, pos.y, pos.z, 10, hsl.replace('%hue', 60));
   // }
   
   for (var i = -4; i <= 4; i++) {
@@ -29,7 +29,7 @@ Paint.init = function () {
 };
 
 Paint.painting = function () {
-  var rotateAxis = Math.normalize({ x: 0, y: 1, z: 0 });
+  var rotateAxis = Math.normalize({ x: 0, y: 1, z: 0.1 });
   for (var i = 0; i < entities.length; i++) {
     if (entities[i]) {
       entities[i].position.rotateAroundAxis(rotateAxis, Math.rad(0.1));
@@ -37,8 +37,4 @@ Paint.painting = function () {
   }
 };
 
-
-(function () {
-  Render.init();
-} () );
-
+Render.init();
