@@ -46,7 +46,7 @@ Point3.prototype = {
     var point = new Point2(0, 0);
     var ratio = Math.abs(canvas.camera.position.z) / (this.z - canvas.camera.position.z);
     for (var key in point) {
-      point[key] = this[key] * ratio;
+      point[key] = (this[key] - canvas.camera.offset[key]) * ratio;
     }
     
     return { x: point.x, y: point.y };
@@ -96,7 +96,8 @@ Canvas.prototype = {
     this.context = this.$canvas.get(0).getContext('2d');
     
     this.camera = {
-      position: { x: 0, y: 0, z: -this.width / 2 }
+      position: { x: 0, y: 0, z: -this.width / 2 },
+      offset: { x: 0, y: 0 }
     };
     this.offset = { x: this.width * 0.5, y: this.height * 0.5 };
     
