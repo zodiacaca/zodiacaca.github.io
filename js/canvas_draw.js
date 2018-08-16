@@ -1,6 +1,7 @@
 
-var init = function () {
-  setBackground('rgba(0, 0, 0, 0.2)');
+Paint.init = function () {
+  this.canvas = new Canvas($('.card-item')[0]);
+  this.canvas.background = 'rgba(0, 0, 0, 0.2)';
   
   var hsl = 'hsl(%hue, 100%, 70%)';
   
@@ -21,15 +22,13 @@ var init = function () {
   for (var i = -4; i <= 4; i++) {
     for (var ii = -4; ii <= 4; ii++) {
       for (var iii = -4; iii <= 4; iii++) {
-        entities.push(new Particle(i * 80, ii * 80, iii * 80, 10, hsl.replace('%hue', (iii + 5) * 5)));
+        new Particle(i * 80, ii * 80, iii * 80, 10, hsl.replace('%hue', (iii + 5) * 5));
       }
     }
   }
 };
 
-var render = function () {
-  requestAnimationFrame(render);
-  
+Paint.painting = function () {
   var rotateAxis = Math.normalize({ x: 0, y: 1, z: 0 });
   for (var i = 0; i < entities.length; i++) {
     if (entities[i]) {
@@ -38,8 +37,8 @@ var render = function () {
   }
 };
 
+
 (function () {
-  init();
-  render();
+  Render.init();
 } () );
 

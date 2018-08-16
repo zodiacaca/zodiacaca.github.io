@@ -1,4 +1,5 @@
 
+var canvases = [];
 var entities = [];
 
 Math.rad = function (degree) {
@@ -15,11 +16,6 @@ Math.normalize = function (obj) {
   
   return obj;
 };
-
-var CONFIG = {
-  offset: { xAxis: 0.5, yAxis: 0.5 }
-};
-
 
 var Point2 = function (x, y) {
   this.x = x;
@@ -46,17 +42,9 @@ Point3.prototype = {
     this.y = v * (u * x + v * y + w * z) * (1 - cosTheta) + y * cosTheta + (w * x - u * z) * sinTheta;
     this.z = w * (u * x + v * y + w * z) * (1 - cosTheta) + z * cosTheta + (u * y - v * x) * sinTheta;
   },
-  getDistance : function () {
-    var sum = 0;
-    for (var key in Renderer.camera.position) {
-      sum += Math.pow(this[key] - Renderer.camera.position[key], 2);
-    }
-    
-    return Math.sqrt(sum);
-  },
-  get2D: function () {
+  get2D: function (canvas) {
     var point = new Point2(0, 0);
-    var ratio = Math.abs(Renderer.camera.position.z) / (this.z - Renderer.camera.position.z);
+    var ratio = Math.abs(canvas.camera.position.z) / (this.z - canvas.camera.position.z);
     for (var key in point) {
       point[key] = this[key] * ratio;
     }
@@ -66,28 +54,41 @@ Point3.prototype = {
 };
 
 var Particle = function (x, y, z, size, color) {
+  this.id = 'entity_' + entities.length;
   this.class = 'Particle';
   
   this.position = new Point3(x, y, z);
   this.size = size;
   this.color = color;
+  
+  this.init();
 };
 Particle.prototype = {
-  getPerceivedSize: function () {
-    var ratio = Math.abs(Renderer.camera.position.z) / (this.position.z - Renderer.camera.position.z);
+  init : function () {
+    entities.push(this);
+  },
+  getPerceivedSize : function (canvas) {
+    var ratio = Math.abs(canvas.camera.position.z) / (this.position.z - canvas.camera.position.z);
     var size = this.size * ratio;
     
     return size;
-  }
-}
-
-var Renderer = {
-  init : function () {
-    this.setupVariables();
-    this.initRender();
   },
-  setupVariables : function () {
-    this.$container = $($('.card-item')[0]);
+  remove : function () {
+    for (var i = 0; i < entities.length; i++) {
+      if (entities.id == this.id) {
+        entities[i] = undefined;
+      }
+    }
+  }
+};
+
+var Canvas = function (container) {
+  this.$container = $(container);
+  
+  this.setup();
+};
+Canvas.prototype = {
+  setup : function () {
     this.width = this.$container.width();
     this.height = this.$container.height();
     
@@ -97,46 +98,57 @@ var Renderer = {
     this.camera = {
       position: { x: 0, y: 0, z: -this.width / 2 }
     };
-    this.offset = { x: this.width * CONFIG.offset.xAxis, y: this.height * CONFIG.offset.yAxis };
+    this.offset = { x: this.width * 0.5, y: this.height * 0.5 };
     
     this.background = 'rgba(0, 0, 255, 0)';
     
-    this.tick = 0;
+    canvases.push(this);
   },
-  initRender : function () {
-    requestAnimationFrame(this.initRender.bind(this));
-    
-    entities.sort(function (a, b) { return b.position.z - a.position.z });
+  draw : function () {
+    entities.sort(function (a, b) {
+      return b.position.z - a.position.z;
+    });
     
     this['drawBackground']();
     for (var i = 0; i < entities.length; i++) {
-      if (entities[i]) {
+      if (entities[i] && entities[i].position.z > this.camera.position.z) {
         this['draw' + entities[i].class](entities[i]);
       }
     }
   }
 };
-Renderer.drawBackground = function () {
+Canvas.prototype.drawBackground = function () {
   this.context.fillStyle = this.background;
   this.context.fillRect(0, 0, this.width, this.height);
 };
-Renderer.drawParticle = function (entity) {
-  if (entity.position.z > this.camera.position.z) {
-    var pos = entity.position.get2D();
-    var size = entity.getPerceivedSize();
-    
-    this.context.beginPath();
-    this.context.fillStyle = entity.color;
-    this.context.arc(pos.x + this.offset.x, pos.y + this.offset.y, size / 2, 0, Math.rad(360));
-    this.context.fill();
-  }
+Canvas.prototype.drawParticle = function (entity) {
+  var pos = entity.position.get2D(this);
+  var size = entity.getPerceivedSize(this);
+  
+  this.context.beginPath();
+  this.context.fillStyle = entity.color;
+  this.context.arc(pos.x + this.offset.x, pos.y + this.offset.y, size / 2, 0, Math.rad(360));
+  this.context.fill();
 };
 
-(function () {
-  Renderer.init();
-} () );
+var Paint = {
+  init : function () {},
+  painting : function () {}
+};
 
-function setBackground(color) {
-  Renderer.background = color;
+var Render = {
+  init : function () {
+    Paint.init();
+    this.frame();
+  },
+  frame : function () {
+    requestAnimationFrame(Render.frame);
+    
+    Paint.painting();
+    
+    for (var i = 0; i < canvases.length; i++) {
+      canvases[i].draw();
+    }
+  }
 };
 
