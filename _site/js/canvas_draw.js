@@ -16,23 +16,23 @@ Paint.init = function () {
       // z : radius * Math.sin(beta)
     // };
     
-    // new Particle(pos.x, pos.y, pos.z, 10, hsl.replace('%hue', 60));
+    // new Particle(this.canvas, pos.x, pos.y, pos.z, 10, hsl.replace('%hue', 60));
   // }
   
   for (var i = -4; i <= 4; i++) {
     for (var ii = -4; ii <= 4; ii++) {
       for (var iii = -4; iii <= 4; iii++) {
-        new Particle(i * 80, ii * 80, iii * 80, 10, hsl.replace('%hue', (iii + 5) * 5));
+        new Particle(this.canvas, i * 80, ii * 80, iii * 80, 10, hsl.replace('%hue', (iii + 5) * 5));
       }
     }
   }
 };
 
-Paint.painting = function () {
+Paint.painting = function (canvas) {
   var rotateAxis = Math.normalize({ x: 0, y: 1, z: 0.1 });
-  for (var i = 0; i < entities.length; i++) {
-    if (entities[i]) {
-      entities[i].position.rotateAroundAxis(rotateAxis, Math.rad(0.1));
+  for (var i = 0; i < canvas.entities.length; i++) {
+    if (canvas.entities[i]) {
+      canvas.entities[i].position.rotateAroundAxis(rotateAxis, Math.rad(0.1));
     }
   }
 };

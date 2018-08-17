@@ -1,6 +1,5 @@
 
 var canvases = [];
-var entities = [];
 
 Math.rad = function (degree) {
   return degree / 360 * 2 * Math.PI;
@@ -62,19 +61,19 @@ Point3.prototype = {
   }
 };
 
-var Particle = function (x, y, z, size, color) {
-  this.id = 'entity_' + entities.length;
+var Particle = function (canvas, x, y, z, size, color) {
+  this.id = 'entity_' + canvas.entities.length;
   this.class = 'Particle';
   
   this.position = new Point3(x, y, z);
   this.size = size;
   this.color = color;
   
-  this.init();
+  this.init(canvas);
 };
 Particle.prototype = {
-  init : function () {
-    entities.push(this);
+  init : function (canvas) {
+    canvas.entities.push(this);
   },
   getPerceivedSize : function (canvas) {
     var ratio = Math.abs(canvas.camera.position.z) / (this.position.z - canvas.camera.position.z);
@@ -93,6 +92,8 @@ Particle.prototype = {
 
 var Canvas = function (container) {
   this.$container = $(container);
+  
+  this.entities = [];
   
   this.setup();
 };
@@ -115,14 +116,14 @@ Canvas.prototype = {
     canvases.push(this);
   },
   draw : function () {
-    entities.sort(function (a, b) {
+    this.entities.sort(function (a, b) {
       return b.position.z - a.position.z;
     });
     
     this['drawBackground']();
-    for (var i = 0; i < entities.length; i++) {
-      if (entities[i] && entities[i].position.z > this.camera.position.z) {
-        this['draw' + entities[i].class](entities[i]);
+    for (var i = 0; i < this.entities.length; i++) {
+      if (this.entities[i] && this.entities[i].position.z > this.camera.position.z) {
+        this['draw' + this.entities[i].class](this.entities[i]);
       }
     }
   }
@@ -143,7 +144,7 @@ Canvas.prototype.drawParticle = function (entity) {
 
 var Paint = {
   init : function () {},
-  painting : function () {}
+  painting : function (canvas) {}
 };
 
 var Render = {
@@ -154,9 +155,8 @@ var Render = {
   frame : function () {
     requestAnimationFrame(Render.frame);
     
-    Paint.painting();
-    
     for (var i = 0; i < canvases.length; i++) {
+      Paint.painting(canvases[i]);
       canvases[i].draw();
     }
   }
