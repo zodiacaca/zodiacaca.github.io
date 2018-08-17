@@ -42,14 +42,23 @@ Point3.prototype = {
     this.y = v * (u * x + v * y + w * z) * (1 - cosTheta) + y * cosTheta + (w * x - u * z) * sinTheta;
     this.z = w * (u * x + v * y + w * z) * (1 - cosTheta) + z * cosTheta + (u * y - v * x) * sinTheta;
   },
+  getRelativePosition: function (canvas) {
+    var point = new Point2(0, 0);
+    for (var key in point) {
+      point[key] = this[key] - canvas.camera.offset[key];
+    }
+    
+    return point;
+  },
   get2D: function (canvas) {
     var point = new Point2(0, 0);
     var ratio = Math.abs(canvas.camera.position.z) / (this.z - canvas.camera.position.z);
+    var viewPosition = this.getRelativePosition(canvas);
     for (var key in point) {
-      point[key] = (this[key] - canvas.camera.offset[key]) * ratio;
+      point[key] = viewPosition[key] * ratio;
     }
     
-    return { x: point.x, y: point.y };
+    return point;
   }
 };
 
