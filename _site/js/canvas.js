@@ -51,8 +51,8 @@ Point3.prototype = {
   },
   get2D: function (canvas) {
     var point = new Point2(0, 0);
-    var ratio = Math.abs(canvas.camera.position.z) / (this.z - canvas.camera.position.z);
     var viewPosition = this.getRelativePosition(canvas);
+    var ratio = Math.abs(canvas.camera.position.z) / (this.z - canvas.camera.position.z);
     for (var key in point) {
       point[key] = viewPosition[key] * ratio;
     }
@@ -107,7 +107,7 @@ Canvas.prototype = {
     
     this.camera = {
       position: { x: 0, y: 0, z: -this.width / 2 },
-      offset: { x: 0, y: 0 }
+      offset: { x: 0, y: 0, z: 0 }
     };
     this.offset = { x: this.width * 0.5, y: this.height * 0.5 };
     
@@ -156,7 +156,7 @@ var Render = {
     requestAnimationFrame(Render.frame);
     
     for (var i = 0; i < canvases.length; i++) {
-      Paint.painting(canvases[i]);
+      Paint.painting();
       canvases[i].draw();
     }
   }

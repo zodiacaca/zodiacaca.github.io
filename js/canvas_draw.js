@@ -22,17 +22,17 @@ Paint.init = function () {
   for (var i = -4; i <= 4; i++) {
     for (var ii = -4; ii <= 4; ii++) {
       for (var iii = -4; iii <= 4; iii++) {
-        new Particle(this.canvas, i * 80, ii * 80, iii * 80, 10, hsl.replace('%hue', (iii + 5) * 5));
+        new Particle(this.canvas, i * 80, ii * 80, iii * 80, 10, hsl.replace('%hue', 255 - (iii + 8) * 15));
       }
     }
   }
 };
 
-Paint.painting = function (canvas) {
+Paint.painting = function () {
   var rotateAxis = Math.normalize({ x: 0, y: 1, z: 0.1 });
-  for (var i = 0; i < canvas.entities.length; i++) {
-    if (canvas.entities[i]) {
-      canvas.entities[i].position.rotateAroundAxis(rotateAxis, Math.rad(0.1));
+  for (var i = 0; i < this.canvas.entities.length; i++) {
+    if (this.canvas.entities[i]) {
+      this.canvas.entities[i].position.rotateAroundAxis(rotateAxis, Math.rad(0.1));
     }
   }
 };
