@@ -46,10 +46,12 @@ layout: default
       <div id="card-pool">
         <ul id="card-list">
           <li class="card-item">
+            <div class="overlay"></div>
           </li>
           {% for post in site.posts %}
             <li class="card-item">
               <img src={{ post.cover }} width="100%" height="auto"></img>
+              <div class="overlay"></div>
             </li>
           {% endfor %}
         </ul>

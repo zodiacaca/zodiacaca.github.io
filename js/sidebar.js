@@ -22,6 +22,18 @@
     }
     
   }
+  $(".card-item").click(function () {
+    $(this).children(".overlay").css("display", "none");
+    selected = $(this).index();
+    selectCard();
+  });
+  $(".card-item").hover(function () {
+    if (selected != $(this).index()) {
+      $(this).children(".overlay").css("display", "block");
+    }
+  }, function() {
+    $(this).children(".overlay").css("display", "none");
+  });
 
   /*
     tag-pool
