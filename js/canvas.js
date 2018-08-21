@@ -16,43 +16,46 @@ Math.normalize = function (obj) {
   return obj;
 };
 
-var Point2 = function (x, y) {
+var Axis2 = function (x = 0, y = 0) {
   this.x = x;
   this.y = y;
 };
-
-var Point3 = function (x, y, z) {
+var Axis3 = function (x = 0, y = 0, z = 0) {
   this.x = x;
   this.y = y;
   this.z = z;
 };
-Point3.prototype = {
+var Transform = function (vector, angle) {
+  this.position = vector;
+  this.rotation = angle;
+};
+Transform.prototype = {
   rotateAroundAxis : function (vector, angle) {
-    var x = this.x,
-          y = this.y,
-          z = this.z;
+    var x = this.position.x,
+          y = this.position.y,
+          z = this.position.z;
     var u = vector.x,
           v = vector.y,
           w = vector.z;
     var sinTheta = Math.sin(angle),
           cosTheta = Math.cos(angle);
     
-    this.x = u * (u * x + v * y + w * z) * (1 - cosTheta) + x * cosTheta + (v * z - w * y) * sinTheta;
-    this.y = v * (u * x + v * y + w * z) * (1 - cosTheta) + y * cosTheta + (w * x - u * z) * sinTheta;
-    this.z = w * (u * x + v * y + w * z) * (1 - cosTheta) + z * cosTheta + (u * y - v * x) * sinTheta;
+    this.position.x = u * (u * x + v * y + w * z) * (1 - cosTheta) + x * cosTheta + (v * z - w * y) * sinTheta;
+    this.position.y = v * (u * x + v * y + w * z) * (1 - cosTheta) + y * cosTheta + (w * x - u * z) * sinTheta;
+    this.position.z = w * (u * x + v * y + w * z) * (1 - cosTheta) + z * cosTheta + (u * y - v * x) * sinTheta;
   },
   getRelativePosition: function (canvas) {
-    var point = new Point2(0, 0);
+    var point = new Axis2();
     for (var key in point) {
-      point[key] = this[key] - canvas.camera.offset[key];
+      point[key] = this.position[key] - canvas.camera.offset[key];
     }
     
     return point;
   },
   get2D: function (canvas) {
-    var point = new Point2(0, 0);
+    var point = new Axis2();
     var viewPosition = this.getRelativePosition(canvas);
-    var ratio = Math.abs(canvas.camera.position.z) / (this.z - canvas.camera.position.z);
+    var ratio = Math.abs(canvas.camera.position.z) / (this.position.z - canvas.camera.position.z);
     for (var key in point) {
       point[key] = viewPosition[key] * ratio;
     }
@@ -65,7 +68,7 @@ var Particle = function (canvas, x, y, z, size, color) {
   this.id = 'entity_' + canvas.entities.length;
   this.class = 'Particle';
   
-  this.position = new Point3(x, y, z);
+  this.transform = new Transform(new Axis3(x, y, z));
   this.size = size;
   this.color = color;
   
@@ -76,7 +79,7 @@ Particle.prototype = {
     canvas.entities.push(this);
   },
   getPerceivedSize : function (canvas) {
-    var ratio = Math.abs(canvas.camera.position.z) / (this.position.z - canvas.camera.position.z);
+    var ratio = Math.abs(canvas.camera.position.z) / (this.transform.position.z - canvas.camera.position.z);
     var size = this.size * ratio;
     
     return size;
@@ -117,12 +120,12 @@ Canvas.prototype = {
   },
   draw : function () {
     this.entities.sort(function (a, b) {
-      return b.position.z - a.position.z;
+      return b.transform.position.z - a.transform.position.z;
     });
     
     this['drawBackground']();
     for (var i = 0; i < this.entities.length; i++) {
-      if (this.entities[i] && this.entities[i].position.z > this.camera.position.z) {
+      if (this.entities[i] && this.entities[i].transform.position.z > this.camera.position.z) {
         this['draw' + this.entities[i].class](this.entities[i]);
       }
     }
@@ -133,7 +136,7 @@ Canvas.prototype.drawBackground = function () {
   this.context.fillRect(0, 0, this.width, this.height);
 };
 Canvas.prototype.drawParticle = function (entity) {
-  var pos = entity.position.get2D(this);
+  var pos = entity.transform.get2D(this);
   var size = entity.getPerceivedSize(this);
   
   this.context.beginPath();

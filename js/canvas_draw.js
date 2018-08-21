@@ -50,32 +50,32 @@ Paint.init = function () {
 
   var points = formCube();
   for (var i = 0; i < Math.pow(9, 3); i++) {
-    new Particle(this.canvas, points[i].x, points[i].y, points[i].z, 10, hsl.replace('%hue', 255 - i * 0.4));
+    new Particle(this.canvas, points[i].x, points[i].y, points[i].z, 10, hsl.replace('%hue', 220 - i * 0.1));
   }
 };
 
 Paint.tick = 1;
 Paint.painting = function () {
-  var rotateAxis = Math.normalize({ x: 0, y: 1, z: 0.1 });
-  if (this.tick % 60 == 0) {
+  var rotateAxis = Math.normalize(new Axis3(0, 1, 0.1));
+  if (this.tick % 120 == 0) {
     var points = formCube();
     for (var i = 0; i < this.canvas.entities.length; i++) {
-      this.canvas.entities[i].position.x = points[i].x;
-      this.canvas.entities[i].position.y = points[i].y;
-      this.canvas.entities[i].position.z = points[i].z;
-      this.canvas.entities[i].position.rotateAroundAxis(rotateAxis, Math.rad(this.tick * 0.1));
+      this.canvas.entities[i].transform.position.x = points[i].x;
+      this.canvas.entities[i].transform.position.y = points[i].y;
+      this.canvas.entities[i].transform.position.z = points[i].z;
+      this.canvas.entities[i].transform.rotateAroundAxis(rotateAxis, Math.rad(this.tick * 0.2));
     }
-  } else if (this.tick % 30 == 0) {
+  } else if (this.tick % 60 == 0) {
     var points = formSphere();
     for (var i = 0; i < this.canvas.entities.length; i++) {
-      this.canvas.entities[i].position.x = points[i].x;
-      this.canvas.entities[i].position.y = points[i].y;
-      this.canvas.entities[i].position.z = points[i].z;
-      this.canvas.entities[i].position.rotateAroundAxis(rotateAxis, Math.rad(this.tick * 0.1));
+      this.canvas.entities[i].transform.position.x = points[i].x;
+      this.canvas.entities[i].transform.position.y = points[i].y;
+      this.canvas.entities[i].transform.position.z = points[i].z;
+      this.canvas.entities[i].transform.rotateAroundAxis(rotateAxis, Math.rad(this.tick * 0.2));
     }
   }
   for (var i = 0; i < this.canvas.entities.length; i++) {
-    this.canvas.entities[i].position.rotateAroundAxis(rotateAxis, Math.rad(0.1));
+    this.canvas.entities[i].transform.rotateAroundAxis(rotateAxis, Math.rad(0.2));
   }
   this.tick++;
 };
