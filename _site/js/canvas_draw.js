@@ -28,7 +28,7 @@ function formCube() {
           y : ii * 80,
           z : iii * 80
         };
-        
+
         points.push(pos);
       }
     }
