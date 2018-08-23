@@ -4,7 +4,7 @@ var canvases = [];
 Math.rad = function (degree) {
   return degree / 360 * 2 * Math.PI;
 };
-Math.normalize = function (obj) {
+Math.norm = function (obj) {
   var sum = 0;
   for (var key in obj) {
     sum += Math.pow(obj[key], 2);
@@ -14,6 +14,14 @@ Math.normalize = function (obj) {
   }
   
   return obj;
+};
+Math.len = function (obj) {
+  var sum = 0;
+  for (var key in obj) {
+    sum += Math.pow(obj[key], 2);
+  }
+  
+  return Math.sqrt(sum);
 };
 
 var Axis2 = function (x = 0, y = 0) {
@@ -69,6 +77,7 @@ var Particle = function (canvas, x, y, z, size, color) {
   this.class = 'Particle';
   
   this.transform = new Transform(new Axis3(x, y, z));
+  this.lastTransform = new Transform(new Axis3(x, y, z));
   this.size = size;
   this.color = color;
   
@@ -83,6 +92,13 @@ Particle.prototype = {
     var size = this.size * ratio;
     
     return size;
+  },
+  velocity : function () {
+    return {
+      x: this.transform.position.x - this.lastTransform.position.x,
+      y: this.transform.position.y - this.lastTransform.position.y,
+      z: this.transform.position.z - this.lastTransform.position.z
+    };
   },
   remove : function () {
     for (var i = 0; i < entities.length; i++) {
@@ -125,8 +141,13 @@ Canvas.prototype = {
     
     this['drawBackground']();
     for (var i = 0; i < this.entities.length; i++) {
-      if (this.entities[i] && this.entities[i].transform.position.z > this.camera.position.z) {
-        this['draw' + this.entities[i].class](this.entities[i]);
+      if (this.entities[i]) {
+        for (var key in this.entities[i].transform.position) {
+          this.entities[i].lastTransform.position[key] = this.entities[i].transform.position[key];
+        }
+        if (this.entities[i].transform.position.z > this.camera.position.z) {
+          this['draw' + this.entities[i].class](this.entities[i]);
+        }
       }
     }
   }

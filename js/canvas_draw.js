@@ -56,7 +56,7 @@ Paint.init = function () {
 
 Paint.tick = 1;
 Paint.painting = function () {
-  var rotateAxis = Math.normalize(new Axis3(0, 1, 0.1));
+  var rotateAxis = Math.norm(new Axis3(0, 1, 0.1));
   if (this.tick % 120 == 0) {
     var points = formCube();
     for (var i = 0; i < this.canvas.entities.length; i++) {
