@@ -135,19 +135,20 @@ Canvas.prototype = {
     canvases.push(this);
   },
   draw : function () {
-    this.entities.sort(function (a, b) {
+    var entitiesCopy = this.entities.slice();
+    entitiesCopy.sort(function (a, b) {
       return b.transform.position.z - a.transform.position.z;
     });
 
     this['drawBackground']();
-    for (var i = 0; i < this.entities.length; i++) {
+    for (var i = 0; i < entitiesCopy.length; i++) {
       if (this.entities[i]) {
         for (var key in this.entities[i].transform.position) {
           this.entities[i].lastTransform.position[key] = this.entities[i].transform.position[key];
         }
-        if (this.entities[i].transform.position.z > this.camera.position.z) {
-          this['draw' + this.entities[i].class](this.entities[i]);
-        }
+      }
+      if (entitiesCopy[i] && entitiesCopy[i].transform.position.z > this.camera.position.z) {
+        this['draw' + entitiesCopy[i].class](entitiesCopy[i]);
       }
     }
   }
