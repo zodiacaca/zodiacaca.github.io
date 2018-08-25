@@ -9,11 +9,15 @@ Math.norm = function (obj) {
   for (var key in obj) {
     sum += Math.pow(obj[key], 2);
   }
-  for (var key in obj) {
-    obj[key] = obj[key] / Math.sqrt(sum);
-  }
+  if (sum == 0) {
+    return obj;
+  } else {
+    for (var key in obj) {
+      obj[key] = obj[key] / Math.sqrt(sum);
+    }
 
-  return obj;
+    return obj;
+  }
 };
 Math.len = function (obj) {
   var sum = 0;
