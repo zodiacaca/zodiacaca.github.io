@@ -5,7 +5,7 @@ function formSphere() {
     var alpha = Math.random() * Math.rad(360); // xy
     var beta = Math.random() * Math.rad(360);  // vertical plane
 
-    var radius = 200;
+    var radius = 300;
     var pos = {
       x : radius * Math.cos(beta) * Math.cos(alpha),
       y : radius * Math.cos(beta) * Math.sin(alpha),
@@ -58,12 +58,12 @@ Paint.tick = 1;
 var maxV = 6;
 Paint.painting = function () {
   var rotateAxis = Math.norm(new Axis3(0, 1, 0.1));
-  if (this.tick % 240 == 0) {
+  if (this.tick % 480 == 0) {
     this.desiredPositions = formCube();
     for (var i = 0; i < this.desiredPositions.length; i++) {
       this.desiredPositions[i].rotateAroundAxis(rotateAxis, Math.rad(this.tick * 0.2));
     }
-  } else if (this.tick % 120 == 0) {
+  } else if (this.tick % 240 == 0) {
     this.desiredPositions = formSphere();
     for (var i = 0; i < this.desiredPositions.length; i++) {
       this.desiredPositions[i].rotateAroundAxis(rotateAxis, Math.rad(this.tick * 0.2));

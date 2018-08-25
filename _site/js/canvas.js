@@ -23,6 +23,15 @@ Math.len = function (obj) {
 
   return Math.sqrt(sum);
 };
+Math.clamp = function (num, min, max) {
+  if (num > max) {
+    return max;
+  } else if (num < min) {
+    return min;
+  } else {
+    return num;
+  }
+};
 
 var Axis2 = function (x = 0, y = 0) {
   this.x = x;
