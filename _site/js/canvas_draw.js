@@ -83,7 +83,6 @@ function lerpVector(maxLength, vFrom, vTo) {
     vTo.y - vFrom.y,
     vTo.z - vFrom.z
   );
-  var acc = Math.len(path);
   var pathNorm = Math.norm(path);
   for (var key in pathNorm) {
     pathNorm[key] *= maxLength;
