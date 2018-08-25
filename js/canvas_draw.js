@@ -73,7 +73,7 @@ Paint.painting = function () {
     this.desiredPositions[i].rotateAroundAxis(rotateAxis, Math.rad(0.2));
   }
   for (var i = 0; i < this.canvas.entities.length; i++) {
-    transformLerp(this.canvas.entities[i].transform, this.desiredPositions[i]);
+    lerpVector(maxV, this.canvas.entities[i].transform.position, this.desiredPositions[i].position);
   }
   // console.log(Math.len(this.canvas.entities[0].velocity()));
   // console.log(this.canvas.entities[0].velocity());
@@ -82,18 +82,18 @@ Paint.painting = function () {
 
 Render.init();
 
-function transformLerp(trFrom, trTo) {
+function lerpVector(maxLength, vFrom, vTo) {
   var path = new Axis3(
-    trTo.position.x - trFrom.position.x,
-    trTo.position.y - trFrom.position.y,
-    trTo.position.z - trFrom.position.z
+    vTo.x - vFrom.x,
+    vTo.y - vFrom.y,
+    vTo.z - vFrom.z
   );
   var pathNorm = Math.norm(path);
   for (var key in pathNorm) {
-    pathNorm[key] *= maxV;
+    pathNorm[key] *= maxLength;
   }
-  for (var key in trFrom.position) {
-    trFrom.position[key] += pathNorm[key];
+  for (var key in vFrom) {
+    vFrom[key] += pathNorm[key];
   }
 };
 

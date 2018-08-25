@@ -62,12 +62,7 @@ Transform.prototype = {
     this.position.z = w * (u * x + v * y + w * z) * (1 - cosTheta) + z * cosTheta + (u * y - v * x) * sinTheta;
   },
   getRelativePosition: function (canvas) {
-    var point = new Axis2();
-    for (var key in point) {
-      point[key] = this.position[key] - canvas.camera.offset[key];
-    }
-
-    return point;
+    return new Axis3(this.position.x, this.position.y, this.position.z - canvas.camera.position.z);
   },
   get2D: function (canvas) {
     var point = new Axis2();
@@ -134,8 +129,7 @@ Canvas.prototype = {
     this.context = this.$canvas.get(0).getContext('2d');
 
     this.camera = {
-      position: { x: 0, y: 0, z: -this.width / 2 },
-      offset: { x: 0, y: 0, z: 0 }
+      position: { x: 0, y: 0, z: -this.width / 2 }
     };
     this.offset = { x: this.width * 0.5, y: this.height * 0.5 };
 
