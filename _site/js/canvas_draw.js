@@ -43,11 +43,6 @@ Paint.init = function () {
 
   var hsl = 'hsl(%hue, 100%, 70%)';
 
-  // var points = formSphere();
-  // for (var i = 0; i < Math.pow(9, 3); i++) {
-    // new Particle(this.canvas, points[i].x, points[i].y, points[i].z, 10, hsl.replace('%hue', 255 - i * 0.4));
-  // }
-
  this.desiredPositions = formCube();
   for (var i = 0; i < Math.pow(9, 3); i++) {
     new Particle(this.canvas, 0, 0, 0, 10, hsl.replace('%hue', 220 - i * 0.1));
@@ -88,6 +83,7 @@ function lerpVector(maxLength, vFrom, vTo) {
     vTo.y - vFrom.y,
     vTo.z - vFrom.z
   );
+  var acc = Math.len(path);
   var pathNorm = Math.norm(path);
   for (var key in pathNorm) {
     pathNorm[key] *= maxLength;
