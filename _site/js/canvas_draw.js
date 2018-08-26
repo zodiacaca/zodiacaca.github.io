@@ -70,8 +70,8 @@ Paint.painting = function () {
   for (var i = 0; i < this.canvas.entities.length; i++) {
     lerpVector(maxV, this.canvas.entities[i].transform.position, this.desiredPositions[i].position);
   }
-  // console.log(Math.len(this.canvas.entities[0].velocity()));
-  // console.log(this.canvas.entities[0].velocity());
+  // console.log(Math.len(this.canvas.entities[0].getVelocity()));
+  // console.log(this.canvas.entities[0].getVelocity());
   this.tick++;
 };
 

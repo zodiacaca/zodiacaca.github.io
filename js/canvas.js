@@ -104,7 +104,7 @@ Particle.prototype = {
 
     return size;
   },
-  velocity : function () {
+  getVelocity : function () {
     return {
       x: this.transform.position.x - this.lastTransform.position.x,
       y: this.transform.position.y - this.lastTransform.position.y,
