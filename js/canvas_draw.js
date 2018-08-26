@@ -16,7 +16,7 @@ function formSphere() {
   }
 
   return points;
-}
+};
 
 function formCube() {
   var points = [];
@@ -35,7 +35,7 @@ function formCube() {
   }
 
   return points;
-}
+};
 
 Paint.init = function () {
   this.canvas = new Canvas($('.card-item')[0]);

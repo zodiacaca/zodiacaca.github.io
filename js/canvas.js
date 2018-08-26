@@ -66,15 +66,18 @@ Transform.prototype = {
     this.position.z = w * (u * x + v * y + w * z) * (1 - cosTheta) + z * cosTheta + (u * y - v * x) * sinTheta;
   },
   getRelativePosition: function (canvas) {
-    return new Axis3(this.position.x, this.position.y, this.position.z - canvas.camera.position.z);
+    this.distance = this.position.z - (canvas.camera.position.z + canvas.camera.offsetZ);
+    
+    return new Axis3(this.position.x, this.position.y, this.distance);
   },
   get2D: function (canvas) {
-    var point = new Axis2();
+    var point = new Axis3();
     var viewPosition = this.getRelativePosition(canvas);
-    var ratio = Math.abs(canvas.camera.position.z) / (this.position.z - canvas.camera.position.z);
-    for (var key in point) {
-      point[key] = viewPosition[key] * ratio;
-    }
+    var ratio = Math.abs(canvas.camera.position.z) / this.distance;
+
+    point.x = viewPosition.x * ratio;
+    point.y = viewPosition.y * ratio;
+    point.z = viewPosition.z;
 
     return point;
   }
@@ -96,7 +99,7 @@ Particle.prototype = {
     canvas.entities.push(this);
   },
   getPerceivedSize : function (canvas) {
-    var ratio = Math.abs(canvas.camera.position.z) / (this.transform.position.z - canvas.camera.position.z);
+    var ratio = Math.abs(canvas.camera.position.z) / this.transform.distance;
     var size = this.size * ratio;
 
     return size;
@@ -133,8 +136,10 @@ Canvas.prototype = {
     this.context = this.$canvas.get(0).getContext('2d');
 
     this.camera = {
-      position: { x: 0, y: 0, z: -this.width / 2 }
+      position: { x: 0, y: 0, z: -this.width / 2 },
+      offsetZ: 0
     };
+    this.changeFOV(90);
     this.offset = { x: this.width * 0.5, y: this.height * 0.5 };
 
     this.background = 'rgba(0, 0, 255, 0)';
@@ -154,18 +159,26 @@ Canvas.prototype = {
           this.entities[i].lastTransform.position[key] = this.entities[i].transform.position[key];
         }
       }
-      if (entitiesCopy[i] && entitiesCopy[i].transform.position.z > this.camera.position.z) {
-        this['draw' + entitiesCopy[i].class](entitiesCopy[i]);
+      if (entitiesCopy[i]) {
+        var pos = entitiesCopy[i].transform.get2D(this);
+        if (pos.z > 0) {
+          this['draw' + entitiesCopy[i].class](entitiesCopy[i], pos);
+        }
       }
     }
   }
+};
+Canvas.prototype.changeFOV = function (fov) {
+  this.FOV = fov;
+
+  var tan = Math.tan(Math.rad(fov / 2));
+  this.camera.offsetZ = -(tan * this.width / 2 - this.width / 2);
 };
 Canvas.prototype.drawBackground = function () {
   this.context.fillStyle = this.background;
   this.context.fillRect(0, 0, this.width, this.height);
 };
-Canvas.prototype.drawParticle = function (entity) {
-  var pos = entity.transform.get2D(this);
+Canvas.prototype.drawParticle = function (entity, pos) {
   var size = entity.getPerceivedSize(this);
 
   this.context.beginPath();
