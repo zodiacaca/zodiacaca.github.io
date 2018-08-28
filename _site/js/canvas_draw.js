@@ -37,6 +37,7 @@ function formCube() {
   return points;
 };
 
+var velDelay = [];
 Paint.init = function () {
   this.canvas = new Canvas($('.card-item')[0]);
   this.canvas.background = 'rgba(0, 0, 15, 0.2)';
@@ -46,11 +47,11 @@ Paint.init = function () {
  this.desiredPositions = formCube();
   for (var i = 0; i < Math.pow(9, 3); i++) {
     new Particle(this.canvas, 0, 0, 0, 10, hsl.replace('%hue', 220 - i * 0.1));
+    velDelay.push(new Axis3());
   }
 };
 
 Paint.tick = 1;
-var maxV = 6;
 Paint.painting = function () {
   var rotateAxis = Math.norm(new Axis3(0, 1, 0.1));
   if (this.tick % 480 == 0) {
@@ -68,7 +69,7 @@ Paint.painting = function () {
     this.desiredPositions[i].rotateAroundAxis(rotateAxis, Math.rad(0.2));
   }
   for (var i = 0; i < this.canvas.entities.length; i++) {
-    lerpVector(maxV, this.canvas.entities[i].transform.position, this.desiredPositions[i].position);
+    lerpVector(i, this.canvas.entities[i].transform.position, this.desiredPositions[i].position);
   }
   // console.log(Math.len(this.canvas.entities[0].getVelocity()));
   // console.log(this.canvas.entities[0].getVelocity());
@@ -77,18 +78,18 @@ Paint.painting = function () {
 
 Render.init();
 
-function lerpVector(maxLength, vFrom, vTo) {
+function lerpVector(i, vFrom, vTo) {
   var path = new Axis3(
     vTo.x - vFrom.x,
     vTo.y - vFrom.y,
     vTo.z - vFrom.z
   );
-  var pathNorm = Math.norm(path);
-  for (var key in pathNorm) {
-    pathNorm[key] *= maxLength;
+  for (var key in velDelay[i]) {
+    velDelay[i][key] += path[key] * 0.01;
+    velDelay[i][key] *= 0.9;
   }
   for (var key in vFrom) {
-    vFrom[key] += pathNorm[key];
+    vFrom[key] += velDelay[i][key];
   }
 };
 
