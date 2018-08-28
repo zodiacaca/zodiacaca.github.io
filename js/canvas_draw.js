@@ -39,8 +39,8 @@ function formCube() {
 
 var velDelay = [];
 Paint.init = function () {
-  this.canvas = new Canvas($('.card-item')[0]);
-  this.canvas.background = 'rgba(0, 0, 15, 0.2)';
+  this.canvas = new Canvas($('body')[0], true);
+  this.canvas.background = 'rgba(0, 0, 15, 1)';
 
   var hsl = 'hsl(%hue, 100%, 70%)';
 

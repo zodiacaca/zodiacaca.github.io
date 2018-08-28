@@ -52,7 +52,7 @@
   function sceneOpen() {
     // main parts
     $("#nav-slider").css("transform", "translateX(-100%)");
-    $("#board-slider").css("background-color", "#333");
+    $("#board-slider").css("background-color", "rgba(50, 50, 50, 0.2)");
     $("#board-slider").css("transform", "translateX(" + $("#nav-slider").width() + "px)");
     $("#board-content").css("left", 0);
     // tag
@@ -92,9 +92,9 @@
       $(".card-item")[i].style.transform = "scale(" + scale + ", " + scale + ")";
       $(".card-item")[i].style.zIndex = zIndex - Math.abs(level);
       if (i == selected) {
-        $(".card-item")[i].style.boxShadow = "0 0 2rem 0.8rem #222";
+        $(".card-item")[i].style.boxShadow = "0 0 2rem 0.8rem rgba(0, 0, 0, 0.7)";
       } else {
-        $(".card-item")[i].style.boxShadow = "0 0 1rem 0.4rem #222";
+        $(".card-item")[i].style.boxShadow = "0 0 1rem 0.4rem rgba(0, 0, 0, 0.7)";
       }
       
     }

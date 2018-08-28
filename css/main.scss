@@ -38,10 +38,10 @@ $fontColor: (
   tag-button-hover: #f59393
 );
 $bgColor: (
-  body: #444,
-  nav: #555,
-  slider: #333, // tag-button below and board-slider in js same value
-  tag-button-layer1: linear-gradient(to right, #333 0%, transparent 5%),
+  body: rgba(70, 70, 70, 1),
+  nav: rgba(85, 85, 85, 0),
+  slider: rgba(50, 50, 50, 0.2), // tag-button below and board-slider in js same value
+  tag-button-layer1: linear-gradient(to right, rgba(50, 50, 50, 0.2) 0%, transparent 5%),
   tag-button-layer2: linear-gradient(145deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%),
   tag-button-hover: linear-gradient(to right, #fff, #fff),
   card-item: #555
@@ -50,7 +50,7 @@ $borderColor: (
   tag-pool: #666
 );
 $shadowColor: (
-  card-item: #222
+  card-item: rgba(0, 0, 0, 0.7) // changed in js
 );
 
 

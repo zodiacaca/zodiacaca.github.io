@@ -67,7 +67,7 @@ Transform.prototype = {
   },
   getRelativePosition: function (canvas) {
     this.distance = this.position.z - (canvas.camera.position.z + canvas.camera.offsetZ);
-    
+
     return new Axis3(this.position.x, this.position.y, this.distance);
   },
   get2D: function (canvas) {
@@ -120,19 +120,24 @@ Particle.prototype = {
   }
 };
 
-var Canvas = function (container) {
+var Canvas = function (container, prepend = false) {
   this.$container = $(container);
 
   this.entities = [];
 
-  this.setup();
+  this.setup(prepend);
 };
 Canvas.prototype = {
-  setup : function () {
+  setup : function (pre) {
     this.width = this.$container.width();
     this.height = this.$container.height();
 
-    this.$canvas = $('<canvas />').attr({ width: this.width, height: this.height }).appendTo(this.$container);
+    this.$canvas = $('<canvas />').attr({ width: this.width, height: this.height });
+    if (pre) {
+      this.$canvas.prependTo(this.$container);
+    } else {
+      this.$canvas.appendTo(this.$container);
+    }
     this.context = this.$canvas.get(0).getContext('2d');
 
     this.camera = {
