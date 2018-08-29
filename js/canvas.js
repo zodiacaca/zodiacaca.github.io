@@ -186,10 +186,14 @@ Canvas.prototype.drawBackground = function () {
 Canvas.prototype.drawParticle = function (entity, pos) {
   var size = entity.getPerceivedSize(this);
 
+  var radialGradient = this.context.createRadialGradient(pos.x + this.offset.x, pos.y + this.offset.y, 0, pos.x + this.offset.x, pos.y + this.offset.y, size / 2);
+  radialGradient.addColorStop(0, entity.color);
+  radialGradient.addColorStop(0.9, 'rgba(0, 0, 0, 0)');
+  radialGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
   this.context.beginPath();
-  this.context.fillStyle = entity.color;
-  this.context.arc(pos.x + this.offset.x, pos.y + this.offset.y, size / 2, 0, Math.rad(360));
-  this.context.fill();
+  this.context.fillStyle = radialGradient;
+  this.context.fillRect(pos.x + this.offset.x - size / 2, pos.y + this.offset.y - size / 2, size, size);
 };
 
 var Paint = {

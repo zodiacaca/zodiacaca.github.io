@@ -46,7 +46,7 @@ Paint.init = function () {
 
  this.desiredPositions = formCube();
   for (var i = 0; i < Math.pow(9, 3); i++) {
-    new Particle(this.canvas, 0, 0, 0, 2, hsl.replace('%hue', 220 - i * 0.1));
+    new Particle(this.canvas, 0, 0, 0, 4, hsl.replace('%hue', 220 - i * 0.1));
     velDelay.push(new Axis3());
   }
 };
@@ -54,17 +54,6 @@ Paint.init = function () {
 Paint.tick = 1;
 Paint.painting = function () {
   var rotateAxis = Math.norm(new Axis3(0, 1, 0.1));
-  if (this.tick % 480 == 0) {
-    this.desiredPositions = formCube();
-    for (var i = 0; i < this.desiredPositions.length; i++) {
-      this.desiredPositions[i].rotateAroundAxis(rotateAxis, Math.rad(this.tick * 0.2));
-    }
-  } else if (this.tick % 240 == 0) {
-    this.desiredPositions = formSphere();
-    for (var i = 0; i < this.desiredPositions.length; i++) {
-      this.desiredPositions[i].rotateAroundAxis(rotateAxis, Math.rad(this.tick * 0.2));
-    }
-  }
   for (var i = 0; i < this.desiredPositions.length; i++) {
     this.desiredPositions[i].rotateAroundAxis(rotateAxis, Math.rad(0.2));
   }
