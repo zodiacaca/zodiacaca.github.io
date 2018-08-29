@@ -5,7 +5,7 @@ function formSphere() {
     var alpha = Math.random() * Math.rad(360); // xy
     var beta = Math.random() * Math.rad(360);  // vertical plane
 
-    var radius = 300;
+    var radius = 550;
     var pos = {
       x : radius * Math.cos(beta) * Math.cos(alpha),
       y : radius * Math.cos(beta) * Math.sin(alpha),
@@ -24,9 +24,9 @@ function formCube() {
     for (var ii = -4; ii <= 4; ii++) {
       for (var iii = -4; iii <= 4; iii++) {
         var pos = {
-          x : i * 80,
-          y : ii * 80,
-          z : iii * 80
+          x : i * 160,
+          y : ii * 160,
+          z : iii * 160
         };
 
         points.push(new Transform(new Axis3(pos.x, pos.y, pos.z)));
@@ -46,7 +46,7 @@ Paint.init = function () {
 
  this.desiredPositions = formCube();
   for (var i = 0; i < Math.pow(9, 3); i++) {
-    new Particle(this.canvas, 0, 0, 0, 10, hsl.replace('%hue', 220 - i * 0.1));
+    new Particle(this.canvas, 0, 0, 0, 2, hsl.replace('%hue', 220 - i * 0.1));
     velDelay.push(new Axis3());
   }
 };
