@@ -57,7 +57,7 @@
     $("#board-content").css("left", 0);
     // tags
     $("#tag-list").css("margin-right", 0);
-    $(".tag-item").css("background-position", -40 + "vw");
+    $(".tag-item").css("background-position", -35 + "vw");
   }
   
   /*

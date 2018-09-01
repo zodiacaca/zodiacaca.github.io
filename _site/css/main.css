@@ -124,7 +124,7 @@ body {
   border-radius: 0.2rem;
   opacity: 0.9;
   position: relative;
-  transition: all 800ms ease-out, background-position 2400ms ease-out; }
+  transition: all 800ms ease-out, background-position 1600ms ease-out; }
   .tag-item:hover {
     background-image: linear-gradient(to right, #fff, #fff); }
     .tag-item:hover label {
