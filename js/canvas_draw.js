@@ -1,35 +1,42 @@
 
-function formSphere() {
-  var points = [];
-  for (var i = 0; i < Math.pow(9, 3); i++) {
-    var alpha = Math.random() * Math.rad(360); // xy
-    var beta = Math.random() * Math.rad(360);  // vertical plane
-
-    var radius = 550;
-    var pos = {
-      x : radius * Math.cos(beta) * Math.cos(alpha),
-      y : radius * Math.cos(beta) * Math.sin(alpha),
-      z : radius * Math.sin(beta)
-    };
-
-    points.push(new Transform(new Axis3(pos.x, pos.y, pos.z)));
-  }
-
-  return points;
-};
+var colors = [];
 
 function formCube() {
+  var hsl = 'hsl(%hue, 100%, 60%)';
+  
   var points = [];
-  for (var i = -4; i <= 4; i++) {
-    for (var ii = -4; ii <= 4; ii++) {
-      for (var iii = -4; iii <= 4; iii++) {
+  
+  var gap = 160;
+  
+  for (var i = -2; i <= 2; i++) {
+    for (var ii = -2; ii <= 2; ii++) {
+      for (var iii = -2; iii <= 2; iii++) {
         var pos = {
-          x : i * 160,
-          y : ii * 160,
-          z : iii * 160
+          x: i * gap * 2,
+          y: ii * gap * 2,
+          z: iii * gap * 2
         };
+        var color = hsl.replace('%hue', 220 - points.length * 0.2);
 
         points.push(new Transform(new Axis3(pos.x, pos.y, pos.z)));
+        colors.push(color);
+      }
+    }
+  }
+
+  var blues = points.length;
+  for (var i = 0; i <= 4; i++) {
+    for (var ii = 0; ii <= 4; ii++) {
+      for (var iii = 0; iii < 4; iii++) {
+        var pos = {
+          x: (i - 2) * gap * 2,
+          y: (ii - 2) * gap * 2,
+          z: (iii - 2) * gap * 2 + gap
+        };
+        var color = hsl.replace('%hue', 10 + (points.length - blues) * 0.4);
+
+        points.push(new Transform(new Axis3(pos.x, pos.y, pos.z)));
+        colors.push(color);
       }
     }
   }
@@ -42,20 +49,22 @@ Paint.init = function () {
   this.canvas = new Canvas($('body')[0], true);
   this.canvas.background = 'rgba(0, 0, 15, 1)';
 
-  var hsl = 'hsl(%hue, 100%, 70%)';
-
- this.desiredPositions = formCube();
-  for (var i = 0; i < Math.pow(9, 3); i++) {
-    new Particle(this.canvas, 0, 0, 0, 4, hsl.replace('%hue', 220 - i * 0.1));
+  this.desiredPositions = formCube();
+  for (var i = 0; i < this.desiredPositions.length; i++) {
+    new Particle(this.canvas, 0, 0, 0, 3, colors[i]);
     velDelay.push(new Axis3());
   }
 };
 
 Paint.tick = 1;
 Paint.painting = function () {
-  var rotateAxis = Math.norm(new Axis3(0, 1, 0.1));
-  for (var i = 0; i < this.desiredPositions.length; i++) {
-    this.desiredPositions[i].rotateAroundAxis(rotateAxis, Math.rad(0.2));
+  var rotateAxis1 = Math.norm(new Axis3(0.1, 1, 0));
+  var rotateAxis2 = Math.norm(new Axis3(-0.1, 1, 0));
+  for (var i = 0; i < 125; i++) {
+    this.desiredPositions[i].rotateAroundAxis(rotateAxis1, Math.rad(-0.1));
+  }
+  for (var i = 125; i < this.desiredPositions.length; i++) {
+    this.desiredPositions[i].rotateAroundAxis(rotateAxis2, Math.rad(0.2));
   }
   for (var i = 0; i < this.canvas.entities.length; i++) {
     lerpVector(i, this.canvas.entities[i].transform.position, this.desiredPositions[i].position);

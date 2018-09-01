@@ -188,7 +188,7 @@ Canvas.prototype.drawParticle = function (entity, pos) {
 
   var radialGradient = this.context.createRadialGradient(pos.x + this.offset.x, pos.y + this.offset.y, 0, pos.x + this.offset.x, pos.y + this.offset.y, size / 2);
   radialGradient.addColorStop(0, entity.color);
-  radialGradient.addColorStop(0.9, 'rgba(0, 0, 0, 0)');
+  radialGradient.addColorStop(0.2, entity.color);
   radialGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
   this.context.beginPath();
