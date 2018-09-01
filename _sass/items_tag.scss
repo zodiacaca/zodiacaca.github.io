@@ -2,8 +2,10 @@
 #tag-list {
   list-style-type: none;
   float: right;
+  margin-right: -100%;
   width: elementSize(tag-list-width);
   height: auto;
+  transition: all #{ 1200 * $durationMulti }ms ease-out;
 }
 
 .tag-item {
@@ -13,15 +15,16 @@
   margin-bottom: 0.6rem;
   width: auto;
   height: auto;
-  background-image: bgColor(tag-button-layer1), bgColor(tag-button-layer2);
+  background-image: bgColor(tag-button);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% 100%;
-  background-position: #{ $poolWidth*100 }vw 0;
+  background-size: 100%;
+  background-position: 0;
   border-radius: 0.2rem;
   opacity: 0.9;
   position: relative;
-  transition: all #{ 800 * $durationMulti }ms ease-out;
+  transition: all #{ 800 * $durationMulti }ms ease-out,
+    background-position #{ 2400 * $durationMulti }ms ease-out;
 
   &:hover {
     background-image: bgColor(tag-button-hover);

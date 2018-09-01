@@ -94,7 +94,8 @@ body {
         width: 35%;
         height: auto;
         border-right: medium solid #666;
-        position: absolute; }
+        position: absolute;
+        overflow: hidden; }
       #main-frame #board-slider #board-content #card-pool {
         width: 65%;
         position: absolute;
@@ -103,8 +104,10 @@ body {
 #tag-list {
   list-style-type: none;
   float: right;
+  margin-right: -100%;
   width: 90%;
-  height: auto; }
+  height: auto;
+  transition: all 1200ms ease-out; }
 
 .tag-item {
   display: inline-block;
@@ -113,15 +116,15 @@ body {
   margin-bottom: 0.6rem;
   width: auto;
   height: auto;
-  background-image: linear-gradient(to right, rgba(50, 50, 50, 0.2) 0%, transparent 5%), linear-gradient(145deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%);
+  background-image: linear-gradient(145deg, #0fb8ad 40%, #1fc8db 50%, #2cb5e8 60%);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% 100%;
-  background-position: 35vw 0;
+  background-size: 100%;
+  background-position: 0;
   border-radius: 0.2rem;
   opacity: 0.9;
   position: relative;
-  transition: all 800ms ease-out; }
+  transition: all 800ms ease-out, background-position 2400ms ease-out; }
   .tag-item:hover {
     background-image: linear-gradient(to right, #fff, #fff); }
     .tag-item:hover label {

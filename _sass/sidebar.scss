@@ -49,6 +49,7 @@ body {
         border-right: medium solid borderColor(tag-pool);
         // it seems height:auto needs position:relative elements have something below them
         position: absolute;
+        overflow: hidden;
       }
       
       #card-pool {

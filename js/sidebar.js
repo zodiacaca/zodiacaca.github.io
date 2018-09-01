@@ -55,18 +55,9 @@
     $("#board-slider").css("background-color", "rgba(50, 50, 50, 0.2)");
     $("#board-slider").css("transform", "translateX(" + $("#nav-slider").width() + "px)");
     $("#board-content").css("left", 0);
-    // tag
-    var left = getTagListLeftBorder();
-    setTimeout(function () {
-      $(".tag-item").css("background-position", (left - 5) + "vw 0");
-    }, 600);
-  }
-
-  function getTagListLeftBorder() {
-    // x position has been translated
-    var left = ($("#tag-pool").width() - $("#tag-list").width()) / bodyWidth * 100;
-    
-    return left;
+    // tags
+    $("#tag-list").css("margin-right", 0);
+    $(".tag-item").css("background-position", -40 + "vw");
   }
   
   /*

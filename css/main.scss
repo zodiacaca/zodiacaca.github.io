@@ -40,9 +40,8 @@ $fontColor: (
 $bgColor: (
   body: rgba(70, 70, 70, 1),
   nav: rgba(85, 85, 85, 0.2),
-  slider: rgba(50, 50, 50, 0.2), // tag-button below and board-slider in js same value
-  tag-button-layer1: linear-gradient(to right, rgba(50, 50, 50, 0.2) 0%, transparent 5%),
-  tag-button-layer2: linear-gradient(145deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%),
+  slider: rgba(50, 50, 50, 0.2),
+  tag-button: linear-gradient(145deg, #0fb8ad 40%, #1fc8db 50%, #2cb5e8 60%),
   tag-button-hover: linear-gradient(to right, #fff, #fff),
   card-item: #555
 );
