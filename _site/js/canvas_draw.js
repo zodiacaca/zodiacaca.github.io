@@ -6,15 +6,15 @@ function formCube() {
   
   var points = [];
   
-  var gap = 160;
+  var gap = 320;
   
   for (var i = -2; i <= 2; i++) {
     for (var ii = -2; ii <= 2; ii++) {
       for (var iii = -2; iii <= 2; iii++) {
         var pos = {
-          x: i * gap * 2,
-          y: ii * gap * 2,
-          z: iii * gap * 2
+          x: i * gap - gap / 4,
+          y: ii * gap,
+          z: iii * gap
         };
         var color = hsl.replace('%hue', 220 - points.length * 0.2);
 
@@ -25,13 +25,13 @@ function formCube() {
   }
 
   var blues = points.length;
-  for (var i = 0; i <= 4; i++) {
-    for (var ii = 0; ii <= 4; ii++) {
-      for (var iii = 0; iii < 4; iii++) {
+  for (var i = -2; i <= 2; i++) {
+    for (var ii = -2; ii <= 2; ii++) {
+      for (var iii = -2; iii <= 2; iii++) {
         var pos = {
-          x: (i - 2) * gap * 2,
-          y: (ii - 2) * gap * 2,
-          z: (iii - 2) * gap * 2 + gap
+          x: i * gap + gap / 4,
+          y: ii * gap,
+          z: iii * gap
         };
         var color = hsl.replace('%hue', 10 + (points.length - blues) * 0.4);
 
