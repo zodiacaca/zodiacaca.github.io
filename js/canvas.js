@@ -49,6 +49,11 @@ var Axis3 = function (x = 0, y = 0, z = 0) {
 var Transform = function (vector, angle) {
   this.position = vector;
   this.rotation = angle;
+  this.row = [];
+  this.row[1] = [1, 0, 0, vector.x];
+  this.row[2] = [0, 1, 0, vector.y];
+  this.row[3] = [0, 0, 1, vector.z];
+  this.row[4] = [0, 0, 0, 1];
 };
 Transform.prototype = {
   rotateAroundAxis : function (vector, angle) {
@@ -141,7 +146,7 @@ Canvas.prototype = {
     this.context = this.$canvas.get(0).getContext('2d');
 
     this.camera = {
-      position: { x: 0, y: 0, z: -this.width / 2 },
+      position: new Axis3(0, 0, -this.width / 2),
       offsetZ: 0
     };
     this.changeFOV(90);
