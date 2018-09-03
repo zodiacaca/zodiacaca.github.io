@@ -126,13 +126,14 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
-  background-position: 0;
+  background-position: -35vw;
   border-radius: 0.2rem;
   opacity: 0.9;
   position: relative;
-  transition: all 800ms ease-out, background-position 1600ms ease-out; }
+  animation: 1.6s ease-out 0s raySweep;
+  transition: all 800ms ease-out, background-position 800ms ease-out; }
   .tag-item:hover {
-    background-image: linear-gradient(to right, #fff, #fff); }
+    background-position: -30vw; }
     .tag-item:hover label {
       color: #f59393; }
   .tag-item .tag-item-input {
@@ -146,6 +147,11 @@ body {
     padding: 0 1rem;
     transition: all 200ms ease-out; }
 
+@keyframes raySweep {
+  from {
+    background-position: 0; }
+  to {
+    background-position: -35vw; } }
 #card-list {
   list-style-type: none;
   width: 90%;

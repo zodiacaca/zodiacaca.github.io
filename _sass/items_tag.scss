@@ -19,15 +19,16 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
-  background-position: 0;
+  background-position: -35vw;
   border-radius: 0.2rem;
   opacity: 0.9;
   position: relative;
+  animation: 1.6s ease-out 0s raySweep;
   transition: all #{ 800 * $durationMulti }ms ease-out,
-    background-position #{ 1600 * $durationMulti }ms ease-out;
+    background-position #{ 800 * $durationMulti }ms ease-out;
 
   &:hover {
-    background-image: bgColor(tag-button-hover);
+    background-position: -30vw;
     label {
       color: fontColor(tag-button-hover);
     }
@@ -46,5 +47,10 @@
     padding: 0 1rem;
     transition: all #{ 200 * $durationMulti }ms ease-out;
   }
+}
+
+@keyframes raySweep {
+  from { background-position: 0; }
+  to { background-position: -35vw; }
 }
 
