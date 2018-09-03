@@ -6,7 +6,7 @@ function formCube(scrW) {
   
   var points = [];
   
-  for (var i = 0; i < 125; i++) {
+  for (var i = 0; i < 180; i++) {
     var pos = {
       x: (Math.random() * 2 - 1) * scrW * 0.5,
       y: (Math.random() * 2 - 1) * scrW * 0.5,
@@ -19,13 +19,13 @@ function formCube(scrW) {
   }
 
   var blues = points.length;
-  for (var i = 125; i < 250; i++) {
+  for (var i = 180; i < 360; i++) {
     var pos = {
       x: (Math.random() * 2 - 1) * scrW * 0.5,
       y: (Math.random() * 2 - 1) * scrW * 0.5,
       z: (Math.random() * 2 - 1) * scrW * 0.5
     };
-    var color = hsl.replace('%hue', 10 + (points.length - blues) * 0.4);
+    var color = hsl.replace('%hue', 10 + (points.length - blues) * 0.3);
 
     points.push(new Transform(new Axis3(pos.x, pos.y, pos.z)));
     colors.push(color);
@@ -37,7 +37,7 @@ function formCube(scrW) {
 var velDelay = [];
 Paint.init = function () {
   this.canvas = new Canvas($('body')[0], true);
-  this.canvas.background = 'rgba(0, 0, 15, 1)';
+  this.canvas.background = 'rgba(12, 10, 30, 1)';
 
   this.desiredPositions = formCube(this.canvas.width);
   for (var i = 0; i < this.desiredPositions.length; i++) {
@@ -48,7 +48,7 @@ Paint.init = function () {
 
 Paint.tick = 1;
 Paint.painting = function () {
-  for (var i = 0; i < 250; i++) {
+  for (var i = 0; i < 360; i++) {
     this.desiredPositions[i].rotateAroundAxis(new Axis3(0, 1, 0), Math.rad(0.2), new Axis3(-this.canvas.width / 4, 0, 0));
   }
   for (var i = 0; i < this.canvas.entities.length; i++) {
