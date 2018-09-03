@@ -49,26 +49,27 @@ var Axis3 = function (x = 0, y = 0, z = 0) {
 var Transform = function (vector, angle) {
   this.position = vector;
   this.rotation = angle;
-  this.row = [];
-  this.row[1] = [1, 0, 0, vector.x];
-  this.row[2] = [0, 1, 0, vector.y];
-  this.row[3] = [0, 0, 1, vector.z];
-  this.row[4] = [0, 0, 0, 1];
 };
 Transform.prototype = {
-  rotateAroundAxis : function (vector, angle) {
+  rotateAroundAxis : function (vector, angle, point = new Axis3()) {
     var x = this.position.x,
           y = this.position.y,
           z = this.position.z;
+    var a = point.x,
+          b = point.y,
+          c = point.z;
     var u = vector.x,
           v = vector.y,
           w = vector.z;
+    var u2 = Math.pow(u, 2),
+          v2 = Math.pow(v, 2),
+          w2 = Math.pow(w, 2);
     var sinTheta = Math.sin(angle),
           cosTheta = Math.cos(angle);
 
-    this.position.x = u * (u * x + v * y + w * z) * (1 - cosTheta) + x * cosTheta + (v * z - w * y) * sinTheta;
-    this.position.y = v * (u * x + v * y + w * z) * (1 - cosTheta) + y * cosTheta + (w * x - u * z) * sinTheta;
-    this.position.z = w * (u * x + v * y + w * z) * (1 - cosTheta) + z * cosTheta + (u * y - v * x) * sinTheta;
+    this.position.x = (a * (v2 + w2) - u * (b*v + c*w - u*x - v*y - w*z)) * (1 - cosTheta) + x * cosTheta + (-c*v + b*w - w*y + v*z) * sinTheta;
+    this.position.y = (b * (u2 + w2) - v * (a*u + c*w - u*x - v*y - w*z)) * (1 - cosTheta) + y * cosTheta + (c*u - a*w + w*x - u*z) * sinTheta;
+    this.position.z = (c * (u2 + v2) - w * (a*u + b*v - u*x - v*y - w*z)) * (1 - cosTheta) + z * cosTheta + (-b*u + a*v - v*x + u*y) * sinTheta;
   },
   getRelativePosition: function (canvas) {
     this.distance = this.position.z - (canvas.camera.position.z + canvas.camera.offsetZ);
