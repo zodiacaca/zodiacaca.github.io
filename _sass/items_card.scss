@@ -12,7 +12,7 @@
   height: elementSize(card-item-height);
   background-color: bgColor(card-item);
   // @include show-border();
-  box-shadow: 0 0 1rem 0.4rem shadowColor(card-item);
+  opacity: 0.9;
   position: absolute;
   top: 90vh;
   overflow: hidden;

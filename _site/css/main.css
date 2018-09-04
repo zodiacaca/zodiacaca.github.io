@@ -65,7 +65,7 @@ body {
   overflow: hidden;
   z-index: 0; }
   #main-frame #nav-slider {
-    padding: 0 0 1.4rem 0;
+    padding: 0 0 0.6rem 0;
     width: 20%;
     height: 100%;
     position: absolute;
@@ -133,7 +133,7 @@ body {
   animation: 1.6s ease-out 0s raySweep;
   transition: all 800ms ease-out, background-position 800ms ease-out; }
   .tag-item:hover {
-    background-position: -30vw; }
+    background-position: -40vw; }
     .tag-item:hover label {
       color: #f59393; }
   .tag-item .tag-item-input {
@@ -163,7 +163,7 @@ body {
   width: 95%;
   height: 28rem;
   background-color: #555;
-  box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.7);
+  opacity: 0.9;
   position: absolute;
   top: 90vh;
   overflow: hidden;
