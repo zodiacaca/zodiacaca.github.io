@@ -1,20 +1,21 @@
 
 #card-list {
   list-style-type: none;
+  padding: 0 0.5rem;
   width: elementSize(card-list-width);
+  background-color: bgColor(slider);
   position: relative;
 }
 
 .card-item {
   transform: translate3d(0, 0, 0);
-  margin: 0 ((100% - elementSize(card-item-width)) / 2);
+  margin: 0.1rem 0;
   width: elementSize(card-item-width);
   height: elementSize(card-item-height);
   background-color: bgColor(card-item);
   // @include show-border();
   opacity: 0.9;
-  position: absolute;
-  top: 90vh;
+  position: relative;
   overflow: hidden;
   transition:
     top #{ 400 * $durationMulti }ms ease-out,

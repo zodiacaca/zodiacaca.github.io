@@ -17,7 +17,7 @@
       if (e.deltaY > 0) {
         if (selected < $(".card-item").length - 1) { selected += 1 }
       }
-      selectCard();
+      // selectCard();
       
     }
     
@@ -25,7 +25,7 @@
   $(".card-item").click(function () {
     $(this).children(".overlay").css("display", "none");
     selected = $(this).index();
-    selectCard();
+    // selectCard();
   });
   $(".card-item").hover(function () {
     if (selected != $(this).index()) {
@@ -90,7 +90,7 @@
     }
   }
   setTimeout(function () {
-    selectCard();
+    // selectCard();
   }, 800);
   
   $("#card-pool").hover(function () {
