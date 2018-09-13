@@ -14,12 +14,13 @@
   height: elementSize(card-item-height);
   background-color: bgColor(card-item);
   // @include show-border();
-  opacity: 0.9;
+  opacity: 0.85;
   position: relative;
   overflow: hidden;
   transition:
     top #{ 400 * $durationMulti }ms ease-out,
-    transform #{ 400 * $durationMulti }ms ease-out
+    transform #{ 400 * $durationMulti }ms ease-out,
+    opacity #{ 400 * $durationMulti }ms ease-out
   ;
 }
 

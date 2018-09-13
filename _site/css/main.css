@@ -46,15 +46,6 @@ canvas {
   top: 0;
   left: 0; }
 
-.overlay {
-  display: none;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 255, 0.4);
-  position: absolute;
-  top: 0;
-  left: 0; }
-
 body {
   overflow: hidden; }
 
@@ -165,7 +156,7 @@ body {
   width: 100%;
   height: 12rem;
   background-color: #555;
-  opacity: 0.9;
+  opacity: 0.85;
   position: relative;
   overflow: hidden;
-  transition: top 400ms ease-out, transform 400ms ease-out; }
+  transition: top 400ms ease-out, transform 400ms ease-out, opacity 400ms ease-out; }
