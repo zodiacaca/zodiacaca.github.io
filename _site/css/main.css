@@ -187,3 +187,9 @@ body {
   position: relative;
   overflow: hidden;
   transition: top 400ms ease-out, transform 400ms ease-out, opacity 400ms ease-out; }
+  .card-item img {
+    width: 100%;
+    height: auto;
+    position: absolute; }
+  .card-item .card-context {
+    position: absolute; }

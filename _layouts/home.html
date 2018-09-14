@@ -65,7 +65,10 @@ layout: default
         <ul id="card-list">
           {% for post in site.posts %}
             <li class="card-item">
-              <img src={{ post.cover }} width="100%" height="auto"></img>
+              <img src={{ post.cover }}></img>
+              <div class="card-context">
+                <h2><a href={{ post.url }}>{{ post.title }}</a></h2>
+              </div>
             </li>
           {% endfor %}
         </ul>

@@ -21,5 +21,15 @@
     transform #{ 400 * $durationMulti }ms ease-out,
     opacity #{ 400 * $durationMulti }ms ease-out
   ;
+  
+  img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+  }
+  
+  .card-context {
+    position: absolute;
+  }
 }
 
