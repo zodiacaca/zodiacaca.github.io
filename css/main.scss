@@ -18,7 +18,7 @@
 $durationMulti: 1;
 
 $sideWidth: 0.2;
-$poolWidth: 0.42;
+$poolWidth: 0.4;
 $elementSize: (
   nav-width: percentage($sideWidth),
   board-content-width: percentage(1 - $sideWidth),
@@ -47,7 +47,7 @@ $bgColor: (
 );
 $borderColor: (
   nav-menu: linear-gradient(to right, hsl(220, 100%, 60%) 0%, hsl(10, 100%, 60%) 100%),
-  tag-pool: #666
+  tag-list: rgba(90, 90, 90, 0.9)
 );
 $shadowColor: (
   card-item: rgba(0, 0, 0, 0.7) // changed in js

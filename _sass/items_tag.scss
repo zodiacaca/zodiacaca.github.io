@@ -5,6 +5,7 @@
   margin-right: -100%;
   width: elementSize(tag-list-width);
   height: auto;
+  border-right: medium solid borderColor(tag-list);
   transition: all #{ 1200 * $durationMulti }ms ease-out;
 }
 

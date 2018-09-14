@@ -87,9 +87,9 @@ body {
       transition: all #{ 800 * $durationMulti }ms ease-out;
       
       #tag-pool {
+        padding: 0 0.3rem 0 0;
         width: elementSize(tag-pool-width);
         height: auto;
-        border-right: medium solid borderColor(tag-pool);
         // it seems height:auto needs position:relative elements have something below them
         position: absolute;
         overflow: hidden;
