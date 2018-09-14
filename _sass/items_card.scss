@@ -30,6 +30,10 @@
   
   .card-context {
     position: absolute;
+    
+    a {
+      @include simple-link(fontColor(card-title), fontColor(card-title-hover));
+    }
   }
 }
 

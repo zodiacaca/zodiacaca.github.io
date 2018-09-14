@@ -75,14 +75,14 @@ body {
         width: 100%;
         border-bottom: thin solid rgba(0, 0, 0, 0.2); }
         #main-frame #nav-slider #nav-menu .nav-menu-item a {
-          text-decoration: none;
           font-family: Quattrocento Sans;
           font-weight: 100;
           font-size: 1.2rem;
           line-height: 3;
-          color: rgba(32, 204, 223, 0.5);
           padding: 0 1.5rem;
           opacity: 0.85;
+          text-decoration: none;
+          color: rgba(32, 204, 223, 0.5);
           transition: all 400ms ease-out; }
           #main-frame #nav-slider #nav-menu .nav-menu-item a:link {
             color: rgba(32, 204, 223, 0.5); }
@@ -193,3 +193,15 @@ body {
     position: absolute; }
   .card-item .card-context {
     position: absolute; }
+    .card-item .card-context a {
+      text-decoration: none;
+      color: rgba(80, 80, 80, 0.9);
+      transition: all 400ms ease-out; }
+      .card-item .card-context a:link {
+        color: rgba(80, 80, 80, 0.9); }
+      .card-item .card-context a:visited {
+        color: rgba(80, 80, 80, 0.9); }
+      .card-item .card-context a:hover {
+        color: #323232; }
+      .card-item .card-context a:active {
+        color: rgba(80, 80, 80, 0.9); }

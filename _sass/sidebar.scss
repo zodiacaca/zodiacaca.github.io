@@ -35,28 +35,14 @@ body {
         border-bottom: thin solid rgba(0, 0, 0, 0.2);
         
         a {
-          text-decoration: none;
           font-family: Quattrocento Sans;
           font-weight: 100;
           font-size: elementSize(nav-menu-item-font);
           line-height: elementSize(nav-menu-item-line);
-          color: fontColor(nav-menu);
           padding: 0 1.5rem;
           opacity: 0.85;
-          transition: all #{ 400 * $durationMulti }ms ease-out;
           
-          &:link {
-            color: fontColor(nav-menu);
-          }
-          &:visited {
-            color: fontColor(nav-menu);
-          }
-          &:hover {
-            color: fontColor(tag-button-hover);
-          }
-          &:active {
-            color: fontColor(nav-menu);
-          }
+          @include simple-link(fontColor(nav-menu), fontColor(tag-button-hover));
         }
         
         &:first-child{

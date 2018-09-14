@@ -13,3 +13,22 @@
   border: medium solid grey;
 }
 
+@mixin simple-link($normal, $hover) {
+  text-decoration: none;
+  color: $normal;
+  transition: all #{ 400 * $durationMulti }ms ease-out;
+  
+  &:link {
+    color: $normal;
+  }
+  &:visited {
+    color: $normal;
+  }
+  &:hover {
+    color: $hover;
+  }
+  &:active {
+    color: $normal;
+  }
+}
+
