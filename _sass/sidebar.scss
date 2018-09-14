@@ -41,6 +41,19 @@ body {
           font-size: elementSize(nav-menu-item-font);
           line-height: elementSize(nav-menu-item-line);
           padding: 0 2rem;
+          
+          &:link {
+            color: hsla(186, 75%, 50%, 0.5)
+          }
+          &:visited {
+            color: hsla(186, 75%, 50%, 0.5)
+          }
+          &:hover {
+            color: hsla(186, 75%, 50%, 0.5)
+          }
+          &:active {
+            color: hsla(186, 75%, 50%, 0.5)
+          }
         }
         
         &:first-child{
