@@ -40,20 +40,22 @@ body {
           font-weight: 100;
           font-size: elementSize(nav-menu-item-font);
           line-height: elementSize(nav-menu-item-line);
-          padding: 0 2rem;
+          color: fontColor(nav-menu);
+          padding: 0 1.5rem;
           opacity: 0.85;
+          transition: all #{ 400 * $durationMulti }ms ease-out;
           
           &:link {
-            color: hsla(186, 75%, 50%, 0.5)
+            color: fontColor(nav-menu);
           }
           &:visited {
-            color: hsla(186, 75%, 50%, 0.5)
+            color: fontColor(nav-menu);
           }
           &:hover {
-            color: hsla(186, 75%, 50%, 0.5)
+            color: fontColor(tag-button-hover);
           }
           &:active {
-            color: hsla(186, 75%, 50%, 0.5)
+            color: fontColor(nav-menu);
           }
         }
         

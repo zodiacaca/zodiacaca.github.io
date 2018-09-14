@@ -80,14 +80,16 @@ body {
           font-weight: 100;
           font-size: 1.2rem;
           line-height: 3;
-          padding: 0 2rem;
-          opacity: 0.85; }
+          color: rgba(32, 204, 223, 0.5);
+          padding: 0 1.5rem;
+          opacity: 0.85;
+          transition: all 400ms ease-out; }
           #main-frame #nav-slider #nav-menu .nav-menu-item a:link {
             color: rgba(32, 204, 223, 0.5); }
           #main-frame #nav-slider #nav-menu .nav-menu-item a:visited {
             color: rgba(32, 204, 223, 0.5); }
           #main-frame #nav-slider #nav-menu .nav-menu-item a:hover {
-            color: rgba(32, 204, 223, 0.5); }
+            color: #f59393; }
           #main-frame #nav-slider #nav-menu .nav-menu-item a:active {
             color: rgba(32, 204, 223, 0.5); }
         #main-frame #nav-slider #nav-menu .nav-menu-item:first-child:before {
@@ -138,7 +140,7 @@ body {
   margin-bottom: 0.6rem;
   width: auto;
   height: auto;
-  background-image: linear-gradient(145deg, rgba(15, 189, 177, 0.5) 40%, #20ccdf 50%, rgba(32, 204, 223, 0.5) 60%);
+  background-image: linear-gradient(145deg, rgba(15, 189, 177, 0.5) 40%, #20ccdf 50%, rgba(32, 204, 223, 0.5) 58%, rgba(32, 204, 223, 0.8) 65%, rgba(32, 204, 223, 0.5) 68%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
@@ -150,7 +152,7 @@ body {
   animation: 1.6s ease-out 0s raySweep;
   transition: all 800ms ease-out, background-position 800ms ease-out; }
   .tag-item:hover {
-    background-position: -40vw; }
+    background-position: -42vw; }
     .tag-item:hover label {
       color: #f59393; }
   .tag-item .tag-item-input {

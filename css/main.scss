@@ -36,6 +36,7 @@ $elementSize: (
 
 $fontColor: (
   body: #48a770,
+  nav-menu: hsla(186, 75%, 50%, 0.5),
   tag-button: #fff,
   tag-button-hover: #f59393
 );
@@ -43,7 +44,7 @@ $bgColor: (
   body: rgba(70, 70, 70, 1),
   nav: rgba(40, 40, 40, 0.1),
   slider: rgba(0, 0, 0, 0.15),
-  tag-button: linear-gradient(145deg, hsla(176, 85%, 40%, 0.5) 40%, hsla(186, 75%, 50%, 1) 50%, hsla(186, 75%, 50%, 0.5) 60%)
+  tag-button: linear-gradient(145deg, hsla(176, 85%, 40%, 0.5) 40%, hsla(186, 75%, 50%, 1) 50%, hsla(186, 75%, 50%, 0.5) 58%, hsla(186, 75%, 50%, 0.8) 65%, hsla(186, 75%, 50%, 0.5) 68%)
 );
 $borderColor: (
   nav-menu: linear-gradient(to right, hsl(220, 100%, 60%) 0%, hsl(10, 100%, 60%) 100%),
