@@ -20,7 +20,6 @@
   function sceneOpen() {
     // main parts
     $("#nav-slider").css("transform", "translateX(-100%)");
-    $("#board-slider").css("background-color", "rgba(50, 50, 50, 0.2)");
     $("#board-slider").css("transform", "translateX(" + $("#nav-slider").width() + "px)");
     $("#board-content").css("left", 0);
     // tags

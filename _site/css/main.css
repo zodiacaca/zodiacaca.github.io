@@ -58,7 +58,7 @@ body {
   #main-frame #nav-slider {
     width: 20%;
     height: 98%;
-    background-color: rgba(85, 85, 85, 0.2);
+    background-color: rgba(60, 60, 60, 0.2);
     position: absolute;
     left: 20%;
     transition: all 800ms ease-out;
@@ -90,7 +90,7 @@ body {
   #main-frame #board-slider {
     width: 100%;
     height: 100%;
-    background-color: rgba(25, 25, 25, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
     transition: all 800ms ease-out;
     z-index: 10; }
@@ -160,7 +160,7 @@ body {
   list-style-type: none;
   padding: 0.2rem 1rem;
   width: 96%;
-  background-color: rgba(50, 50, 50, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   position: relative; }
 
 .card-item {
@@ -168,7 +168,6 @@ body {
   margin: 1px 0;
   width: 100%;
   height: 12rem;
-  background-color: #555;
   opacity: 0.9;
   position: relative;
   overflow: hidden;

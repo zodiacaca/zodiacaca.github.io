@@ -41,10 +41,9 @@ $fontColor: (
 );
 $bgColor: (
   body: rgba(70, 70, 70, 1),
-  nav: rgba(85, 85, 85, 0.2),
-  slider: rgba(50, 50, 50, 0.2),
-  tag-button: linear-gradient(145deg, hsla(176, 85%, 40%, 0.5) 40%, hsla(186, 75%, 50%, 1) 50%, hsla(186, 75%, 50%, 0.5) 60%),
-  card-item: #555
+  nav: rgba(60, 60, 60, 0.2),
+  slider: rgba(0, 0, 0, 0.2),
+  tag-button: linear-gradient(145deg, hsla(176, 85%, 40%, 0.5) 40%, hsla(186, 75%, 50%, 1) 50%, hsla(186, 75%, 50%, 0.5) 60%)
 );
 $borderColor: (
   nav-menu: linear-gradient(to right, hsl(220, 100%, 60%) 0%, hsl(10, 100%, 60%) 100%),
