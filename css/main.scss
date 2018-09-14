@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: Quattrocento Sans;
-  src: url(/fonts/quattrocento/QuattrocentoSans-Regular.woff);
+  src: url(/fonts/quattrocento/QuattrocentoSans-Regular.ttf);
 }
 
 @font-face {
@@ -18,16 +18,18 @@
 $durationMulti: 1;
 
 $sideWidth: 0.2;
-$poolWidth: 0.4;
+$poolWidth: 0.42;
 $elementSize: (
   nav-width: percentage($sideWidth),
   board-content-width: percentage(1 - $sideWidth),
+  nav-menu-item-font: 1.2rem,
+  nav-menu-item-line: 3,
   tag-pool-width: percentage($poolWidth),
   tag-list-width: 90%,
   tag-item-font: 1rem,
   tag-item-line: 2,
   card-pool-width: percentage(1 - $poolWidth),
-  card-list-width: 98%,
+  card-list-width: 96%,
   card-item-width: 100%,
   card-item-height: 12rem
 );

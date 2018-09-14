@@ -1,7 +1,7 @@
 
 #card-list {
   list-style-type: none;
-  padding: 0 0.5rem;
+  padding: 0.2rem 1rem;
   width: elementSize(card-list-width);
   background-color: bgColor(slider);
   position: relative;
@@ -9,12 +9,12 @@
 
 .card-item {
   transform: translate3d(0, 0, 0);
-  margin: 0.1rem 0;
+  margin: 1px 0;
   width: elementSize(card-item-width);
   height: elementSize(card-item-height);
   background-color: bgColor(card-item);
   // @include show-border();
-  opacity: 0.85;
+  opacity: 0.9;
   position: relative;
   overflow: hidden;
   transition:
