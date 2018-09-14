@@ -41,6 +41,7 @@ body {
           font-size: elementSize(nav-menu-item-font);
           line-height: elementSize(nav-menu-item-line);
           padding: 0 2rem;
+          opacity: 0.85;
           
           &:link {
             color: hsla(186, 75%, 50%, 0.5)
