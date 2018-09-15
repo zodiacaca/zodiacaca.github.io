@@ -31,11 +31,11 @@
   box-sizing: border-box; }
 
 body {
-  color: #48a770;
+  color: #fff;
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #464646; }
+  background-color: black; }
 
 div, nav, menu, ol, ul, li {
   margin: 0;
@@ -140,7 +140,7 @@ body {
   margin-bottom: 0.6rem;
   width: auto;
   height: auto;
-  background-image: linear-gradient(145deg, rgba(15, 189, 177, 0.5) 40%, #20ccdf 50%, rgba(32, 204, 223, 0.5) 58%, rgba(32, 204, 223, 0.8) 65%, rgba(32, 204, 223, 0.5) 68%);
+  background-image: linear-gradient(145deg, rgba(15, 189, 177, 0.5) 40%, rgba(32, 204, 223, 0.95) 50%, rgba(32, 204, 223, 0.5) 60%, rgba(32, 204, 223, 0.8) 65%, rgba(32, 204, 223, 0.5) 68%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
@@ -159,9 +159,8 @@ body {
     display: none; }
   .tag-item label {
     font-family: Lato;
-    text-transform: uppercase;
     font-size: 1rem;
-    line-height: 2;
+    line-height: 1.8;
     color: #fff;
     padding: 0 1rem;
     transition: all 200ms ease-out; }
@@ -180,7 +179,7 @@ body {
 
 .card-item {
   transform: translate3d(0, 0, 0);
-  margin: 1px 0;
+  margin: thin 0;
   width: 100%;
   height: 12rem;
   opacity: 0.2;

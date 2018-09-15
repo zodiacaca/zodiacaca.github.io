@@ -27,7 +27,7 @@ $elementSize: (
   tag-pool-width: percentage($poolWidth),
   tag-list-width: 90%,
   tag-item-font: 1rem,
-  tag-item-line: 2,
+  tag-item-line: 1.8,
   card-pool-width: percentage(1 - $poolWidth),
   card-list-width: 98%,
   card-item-width: 100%,
@@ -35,7 +35,7 @@ $elementSize: (
 );
 
 $fontColor: (
-  body: #48a770,
+  body: #fff,
   nav-menu: hsla(186, 75%, 50%, 0.5),
   tag-button: #fff,
   tag-button-hover: #f59393,
@@ -43,17 +43,14 @@ $fontColor: (
   card-title-hover: rgba(50, 50, 50, 1)
 );
 $bgColor: (
-  body: rgba(70, 70, 70, 1),
+  body: rgba(0, 0, 0, 1),
   nav: rgba(40, 40, 40, 0.1),
   slider: rgba(0, 0, 0, 0.15),
-  tag-button: linear-gradient(145deg, hsla(176, 85%, 40%, 0.5) 40%, hsla(186, 75%, 50%, 1) 50%, hsla(186, 75%, 50%, 0.5) 58%, hsla(186, 75%, 50%, 0.8) 65%, hsla(186, 75%, 50%, 0.5) 68%)
+  tag-button: linear-gradient(145deg, hsla(176, 85%, 40%, 0.5) 40%, hsla(186, 75%, 50%, 0.95) 50%, hsla(186, 75%, 50%, 0.5) 60%, hsla(186, 75%, 50%, 0.8) 65%, hsla(186, 75%, 50%, 0.5) 68%)
 );
 $borderColor: (
   nav-menu: linear-gradient(to right, hsl(220, 100%, 60%) 0%, hsl(10, 100%, 60%) 100%),
   tag-list: rgba(90, 90, 90, 0.9)
-);
-$shadowColor: (
-  card-item: rgba(0, 0, 0, 0.7) // changed in js
 );
 
 

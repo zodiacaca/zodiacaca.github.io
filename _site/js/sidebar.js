@@ -3,15 +3,6 @@
   var bodyWidth = window.innerWidth;
   var bodyHeight = window.innerHeight;
 
-  /*
-    tag-pool
-  */
-  function getTagListVerticalCenter() {
-    var listHeight = $("#tag-list").height();
-    $("#tag-pool").css("top", bodyHeight / 2 - listHeight / 2);
-  }
-  getTagListVerticalCenter();
-  
   /* after document loaded */
   $(document).ready(function () {
     sceneOpen();
@@ -27,11 +18,20 @@
   }
   
   /*
+    tag-pool
+  */
+  function getTagListVerticalCenter() {
+    var listHeight = $("#tag-list").height();
+    $("#tag-pool").css("top", bodyHeight / 2 - listHeight / 2);
+  }
+  getTagListVerticalCenter();
+  
+  /*
     card-pool
   */
   $(".card-item").hover(function () {
     $(this).css("opacity", "1");
-  }, function() {
+  }, function () {
     $(this).css("opacity", "0.2");
   });
 } () );

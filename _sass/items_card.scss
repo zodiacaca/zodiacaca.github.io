@@ -9,7 +9,7 @@
 
 .card-item {
   transform: translate3d(0, 0, 0);
-  margin: 1px 0;
+  margin: thin 0;
   width: elementSize(card-item-width);
   height: elementSize(card-item-height);
   // @include show-border();
