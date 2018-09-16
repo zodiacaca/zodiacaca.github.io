@@ -6,6 +6,7 @@ body {
 #main-frame {
   width: 100%;
   height: 100vh;
+  max-height: 100vw * 9 / 16;
   position: relative;
   overflow: hidden;
   z-index: 0;
@@ -19,7 +20,7 @@ body {
     transition: all #{ 800 * $durationMulti }ms ease-out;
     z-index: 5;
     
-    #brand-place {
+    #nav-brand {
       width: 100%;
       height: 20%;
     }
@@ -32,7 +33,7 @@ body {
       
       .nav-menu-item {
         width: 100%;
-        border-bottom: thin solid rgba(0, 0, 0, 0.2);
+        border-bottom: thin solid borderColor(nav-menu-item);
         
         a {
           font-family: Quattrocento Sans;
@@ -40,12 +41,11 @@ body {
           font-size: elementSize(nav-menu-item-font);
           line-height: elementSize(nav-menu-item-line);
           padding: 0 1.5rem;
-          opacity: 0.85;
           
           @include simple-link(fontColor(nav-menu), fontColor(tag-button-hover));
         }
         
-        &:first-child{
+        &:first-child {
           &:before {
             display: block;
             content: "";

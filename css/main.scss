@@ -36,7 +36,7 @@ $elementSize: (
 
 $fontColor: (
   body: #fff,
-  nav-menu: hsla(186, 75%, 50%, 0.5),
+  nav-menu: hsla(186, 75%, 50%, 0.4),
   tag-button: #fff,
   tag-button-hover: #f59393,
   card-title: rgba(80, 80, 80, 0.9),
@@ -50,6 +50,7 @@ $bgColor: (
 );
 $borderColor: (
   nav-menu: linear-gradient(to right, hsl(220, 100%, 60%) 0%, hsl(10, 100%, 60%) 100%),
+  nav-menu-item: rgba(0, 0, 0, 0.2),
   tag-list: rgba(90, 90, 90, 0.9)
 );
 

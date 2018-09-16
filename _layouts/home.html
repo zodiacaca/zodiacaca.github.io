@@ -5,7 +5,7 @@ layout: default
 
   <nav id="nav-slider">
   
-    <div id="brand-place">
+    <div id="nav-brand">
       
     </div>
   
@@ -66,7 +66,7 @@ layout: default
           {% for post in site.posts %}
             <li class="card-item">
               <img src={{ post.cover }}></img>
-              <div class="card-context">
+              <div class="card-info">
                 <h2><a href={{ post.url }}>{{ post.title }}</a></h2>
               </div>
             </li>
