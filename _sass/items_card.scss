@@ -16,11 +16,11 @@
   opacity: 0.2;
   position: relative;
   overflow: hidden;
-  transition:
-    top #{ 400 * $durationMulti }ms ease-out,
-    transform #{ 400 * $durationMulti }ms ease-out,
-    opacity #{ 400 * $durationMulti }ms ease-out
-  ;
+  transition: all #{ 800 * $durationMulti }ms ease-out;
+  
+  &:hover {
+    opacity: 1;
+  }
   
   img {
     width: 100%;

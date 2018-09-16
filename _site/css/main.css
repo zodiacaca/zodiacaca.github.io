@@ -138,8 +138,6 @@ body {
   float: right;
   margin-right: 0.6rem;
   margin-bottom: 0.6rem;
-  width: auto;
-  height: auto;
   background-image: linear-gradient(145deg, rgba(15, 189, 177, 0.5) 40%, rgba(32, 204, 223, 0.95) 50%, rgba(32, 204, 223, 0.5) 60%, rgba(32, 204, 223, 0.8) 65%, rgba(32, 204, 223, 0.5) 68%);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -150,7 +148,7 @@ body {
   opacity: 0.9;
   position: relative;
   animation: 1.6s ease-out 0s raySweep;
-  transition: all 800ms ease-out, background-position 800ms ease-out; }
+  transition: all 800ms ease-out, background-position 400ms ease-out; }
   .tag-item:hover {
     background-position: -42vw; }
     .tag-item:hover label {
@@ -185,7 +183,9 @@ body {
   opacity: 0.2;
   position: relative;
   overflow: hidden;
-  transition: top 400ms ease-out, transform 400ms ease-out, opacity 400ms ease-out; }
+  transition: all 800ms ease-out; }
+  .card-item:hover {
+    opacity: 1; }
   .card-item img {
     width: 100%;
     height: auto;

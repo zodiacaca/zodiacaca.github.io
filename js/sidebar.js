@@ -25,14 +25,5 @@
     $("#tag-pool").css("top", bodyHeight / 2 - listHeight / 2);
   }
   getTagListVerticalCenter();
-  
-  /*
-    card-pool
-  */
-  $(".card-item").hover(function () {
-    $(this).css("opacity", "1");
-  }, function () {
-    $(this).css("opacity", "0.2");
-  });
 } () );
 
