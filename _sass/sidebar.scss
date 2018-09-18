@@ -86,8 +86,6 @@ body {
       
       #card-pool {
         width: elementSize(card-pool-width);
-        // @include show-border();
-        box-shadow: 0px 0px 0.5rem 0.25rem black;
         position: absolute;
         left: elementSize(tag-pool-width);
       }

@@ -18,7 +18,7 @@
 $durationMulti: 1;
 
 $sideWidth: 0.18;
-$poolWidth: 0.46;
+$poolWidth: 0.14;
 $elementSize: (
   nav-width: percentage($sideWidth),
   board-content-width: percentage(1 - $sideWidth),
@@ -29,9 +29,9 @@ $elementSize: (
   tag-item-font: 1rem,
   tag-item-line: 1.8,
   card-pool-width: percentage(1 - $poolWidth),
-  card-list-width: 98%,
+  card-list-width: 86%,
   card-item-width: 100%,
-  card-item-height: 12rem
+  card-item-height: 9rem
 );
 
 $fontColor: (
