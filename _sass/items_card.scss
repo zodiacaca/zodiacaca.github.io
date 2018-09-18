@@ -13,11 +13,11 @@
   height: elementSize(card-item-height);
   // @include show-border();
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   transition: all #{ 800 * $durationMulti }ms ease-out;
   
   &:nth-child(even) {
-    margin-left: 8rem;
+    margin-left: 7rem;
   }
 
   img {
@@ -25,18 +25,18 @@
     height: auto;
     position: absolute;
   }
-  
+
   .overlay {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0) 100%);
+    background-image: linear-gradient(100deg, rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0) 100%);
     position: absolute;
   }
   
   .card-info {
-    margin-top: -4rem;
+    margin-left: 2rem;
     position: absolute;
-    top: 100%;
+    top: 65%;
     
     a {
       @include simple-link(fontColor(card-title), fontColor(card-title-hover));
