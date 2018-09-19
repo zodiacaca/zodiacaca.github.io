@@ -59,7 +59,7 @@ Paint.painting = function () {
   this.tick++;
 };
 
-Render.init();
+// Render.init();
 
 function lerpVector(i, vFrom, vTo) {
   var path = new Axis3(

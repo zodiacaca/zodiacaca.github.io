@@ -49,6 +49,9 @@ canvas {
   top: 0;
   left: 0; }
 
+svg {
+  display: block; }
+
 body {
   overflow: hidden; }
 
@@ -117,14 +120,14 @@ body {
       transition: all 800ms ease-out; }
       #main-frame #board-slider #board-content #tag-pool {
         padding: 0 0.3rem 0 0;
-        width: 14%;
+        width: 12%;
         height: auto;
         position: absolute;
         overflow: hidden; }
       #main-frame #board-slider #board-content #card-pool {
-        width: 86%;
+        width: 88%;
         position: absolute;
-        left: 14%; }
+        left: 12%; }
 
 #tag-list {
   list-style-type: none;
