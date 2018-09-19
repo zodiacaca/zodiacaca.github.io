@@ -49,7 +49,7 @@ Paint.init = function () {
 Paint.tick = 1;
 Paint.painting = function () {
   for (var i = 0; i < 360; i++) {
-    this.desiredPositions[i].rotateAroundAxis(new Axis3(0, 1, 0), Math.rad(0.2), new Axis3(-this.canvas.width / 4, 0, 0));
+    this.desiredPositions[i].rotateAroundAxis(new Axis3(0, 1, 0), Math.rad(0.04), new Axis3(-this.canvas.width / 4, 0, 0));
   }
   for (var i = 0; i < this.canvas.entities.length; i++) {
     lerpVector(i, this.canvas.entities[i].transform.position, this.desiredPositions[i].position);
