@@ -27,7 +27,7 @@ $elementSize: (
   tag-pool-width: percentage($poolWidth),
   tag-list-width: 90%,
   tag-item-font: 1rem,
-  tag-item-line: 1.8,
+  tag-item-line: 3,
   card-pool-width: percentage(1 - $poolWidth),
   card-list-width: 86%,
   card-item-width: 100%,
@@ -45,8 +45,7 @@ $fontColor: (
 $bgColor: (
   body: rgba(0, 0, 0, 1),
   nav: rgba(40, 40, 40, 0.1),
-  slider: rgba(0, 0, 0, 0.15),
-  tag-button: linear-gradient(145deg, hsla(176, 85%, 40%, 0.5) 40%, hsla(186, 75%, 50%, 0.95) 50%, hsla(186, 75%, 50%, 0.5) 60%, hsla(186, 75%, 50%, 0.8) 65%, hsla(186, 75%, 50%, 0.5) 68%)
+  slider: rgba(0, 0, 0, 0.15)
 );
 $borderColor: (
   nav-menu: linear-gradient(to right, hsl(220, 100%, 60%) 0%, hsl(10, 100%, 60%) 100%),

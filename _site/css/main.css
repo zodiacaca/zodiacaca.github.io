@@ -129,25 +129,17 @@ body {
   margin-right: -100%;
   width: 90%;
   height: auto;
-  border-right: medium solid rgba(90, 90, 90, 0.9);
   transition: all 1200ms ease-out; }
 
 .tag-item {
-  display: inline-block;
-  float: right;
-  margin-right: 0.6rem;
-  margin-bottom: 0.6rem;
-  background-image: linear-gradient(145deg, rgba(15, 189, 177, 0.5) 40%, rgba(32, 204, 223, 0.95) 50%, rgba(32, 204, 223, 0.5) 60%, rgba(32, 204, 223, 0.8) 65%, rgba(32, 204, 223, 0.5) 68%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  background-position: -35vw;
-  border-radius: 0.2rem;
-  box-shadow: 0px 0px 0.5rem 0.2rem black;
+  display: block;
+  margin: 1rem 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.3rem;
   opacity: 0.9;
   position: relative;
-  animation: 1.6s ease-out 0s raySweep;
-  transition: all 800ms ease-out, background-position 400ms ease-out; }
+  transition: all 800ms ease-out; }
   .tag-item:hover {
     background-position: -42vw; }
     .tag-item:hover label {
@@ -155,18 +147,13 @@ body {
   .tag-item .tag-item-input {
     display: none; }
   .tag-item label {
+    display: block;
     font-family: Lato;
     font-size: 1rem;
-    line-height: 1.8;
+    line-height: 3;
     color: #fff;
-    padding: 0 1rem;
     transition: all 200ms ease-out; }
 
-@keyframes raySweep {
-  from {
-    background-position: 0; }
-  to {
-    background-position: -35vw; } }
 #card-list {
   list-style-type: none;
   width: 86%;

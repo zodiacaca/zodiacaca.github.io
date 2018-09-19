@@ -5,27 +5,19 @@
   margin-right: -100%;
   width: elementSize(tag-list-width);
   height: auto;
-  border-right: medium solid borderColor(tag-list);
   transition: all #{ 1200 * $durationMulti }ms ease-out;
 }
 
 .tag-item {
-  display: inline-block;
-  float: right;
-  margin-right: 0.6rem;
-  margin-bottom: 0.6rem;
-  background-image: bgColor(tag-button);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  background-position: -35vw;
-  border-radius: 0.2rem;
-  box-shadow: 0px 0px 0.5rem 0.2rem black;
+  display: block;
+  margin: 1rem 1rem;
+  width: 3rem;
+  height: 3rem;
+  // border: medium solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.3rem;
   opacity: 0.9;
   position: relative;
-  animation: 1.6s ease-out 0s raySweep;
-  transition: all #{ 800 * $durationMulti }ms ease-out,
-    background-position #{ 400 * $durationMulti }ms ease-out;
+  transition: all #{ 800 * $durationMulti }ms ease-out;
 
   &:hover {
     background-position: -42vw;
@@ -39,17 +31,13 @@
   }
   
   label {
+    display: block;
+    // text-align: center;
     font-family: Lato;
     font-size: elementSize(tag-item-font);
     line-height: elementSize(tag-item-line);
     color: fontColor(tag-button);
-    padding: 0 1rem;
     transition: all #{ 200 * $durationMulti }ms ease-out;
   }
-}
-
-@keyframes raySweep {
-  from { background-position: 0; }
-  to { background-position: -35vw; }
 }
 
