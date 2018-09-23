@@ -1,0 +1,46 @@
+
+#article-list {
+  list-style-type: none;
+  padding: 0.5rem;
+  width: elementSize(article-list-width);
+  background-color: bgColor(slider);
+  box-shadow: 0px 0px 0.5rem 0.1rem black;
+  position: relative;
+}
+
+.article-item {
+  margin-bottom: 3rem;
+  width: elementSize(article-item-width);
+  height: elementSize(article-item-height);
+  background-image: bgColor(article-item);
+  box-shadow: 0px 0px 0.5rem 0.1rem black;
+  position: relative;
+  overflow: visible;
+  transition: all #{ 800 * $durationMulti }ms ease-out;
+
+  .article-shortcut {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-right: thin solid borderColor(article-shortcut);
+    border-bottom: thin solid borderColor(article-shortcut);
+    
+    i {
+      display: block;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+  
+  .article-info {
+    font-family: Daville;
+    margin-left: 2rem;
+    position: absolute;
+    top: 65%;
+    
+    a {
+      @include simple-link(fontColor(article-title), fontColor(article-title-hover));
+    }
+  }
+}
+

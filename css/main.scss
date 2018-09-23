@@ -30,32 +30,33 @@ $elementSize: (
   nav-menu-item-font: 1.2rem,
   nav-menu-item-line: 3,
   tag-pool-width: percentage($poolWidth),
-  tag-list-width: 90%,
   tag-item-font: 1rem,
   tag-item-line: 3,
-  card-pool-width: percentage(1 - $poolWidth),
-  card-list-width: 86%,
-  card-item-width: 100%,
-  card-item-height: 9rem
+  article-pool-width: percentage(1 - $poolWidth),
+  article-list-width: 86%,
+  article-item-width: 100%,
+  article-item-height: 9rem
 );
 
 $fontColor: (
   body: #fff,
   nav-menu: hsla(186, 75%, 50%, 0.4),
-  tag-button: #fff,
-  tag-button-hover: #f59393,
-  card-title: rgba(80, 80, 80, 0.9),
-  card-title-hover: rgba(50, 50, 50, 1)
+  nav-menu-hover: rgba(245, 147, 147, 0.9),
+  tag-button: rgba(255, 255, 255, 0.9),
+  tag-button-hover: rgba(245, 147, 147, 0.9),
+  article-title: rgba(80, 80, 80, 0.9),
+  article-title-hover: rgba(50, 50, 50, 1)
 );
 $bgColor: (
-  body: rgba(0, 0, 0, 1),
+  body: rgba(12, 10, 30, 1),
   nav: rgba(40, 40, 40, 0.1),
-  slider: rgba(0, 0, 0, 0.15)
+  slider: rgba(0, 0, 0, 0.15),
+  article-item: linear-gradient(100deg, rgba(50, 50, 55, 0.3) 10%, rgba(0, 0, 0, 0) 100%)
 );
 $borderColor: (
   nav-menu: linear-gradient(to right, hsl(220, 100%, 60%) 0%, hsl(10, 100%, 60%) 100%),
   nav-menu-item: rgba(0, 0, 0, 0.2),
-  tag-list: rgba(90, 90, 90, 0.9)
+  article-shortcut: rgba(0, 0, 0, 1)
 );
 
 
@@ -68,6 +69,6 @@ $borderColor: (
   "shared",
   "sidebar",
   "items_tag",
-  "items_card"
+  "items_article"
 ;
 

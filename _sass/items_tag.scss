@@ -1,26 +1,17 @@
 
 #tag-list {
   list-style-type: none;
-  float: right;
   margin-right: -100%;
-  width: elementSize(tag-list-width);
-  height: auto;
   transition: all #{ 1200 * $durationMulti }ms ease-out;
 }
 
 .tag-item {
   display: block;
-  margin: 1rem 1rem;
-  width: 3rem;
-  height: 3rem;
-  // border: medium solid rgba(255, 255, 255, 0.5);
+  margin: 1rem 2rem;
   border-radius: 0.3rem;
-  opacity: 0.9;
   position: relative;
-  transition: all #{ 800 * $durationMulti }ms ease-out;
 
   &:hover {
-    background-position: -42vw;
     label {
       color: fontColor(tag-button-hover);
     }
