@@ -12,9 +12,7 @@
     // main parts
     $("#nav-slider").css("transform", "translateX(-100%)");
     $("#board-slider").css("transform", "translateX(" + $("#nav-slider").width() + "px)");
-    $("#board-content").css("left", 0);
-    // tags
-    $("#tag-list").css("margin-right", 0);
+    $("#board-wrapper").css("left", 0);
   }
   
   /*

@@ -112,17 +112,17 @@ body {
     position: absolute;
     transition: all 800ms ease-out;
     z-index: 10; }
-    #main-frame #board-slider #board-content {
+    #main-frame #board-slider #board-wrapper {
       width: 82%;
       height: 100%;
       position: relative;
       left: 9%;
       transition: all 800ms ease-out; }
-      #main-frame #board-slider #board-content #tag-pool {
+      #main-frame #board-slider #board-wrapper #tag-pool {
         width: 12%;
         position: absolute;
         overflow: hidden; }
-      #main-frame #board-slider #board-content #article-pool {
+      #main-frame #board-slider #board-wrapper #article-pool {
         width: 88%;
         position: absolute;
         left: 12%; }

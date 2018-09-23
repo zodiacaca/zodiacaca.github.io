@@ -69,8 +69,8 @@ body {
     transition: all #{ 800 * $durationMulti }ms ease-out;
     z-index: 10;
     
-    #board-content {
-      width: elementSize(board-content-width);
+    #board-wrapper {
+      width: elementSize(board-wrapper-width);
       height: 100%;
       position: relative;
       // @include show-border();

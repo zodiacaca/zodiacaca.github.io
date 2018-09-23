@@ -26,7 +26,7 @@ $sideWidth: 0.18;
 $poolWidth: 0.12;
 $elementSize: (
   nav-width: percentage($sideWidth),
-  board-content-width: percentage(1 - $sideWidth),
+  board-wrapper-width: percentage(1 - $sideWidth),
   nav-menu-item-font: 1.2rem,
   nav-menu-item-line: 3,
   tag-pool-width: percentage($poolWidth),
