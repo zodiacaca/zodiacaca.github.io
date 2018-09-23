@@ -169,13 +169,14 @@ body {
   .article-item .article-shortcut {
     width: 1.5rem;
     height: 1.5rem;
-    border-right: thin solid black;
-    border-bottom: thin solid black; }
+    border-right: thin solid rgba(0, 0, 0, 0.8);
+    border-bottom: thin solid rgba(0, 0, 0, 0.8); }
     .article-item .article-shortcut i {
       display: block;
       text-align: center;
       font-size: 1rem;
-      line-height: 1.5; }
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.95); }
   .article-item .article-info {
     font-family: Daville;
     margin-left: 2rem;
