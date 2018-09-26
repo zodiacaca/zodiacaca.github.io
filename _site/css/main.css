@@ -82,11 +82,11 @@ body {
         width: 100%;
         border-bottom: thin solid rgba(0, 0, 0, 0.2); }
         #main-frame #nav-slider #nav-menu .nav-menu-item a {
+          display: block;
           font-family: Quattrocento Sans;
           font-weight: 100;
           font-size: 1.2rem;
           line-height: 3;
-          padding: 0 1.5rem;
           text-decoration: none;
           color: rgba(32, 204, 223, 0.4);
           transition: all 400ms ease-out; }
@@ -98,6 +98,9 @@ body {
             color: rgba(245, 147, 147, 0.9); }
           #main-frame #nav-slider #nav-menu .nav-menu-item a:active {
             color: rgba(32, 204, 223, 0.4); }
+          #main-frame #nav-slider #nav-menu .nav-menu-item a i {
+            text-align: center;
+            width: 3rem; }
         #main-frame #nav-slider #nav-menu .nav-menu-item:first-child:before {
           display: block;
           content: "";
@@ -169,8 +172,8 @@ body {
   .article-item .article-shortcut {
     width: 1.5rem;
     height: 1.5rem;
-    border-right: thin solid rgba(0, 0, 0, 0.8);
-    border-bottom: thin solid rgba(0, 0, 0, 0.8); }
+    border-right: thin solid rgba(0, 0, 0, 0.4);
+    border-bottom: thin solid rgba(0, 0, 0, 0.4); }
     .article-item .article-shortcut i {
       display: block;
       text-align: center;
