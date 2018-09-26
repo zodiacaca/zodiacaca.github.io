@@ -83,24 +83,22 @@ body {
         border-bottom: thin solid rgba(0, 0, 0, 0.2); }
         #main-frame #nav-slider #nav-menu .nav-menu-item a {
           display: block;
-          font-family: Quattrocento Sans;
-          font-weight: 100;
-          font-size: 1.2rem;
-          line-height: 3;
-          text-decoration: none;
-          color: rgba(32, 204, 223, 0.4);
-          transition: all 400ms ease-out; }
-          #main-frame #nav-slider #nav-menu .nav-menu-item a:link {
-            color: rgba(32, 204, 223, 0.4); }
-          #main-frame #nav-slider #nav-menu .nav-menu-item a:visited {
-            color: rgba(32, 204, 223, 0.4); }
-          #main-frame #nav-slider #nav-menu .nav-menu-item a:hover {
-            color: rgba(245, 147, 147, 0.9); }
-          #main-frame #nav-slider #nav-menu .nav-menu-item a:active {
-            color: rgba(32, 204, 223, 0.4); }
+          text-decoration: none; }
+          #main-frame #nav-slider #nav-menu .nav-menu-item a * {
+            transition: all 200ms ease-out; }
+          #main-frame #nav-slider #nav-menu .nav-menu-item a:hover span {
+            color: white; }
           #main-frame #nav-slider #nav-menu .nav-menu-item a i {
             text-align: center;
+            color: rgba(255, 255, 255, 0.85);
             width: 3rem; }
+          #main-frame #nav-slider #nav-menu .nav-menu-item a span {
+            font-family: Quattrocento Sans;
+            font-weight: 100;
+            font-size: 1.2rem;
+            line-height: 3;
+            color: rgba(32, 204, 223, 0.4);
+            padding: 1rem; }
         #main-frame #nav-slider #nav-menu .nav-menu-item:first-child:before {
           display: block;
           content: "";
@@ -180,20 +178,20 @@ body {
       font-size: 1rem;
       line-height: 1.5;
       color: rgba(255, 255, 255, 0.95); }
-  .article-item .article-info {
+  .article-item .article-info h3 {
     font-family: Daville;
     margin-left: 2rem;
     position: absolute;
     top: 65%; }
-    .article-item .article-info a {
+    .article-item .article-info h3 a {
       text-decoration: none;
       color: rgba(80, 80, 80, 0.9);
       transition: all 400ms ease-out; }
-      .article-item .article-info a:link {
+      .article-item .article-info h3 a:link {
         color: rgba(80, 80, 80, 0.9); }
-      .article-item .article-info a:visited {
+      .article-item .article-info h3 a:visited {
         color: rgba(80, 80, 80, 0.9); }
-      .article-item .article-info a:hover {
+      .article-item .article-info h3 a:hover {
         color: #323232; }
-      .article-item .article-info a:active {
+      .article-item .article-info h3 a:active {
         color: rgba(80, 80, 80, 0.9); }

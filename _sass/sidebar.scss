@@ -37,16 +37,31 @@ body {
         
         a {
           display:block;
-          font-family: Quattrocento Sans;
-          font-weight: 100;
-          font-size: elementSize(nav-menu-item-font);
-          line-height: elementSize(nav-menu-item-line);
+          text-decoration: none;
           
-          @include simple-link(fontColor(nav-menu), fontColor(nav-menu-hover));
+          * {
+            transition: all #{ 200 * $durationMulti }ms ease-out;
+          }
           
+          &:hover {
+            span {
+              color: fontColor(nav-menu-hover);
+            }
+          }
+
           i {
             text-align: center;
+            color: fontColor(nav-menu-icon);
             width: 3rem;
+          }
+          
+          span {
+            font-family: Quattrocento Sans;
+            font-weight: 100;
+            font-size: elementSize(nav-menu-item-font);
+            line-height: elementSize(nav-menu-item-line);
+            color: fontColor(nav-menu);
+            padding: 1rem;
           }
         }
         
