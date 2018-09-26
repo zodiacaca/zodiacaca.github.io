@@ -93,12 +93,12 @@ body {
             color: rgba(255, 255, 255, 0.85);
             width: 3rem; }
           #main-frame #nav-slider #nav-menu .nav-menu-item a span {
-            font-family: Quattrocento Sans;
+            font-family: Lato;
             font-weight: 100;
-            font-size: 1.2rem;
-            line-height: 3;
+            font-size: 1rem;
+            line-height: 4;
             color: rgba(32, 204, 223, 0.4);
-            padding: 1rem; }
+            padding: 0.8rem; }
         #main-frame #nav-slider #nav-menu .nav-menu-item:first-child:before {
           display: block;
           content: "";
