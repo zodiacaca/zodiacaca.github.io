@@ -22,8 +22,8 @@
 // Our variables
 $durationMulti: 1;
 
-$sideWidth: 0.18;
-$poolWidth: 0.12;
+$sideWidth: 0.2;
+$poolWidth: 0.1;
 $elementSize: (
   nav-width: percentage($sideWidth),
   board-wrapper-width: percentage(1 - $sideWidth),
@@ -33,7 +33,7 @@ $elementSize: (
   tag-item-font: 1rem,
   tag-item-line: 3,
   article-pool-width: percentage(1 - $poolWidth),
-  article-list-width: 86%,
+  article-list-width: 88%,
   article-item-width: 100%,
   article-item-height: 9rem
 );
