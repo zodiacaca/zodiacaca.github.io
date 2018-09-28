@@ -11,7 +11,7 @@
   function sceneOpen() {
     // main parts
     // $("#nav-slider").css("transform", "translateX(-100%)");
-    $("#board-slider").css("transform", "translateX(" + ($("#nav-slider").width() + bodyWidth * 0.01) + "px)");
+    $("#board-slider").css("transform", "translateX(" + $("#nav-slider").width() + "px)");
     $("#board-wrapper").css("left", 0);
   }
   

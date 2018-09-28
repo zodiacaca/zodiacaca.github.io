@@ -12,18 +12,31 @@ body {
   z-index: 0;
   
   #nav-slider {
-    width: elementSize(nav-width) - 1%;
+    width: elementSize(nav-width);
     height: 100%;
     background-color: bgColor(nav);
     position: absolute;
-    left: 1%;
     transition: all #{ 800 * $durationMulti }ms ease-out;
     z-index: 5;
     
+    $color: rgba(50, 50, 50, 0.5);
+    &:before {
+      display: block;
+      content: "";
+      width: elementSize(nav-before-width);
+      height: 100%;
+      background-image: linear-gradient(45deg, $color 5.56%, transparent 5.56%, transparent 50%, $color 50%, $color 55.56%, transparent 55.56%, transparent 100%);
+      background-size: 9px 9px;
+      border-right: thin solid $color;
+      box-shadow: 0px 0px 0.5rem 0.1rem black;
+      position: absolute;
+    }
+    
     #nav-brand {
-      width: 100%;
+      width: 100% - elementSize(nav-before-width);
       height: 16%;
       position: relative;
+      left: elementSize(nav-before-width);
       
       img {
         transform: rotateX(180deg);
@@ -37,9 +50,11 @@ body {
     
     #nav-menu {
       list-style-type: none;
-      width: 100%;
+      width: 100% - elementSize(nav-before-width);
       height: 100%;
       border-top: thin solid borderColor(nav-menu);
+      position: relative;
+      left: elementSize(nav-before-width);
       z-index: 10;
       
       .nav-menu-item {
