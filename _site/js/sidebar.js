@@ -10,8 +10,8 @@
 
   function sceneOpen() {
     // main parts
-    $("#nav-slider").css("transform", "translateX(-100%)");
-    $("#board-slider").css("transform", "translateX(" + $("#nav-slider").width() + "px)");
+    // $("#nav-slider").css("transform", "translateX(-100%)");
+    $("#board-slider").css("transform", "translateX(" + ($("#nav-slider").width() + bodyWidth * 0.01) + "px)");
     $("#board-wrapper").css("left", 0);
   }
   
@@ -20,7 +20,7 @@
   */
   function getTagListVerticalCenter() {
     var listHeight = $("#tag-list").height();
-    $("#tag-pool").css("top", bodyHeight / 2 - listHeight / 2);
+    $("#tag-list").css("top", bodyHeight / 2 - listHeight / 2);
   }
   getTagListVerticalCenter();
 } () );

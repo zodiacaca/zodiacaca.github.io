@@ -22,18 +22,19 @@
 // Our variables
 $durationMulti: 1;
 
-$sideWidth: 0.2;
-$poolWidth: 0.1;
+$sideWidth: 0.18;
+$poolWidth: 0.12;
 $elementSize: (
   nav-width: percentage($sideWidth),
   board-wrapper-width: percentage(1 - $sideWidth),
   nav-menu-item-font: 1rem,
   nav-menu-item-line: 4,
+  logo-height: 50%;
   tag-pool-width: percentage($poolWidth),
   tag-item-font: 1rem,
   tag-item-line: 3,
   article-pool-width: percentage(1 - $poolWidth),
-  article-list-width: 88%,
+  article-list-width: 86%,
   article-item-width: 100%,
   article-item-height: 9rem
 );
@@ -50,13 +51,14 @@ $fontColor: (
   article-shortcut: rgba(255, 255, 255, 0.95)
 );
 $bgColor: (
-  body: rgba(12, 10, 30, 1),
+  body: rgba(20, 20, 20, 1),
   nav: rgba(40, 40, 40, 0.1),
   slider: rgba(0, 0, 0, 0.15),
-  article-item: linear-gradient(100deg, rgba(50, 50, 55, 0.3) 10%, rgba(0, 0, 0, 0) 100%)
+  article-item: linear-gradient(100deg, rgba(50, 50, 55, 0.3) 10%, rgba(70, 70, 75, 0.3) 100%)
 );
 $borderColor: (
-  nav-menu: linear-gradient(to right, hsl(220, 100%, 60%) 0%, hsl(10, 100%, 60%) 100%),
+  // nav-menu: linear-gradient(to right, hsl(220, 100%, 60%) 0%, hsl(10, 100%, 60%) 100%),
+  nav-menu: rgba(150, 150, 150, 1),
   nav-menu-item: rgba(0, 0, 0, 0.2),
   article-shortcut: rgba(0, 0, 0, 0.4)
 );

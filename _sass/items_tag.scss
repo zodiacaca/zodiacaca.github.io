@@ -2,6 +2,7 @@
 #tag-list {
   list-style-type: none;
   margin-right: -100%;
+  position: absolute;
   transition: all #{ 1200 * $durationMulti }ms ease-out;
 }
 

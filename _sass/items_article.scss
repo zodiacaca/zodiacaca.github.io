@@ -1,19 +1,18 @@
 
 #article-list {
   list-style-type: none;
-  padding: 0.5rem;
+  padding: 1rem;
   width: elementSize(article-list-width);
+  height: 100%;
   background-color: bgColor(slider);
-  box-shadow: 0px 0px 0.5rem 0.1rem black;
   position: relative;
 }
 
 .article-item {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   width: elementSize(article-item-width);
   height: elementSize(article-item-height);
   background-image: bgColor(article-item);
-  box-shadow: 0px 0px 0.5rem 0.1rem black;
   position: relative;
   overflow: visible;
   transition: all #{ 800 * $durationMulti }ms ease-out;
@@ -35,9 +34,9 @@
   
   .article-info h3 {
     font-family: Daville;
-    margin-left: 2rem;
+    margin: -2rem 2rem;
     position: absolute;
-    top: 65%;
+    top: 100%;
     
     a {
       @include simple-link(fontColor(article-title), fontColor(article-title-hover));
