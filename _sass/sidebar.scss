@@ -17,7 +17,7 @@ body {
     background-color: bgColor(nav);
     position: absolute;
     transition: all #{ 800 * $durationMulti }ms ease-out;
-    z-index: 5;
+    z-index: 10;
     
     $color: rgba(50, 50, 50, 0.5);
     &:before {
@@ -103,7 +103,7 @@ body {
     box-shadow: 0px 0px 0.5rem 0.02rem black inset;
     position: absolute;
     transition: all #{ 800 * $durationMulti }ms ease-out;
-    z-index: 10;
+    z-index: 5;
     
     #board-wrapper {
       width: elementSize(board-wrapper-width);
