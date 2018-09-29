@@ -1,18 +1,18 @@
 
 body {
   overflow: hidden;
-  background-image: url("/images/bg/bg-before.svg");
+  background-image: url("/images/bg/bg.svg");
 }
 
 $left: 40%;
 $stripe-color: rgba(60, 60, 60, 1);
-body::after {
+body::before {
   transform: skewX(-10deg);
   display: block;
   content: "";
   width: 100%;
   height: 100%;
-  background-color: bgColor(body-after);
+  background-color: bgColor(body-before);
   background-image: linear-gradient(-45deg, $stripe-color 5.56%, transparent 5.56%, transparent 50%, $stripe-color 50%, $stripe-color 55.56%, transparent 55.56%, transparent 100%);
   background-size: 11px 11px;
   border-left: medium solid rgba(10, 10, 10, 1);
@@ -20,3 +20,15 @@ body::after {
   position: absolute;
   left: $left;
 }
+
+
+#showcase {
+  background-color: rgba(30, 30, 30, 1);
+  width: 70%;
+  height: 70%;
+  box-shadow: 0px 0px 0.5rem 0.1rem black;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+}
+
