@@ -9,7 +9,7 @@ title:
 author: Steven Lee
 email: 121059464@qq.com
 description: >- # this means to ignore newlines until "url:"
-url: "http://even-steel.me" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://even-steel.me" # the base hostname & protocol for your site, e.g. http://example.com
 subpath: "" # the subpath of your site, e.g. /blog/
 permalink: /:categories/:title:output_ext
 twitter_username: 

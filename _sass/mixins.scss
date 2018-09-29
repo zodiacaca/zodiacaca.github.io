@@ -9,10 +9,6 @@
   }
 }
 
-@mixin show-border() {
-  border: medium solid grey;
-}
-
 @mixin simple-link($normal, $hover) {
   text-decoration: none;
   color: $normal;
