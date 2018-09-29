@@ -1,61 +1,11 @@
 
-var colors = [];
-
-function formCube(scrW) {
-  var hsl = 'hsl(%hue, 100%, 60%)';
-  
-  var points = [];
-  
-  for (var i = 0; i < 180; i++) {
-    var pos = {
-      x: (Math.random() * 2 - 1) * scrW * 0.5,
-      y: (Math.random() * 2 - 1) * scrW * 0.5,
-      z: (Math.random() * 2 - 1) * scrW * 0.5
-    };
-    var color = hsl.replace('%hue', 220 - points.length * 0.2);
-
-    points.push(new Transform(new Axis3(pos.x, pos.y, pos.z)));
-    colors.push(color);
-  }
-
-  var blues = points.length;
-  for (var i = 180; i < 360; i++) {
-    var pos = {
-      x: (Math.random() * 2 - 1) * scrW * 0.5,
-      y: (Math.random() * 2 - 1) * scrW * 0.5,
-      z: (Math.random() * 2 - 1) * scrW * 0.5
-    };
-    var color = hsl.replace('%hue', 10 + (points.length - blues) * 0.3);
-
-    points.push(new Transform(new Axis3(pos.x, pos.y, pos.z)));
-    colors.push(color);
-  }
-
-  return points;
-};
-
-var velDelay = [];
 Paint.init = function () {
-  this.canvas = new Canvas($('body')[0], true);
-  this.canvas.background = 'rgba(12, 10, 30, 1)';
-
-  this.desiredPositions = formCube(this.canvas.width);
-  for (var i = 0; i < this.desiredPositions.length; i++) {
-    new Particle(this.canvas, 0, 0, 0, 3, colors[i]);
-    velDelay.push(new Axis3());
-  }
+  
 };
 
 Paint.tick = 1;
 Paint.painting = function () {
-  for (var i = 0; i < 360; i++) {
-    this.desiredPositions[i].rotateAroundAxis(new Axis3(0, 1, 0), Math.rad(0.04), new Axis3(-this.canvas.width / 4, 0, 0));
-  }
-  for (var i = 0; i < this.canvas.entities.length; i++) {
-    lerpVector(i, this.canvas.entities[i].transform.position, this.desiredPositions[i].position);
-  }
-  // console.log(Math.len(this.canvas.entities[0].getVelocity()));
-  // console.log(this.canvas.entities[0].getVelocity());
+  
   this.tick++;
 };
 
