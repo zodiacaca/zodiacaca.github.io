@@ -10,6 +10,56 @@ body {
   position: absolute;
 }
 
+$size: 70%;
+.menu-button {
+  position: absolute;
+  top: (100% - $size) / 2;
+  margin: 0.5rem 2rem;
+  width: elementSize(menu-button-width);
+  height: elementSize(menu-button-height);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.menu-button::before,
+.menu-button::after,
+.menu-button span {
+	background: #5f656f;
+}
+
+.menu-button::before,
+.menu-button::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: elementSize(menu-button-bar);
+	pointer-events: none;
+	transition: transform 0.25s;
+	transform-origin: 50% 50%;
+}
+
+.menu-button span {
+	position: absolute;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	height: elementSize(menu-button-bar);
+	text-indent: 200%;
+	transition: opacity 0.25s;
+}
+
+.menu-button::before {
+	transform: translate3d(0, -(elementSize(menu-button-height) / 2), 0) scale3d(0.8, 1, 1);
+}
+
+.menu-button::after {
+	transform: translate3d(0, (elementSize(menu-button-height) / 2), 0) scale3d(0.8, 1, 1);
+}
+
 $left: 40%;
 $stripe-color: rgba(60, 60, 60, 1);
 #cover {
@@ -34,14 +84,13 @@ $stripe-color: rgba(60, 60, 60, 1);
   }
 }
 
-
 #showcase {
-  width: 70%;
-  height: 70%;
+  width: $size;
+  height: $size;
   background-color: bgColor(showcase);
   // box-shadow: 0px 0px 0.5rem 0.1rem black;
   position: absolute;
-  top: 15%;
-  left: 15%;
+  top: (100% - $size) / 2;
+  left: (100% - $size) / 2;
 }
 
