@@ -60,16 +60,26 @@ body {
   background-image: url("/images/bg/bg.svg");
   position: absolute; }
 
-.menu-button {
+.fancy-button {
   position: absolute;
-  top: 15%;
-  margin: 0.5rem 2rem;
-  width: 30px;
-  height: 20px;
   cursor: pointer;
   border: none;
   outline: none;
   background: transparent; }
+
+.tag-button {
+  top: 85%;
+  margin: -36px 2rem;
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/icon/tags.svg");
+  background-repeat: no-repeat; }
+
+.menu-button {
+  top: 15%;
+  margin: 0.5rem 2rem;
+  width: 30px;
+  height: 20px; }
 
 .menu-button::before,
 .menu-button::after,
