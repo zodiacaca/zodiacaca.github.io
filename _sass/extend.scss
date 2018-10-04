@@ -11,12 +11,19 @@ body {
 }
 
 $size: 70%;
-.fancy-button {
+.flat-button {
   position: absolute;
   cursor: pointer;
   border: none;
   outline: none;
   background: transparent;
+}
+
+.menu-button {
+  top: (100% - $size) / 2;
+  margin: 0.5rem 2rem;
+  width: elementSize(menu-button-width);
+  height: elementSize(menu-button-height);
 }
 
 .tag-button {
@@ -26,13 +33,6 @@ $size: 70%;
   height: elementSize(tag-button-size);
   background-image: url("/images/icon/tags.svg");
   background-repeat: no-repeat;
-}
-
-.menu-button {
-  top: (100% - $size) / 2;
-  margin: 0.5rem 2rem;
-  width: elementSize(menu-button-width);
-  height: elementSize(menu-button-height);
 }
 
 .menu-button::before,
@@ -97,6 +97,7 @@ $stripe-color: rgba(60, 60, 60, 1);
 }
 
 #showcase {
+  transform-origin: 100% 50%;
   width: $size;
   height: $size;
   background-color: bgColor(showcase);
@@ -104,5 +105,6 @@ $stripe-color: rgba(60, 60, 60, 1);
   position: absolute;
   top: (100% - $size) / 2;
   left: (100% - $size) / 2;
+  transition: all #{ 400 * $durationMulti }ms ease-out;
 }
 

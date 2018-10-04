@@ -60,12 +60,18 @@ body {
   background-image: url("/images/bg/bg.svg");
   position: absolute; }
 
-.fancy-button {
+.flat-button {
   position: absolute;
   cursor: pointer;
   border: none;
   outline: none;
   background: transparent; }
+
+.menu-button {
+  top: 15%;
+  margin: 0.5rem 2rem;
+  width: 30px;
+  height: 20px; }
 
 .tag-button {
   top: 85%;
@@ -74,12 +80,6 @@ body {
   height: 32px;
   background-image: url("/images/icon/tags.svg");
   background-repeat: no-repeat; }
-
-.menu-button {
-  top: 15%;
-  margin: 0.5rem 2rem;
-  width: 30px;
-  height: 20px; }
 
 .menu-button::before,
 .menu-button::after,
@@ -131,9 +131,11 @@ body {
     left: -50%; }
 
 #showcase {
+  transform-origin: 100% 50%;
   width: 70%;
   height: 70%;
   background-color: #1e1e1e;
   position: absolute;
   top: 15%;
-  left: 15%; }
+  left: 15%;
+  transition: all 400ms ease-out; }
