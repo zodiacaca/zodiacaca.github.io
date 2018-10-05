@@ -113,6 +113,15 @@ body {
 .menu-button::after {
   transform: translate3d(0, 10px, 0) scale3d(0.8, 1, 1); }
 
+.menu-button--open span {
+  opacity: 0; }
+
+.menu-button--open::before {
+  transform: rotate3d(0, 0, 1, 45deg); }
+
+.menu-button--open::after {
+  transform: rotate3d(0, 0, 1, -45deg); }
+
 #cover {
   transform: skewX(-10deg);
   width: 100%;
@@ -139,6 +148,9 @@ body {
   top: 15%;
   left: 15%;
   transition: all 400ms ease-out; }
+
+.showcase--open {
+  transform: rotate3d(0, 1, 0, -15deg); }
 
 #social {
   margin: -3% -15%;

@@ -2,9 +2,15 @@
 (function () {
   var bodyWidth = window.innerWidth;
   var bodyHeight = window.innerHeight;
-  
+
   $(".menu-button").click(function () {
-    $("#showcase").css("transform", "rotateY(30deg)");
+    if ($(this).hasClass("menu-button--open")) {
+      $(this).removeClass("menu-button--open");
+      $("#showcase").removeClass("showcase--open");
+    } else {
+      $(this).addClass("menu-button--open");
+      $("#showcase").addClass("showcase--open");
+    }
   });
 } () );
 
