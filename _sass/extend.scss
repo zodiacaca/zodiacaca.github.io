@@ -19,13 +19,6 @@ $size: 70%;
   background: transparent;
 }
 
-.menu-button {
-  top: (100% - $size) / 2;
-  margin: 0.5rem 2rem;
-  width: elementSize(menu-button-width);
-  height: elementSize(menu-button-height);
-}
-
 .tag-button {
   top: (100% - $size) / 2 + $size;
   margin: -(elementSize(tag-button-size) + 4px) 2rem;
@@ -33,6 +26,13 @@ $size: 70%;
   height: elementSize(tag-button-size);
   background-image: url("/images/icon/tags.svg");
   background-repeat: no-repeat;
+}
+
+.menu-button {
+  top: (100% - $size) / 2;
+  margin: 0.5rem 2rem;
+  width: elementSize(menu-button-width);
+  height: elementSize(menu-button-height);
 }
 
 .menu-button::before,
@@ -108,3 +108,24 @@ $stripe-color: rgba(60, 60, 60, 1);
   transition: all #{ 400 * $durationMulti }ms ease-out;
 }
 
+#social {
+  margin: -3% -15%;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+
+  span {
+    display: none;
+  }
+}
+
+.link--social {
+	font-size: 1.5rem;
+  color: #4f4f64;
+	margin: 0 0.75em;
+}
+
+.link--social:hover,
+.link--social:focus {
+	color: #5c5edc;
+}

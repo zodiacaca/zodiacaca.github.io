@@ -67,12 +67,6 @@ body {
   outline: none;
   background: transparent; }
 
-.menu-button {
-  top: 15%;
-  margin: 0.5rem 2rem;
-  width: 30px;
-  height: 20px; }
-
 .tag-button {
   top: 85%;
   margin: -36px 2rem;
@@ -80,6 +74,12 @@ body {
   height: 32px;
   background-image: url("/images/icon/tags.svg");
   background-repeat: no-repeat; }
+
+.menu-button {
+  top: 15%;
+  margin: 0.5rem 2rem;
+  width: 30px;
+  height: 20px; }
 
 .menu-button::before,
 .menu-button::after,
@@ -139,3 +139,20 @@ body {
   top: 15%;
   left: 15%;
   transition: all 400ms ease-out; }
+
+#social {
+  margin: -3% -15%;
+  position: absolute;
+  top: 100%;
+  left: 100%; }
+  #social span {
+    display: none; }
+
+.link--social {
+  font-size: 1.5rem;
+  color: #4f4f64;
+  margin: 0 0.75em; }
+
+.link--social:hover,
+.link--social:focus {
+  color: #5c5edc; }
