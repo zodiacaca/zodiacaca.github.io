@@ -141,16 +141,26 @@ body {
 
 #showcase {
   transform-origin: 100% 50%;
-  width: 70%;
+  width: 75%;
   height: 70%;
   background-color: #1e1e1e;
   position: absolute;
   top: 15%;
   left: 15%;
-  transition: all 400ms ease-out; }
+  transition: all 400ms ease-out;
+  -webkit-mask: linear-gradient(80deg, black 90%, transparent 92%); }
 
 .showcase--open {
   transform: rotate3d(0, 1, 0, -15deg); }
+
+#articles {
+  transform: skewX(10deg);
+  width: 45%;
+  height: 100%;
+  border-left: medium solid #5a5a5a;
+  border-right: medium solid #5a5a5a;
+  position: absolute;
+  left: 45%; }
 
 #social {
   margin: -3% -15%;
