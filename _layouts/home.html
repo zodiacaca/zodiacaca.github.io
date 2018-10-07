@@ -14,12 +14,14 @@ layout: default
 
 <div id="showcase">
   <div id="articles-wrapper">
-    <div id="articles">
+    <ul id="articles">
       {% for post in site.posts %}
-        <div class="article">
-        </div>
+        <li class="article">
+          <img src={{ post.cover }}></img>
+          <h3 class="article-title">{{ post.title }}</h3>
+        </li>
       {% endfor %}
-    </div>
+    </ul>
   </div>
 </div>
 
