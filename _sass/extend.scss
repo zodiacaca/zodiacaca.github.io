@@ -110,7 +110,7 @@ $stripe-color: rgba(60, 60, 60, 1);
 
 #showcase {
   transform-origin: 100% 50%;
-  width: $size + 5%;
+  width: $size;
   height: $size;
   background-color: bgColor(showcase);
   // box-shadow: 0px 0px 0.5rem 0.1rem black;
