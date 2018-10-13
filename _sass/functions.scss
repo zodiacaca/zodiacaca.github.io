@@ -8,7 +8,3 @@
   @return map-get($fontColor, $key);
 }
 
-@function bgColor($key) {
-  @return map-get($bgColor, $key);
-}
-

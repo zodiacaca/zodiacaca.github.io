@@ -57,8 +57,31 @@ body {
 #layer {
   width: 100%;
   height: 100%;
-  background-image: url("/images/bg/bg.svg");
   position: absolute; }
+
+#cover {
+  transform: skewX(-10deg);
+  width: 100%;
+  height: 100%;
+  border-left: thin solid #cccccc;
+  position: absolute;
+  left: 40%;
+  overflow: hidden; }
+  #cover .stripes {
+    transform: skewX(10deg);
+    width: 200%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0);
+    background-image: linear-gradient(-45deg, rgba(64, 64, 64, 0.2) 5.56%, transparent 5.56%, transparent 50%, rgba(64, 64, 64, 0.2) 50%, rgba(64, 64, 64, 0.2) 55.56%, transparent 55.56%, transparent 100%);
+    background-size: 11px 11px;
+    position: absolute;
+    left: -50%; }
+  #cover::after {
+    content: '';
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    top: -50%; }
 
 .flat-button {
   position: absolute;
@@ -69,7 +92,7 @@ body {
 
 .tag-button {
   top: 85%;
-  margin: -36px 2rem;
+  margin: -36px 32px;
   width: 32px;
   height: 32px;
   background-image: url("/images/icon/tags.svg");
@@ -77,7 +100,7 @@ body {
 
 .menu-button {
   top: 15%;
-  margin: 0.5rem 2rem;
+  margin: 8px 32px;
   width: 30px;
   height: 20px; }
 
@@ -91,7 +114,6 @@ body {
   content: '';
   position: absolute;
   top: 50%;
-  left: 0;
   width: 100%;
   height: 2px;
   pointer-events: none;
@@ -100,11 +122,10 @@ body {
 
 .menu-button span {
   position: absolute;
-  left: 0;
-  overflow: hidden;
+  text-indent: 100%;
   width: 100%;
   height: 2px;
-  text-indent: 200%;
+  overflow: hidden;
   transition: opacity 0.25s; }
 
 .menu-button::before {
@@ -113,77 +134,69 @@ body {
 .menu-button::after {
   transform: translate3d(0, 10px, 0) scale3d(0.8, 1, 1); }
 
-.menu-button--open span {
-  opacity: 0; }
-
 .menu-button--open::before {
   transform: rotate3d(0, 0, 1, 45deg); }
 
 .menu-button--open::after {
   transform: rotate3d(0, 0, 1, -45deg); }
 
-#cover {
-  transform: skewX(-10deg);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 40%;
-  overflow: hidden; }
-  #cover .stripes {
-    transform: skewX(10deg);
-    width: 200%;
-    height: 100%;
-    background-color: #1e1e1e;
-    background-image: linear-gradient(-45deg, #3c3c3c 5.56%, transparent 5.56%, transparent 50%, #3c3c3c 50%, #3c3c3c 55.56%, transparent 55.56%, transparent 100%);
-    background-size: 11px 11px;
-    position: relative;
-    left: -50%; }
+.menu-button--open span {
+  opacity: 0; }
 
-#showcase {
+#groove {
   transform-origin: 100% 50%;
   width: 70%;
   height: 70%;
-  background-color: #1e1e1e;
+  background-color: rgba(26, 26, 26, 0);
   position: absolute;
   top: 15%;
-  left: 15%;
-  transition: all 400ms ease-out; }
+  left: 15%; }
 
-.showcase--open {
-  transform: rotate3d(0, 1, 0, -15deg); }
+.menu-wrapper {
+  font-family: Lato;
+  width: 40%;
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  -webkit-mask: linear-gradient(135deg, black 60%, transparent 80%); }
+  .menu-wrapper h1 {
+    line-height: 1;
+    margin-top: 0;
+    padding: 1rem 3rem;
+    background-image: linear-gradient(100deg, #4776e6, #8e54e9 50%);
+    border-top: thin solid gray;
+    border-bottom: thin solid gray;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
 
-#articles-wrapper {
-  width: 45%;
+.articles-wrapper {
+  width: 60%;
   height: 100%;
   position: absolute;
-  left: 50%; }
+  left: 55%; }
 
 #articles {
   list-style-type: none;
   width: 120%;
-  height: 100%;
+  max-height: 42rem;
   position: absolute;
-  top: 2%;
-  left: 0%;
+  top: -10%;
   overflow: hidden; }
 
 .article {
-  margin: 0.5rem 0;
-  width: 98%;
-  height: 10rem;
-  box-shadow: 2px 2px 0px 0.1rem #0a0a0a;
+  margin: 3.5rem 0;
+  width: 100%;
+  height: 7rem;
+  background-image: linear-gradient(-45deg, #4776e6, #8e54e9 50%);
+  border-radius: 0.5rem;
   position: relative;
-  overflow: hidden; }
-  .article img {
-    width: 100%;
-    opacity: 0.5; }
+  overflow: hidden;
+  opacity: 0.5;
+  -webkit-mask: linear-gradient(45deg, transparent 3%, black 3%); }
   .article .article-title {
     font-family: Daville;
-    color: rgba(0, 0, 0, 0.8);
-    margin: -2rem 0;
-    position: absolute;
-    top: 100%;
-    left: 1rem; }
+    color: black;
+    margin: 1rem 2rem; }
 
 #social {
   margin: -3% -15%;

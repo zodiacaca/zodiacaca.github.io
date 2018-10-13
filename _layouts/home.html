@@ -5,19 +5,21 @@ layout: default
 
 <div id="layer"></div>
 
-<button class="flat-button menu-button"><span>Menu</span></button>
-<button class="flat-button tag-button"></button>
-
 <div id="cover">
   <div class="stripes"></div>
 </div>
 
-<div id="showcase">
-  <div id="articles-wrapper">
+<button class="flat-button menu-button"><span>Menu</span></button>
+<button class="flat-button tag-button"></button>
+
+<div id="groove">
+  <nav class="menu-wrapper">
+    <h1>Home</h1>
+  </nav>
+  <div class="articles-wrapper">
     <ul id="articles">
       {% for post in site.posts %}
         <li class="article">
-          <img src={{ post.cover }}></img>
           <h3 class="article-title">{{ post.title }}</h3>
         </li>
       {% endfor %}

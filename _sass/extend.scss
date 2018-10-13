@@ -6,8 +6,39 @@ body {
 #layer {
   width: 100%;
   height: 100%;
-  background-image: url("/images/bg/bg.svg");
   position: absolute;
+}
+
+$left: 40%;
+$stripe-color: hsla(0, 0%, 25%, 0.2);
+#cover {
+  transform: skewX(-10deg);
+  width: 100%;
+  height: 100%;
+  border-left: thin solid hsla(0, 0%, 80%, 1);
+  position: absolute;
+  left: $left;
+  overflow: hidden;
+
+  .stripes {
+    transform: skewX(10deg);
+    width: 200%;
+    height: 100%;
+    background-color: hsla(0, 0%, 10%, 0);
+    background-image: linear-gradient(-45deg, $stripe-color 5.56%, transparent 5.56%, transparent 50%, $stripe-color 50%, $stripe-color 55.56%, transparent 55.56%, transparent 100%);
+    background-size: 11px 11px;
+    position: absolute;
+    left: -50%;
+  }
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 200%;
+    // box-shadow: 0px 0px 0.5rem 0.1rem black inset;
+    position: absolute;
+    top: -50%;
+  }
 }
 
 $size: 70%;
@@ -21,7 +52,7 @@ $size: 70%;
 
 .tag-button {
   top: (100% - $size) / 2 + $size;
-  margin: -(elementSize(tag-button-size) + 4px) 2rem;
+  margin: -(elementSize(tag-button-size) + 4px) 32px;
   width: elementSize(tag-button-size);
   height: elementSize(tag-button-size);
   background-image: url("/images/icon/tags.svg");
@@ -30,7 +61,7 @@ $size: 70%;
 
 .menu-button {
   top: (100% - $size) / 2;
-  margin: 0.5rem 2rem;
+  margin: 8px 32px;
   width: elementSize(menu-button-width);
   height: elementSize(menu-button-height);
 }
@@ -46,7 +77,6 @@ $size: 70%;
 	content: '';
 	position: absolute;
 	top: 50%;
-	left: 0;
 	width: 100%;
 	height: elementSize(menu-button-bar);
 	pointer-events: none;
@@ -56,11 +86,10 @@ $size: 70%;
 
 .menu-button span {
 	position: absolute;
-	left: 0;
-	overflow: hidden;
+	text-indent: 100%;
 	width: 100%;
 	height: elementSize(menu-button-bar);
-	text-indent: 200%;
+	overflow: hidden;
 	transition: opacity 0.25s;
 }
 
@@ -72,10 +101,6 @@ $size: 70%;
 	transform: translate3d(0, (elementSize(menu-button-height) / 2), 0) scale3d(0.8, 1, 1);
 }
 
-.menu-button--open span {
-	opacity: 0;
-}
-
 .menu-button--open::before {
 	transform: rotate3d(0, 0, 1, 45deg);
 }
@@ -84,89 +109,73 @@ $size: 70%;
 	transform: rotate3d(0, 0, 1, -45deg);
 }
 
-$left: 40%;
-$stripe-color: rgba(60, 60, 60, 1);
-#cover {
-  transform: skewX(-10deg);
-  width: 100%;
-  height: 100%;
-  // border-left: medium solid rgba(10, 10, 10, 1);
-  // box-shadow: 0px 0px 0.5rem 0.15rem black;
-  position: absolute;
-  left: $left;
-  overflow: hidden;
-
-  .stripes {
-    transform: skewX(10deg);
-    width: 200%;
-    height: 100%;
-    background-color: bgColor(cover);
-    background-image: linear-gradient(-45deg, $stripe-color 5.56%, transparent 5.56%, transparent 50%, $stripe-color 50%, $stripe-color 55.56%, transparent 55.56%, transparent 100%);
-    background-size: 11px 11px;
-    position: relative;
-    left: -50%;
-  }
+.menu-button--open span {
+	opacity: 0;
 }
 
-#showcase {
+#groove {
   transform-origin: 100% 50%;
   width: $size;
   height: $size;
-  background-color: bgColor(showcase);
-  // box-shadow: 0px 0px 0.5rem 0.1rem black;
+  background-color: hsla(0, 0%, 10%, 0);
   position: absolute;
   top: (100% - $size) / 2;
   left: (100% - $size) / 2;
-  transition: all #{ 400 * $durationMulti }ms ease-out;
-  // -webkit-mask: linear-gradient(80deg, black 90%, transparent 92%);
 }
 
-.showcase--open {
-  transform: rotate3d(0, 1, 0, -15deg);
-}
-
-#articles-wrapper {
-  // transform: skewX(10deg);
-  width: 45%;
-  height: 100%;
-  // border-right: thin solid rgba(90, 90, 90, 1);
+.menu-wrapper {
+  font-family: Lato;
+  width: 40%;
   position: absolute;
-  left: 50%;
+  top: 10%;
+  left: -10%;
+  -webkit-mask: linear-gradient(135deg, black 60%, transparent 80%);
+
+  h1 {
+    line-height: 1;
+    margin-top: 0;
+    padding: 1rem 3rem;
+    background-image: linear-gradient(100deg, #4776e6, #8e54e9 50%);
+    border-top: thin solid hsla(0, 0%, 50%, 1);
+    border-bottom: thin solid hsla(0, 0%, 50%, 1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
+.articles-wrapper {
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  left: 55%;
+}
+
+$article-height: 7rem;
+$count: 4;
 #articles {
   list-style-type: none;
   width: 120%;
-  height: 100%;
-  // box-shadow: 0px 0px 0.5rem 0.02rem black inset;
+  max-height: $article-height * $count + $article-height / 2 * $count;
   position: absolute;
-  top: 2%;
-  left: 0%;
+  top: -10%;
   overflow: hidden;
 }
 
 .article {
-  margin: 0.5rem 0;
-  width: 98%;
-  height: 10rem;
-  box-shadow: 2px 2px 0px 0.1rem rgba(10, 10, 10, 1);
+  margin: ($article-height / 2) 0;
+  width: 100%;
+  height: 7rem;
+  background-image: linear-gradient(-45deg, #4776e6, #8e54e9 50%);
+  border-radius: 0.5rem;
   position: relative;
-  // top: 5%;
   overflow: hidden;
-
-  img {
-    width: 100%;
-    opacity: 0.5;
-  }
+  opacity: 0.5;
+  -webkit-mask: linear-gradient(45deg, transparent 3%, black 3%);
 
   .article-title {
     font-family: Daville;
-    color: rgba(0, 0, 0, 0.8);
-    // transform: skewX(-20deg);
-    margin: -2rem 0;
-    position: absolute;
-    top: 100%;
-    left: 1rem;
+    color: hsla(0, 0%, 0%, 1);
+    margin: 1rem 2rem;
   }
 }
 
