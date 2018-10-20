@@ -42,8 +42,20 @@ $stripe-color: hsla(0, 0%, 25%, 0.2);
 }
 
 $size: 70%;
-.flat-button {
+.edge-button {
   position: absolute;
+  
+  &:first-child {
+    top: (100% - $size) / 2;
+  }
+  &:last-child {
+    top: (100% - $size) / 2 + $size;
+    margin: (elementSize(tag-button-size) * -1 - 3px) 0;
+  }
+}
+
+.flat-button {
+  position: relative;
   cursor: pointer;
   border: none;
   outline: none;
@@ -51,8 +63,7 @@ $size: 70%;
 }
 
 .tag-button {
-  top: (100% - $size) / 2 + $size;
-  margin: -(elementSize(tag-button-size) + 4px) 32px;
+  margin: 0 32px;
   width: elementSize(tag-button-size);
   height: elementSize(tag-button-size);
   background-image: url("/images/icon/tags.svg");
@@ -60,7 +71,6 @@ $size: 70%;
 }
 
 .menu-button {
-  top: (100% - $size) / 2;
   margin: 8px 32px;
   width: elementSize(menu-button-width);
   height: elementSize(menu-button-height);
@@ -69,6 +79,7 @@ $size: 70%;
 .menu-button::before,
 .menu-button::after,
 .menu-button span {
+  margin-left: elementSize(menu-button-width) * -0.5;
 	background: #5f656f;
 }
 

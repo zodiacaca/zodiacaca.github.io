@@ -83,23 +83,29 @@ body {
     position: absolute;
     top: -50%; }
 
+.edge-button {
+  position: absolute; }
+  .edge-button:first-child {
+    top: 15%; }
+  .edge-button:last-child {
+    top: 85%;
+    margin: -33px 0; }
+
 .flat-button {
-  position: absolute;
+  position: relative;
   cursor: pointer;
   border: none;
   outline: none;
   background: transparent; }
 
 .tag-button {
-  top: 85%;
-  margin: -36px 32px;
-  width: 32px;
-  height: 32px;
+  margin: 0 32px;
+  width: 30px;
+  height: 30px;
   background-image: url("/images/icon/tags.svg");
   background-repeat: no-repeat; }
 
 .menu-button {
-  top: 15%;
   margin: 8px 32px;
   width: 30px;
   height: 20px; }
@@ -107,6 +113,7 @@ body {
 .menu-button::before,
 .menu-button::after,
 .menu-button span {
+  margin-left: -15px;
   background: #5f656f; }
 
 .menu-button::before,
