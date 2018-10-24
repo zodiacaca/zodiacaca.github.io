@@ -161,11 +161,10 @@ body {
 
 .menu-wrapper {
   font-family: Lato;
-  width: 40%;
+  width: 45%;
   position: absolute;
   top: 10%;
-  left: -10%;
-  -webkit-mask: linear-gradient(135deg, black 60%, transparent 80%); }
+  left: -10%; }
   .menu-wrapper h1 {
     line-height: 1;
     margin-top: 0;
@@ -174,7 +173,24 @@ body {
     border-top: thin solid gray;
     border-bottom: thin solid gray;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; }
+    -webkit-text-fill-color: transparent;
+    -webkit-mask: linear-gradient(135deg, black 60%, transparent 80%); }
+  .menu-wrapper .menu-item {
+    display: block;
+    color: gray;
+    margin: 2.6rem 0; }
+    .menu-wrapper .menu-item figure {
+      display: inline-block;
+      text-align: center;
+      width: 3rem; }
+    .menu-wrapper .menu-item span {
+      font-size: 1.2rem;
+      font-weight: 100; }
+      .menu-wrapper .menu-item span::before {
+        content: '';
+        margin-right: 3rem;
+        height: 100%;
+        border-left: thin solid #bfbfbf; }
 
 .articles-wrapper {
   width: 60%;

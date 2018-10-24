@@ -44,7 +44,7 @@ $stripe-color: hsla(0, 0%, 25%, 0.2);
 $size: 70%;
 .edge-button {
   position: absolute;
-  
+
   &:first-child {
     top: (100% - $size) / 2;
   }
@@ -136,11 +136,10 @@ $size: 70%;
 
 .menu-wrapper {
   font-family: Lato;
-  width: 40%;
+  width: 45%;
   position: absolute;
   top: 10%;
   left: -10%;
-  -webkit-mask: linear-gradient(135deg, black 60%, transparent 80%);
 
   h1 {
     line-height: 1;
@@ -151,6 +150,31 @@ $size: 70%;
     border-bottom: thin solid hsla(0, 0%, 50%, 1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-mask: linear-gradient(135deg, black 60%, transparent 80%);
+  }
+
+  .menu-item {
+    display: block;
+    color: hsla(0, 0%, 50%, 1);
+    margin: 2.6rem 0;
+
+    figure {
+      display: inline-block;
+      text-align: center;
+      width: 3rem;
+    }
+
+    span {
+      font-size: 1.2rem;
+      font-weight: 100;
+
+      &::before {
+        content: '';
+        margin-right: 3rem;
+        height: 100%;
+        border-left: thin solid hsla(0, 0%, 75%, 1);
+      }
+    }
   }
 }
 
