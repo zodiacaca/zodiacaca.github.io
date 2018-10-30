@@ -214,6 +214,39 @@ $count: 4;
   }
 }
 
+#navigator {
+  width: 10%;
+  position: absolute;
+  top: 90%;
+  left: 45%;
+
+  &::before, &::after {
+    content: '';
+    transform: skewX(-10deg);
+    display: inline-block;
+    height: 5px;
+    background-color: #5f656f;
+    opacity: 0.75;
+  }
+
+  &::before {
+    width: 5%;
+  }
+  &::after {
+    width: 85%;
+  }
+
+  span {
+    transform: skewX(-10deg);
+    display: inline-block;
+    text-indent: 100%;
+    width: 5%;
+    height: 5px;
+    background-color: hsla(0, 100%, 50%, 0.5);
+    overflow: hidden;
+  }
+}
+
 #social {
   margin: -3% -15%;
   position: absolute;
