@@ -222,14 +222,19 @@ body {
     margin: 1rem 2rem; }
 
 #navigator {
+  cursor: pointer;
   width: 10%;
   position: absolute;
   top: 90%;
   left: 45%; }
-  #navigator::before, #navigator::after {
-    content: '';
+  #navigator *, #navigator::before, #navigator::after {
     transform: skewX(-10deg);
     display: inline-block;
+    transition: width 0.25s; }
+  #navigator:hover::before, #navigator:hover::after {
+    border: thin solid white; }
+  #navigator::before, #navigator::after {
+    content: '';
     height: 5px;
     background-color: #5f656f;
     opacity: 0.75; }
@@ -238,8 +243,6 @@ body {
   #navigator::after {
     width: 85%; }
   #navigator span {
-    transform: skewX(-10deg);
-    display: inline-block;
     text-indent: 100%;
     width: 5%;
     height: 5px;
