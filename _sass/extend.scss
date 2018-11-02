@@ -141,6 +141,10 @@ $size: 70%;
   top: 10%;
   left: -10%;
 
+  a {
+    @include simple-link(hsla(0, 0%, 50%, 1), hsla(0, 0%, 50%, 1))
+  }
+
   h1 {
     line-height: 1;
     margin-top: 0;
@@ -155,7 +159,6 @@ $size: 70%;
 
   .menu-item {
     display: block;
-    color: hsla(0, 0%, 50%, 1);
     margin: 2.6rem 0;
 
     figure {
@@ -209,8 +212,11 @@ $count: 4;
 
   .article-title {
     font-family: Daville;
-    color: hsla(0, 0%, 0%, 1);
     margin: 1rem 2rem;
+  }
+
+  a {
+    @include simple-link(hsla(0, 0%, 0%, 1), hsla(0, 0%, 0%, 1))
   }
 }
 
@@ -266,7 +272,8 @@ $count: 4;
 }
 
 .link--social {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
   color: #4f4f64;
 	margin: 0 0.75em;
 }
