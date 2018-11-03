@@ -70,28 +70,39 @@ $size: 70%;
   background-repeat: no-repeat;
 }
 
-#tags {
+.tags {
   padding: 0 6rem;
   width: 30%;
   height: 12rem;
-  background-color: hsla(0, 0%, 50%, 0.1);
+  background-color: hsla(0, 0%, 50%, 0.15);
   border-top: thin solid hsla(0, 0%, 50%, 1);
   border-bottom: thin solid hsla(0, 0%, 50%, 1);
   position: absolute;
   top: 700px;
+  left: -30%;
   -webkit-mask: linear-gradient(90deg, black 80%, transparent 100%);
+  transition: left 0.25s;
 
   .tag {
     display: inline-block;
+    cursor: pointer;
     font-family: Lato;
     color: hsla(0, 0%, 25%, 1);
     margin: 1.8rem 0;
     width: 20%;
+    opacity: 0;
+    transition: opacity 1s;
 
     &::before {
       content: '#';
     }
   }
+}
+.tags--open {
+  left: 0;
+}
+.tags .tag--open {
+  opacity: 1;
 }
 
 .menu-button {
@@ -149,7 +160,7 @@ $size: 70%;
 }
 
 #groove {
-  transform-origin: 100% 50%;
+  pointer-events: none;
   width: $size;
   height: $size;
   background-color: hsla(0, 0%, 10%, 0);

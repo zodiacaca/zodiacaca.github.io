@@ -105,24 +105,35 @@ body {
   background-image: url("/images/icon/tags.svg");
   background-repeat: no-repeat; }
 
-#tags {
+.tags {
   padding: 0 6rem;
   width: 30%;
   height: 12rem;
-  background-color: rgba(128, 128, 128, 0.1);
+  background-color: rgba(128, 128, 128, 0.15);
   border-top: thin solid gray;
   border-bottom: thin solid gray;
   position: absolute;
   top: 700px;
-  -webkit-mask: linear-gradient(90deg, black 80%, transparent 100%); }
-  #tags .tag {
+  left: -30%;
+  -webkit-mask: linear-gradient(90deg, black 80%, transparent 100%);
+  transition: left 0.25s; }
+  .tags .tag {
     display: inline-block;
+    cursor: pointer;
     font-family: Lato;
     color: #404040;
     margin: 1.8rem 0;
-    width: 20%; }
-    #tags .tag::before {
+    width: 20%;
+    opacity: 0;
+    transition: opacity 1s; }
+    .tags .tag::before {
       content: '#'; }
+
+.tags--open {
+  left: 0; }
+
+.tags .tag--open {
+  opacity: 1; }
 
 .menu-button {
   margin: 8px 32px;
@@ -170,7 +181,7 @@ body {
   opacity: 0; }
 
 #groove {
-  transform-origin: 100% 50%;
+  pointer-events: none;
   width: 70%;
   height: 70%;
   background-color: rgba(26, 26, 26, 0);
