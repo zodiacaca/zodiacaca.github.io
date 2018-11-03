@@ -105,6 +105,25 @@ body {
   background-image: url("/images/icon/tags.svg");
   background-repeat: no-repeat; }
 
+#tags {
+  padding: 0 6rem;
+  width: 30%;
+  height: 12rem;
+  background-color: rgba(128, 128, 128, 0.1);
+  border-top: thin solid gray;
+  border-bottom: thin solid gray;
+  position: absolute;
+  top: 700px;
+  -webkit-mask: linear-gradient(90deg, black 80%, transparent 100%); }
+  #tags .tag {
+    display: inline-block;
+    font-family: Lato;
+    color: #404040;
+    margin: 1.8rem 0;
+    width: 20%; }
+    #tags .tag::before {
+      content: '#'; }
+
 .menu-button {
   margin: 8px 32px;
   width: 30px;
@@ -165,18 +184,6 @@ body {
   position: absolute;
   top: 10%;
   left: -10%; }
-  .menu-wrapper a {
-    text-decoration: none;
-    color: gray;
-    transition: all 400ms ease-out; }
-    .menu-wrapper a:link {
-      color: gray; }
-    .menu-wrapper a:visited {
-      color: gray; }
-    .menu-wrapper a:hover {
-      color: gray; }
-    .menu-wrapper a:active {
-      color: gray; }
   .menu-wrapper h1 {
     line-height: 1;
     margin-top: 0;
@@ -190,14 +197,29 @@ body {
   .menu-wrapper .menu-item {
     display: block;
     margin: 2.6rem 0; }
-    .menu-wrapper .menu-item figure {
+    .menu-wrapper .menu-item a {
+      text-decoration: none;
+      color: #737373;
+      transition: all 400ms ease-out; }
+      .menu-wrapper .menu-item a:link {
+        color: #737373; }
+      .menu-wrapper .menu-item a:visited {
+        color: #737373; }
+      .menu-wrapper .menu-item a:hover {
+        color: #1a1a1a; }
+      .menu-wrapper .menu-item a:active {
+        color: #737373; }
+    .menu-wrapper .menu-item span:first-child {
       display: inline-block;
       text-align: center;
-      width: 3rem; }
-    .menu-wrapper .menu-item span {
+      margin: 0.5rem 1.5rem;
+      padding: 0.5rem 0;
+      width: 5rem;
+      border-radius: 1rem; }
+    .menu-wrapper .menu-item span:last-child {
       font-size: 1.2rem;
       font-weight: 100; }
-      .menu-wrapper .menu-item span::before {
+      .menu-wrapper .menu-item span:last-child::before {
         content: '';
         margin-right: 3rem;
         height: 100%;
@@ -229,7 +251,8 @@ body {
   -webkit-mask: linear-gradient(45deg, transparent 3%, black 3%); }
   .article .article-title {
     font-family: Daville;
-    margin: 1rem 2rem; }
+    margin: 0.5rem 0;
+    padding: 0.5rem 2rem; }
   .article a {
     text-decoration: none;
     color: black;
@@ -244,6 +267,7 @@ body {
       color: black; }
 
 #navigator {
+  display: none;
   cursor: pointer;
   width: 10%;
   position: absolute;

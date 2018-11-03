@@ -70,6 +70,30 @@ $size: 70%;
   background-repeat: no-repeat;
 }
 
+#tags {
+  padding: 0 6rem;
+  width: 30%;
+  height: 12rem;
+  background-color: hsla(0, 0%, 50%, 0.1);
+  border-top: thin solid hsla(0, 0%, 50%, 1);
+  border-bottom: thin solid hsla(0, 0%, 50%, 1);
+  position: absolute;
+  top: 700px;
+  -webkit-mask: linear-gradient(90deg, black 80%, transparent 100%);
+
+  .tag {
+    display: inline-block;
+    font-family: Lato;
+    color: hsla(0, 0%, 25%, 1);
+    margin: 1.8rem 0;
+    width: 20%;
+
+    &::before {
+      content: '#';
+    }
+  }
+}
+
 .menu-button {
   margin: 8px 32px;
   width: elementSize(menu-button-width);
@@ -141,10 +165,6 @@ $size: 70%;
   top: 10%;
   left: -10%;
 
-  a {
-    @include simple-link(hsla(0, 0%, 50%, 1), hsla(0, 0%, 50%, 1))
-  }
-
   h1 {
     line-height: 1;
     margin-top: 0;
@@ -161,21 +181,31 @@ $size: 70%;
     display: block;
     margin: 2.6rem 0;
 
-    figure {
-      display: inline-block;
-      text-align: center;
-      width: 3rem;
+    a {
+      @include simple-link(hsla(0, 0%, 45%, 1), hsla(0, 0%, 10%, 1))
     }
 
     span {
-      font-size: 1.2rem;
-      font-weight: 100;
+      &:first-child {
+        display: inline-block;
+        text-align: center;
+        margin: 0.5rem 1.5rem;
+        padding: 0.5rem 0;
+        width: 5rem;
+        // background-color: hsla(0, 0%, 50%, 0.5);
+        border-radius: 1rem;
+      }
 
-      &::before {
-        content: '';
-        margin-right: 3rem;
-        height: 100%;
-        border-left: thin solid hsla(0, 0%, 75%, 1);
+      &:last-child {
+        font-size: 1.2rem;
+        font-weight: 100;
+
+        &::before {
+          content: '';
+          margin-right: 3rem;
+          height: 100%;
+          border-left: thin solid hsla(0, 0%, 75%, 1);
+        }
       }
     }
   }
@@ -212,7 +242,8 @@ $count: 4;
 
   .article-title {
     font-family: Daville;
-    margin: 1rem 2rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem 2rem;
   }
 
   a {
@@ -221,6 +252,7 @@ $count: 4;
 }
 
 #navigator {
+  display: none;
   cursor: pointer;
   width: 10%;
   position: absolute;
