@@ -109,7 +109,7 @@ body {
   padding: 0 6rem;
   width: 30%;
   height: 12rem;
-  background-color: rgba(128, 128, 128, 0.15);
+  background-color: rgba(128, 128, 128, 0.1);
   border-top: thin solid gray;
   border-bottom: thin solid gray;
   position: absolute;
@@ -277,34 +277,35 @@ body {
     .article a:active {
       color: black; }
 
+#navigator span:first-child::before, #navigator span:first-child::after, #navigator span:last-child::before, #navigator span:last-child::after {
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 0.25rem;
+  background-color: black; }
+
 #navigator {
-  display: none;
   cursor: pointer;
   width: 10%;
   position: absolute;
   top: 90%;
-  left: 45%;
-  opacity: 0.75; }
-  #navigator *, #navigator::before, #navigator::after {
-    transform: skewX(-10deg);
-    display: inline-block;
-    transition: width 0.25s; }
-  #navigator:hover::before, #navigator:hover::after {
-    border: thin solid white; }
-  #navigator::before, #navigator::after {
-    content: '';
-    height: 0.25rem;
-    background-color: #5f656f; }
-  #navigator::before {
-    width: 5%; }
-  #navigator::after {
-    width: 85%; }
+  left: 45%; }
   #navigator span {
-    text-indent: 100%;
-    width: 5%;
-    height: 0.25rem;
-    background-color: crimson;
-    overflow: hidden; }
+    opacity: 0.5; }
+    #navigator span:first-child::before {
+      transform: skewY(-45deg); }
+    #navigator span:first-child::after {
+      transform: skewY(45deg); }
+    #navigator span:nth-child(2) {
+      display: inline-block;
+      width: 0.25rem;
+      height: 0.25rem;
+      background-color: black;
+      border-radius: 50%; }
+    #navigator span:last-child::before {
+      transform: skewY(45deg); }
+    #navigator span:last-child::after {
+      transform: skewY(-45deg); }
 
 #social {
   margin: -3% -15%;
