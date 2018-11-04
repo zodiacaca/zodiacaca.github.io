@@ -103,7 +103,8 @@ body {
   width: 30px;
   height: 30px;
   background-image: url("/images/icon/tags.svg");
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  z-index: 10; }
 
 .tags {
   padding: 0 6rem;
@@ -115,6 +116,7 @@ body {
   position: absolute;
   top: 700px;
   left: -30%;
+  z-index: 5;
   -webkit-mask: linear-gradient(90deg, black 80%, transparent 100%);
   transition: left 0.25s; }
   .tags .tag {
@@ -181,7 +183,6 @@ body {
   opacity: 0; }
 
 #groove {
-  pointer-events: none;
   width: 70%;
   height: 70%;
   background-color: rgba(26, 26, 26, 0);
@@ -301,11 +302,14 @@ body {
       width: 0.25rem;
       height: 0.25rem;
       background-color: black;
-      border-radius: 50%; }
+      border-radius: 50%;
+      pointer-events: none; }
     #navigator span:last-child::before {
       transform: skewY(45deg); }
     #navigator span:last-child::after {
       transform: skewY(-45deg); }
+  #navigator *:hover {
+    opacity: 0.75; }
 
 #social {
   margin: -3% -15%;

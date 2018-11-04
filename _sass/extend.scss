@@ -68,6 +68,7 @@ $size: 70%;
   height: elementSize(tag-button-size);
   background-image: url("/images/icon/tags.svg");
   background-repeat: no-repeat;
+  z-index: 10;
 }
 
 .tags {
@@ -80,6 +81,7 @@ $size: 70%;
   position: absolute;
   top: 700px;
   left: -30%;
+  z-index: 5;
   -webkit-mask: linear-gradient(90deg, black 80%, transparent 100%);
   transition: left 0.25s;
 
@@ -160,7 +162,6 @@ $size: 70%;
 }
 
 #groove {
-  pointer-events: none;
   width: $size;
   height: $size;
   background-color: hsla(0, 0%, 10%, 0);
@@ -296,6 +297,7 @@ $count: 4;
       height: 0.25rem;
       background-color: black;
       border-radius: 50%;
+      pointer-events: none;
     }
     &:last-child {
       &::before {
@@ -307,6 +309,10 @@ $count: 4;
         @extend %arrow-arm;
       }
     }
+  }
+
+  *:hover {
+    opacity: 0.75;
   }
 }
 
