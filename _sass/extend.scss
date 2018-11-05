@@ -259,7 +259,7 @@ $count: 4;
   }
 
   a {
-    @include simple-link(hsla(0, 0%, 0%, 1), hsla(0, 0%, 0%, 1))
+    @include simple-link(hsla(0, 0%, 0%, 1), hsla(115, 100%, 50%, 1))
   }
 }
 
