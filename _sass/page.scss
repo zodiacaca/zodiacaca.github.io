@@ -26,7 +26,23 @@ body {
   position: relative;
 
   .post {
+    padding: 1.5rem 3rem;
     width: 80%;
+
+    nav {
+      span {
+        font-family: Lato;
+        font-size: 0.9rem;
+        opacity: 0.55;
+
+        &::after {
+          content: ' /';
+        }
+        &:last-child::after {
+          content: '';
+        }
+      }
+    }
   }
 
   #outline {

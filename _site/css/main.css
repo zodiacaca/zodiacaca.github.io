@@ -350,7 +350,16 @@ body {
   height: 100%;
   position: relative; }
   #page-main .post {
+    padding: 1.5rem 3rem;
     width: 80%; }
+    #page-main .post nav span {
+      font-family: Lato;
+      font-size: 0.9rem;
+      opacity: 0.55; }
+      #page-main .post nav span::after {
+        content: ' /'; }
+      #page-main .post nav span:last-child::after {
+        content: ''; }
   #page-main #outline {
     float: right;
     width: 20%;
