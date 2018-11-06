@@ -19,7 +19,7 @@ body {
   min-height: 100vh;
   background-color: #fff; }
 
-div, nav, ol, ul, li, button, img {
+div, nav, ol, ul, li, button, article, img {
   margin: 0;
   padding: 0; }
 
@@ -49,6 +49,7 @@ html, body {
   height: 100%;
   position: relative; }
   #page-main .post {
+    float: left;
     padding: 1.5rem 3rem;
     width: 80%; }
     #page-main .post nav span {

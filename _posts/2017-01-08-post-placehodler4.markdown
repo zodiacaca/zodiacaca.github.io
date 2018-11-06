@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "Install Nginx"
 date: 2017-01-08 13:00:00 -0800
 categories: post

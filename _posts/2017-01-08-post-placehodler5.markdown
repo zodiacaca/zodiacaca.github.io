@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "Initial Server Setup with Ubuntu 16.04"
 date: 2017-01-09 13:00:00 -0800
 categories: post
