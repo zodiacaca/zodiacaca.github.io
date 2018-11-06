@@ -1,78 +1,87 @@
----
-layout: default
----
-<div id="layer"></div>
+<!DOCTYPE html>
+<html lang="en">
 
-<div id="cover">
-  <div class="stripes"></div>
-</div>
+  {% include head.p1.html %}
+  {% include head.p2a.html %}
 
-<aside>
-  <div class="edge-button">
-    <button class="flat-button menu-button">
-      <span>Menu</span>
-    </button>
-  </div>
-  <ul class="tags">
-    <li class="tag">tag1</li>
-    <li class="tag">tag2</li>
-    <li class="tag">tag3</li>
-    <li class="tag">tag4</li>
-    <li class="tag">tag5</li>
-    <li class="tag">tag6</li>
-  </ul>
-  <div class="edge-button">
-    <button class="flat-button tag-button">
-    </button>
-  </div>
-</aside>
+  <body>
 
-<div id="groove">
-  <nav class="menu-wrapper">
-    <h1>Home</h1>
-    <ul>
-      <li class="menu-item">
-        <a href="#">
-          <span><i class="far fa-newspaper"></i></span>
-          <span>Timeline</span>
-        </a>
-      </li>
-      <li class="menu-item">
-        <a href="#">
-          <span><i class="far fa-edit"></i></span>
-          <span>Works</span>
-        </a>
-      </li>
-      <li class="menu-item">
-        <a href="#">
-          <span><i class="far fa-user"></i></span>
-          <span>About Me</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <div class="articles-wrapper">
-    <ul id="articles">
-      {% for post in site.posts %}
-        <li class="article">
-          <h3 class="article-title"><a href="#">{{ post.title }}</a></h3>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-</div>
+    <div id="layer"></div>
 
-<div id="navigator">
-  {% for i in (1..3) %}<span></span>{% endfor %}
-</div>
+    <div id="cover">
+      <div class="stripes"></div>
+    </div>
 
-<div id="social">
-  <a class="link link--social" href="#"><i class="fab fa-twitter"></i><span class="text-hidden">Twitter</span></a>
-  <a class="link link--social" href="#"><i class="fab fa-linkedin"></i><span class="text-hidden">LinkedIn</span></a>
-  <a class="link link--social" href="#"><i class="fab fa-facebook"></i><span class="text-hidden">Facebook</span></a>
-  <a class="link link--social" href="#"><i class="fab fa-youtube"></i><span class="text-hidden">YouTube</span></a>
-</div>
+    <aside>
+      <div class="edge-button">
+        <button class="flat-button menu-button">
+          <span>Menu</span>
+        </button>
+      </div>
+      <ul class="tags">
+        <li class="tag">tag1</li>
+        <li class="tag">tag2</li>
+        <li class="tag">tag3</li>
+        <li class="tag">tag4</li>
+        <li class="tag">tag5</li>
+        <li class="tag">tag6</li>
+      </ul>
+      <div class="edge-button">
+        <button class="flat-button tag-button">
+        </button>
+      </div>
+    </aside>
 
-<script src="/js/index.js"></script>
-<script src="/js/canvas.js"></script>
-<script src="/js/canvas_draw.js"></script>
+    <div id="groove">
+      <nav class="menu-wrapper">
+        <h1>Home</h1>
+        <ul>
+          <li class="menu-item">
+            <a href="#">
+              <span><i class="far fa-newspaper"></i></span>
+              <span>Timeline</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#">
+              <span><i class="far fa-edit"></i></span>
+              <span>Works</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#">
+              <span><i class="far fa-user"></i></span>
+              <span>About Me</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="articles-wrapper">
+        <ul id="articles">
+          {% for post in site.posts %}
+            <li class="article">
+              <h3 class="article-title"><a href="#">{{ post.title }}</a></h3>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div id="navigator">
+      {% for i in (1..3) %}<span></span>{% endfor %}
+    </div>
+
+    <div id="social">
+      <a class="link link--social" href="#"><i class="fab fa-twitter"></i><span class="text-hidden">Twitter</span></a>
+      <a class="link link--social" href="#"><i class="fab fa-linkedin"></i><span class="text-hidden">LinkedIn</span></a>
+      <a class="link link--social" href="#"><i class="fab fa-facebook"></i><span class="text-hidden">Facebook</span></a>
+      <a class="link link--social" href="#"><i class="fab fa-youtube"></i><span class="text-hidden">YouTube</span></a>
+    </div>
+
+    <script src="/js/index.js"></script>
+    <script src="/js/canvas.js"></script>
+    <script src="/js/canvas_draw.js"></script>
+
+  </body>
+
+</html>

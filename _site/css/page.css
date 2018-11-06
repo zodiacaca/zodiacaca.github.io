@@ -1,0 +1,66 @@
+@font-face {
+  font-family: Quattrocento Sans;
+  src: url(/fonts/quattrocento/QuattrocentoSans-Regular.ttf); }
+@font-face {
+  font-family: Lato;
+  src: url(/fonts/lato/Lato-Regular.woff); }
+@font-face {
+  font-family: Daville;
+  src: url(/fonts/daville/Daville-Condensed-Slanted.ttf); }
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #fff; }
+
+div, nav, ol, ul, li, button, img {
+  margin: 0;
+  padding: 0; }
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+svg {
+  display: block; }
+
+html, body {
+  height: 100%; }
+
+#page-header {
+  width: 100%;
+  height: 4rem;
+  border-bottom: thin solid rgba(0, 0, 0, 0.15); }
+  #page-header #search {
+    float: right;
+    width: 20%;
+    height: 100%;
+    border-left: thin solid rgba(0, 0, 0, 0.15); }
+
+#page-main {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+  #page-main .post {
+    padding: 1.5rem 3rem;
+    width: 80%; }
+    #page-main .post nav span {
+      font-family: Lato;
+      font-size: 0.9rem;
+      opacity: 0.55; }
+      #page-main .post nav span::after {
+        content: ' /'; }
+      #page-main .post nav span:last-child::after {
+        content: ''; }
+  #page-main #outline {
+    float: right;
+    width: 20%;
+    height: 100%;
+    border-left: thin solid rgba(0, 0, 0, 0.15); }

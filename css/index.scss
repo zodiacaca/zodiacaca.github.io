@@ -36,13 +36,9 @@ $fontColor: (
 
 // Import partials from `sass_dir` (default as `_sass`)
 @import
-  "helpers",
-
   "mixins",
   "functions",
   "shared",
-  "extend",
-
-  "page"
+  "extend"
 ;
 
