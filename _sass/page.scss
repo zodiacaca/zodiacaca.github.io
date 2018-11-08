@@ -4,49 +4,77 @@ html, body {
 }
 
 #page-header {
-  width: 100%;
+  width: 80%;
   height: 4rem;
   border-bottom: thin solid hsla(0, 0%, 0%, 0.15);
-
-  #search {
-    float: right;
-    width: 20%;
-    height: 100%;
-    border-left: thin solid hsla(0, 0%, 0%, 0.15);
-  }
 }
 
 #page-main {
-  width: 100%;
+  padding: 3rem 5rem;
+  width: 80%;
   height: 100%;
-  position: relative;
 
-  .post {
-    float: left;
-    padding: 1.5rem 3rem;
-    width: 80%;
+  nav {
+    span {
+      font-family: Lato;
+      font-size: 0.9rem;
+      opacity: 0.55;
 
-    nav {
-      span {
-        font-family: Lato;
-        font-size: 0.9rem;
-        opacity: 0.55;
+      a {
+        text-decoration: none;
+      }
 
-        &::after {
-          content: ' /';
-        }
-        &:last-child::after {
-          content: '';
-        }
+      &::after {
+        content: ' /';
+      }
+      &:last-child::after {
+        content: '';
       }
     }
   }
 
-  #outline {
-    float: right;
-    width: 20%;
-    height: 100%;
-    border-left: thin solid hsla(0, 0%, 0%, 0.15);
+  .post-header {
+    font-family: Helvetica;
+    border-bottom: thin solid hsla(0, 0%, 0%, 0.4);
+
+    .post-title {
+      font-size: 1.8rem;
+      color: hsla(0, 0%, 0%, 0.55);
+    }
+
+    .post-meta {
+      font-size: 0.9rem;
+      color: hsla(0, 0%, 0%, 0.55);
+    }
   }
+
+  .post-content {
+    font-size: 0.9rem;
+    line-height: 2;
+    color: hsla(0, 0%, 0%, 0.8);
+    text-indent: 1rem;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 10%;
+  }
+}
+
+#search {
+  width: 20%;
+  height: 4rem;
+  border-left: thin solid hsla(0, 0%, 0%, 0.15);
+  border-bottom: thin solid hsla(0, 0%, 0%, 0.15);
+  position: fixed;
+  top: 0%;
+  left: 80%;
+}
+
+#outline {
+  width: 20%;
+  height: 100%;
+  border-left: thin solid hsla(0, 0%, 0%, 0.15);
+  position: fixed;
+  top: 4rem;
+  left: 80%;
 }
 

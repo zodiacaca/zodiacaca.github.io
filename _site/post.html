@@ -27,41 +27,36 @@
 
   <body>
 
-    <!-- <article class="post" itemscope itemtype="http://schema.org/BlogPosting"> -->
-
-      <!-- <header class="post-header"> -->
-        <!-- <h1 class="post-title" itemprop="headline">Product Documentation</h1> -->
-        <!-- <p class="post-meta"> -->
-          <!-- <time datetime="2017-01-06T05:00:00+08:00" itemprop="datePublished">January 05th - 2017</time> -->
-          <!-- <span class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">by: Steven Lee</span> -->
-        <!-- </p> -->
-      <!-- </header> -->
-
-      <!-- <div class="post-content" itemprop="articleBody"> -->
-        <!-- 
- -->
-      <!-- </div> -->
-
-    <!-- </article> -->
-
     <header id="page-header">
-      <div id="search"></div>
     </header>
-
     <main id="page-main">
+      <nav>
+        <span><a href="#">Home</a></span>
+        <span><a href="#">Post</a></span>
+        <span>this article</span>
+      </nav>
 
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-        <nav>
-          <span><a href="#">Home</a></span>
-          <span><a href="#">Post</a></span>
-          <span>this article</span>
-        </nav>
+        <header class="post-header">
+          <h1 class="post-title" itemprop="headline">Product Documentation</h1>
+          <p class="post-meta">
+            <time datetime="2017-01-06T05:00:00+08:00" itemprop="datePublished">January 05th - 2017</time>
+            <span class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">by: Steven Lee</span>
+          </p>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+          <p>There are two syntaxes available for Sass. The first, known as SCSS (Sassy CSS) and used throughout this reference, is an extension of the syntax of CSS. This means that every valid CSS stylesheet is a valid SCSS file with the same meaning. In addition, SCSS understands most CSS hacks and vendor-specific syntax, such as IE’s old filter syntax. This syntax is enhanced with the Sass features described below. Files using this syntax have the .scss extension.</p>
+
+<p>The second and older syntax, known as the indented syntax (or sometimes just “Sass”), provides a more concise way of writing CSS. It uses indentation rather than brackets to indicate nesting of selectors, and newlines rather than semicolons to separate properties. Some people find this to be easier to read and quicker to write than SCSS. The indented syntax has all the same features, although some of them have slightly different syntax; this is described in the indented syntax reference. Files using this syntax have the .sass extension.</p>
+
+        </div>
       </article>
-
-      <div id="outline">
-      </div>
-
     </main>
+
+    <div id="search"></div>
+    <div id="outline">
+    </div>
 
   </body>
 

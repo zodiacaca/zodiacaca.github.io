@@ -7,6 +7,9 @@
 @font-face {
   font-family: Daville;
   src: url(/fonts/daville/Daville-Condensed-Slanted.ttf); }
+@font-face {
+  font-family: Helvetica;
+  src: url(/fonts/helvetica/Helvetica.ttf); }
 *,
 *:before,
 *:after {
@@ -35,33 +38,55 @@ html, body {
   height: 100%; }
 
 #page-header {
-  width: 100%;
+  width: 80%;
   height: 4rem;
   border-bottom: thin solid rgba(0, 0, 0, 0.15); }
-  #page-header #search {
-    float: right;
-    width: 20%;
-    height: 100%;
-    border-left: thin solid rgba(0, 0, 0, 0.15); }
 
 #page-main {
-  width: 100%;
-  height: 100%;
-  position: relative; }
-  #page-main .post {
-    float: left;
-    padding: 1.5rem 3rem;
-    width: 80%; }
-    #page-main .post nav span {
-      font-family: Lato;
+  padding: 3rem 5rem;
+  width: 80%;
+  height: 100%; }
+  #page-main nav span {
+    font-family: Lato;
+    font-size: 0.9rem;
+    opacity: 0.55; }
+    #page-main nav span a {
+      text-decoration: none; }
+    #page-main nav span::after {
+      content: ' /'; }
+    #page-main nav span:last-child::after {
+      content: ''; }
+  #page-main .post-header {
+    font-family: Helvetica;
+    border-bottom: thin solid rgba(0, 0, 0, 0.4); }
+    #page-main .post-header .post-title {
+      font-size: 1.8rem;
+      color: rgba(0, 0, 0, 0.55); }
+    #page-main .post-header .post-meta {
       font-size: 0.9rem;
-      opacity: 0.55; }
-      #page-main .post nav span::after {
-        content: ' /'; }
-      #page-main .post nav span:last-child::after {
-        content: ''; }
-  #page-main #outline {
-    float: right;
-    width: 20%;
-    height: 100%;
-    border-left: thin solid rgba(0, 0, 0, 0.15); }
+      color: rgba(0, 0, 0, 0.55); }
+  #page-main .post-content {
+    font-size: 0.9rem;
+    line-height: 2;
+    color: rgba(0, 0, 0, 0.8);
+    text-indent: 1rem;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 10%; }
+
+#search {
+  width: 20%;
+  height: 4rem;
+  border-left: thin solid rgba(0, 0, 0, 0.15);
+  border-bottom: thin solid rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0%;
+  left: 80%; }
+
+#outline {
+  width: 20%;
+  height: 100%;
+  border-left: thin solid rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 4rem;
+  left: 80%; }
