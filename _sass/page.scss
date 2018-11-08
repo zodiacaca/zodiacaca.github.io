@@ -60,6 +60,8 @@ html, body {
 }
 
 #search {
+  color: hsla(0, 0%, 0%, 0.55);
+  fill: hsla(0, 0%, 0%, 0.55);
   width: 20%;
   height: 4rem;
   border-left: thin solid hsla(0, 0%, 0%, 0.15);
@@ -67,6 +69,14 @@ html, body {
   position: fixed;
   top: 0%;
   left: 80%;
+
+  * {
+    display: inline;
+  }
+
+  input {
+    align-self: stretch;
+  }
 }
 
 #outline {

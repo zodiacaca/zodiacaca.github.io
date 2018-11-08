@@ -13,9 +13,10 @@ body {
   background-color: #fff;
 }
 
-div, nav, ol, ul, li, button, article, img {
+div, nav, ol, ul, li, button, article, img, input {
   margin: 0;
   padding: 0;
+  // border: 0;
 }
 
 canvas {
