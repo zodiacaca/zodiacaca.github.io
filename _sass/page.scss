@@ -34,7 +34,7 @@ html, body {
   }
 
   .post-header {
-    font-family: Helvetica;
+    font-family: Roboto;
     border-bottom: thin solid hsla(0, 0%, 0%, 0.4);
 
     .post-title {
@@ -49,9 +49,10 @@ html, body {
   }
 
   .post-content {
+    font-family: Helvetica;
     font-size: 0.9rem;
     line-height: 2;
-    color: hsla(0, 0%, 0%, 0.8);
+    color: hsla(0, 0%, 0%, 0.75);
     text-indent: 1rem;
     padding-top: 0.5rem;
     padding-left: 0.5rem;
@@ -61,7 +62,7 @@ html, body {
 
 #search {
   color: hsla(0, 0%, 0%, 0.55);
-  fill: hsla(0, 0%, 0%, 0.55);
+  fill: hsla(0, 0%, 0%, 0.45);
   width: 20%;
   height: 4rem;
   border-left: thin solid hsla(0, 0%, 0%, 0.15);
@@ -71,11 +72,25 @@ html, body {
   left: 80%;
 
   * {
-    display: inline;
+    display: inline-block;
+  }
+
+  svg {
+    float: left;
+    margin: 1rem;
   }
 
   input {
-    align-self: stretch;
+    font-family: Roboto;
+    font-size: 1rem;
+    line-height: 4;
+    font-weight: 600;
+    color: hsla(0, 0%, 0%, 0.55);
+    width: 80%;
+    cursor: text;
+    background: transparent;
+    border: none;
+    outline: none;
   }
 }
 

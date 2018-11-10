@@ -10,6 +10,9 @@
 @font-face {
   font-family: Helvetica;
   src: url(/fonts/helvetica/Helvetica.ttf); }
+@font-face {
+  font-family: Roboto;
+  src: url(/fonts/roboto/Roboto-Regular.ttf); }
 *,
 *:before,
 *:after {
@@ -57,7 +60,7 @@ html, body {
     #page-main nav span:last-child::after {
       content: ''; }
   #page-main .post-header {
-    font-family: Helvetica;
+    font-family: Roboto;
     border-bottom: thin solid rgba(0, 0, 0, 0.4); }
     #page-main .post-header .post-title {
       font-size: 1.8rem;
@@ -66,9 +69,10 @@ html, body {
       font-size: 0.9rem;
       color: rgba(0, 0, 0, 0.55); }
   #page-main .post-content {
+    font-family: Helvetica;
     font-size: 0.9rem;
     line-height: 2;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 0.75);
     text-indent: 1rem;
     padding-top: 0.5rem;
     padding-left: 0.5rem;
@@ -76,7 +80,7 @@ html, body {
 
 #search {
   color: rgba(0, 0, 0, 0.55);
-  fill: rgba(0, 0, 0, 0.55);
+  fill: rgba(0, 0, 0, 0.45);
   width: 20%;
   height: 4rem;
   border-left: thin solid rgba(0, 0, 0, 0.15);
@@ -85,9 +89,21 @@ html, body {
   top: 0%;
   left: 80%; }
   #search * {
-    display: inline; }
+    display: inline-block; }
+  #search svg {
+    float: left;
+    margin: 1rem; }
   #search input {
-    align-self: stretch; }
+    font-family: Roboto;
+    font-size: 1rem;
+    line-height: 4;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.55);
+    width: 80%;
+    cursor: text;
+    background: transparent;
+    border: none;
+    outline: none; }
 
 #outline {
   width: 20%;

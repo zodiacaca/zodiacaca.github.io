@@ -51,17 +51,10 @@ body {
     transform: skewX(10deg);
     width: 200%;
     height: 100%;
-    background-color: rgba(26, 26, 26, 0);
     background-image: linear-gradient(-45deg, rgba(64, 64, 64, 0.2) 5.56%, transparent 5.56%, transparent 50%, rgba(64, 64, 64, 0.2) 50%, rgba(64, 64, 64, 0.2) 55.56%, transparent 55.56%, transparent 100%);
     background-size: 11px 11px;
     position: absolute;
     left: -50%; }
-  #cover::after {
-    content: '';
-    width: 100%;
-    height: 200%;
-    position: absolute;
-    top: -50%; }
 
 .edge-button {
   position: absolute; }
@@ -165,7 +158,6 @@ body {
 #groove {
   width: 70%;
   height: 70%;
-  background-color: rgba(26, 26, 26, 0);
   position: absolute;
   top: 15%;
   left: 15%; }
@@ -191,16 +183,16 @@ body {
     margin: 2.6rem 0; }
     .menu-wrapper .menu-item a {
       text-decoration: none;
-      color: #737373;
-      transition: all 400ms ease-out; }
+      color: rgba(0, 0, 0, 0.55);
+      transition: color 400ms ease-out; }
       .menu-wrapper .menu-item a:link {
-        color: #737373; }
+        color: rgba(0, 0, 0, 0.55); }
       .menu-wrapper .menu-item a:visited {
-        color: #737373; }
+        color: rgba(0, 0, 0, 0.55); }
       .menu-wrapper .menu-item a:hover {
-        color: #1a1a1a; }
+        color: rgba(0, 0, 0, 0.9); }
       .menu-wrapper .menu-item a:active {
-        color: #737373; }
+        color: rgba(0, 0, 0, 0.55); }
     .menu-wrapper .menu-item span:first-child {
       display: inline-block;
       text-align: center;
@@ -215,7 +207,7 @@ body {
         content: '';
         margin-right: 3rem;
         height: 100%;
-        border-left: thin solid #bfbfbf; }
+        border-left: thin solid rgba(0, 0, 0, 0.25); }
 
 .articles-wrapper {
   width: 60%;
@@ -248,13 +240,13 @@ body {
   .article a {
     text-decoration: none;
     color: black;
-    transition: all 400ms ease-out; }
+    transition: color 400ms ease-out; }
     .article a:link {
       color: black; }
     .article a:visited {
       color: black; }
     .article a:hover {
-      color: #15ff00; }
+      color: #00d5ff; }
     .article a:active {
       color: black; }
 
