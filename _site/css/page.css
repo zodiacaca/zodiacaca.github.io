@@ -62,6 +62,8 @@ html, body {
   #page-main .post-header {
     font-family: Proxima Nova;
     border-bottom: thin solid rgba(0, 0, 0, 0.4); }
+    #page-main .post-header * {
+      display: inline-block; }
     #page-main .post-header .post-title {
       font-size: 1.8rem;
       color: rgba(0, 0, 0, 0.55); }
