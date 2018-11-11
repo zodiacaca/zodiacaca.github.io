@@ -40,7 +40,7 @@ $size: 70%;
   }
   &:last-child {
     top: (100% - $size) / 2 + $size;
-    margin: (elementSize(tag-button-size) * -1 - 3px) 0;
+    margin: (elementSize(tag-button-size) * -1 - 6px) 0;
   }
 }
 
@@ -54,11 +54,15 @@ $size: 70%;
 
 .tag-button {
   margin: 0 32px;
-  width: elementSize(tag-button-size);
-  height: elementSize(tag-button-size);
-  background-image: url("/images/icon/tags.svg");
-  background-repeat: no-repeat;
   z-index: 10;
+  
+  svg {
+    fill: #5f656f;
+    stroke: #5f656f;
+    stroke-width: 10;
+    width: elementSize(tag-button-size);
+    height: elementSize(tag-button-size);
+  }
 }
 
 .tags {

@@ -92,7 +92,9 @@ html, body {
     display: inline-block; }
   #search svg {
     float: left;
-    margin: 1rem; }
+    margin: 1rem;
+    width: 2rem;
+    height: 2rem; }
   #search input {
     font-family: Roboto;
     font-size: 1rem;

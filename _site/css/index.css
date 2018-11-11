@@ -59,7 +59,7 @@ body {
     top: 15%; }
   .edge-button:last-child {
     top: 85%;
-    margin: -33px 0; }
+    margin: -36px 0; }
 
 .flat-button {
   position: relative;
@@ -70,11 +70,13 @@ body {
 
 .tag-button {
   margin: 0 32px;
-  width: 30px;
-  height: 30px;
-  background-image: url("/images/icon/tags.svg");
-  background-repeat: no-repeat;
   z-index: 10; }
+  .tag-button svg {
+    fill: #5f656f;
+    stroke: #5f656f;
+    stroke-width: 10;
+    width: 30px;
+    height: 30px; }
 
 .tags {
   padding: 0 6rem;
