@@ -61,7 +61,7 @@ html, body {
       content: ''; }
   #page-main .post-header {
     font-family: Proxima Nova;
-    border-bottom: thin solid rgba(0, 0, 0, 0.4); }
+    border-bottom: thin dotted rgba(0, 0, 0, 0.4); }
     #page-main .post-header * {
       display: inline-block; }
     #page-main .post-header .post-title {
@@ -74,7 +74,7 @@ html, body {
     font-family: Helvetica;
     font-size: 0.9rem;
     line-height: 2;
-    color: rgba(0, 0, 0, 0.75);
+    color: rgba(0, 0, 0, 0.65);
     text-indent: 1rem;
     padding-top: 0.5rem;
     padding-left: 0.5rem;

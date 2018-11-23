@@ -12,7 +12,7 @@
 @mixin simple-link($normal, $hover) {
   text-decoration: none;
   color: $normal;
-  transition: color #{ 400 * $durationMulti }ms ease-out;
+  transition: color #{400*$durationMulti}ms ease-out;
   
   &:link {
     color: $normal;
