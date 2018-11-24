@@ -187,7 +187,7 @@ $size: 70%;
     margin: 2.6rem 0;
 
     a {
-      @include simple-link(hsla(0, 0%, 0%, 0.55), hsla(0, 0%, 0%, 0.9))
+      @include simple-link(hsla(0, 0%, 0%, 0.55), hsla(0, 0%, 0%, 0.9));
     }
 
     span {
@@ -251,7 +251,7 @@ $count: 4;
   }
 
   a {
-    @include simple-link(hsla(0, 0%, 0%, 1), hsla(190, 100%, 50%, 1))
+    @include simple-link(hsla(0, 0%, 0%, 1), hsla(190, 100%, 50%, 1));
   }
 }
 

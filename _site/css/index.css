@@ -183,7 +183,7 @@ body {
     .menu-wrapper .menu-item a {
       text-decoration: none;
       color: rgba(0, 0, 0, 0.55);
-      transition: color 400ms ease-out; }
+      transition: color 250ms ease-out; }
       .menu-wrapper .menu-item a:link {
         color: rgba(0, 0, 0, 0.55); }
       .menu-wrapper .menu-item a:visited {
@@ -239,7 +239,7 @@ body {
   .article a {
     text-decoration: none;
     color: black;
-    transition: color 400ms ease-out; }
+    transition: color 250ms ease-out; }
     .article a:link {
       color: black; }
     .article a:visited {

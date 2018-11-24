@@ -10,7 +10,7 @@ html, body {
 }
 
 #page-main {
-  padding: 3rem 5rem;
+  padding: 3rem 4rem;
   width: 80%;
   height: 100%;
 
@@ -18,17 +18,40 @@ html, body {
     span {
       font-family: Lato;
       font-size: 0.9rem;
-      opacity: 0.55;
 
+      * {
+        opacity: 0.9;
+      }
+
+      $color: #4776e6;
       a {
+        &:link {
+          color: $color;
+        }
+        &:visited {
+          color: $color;
+        }
+        &:hover {
+          color: $color;
+          text-decoration: underline;
+          opacity: 1;
+        }
+        &:active {
+          color: $color;
+        }
         text-decoration: none;
       }
 
       &::after {
-        content: ' /';
+        content: ' >';
+        opacity: 0.8;
       }
-      &:last-child::after {
-        content: '';
+      &:last-child {
+        opacity: 0.55;
+
+        &::after {
+          content: '';
+        }
       }
     }
   }

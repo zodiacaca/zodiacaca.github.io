@@ -46,19 +46,33 @@ html, body {
   border-bottom: thin solid rgba(0, 0, 0, 0.15); }
 
 #page-main {
-  padding: 3rem 5rem;
+  padding: 3rem 4rem;
   width: 80%;
   height: 100%; }
   #page-main nav span {
     font-family: Lato;
-    font-size: 0.9rem;
-    opacity: 0.55; }
+    font-size: 0.9rem; }
+    #page-main nav span * {
+      opacity: 0.9; }
     #page-main nav span a {
       text-decoration: none; }
+      #page-main nav span a:link {
+        color: #4776e6; }
+      #page-main nav span a:visited {
+        color: #4776e6; }
+      #page-main nav span a:hover {
+        color: #4776e6;
+        text-decoration: underline;
+        opacity: 1; }
+      #page-main nav span a:active {
+        color: #4776e6; }
     #page-main nav span::after {
-      content: ' /'; }
-    #page-main nav span:last-child::after {
-      content: ''; }
+      content: ' >';
+      opacity: 0.8; }
+    #page-main nav span:last-child {
+      opacity: 0.55; }
+      #page-main nav span:last-child::after {
+        content: ''; }
   #page-main .post-header {
     font-family: Proxima Nova;
     border-bottom: thin dotted rgba(0, 0, 0, 0.4); }
