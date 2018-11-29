@@ -3,15 +3,59 @@ html, body {
   height:100%;
 }
 
+$left: 80%;
 #page-header {
-  width: 80%;
-  height: 4rem;
-  border-bottom: thin solid hsla(0, 0%, 0%, 0.15);
+  padding: 2rem 2rem;
+  width: $left;
+  height: 8rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-top: -1px;
+    margin-left: #{-65px-32px};
+    width: 100%;
+    height: 0;
+    border-bottom: thin solid hsla(0, 0%, 0%, 0.15);
+    position: absolute;
+    top: 8rem;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-left: -8rem;
+    width: 8rem;
+    height: 8rem;
+    border-bottom: thin solid hsla(0, 0%, 0%, 0.15);
+    position: absolute;
+    top: -4rem;
+    left: 100%;
+    transform-origin: 100% 100%;
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
+}
+
+header {
+  font-family: Proxima Nova;
+
+  .post-title {
+    font-size: 1.8rem;
+    color: hsla(0, 0%, 0%, 0.55);
+  }
+
+  .post-meta {
+    font-size: 0.9rem;
+    color: hsla(0, 0%, 0%, 0.55);
+    margin-top: -0.5rem;
+  }
 }
 
 #page-main {
   padding: 3rem 4rem;
-  width: 80%;
+  width: $left;
   height: 100%;
 
   nav {
@@ -56,47 +100,29 @@ html, body {
     }
   }
 
-  .post-header {
-    font-family: Proxima Nova;
-    border-bottom: thin dotted hsla(0, 0%, 0%, 0.4);
-
-    * {
-      display: inline-block;
-    }
-
-    .post-title {
-      font-size: 1.8rem;
-      color: hsla(0, 0%, 0%, 0.55);
-    }
-
-    .post-meta {
-      font-size: 0.9rem;
-      color: hsla(0, 0%, 0%, 0.55);
-    }
-  }
-
   .post-content {
     font-family: Helvetica;
     font-size: 0.9rem;
     line-height: 2;
-    color: hsla(0, 0%, 0%, 0.65);
+    color: hsla(0, 0%, 0%, 0.6);
     text-indent: 1rem;
     padding-top: 0.5rem;
     padding-left: 0.5rem;
-    padding-right: 10%;
+    padding-right: 15%;
+    height: 100vh;
   }
 }
 
 #search {
   color: hsla(0, 0%, 0%, 0.55);
   fill: hsla(0, 0%, 0%, 0.45);
-  width: 20%;
+  width: 100% - $left;
   height: 4rem;
   border-left: thin solid hsla(0, 0%, 0%, 0.15);
   border-bottom: thin solid hsla(0, 0%, 0%, 0.15);
   position: fixed;
   top: 0%;
-  left: 80%;
+  left: $left;
 
   * {
     display: inline-block;
@@ -124,11 +150,13 @@ html, body {
 }
 
 #outline {
-  width: 20%;
+  margin-top: #{64px};
+  margin-left: #{-65px};
+  width: 100% - $left;
   height: 100%;
   border-left: thin solid hsla(0, 0%, 0%, 0.15);
   position: fixed;
   top: 4rem;
-  left: 80%;
+  left: $left;
 }
 
