@@ -4,10 +4,11 @@ html, body {
 }
 
 $left: 80%;
+$height: 4 * 16px;
 #page-header {
-  padding: 2rem 2rem;
+  padding: ($height / 2) ($height / 2);
   width: $left;
-  height: 8rem;
+  height: $height * 2;
   position: relative;
   overflow: hidden;
 
@@ -15,23 +16,23 @@ $left: 80%;
     content: '';
     display: inline-block;
     margin-top: -1px;
-    margin-left: #{-65px-32px};
+    margin-left: -$height - 1px - ($height / 2);
     width: 100%;
     height: 0;
     border-bottom: thin solid hsla(0, 0%, 0%, 0.15);
     position: absolute;
-    top: 8rem;
+    top: $height * 2;
   }
 
   &::after {
     content: '';
     display: inline-block;
-    margin-left: -8rem;
-    width: 8rem;
-    height: 8rem;
+    margin-left: -$height * 2;
+    width: $height * 2;
+    height: $height * 2;
     border-bottom: thin solid hsla(0, 0%, 0%, 0.15);
     position: absolute;
-    top: -4rem;
+    top: -$height;
     left: 100%;
     transform-origin: 100% 100%;
     transform: rotate3d(0, 0, 1, -45deg);
@@ -150,13 +151,13 @@ header {
 }
 
 #outline {
-  margin-top: #{64px};
-  margin-left: #{-65px};
+  margin-top: $height;
+  margin-left: -$height - 1px;
   width: 100% - $left;
   height: 100%;
   border-left: thin solid hsla(0, 0%, 0%, 0.15);
   position: fixed;
-  top: 4rem;
+  top: $height;
   left: $left;
 }
 

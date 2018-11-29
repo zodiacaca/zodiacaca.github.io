@@ -291,7 +291,7 @@ $nav-base-height: 0.5rem;
       display: inline-block;
       width: $nav-base-height;
       height: $nav-base-height;
-      background: radial-gradient(black #{$nav-base-height/4}, transparent #{$nav-base-height/4});
+      background: radial-gradient(black #{$nav-base-height / 4}, transparent #{$nav-base-height / 4});
       border-radius: 50%;
       pointer-events: none;
     }

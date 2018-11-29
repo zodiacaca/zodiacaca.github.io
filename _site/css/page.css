@@ -41,9 +41,9 @@ html, body {
   height: 100%; }
 
 #page-header {
-  padding: 2rem 2rem;
+  padding: 32px 32px;
   width: 80%;
-  height: 8rem;
+  height: 128px;
   position: relative;
   overflow: hidden; }
   #page-header::before {
@@ -55,16 +55,16 @@ html, body {
     height: 0;
     border-bottom: thin solid rgba(0, 0, 0, 0.15);
     position: absolute;
-    top: 8rem; }
+    top: 128px; }
   #page-header::after {
     content: '';
     display: inline-block;
-    margin-left: -8rem;
-    width: 8rem;
-    height: 8rem;
+    margin-left: -128px;
+    width: 128px;
+    height: 128px;
     border-bottom: thin solid rgba(0, 0, 0, 0.15);
     position: absolute;
-    top: -4rem;
+    top: -64px;
     left: 100%;
     transform-origin: 100% 100%;
     transform: rotate3d(0, 0, 1, -45deg); }
@@ -154,5 +154,5 @@ header {
   height: 100%;
   border-left: thin solid rgba(0, 0, 0, 0.15);
   position: fixed;
-  top: 4rem;
+  top: 64px;
   left: 80%; }
