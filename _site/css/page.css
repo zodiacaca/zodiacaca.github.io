@@ -148,11 +148,29 @@ header {
     outline: none; }
 
 #outline {
-  margin-top: 64px;
   margin-left: -65px;
   width: 20%;
   height: 100%;
-  border-left: thin solid rgba(0, 0, 0, 0.15);
   position: fixed;
   top: 64px;
-  left: 80%; }
+  left: 80%;
+  overflow: hidden; }
+  #outline::before {
+    content: '';
+    display: inline-block;
+    margin-top: 65px;
+    width: 0;
+    height: 100%;
+    border-left: thin solid rgba(0, 0, 0, 0.15);
+    position: absolute; }
+
+.corner::after {
+  content: '';
+  display: inline-block;
+  margin-top: -63px;
+  width: 128px;
+  height: 128px;
+  border-bottom: thin solid rgba(0, 0, 0, 0.15);
+  position: absolute;
+  transform-origin: 0 100%;
+  transform: rotate3d(0, 0, 1, -45deg); }

@@ -151,13 +151,36 @@ header {
 }
 
 #outline {
-  margin-top: $height;
   margin-left: -$height - 1px;
   width: 100% - $left;
   height: 100%;
-  border-left: thin solid hsla(0, 0%, 0%, 0.15);
   position: fixed;
   top: $height;
   left: $left;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-top: $height + 1px;
+    width: 0;
+    height: 100%;
+    border-left: thin solid hsla(0, 0%, 0%, 0.15);
+    position: absolute;
+  }
+}
+
+.corner {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-top: -$height + 1px;
+    width: $height * 2;
+    height: $height * 2;
+    border-bottom: thin solid hsla(0, 0%, 0%, 0.15);
+    position: absolute;
+    transform-origin: 0 100%;
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
 }
 
