@@ -179,7 +179,10 @@ body {
     -webkit-mask: linear-gradient(135deg, black 60%, transparent 80%); }
   .menu-wrapper .menu-item {
     display: block;
-    margin: 2.6rem 0; }
+    margin: 2.6rem 0;
+    width: 55%;
+    border-radius: 0.75rem;
+    transition: background 0.25s; }
     .menu-wrapper .menu-item a {
       text-decoration: none;
       color: rgba(0, 0, 0, 0.55);
@@ -207,6 +210,10 @@ body {
         margin-right: 3rem;
         height: 100%;
         border-left: thin solid rgba(0, 0, 0, 0.25); }
+    .menu-wrapper .menu-item:hover {
+      background: rgba(0, 0, 0, 0.1); }
+      .menu-wrapper .menu-item:hover a {
+        color: rgba(0, 0, 0, 0.9); }
 
 .articles-wrapper {
   width: 60%;
@@ -270,6 +277,8 @@ body {
     #navigator span:first-child::after {
       transform: skewY(45deg);
       --dir: 180deg; }
+    #navigator span:first-child:hover::before, #navigator span:first-child:hover::after {
+      box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.5); }
     #navigator span:nth-child(2) {
       display: inline-block;
       width: 0.5rem;
@@ -283,6 +292,8 @@ body {
     #navigator span:last-child::after {
       transform: skewY(-45deg);
       --dir: 0; }
+    #navigator span:last-child:hover::before, #navigator span:last-child:hover::after {
+      box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.5); }
   #navigator *:hover {
     opacity: 0.75; }
 

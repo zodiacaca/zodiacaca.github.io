@@ -185,6 +185,9 @@ $size: 70%;
   .menu-item {
     display: block;
     margin: 2.6rem 0;
+    width: 55%;
+    border-radius: 0.75rem;
+    transition: background 0.25s;
 
     a {
       @include simple-link(hsla(0, 0%, 0%, 0.55), hsla(0, 0%, 0%, 0.9));
@@ -210,6 +213,14 @@ $size: 70%;
           height: 100%;
           border-left: thin solid hsla(0, 0%, 0%, 0.25);
         }
+      }
+    }
+
+    &:hover {
+      background: hsla(0, 0%, 0%, 0.1);
+
+      a {
+        color: hsla(0, 0%, 0%, 0.9);
       }
     }
   }
@@ -286,6 +297,10 @@ $nav-base-height: 0.5rem;
         @extend %arrow-arm;
         --dir: 180deg;
       }
+
+      &:hover::before, &:hover::after {
+        box-shadow: 0 0 0.5rem 0 hsla(0, 0%, 0%, 0.5);
+      }
     }
     &:nth-child(2) {
       display: inline-block;
@@ -305,6 +320,10 @@ $nav-base-height: 0.5rem;
         transform: skewY(-45deg);
         @extend %arrow-arm;
         --dir: 0;
+      }
+
+      &:hover::before, &:hover::after {
+        box-shadow: 0 0 0.5rem 0 hsla(0, 0%, 0%, 0.5);
       }
     }
   }
