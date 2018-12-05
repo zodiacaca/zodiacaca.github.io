@@ -168,26 +168,40 @@ $size: 70%;
   width: 45%;
   position: absolute;
   top: 10%;
-  left: -10%;
+  left: -5%;
 
   h1 {
+    font-size: 1.9rem;
     line-height: 1;
+    text-align: right;
     margin-top: 0;
-    padding: 1rem 3rem;
+    padding: 0.5rem 0;
+    width: 100%;
     background: linear-gradient(100deg, #8e54e9, #4776e6 20%);
-    border-top: thin solid hsla(0, 0%, 50%, 1);
     border-bottom: thin solid hsla(0, 0%, 50%, 1);
+    position: absolute;
+    left: -115%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-mask: linear-gradient(135deg, black 60%, transparent 80%);
+    -webkit-mask: linear-gradient(-135deg, black 60%, transparent 80%);
+    transform-origin: 100% 0%;
+    transform: rotate3d(0, 0, 1, -90deg);
   }
 
   .menu-item {
     display: block;
-    margin: 2.6rem 0;
-    width: 55%;
+    margin: 5rem 0;
     border-radius: 0.75rem;
     transition: background 0.25s;
+
+    &:first-child {
+      margin-top: 0.5rem;
+    }
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        width: #{65% - $i * 5%};
+      }
+    }
 
     a {
       @include simple-link(hsla(0, 0%, 0%, 0.55), hsla(0, 0%, 0%, 0.9));
@@ -195,30 +209,19 @@ $size: 70%;
 
     span {
       &:first-child {
-        display: inline-block;
-        text-align: center;
-        margin: 0.5rem 1.5rem;
-        padding: 0.5rem 0;
-        width: 5rem;
-        border-radius: 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
       }
 
       &:last-child {
-        font-size: 1.2rem;
-        font-weight: 100;
-
-        &::before {
-          content: '';
-          margin-right: 3rem;
-          height: 100%;
-          border-left: thin solid hsla(0, 0%, 0%, 0.25);
-        }
+        display: block;
+        padding-top: 0.5rem;
+        padding-left: 1.4rem;
+        border-top: thin solid hsla(0, 0%, 0%, 0.55);
       }
     }
 
     &:hover {
-      background: hsla(0, 0%, 0%, 0.1);
-
       a {
         color: hsla(0, 0%, 0%, 0.9);
       }
@@ -259,6 +262,20 @@ $count: 4;
     font-family: Daville;
     margin: 0.5rem 0;
     padding: 0.5rem 2rem;
+
+    &::after {
+      transform: skewX(45deg);
+      content: '';
+      display: none;
+      width: 100%;
+      border-bottom: medium solid hsla(190, 100%, 50%, 1);
+      position: absolute;
+      top: 35%;
+    }
+
+    &:hover::after {
+      display: block;
+    }
   }
 
   a {
