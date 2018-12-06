@@ -4,6 +4,47 @@
   {% include head.p1.html %}
   {% include head.p2a.html %}
 
+  <svg width="0" height="0"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <filter id="transparentShadow">
+      <feOffset
+        dx='-5'
+        dy=0
+        result='offset'
+      />
+      <feComposite
+        operator='out'
+        in='offset'
+        in2='SourceGraphic'
+        result='offset-out'
+      />
+      <feFlood
+        flood-color='hsla(180, 100%, 50%, 1)'
+        flood-opacity='1'
+        result='color'
+      />
+      <feComposite
+        operator='in'
+        in='color'
+        in2='offset-out'
+        result='color-out'
+      />
+      <feOffset
+        dx='5'
+        dy=0
+        result='offset-origin'
+      />
+      <feComposite
+        operator='over'
+        in='offset-origin'
+        in2='SourceGraphic'
+      />
+    </filter>
+
+  </svg>
+
   <body>
 
     <div id="layer"></div>

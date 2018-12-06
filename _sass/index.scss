@@ -257,6 +257,7 @@ $count: 4;
   overflow: hidden;
   opacity: 0.5;
   -webkit-mask: linear-gradient(45deg, transparent 3%, black 3%);
+  -webkit-filter: url(#transparentShadow);
 
   .article-title {
     font-family: Daville;
