@@ -193,6 +193,9 @@ $size: 70%;
     margin: 5rem 0;
     border-radius: 0.75rem;
     transition: background 0.25s;
+    // background: linear-gradient(100deg, #4776e6, #8e54e9 20%);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
 
     &:first-child {
       margin-top: 0.5rem;
@@ -244,7 +247,6 @@ $count: 4;
   max-height: $article-height * $count + $article-height / 2 * $count;
   position: absolute;
   top: -10%;
-  overflow: hidden;
 }
 
 .article {
@@ -254,10 +256,13 @@ $count: 4;
   background: linear-gradient(-45deg, #4776e6, #8e54e9 50%);
   border-radius: 0.5rem;
   position: relative;
-  overflow: hidden;
   opacity: 0.5;
   -webkit-mask: linear-gradient(45deg, transparent 3%, black 3%);
   -webkit-filter: url(#transparentShadow);
+
+  &:nth-child(n+5) {
+    display: none;
+  }
 
   .article-title {
     font-family: Daville;

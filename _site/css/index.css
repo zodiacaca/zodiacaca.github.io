@@ -230,8 +230,7 @@ body {
   width: 120%;
   max-height: 42rem;
   position: absolute;
-  top: -10%;
-  overflow: hidden; }
+  top: -10%; }
 
 .article {
   margin: 3.5rem 0;
@@ -240,10 +239,11 @@ body {
   background: linear-gradient(-45deg, #4776e6, #8e54e9 50%);
   border-radius: 0.5rem;
   position: relative;
-  overflow: hidden;
   opacity: 0.5;
   -webkit-mask: linear-gradient(45deg, transparent 3%, black 3%);
   -webkit-filter: url(#transparentShadow); }
+  .article:nth-child(n+5) {
+    display: none; }
   .article .article-title {
     font-family: Daville;
     margin: 0.5rem 0;
