@@ -21,7 +21,7 @@
         result='offset-out'
       />
       <feFlood
-        flood-color='hsla(180, 100%, 50%, 1)'
+        flood-color='hsla(190, 100%, 50%, 1)'
         flood-opacity='1'
         result='color'
       />
@@ -107,6 +107,15 @@
           {% endfor %}
         </ul>
       </div>
+      <ul class="articles-widget-wrapper">
+        {% for i in (1..4) %}
+          <li class="articles-widget">
+            <menu>
+              {% for i in (1..3) %}<span></span>{% endfor %}
+            </menu>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
 
     <div id="navigator">

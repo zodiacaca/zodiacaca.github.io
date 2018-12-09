@@ -211,11 +211,17 @@ body {
     .menu-wrapper .menu-item span:first-child {
       font-size: 1.5rem;
       font-weight: bold; }
+      .menu-wrapper .menu-item span:first-child::after {
+        content: '>>';
+        float: right; }
     .menu-wrapper .menu-item span:last-child {
       display: block;
       padding-top: 0.5rem;
       padding-left: 1.4rem;
       border-top: thin solid rgba(0, 0, 0, 0.55); }
+      .menu-wrapper .menu-item span:last-child::after {
+        content: '--------';
+        float: right; }
     .menu-wrapper .menu-item:hover a {
       color: rgba(0, 0, 0, 0.9); }
 
@@ -270,6 +276,42 @@ body {
       color: #00d5ff; }
     .article a:active {
       color: black; }
+
+.articles-widget-wrapper {
+  list-style-type: none;
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  opacity: 0.5; }
+  .articles-widget-wrapper li {
+    position: absolute;
+    left: 1rem; }
+    .articles-widget-wrapper li:nth-child(1) {
+      top: 3.75rem; }
+    .articles-widget-wrapper li:nth-child(2) {
+      top: 14.25rem; }
+    .articles-widget-wrapper li:nth-child(3) {
+      top: 24.75rem; }
+    .articles-widget-wrapper li:nth-child(4) {
+      top: 35.25rem; }
+    .articles-widget-wrapper li menu {
+      cursor: pointer; }
+      .articles-widget-wrapper li menu span {
+        display: inline-block;
+        width: 1.5rem;
+        height: 0.125rem;
+        background: black;
+        border-radius: 1px;
+        position: absolute; }
+        .articles-widget-wrapper li menu span:nth-child(1) {
+          top: 0.5rem;
+          left: 0.125rem; }
+        .articles-widget-wrapper li menu span:nth-child(2) {
+          top: 1rem;
+          left: 0.25rem; }
+        .articles-widget-wrapper li menu span:nth-child(3) {
+          top: 1.5rem;
+          left: 0.375rem; }
 
 #navigator span:first-child::before, #navigator span:first-child::after, #navigator span:last-child::before, #navigator span:last-child::after {
   content: '';
