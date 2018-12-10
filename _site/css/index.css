@@ -88,7 +88,6 @@ body {
   padding: 0 6rem;
   width: 30%;
   height: 12rem;
-  background: rgba(128, 128, 128, 0.1);
   border-top: thin solid gray;
   border-bottom: thin solid gray;
   position: absolute;
@@ -172,7 +171,9 @@ body {
   width: 45%;
   position: absolute;
   top: 10%;
-  left: -5%; }
+  left: -5%;
+  -webkit-transition: -webkit-filter 1s;
+  transform-origin: 50% 50%; }
   .menu-wrapper h1 {
     font-size: 1.9rem;
     line-height: 1;
@@ -230,6 +231,9 @@ body {
         float: right; }
     .menu-wrapper .menu-item:hover a {
       color: rgba(0, 0, 0, 0.9); }
+
+.menu-wrapper--fade {
+  filter: blur(10rem); }
 
 .articles-wrapper {
   width: 60%;

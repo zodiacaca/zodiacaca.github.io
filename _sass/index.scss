@@ -77,7 +77,6 @@ $size: 70%;
   padding: 0 6rem;
   width: 30%;
   height: 12rem;
-  background: hsla(0, 0%, 50%, 0.1);
   border-top: thin solid hsla(0, 0%, 50%, 1);
   border-bottom: thin solid hsla(0, 0%, 50%, 1);
   position: absolute;
@@ -177,6 +176,8 @@ $size: 70%;
   position: absolute;
   top: 10%;
   left: -5%;
+  -webkit-transition: -webkit-filter 1s;
+  transform-origin: 50% 50%;
 
   h1 {
     font-size: 1.9rem;
@@ -248,6 +249,10 @@ $size: 70%;
       }
     }
   }
+}
+
+.menu-wrapper--fade {
+  filter: blur(10rem);
 }
 
 .articles-wrapper {
