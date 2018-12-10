@@ -19,5 +19,9 @@
       $(".tag").addClass("tag--open");
     }
   });
+
+  html2canvas(document.querySelector(".menu-wrapper")).then(canvas => {
+    $("#layer")[0].appendChild(canvas)
+  });
 } () );
 

@@ -30,7 +30,7 @@
 
     <filter id="transparentShadow">
       <feOffset
-        dx='-5'
+        dx='-4'
         dy=0
         result='offset'
       />
@@ -41,7 +41,7 @@
         result='offset-out'
       />
       <feFlood
-        flood-color='hsla(190, 100%, 50%, 1)'
+        flood-color='hsla(180, 100%, 50%, 1)'
         flood-opacity='1'
         result='color'
       />
@@ -52,7 +52,7 @@
         result='color-out'
       />
       <feOffset
-        dx='5'
+        dx='4'
         dy=0
         result='offset-origin'
       />
@@ -60,6 +60,17 @@
         operator='over'
         in='offset-origin'
         in2='SourceGraphic'
+      />
+    </filter>
+
+    <filter id="blurText">
+      <feGaussianBlur
+        in='SourceGraphic'
+        stdDeviation='3'
+      />
+      <feComposite
+        operator='over'
+        in='SourceGraphic'
       />
     </filter>
 
@@ -183,6 +194,7 @@
       <a class="link link--social" href="#"><i class="fab fa-youtube"></i><span class="text-hidden">YouTube</span></a>
     </div>
 
+    <script src="/library/html2canvas.min.js"></script>
     <script src="/js/index.js"></script>
     <script src="/js/canvas.js"></script>
     <script src="/js/canvas_draw.js"></script>
