@@ -66,6 +66,7 @@
       <div class="stripes"></div>
     </div>
 
+    <!-- side -->
     <aside>
       <div class="edge-button">
         <button class="flat-button menu-button">
@@ -87,11 +88,13 @@
       </div>
     </aside>
 
+    <!-- main -->
     <div id="groove">
+      <!-- menu -->
       <nav class="menu-wrapper">
         <h1>Home</h1>
         <ul>
-          <li class="menu-item">
+          <li id="mi-timeline" class="menu-item">
             <a href="#">
               <span>01.Timeline</span>
               <span>Posts through out time.</span>
@@ -111,6 +114,7 @@
           </li>
         </ul>
       </nav>
+      <!-- post list -->
       <div class="articles-wrapper">
         <ul id="articles">
           {% for post in site.posts %}
@@ -131,16 +135,28 @@
       </ul>
     </div>
 
+    <!-- navigator -->
     <div id="navigator">
       {% for i in (1..3) %}<span></span>{% endfor %}
     </div>
 
+    <!-- social -->
     <div id="social">
       <a class="link link--social" href="#"><i class="fab fa-twitter"></i><span class="text-hidden">Twitter</span></a>
       <a class="link link--social" href="#"><i class="fab fa-linkedin"></i><span class="text-hidden">LinkedIn</span></a>
       <a class="link link--social" href="#"><i class="fab fa-facebook"></i><span class="text-hidden">Facebook</span></a>
       <a class="link link--social" href="#"><i class="fab fa-youtube"></i><span class="text-hidden">YouTube</span></a>
     </div>
+
+    <!-- menu stuff -->
+    <!-- timeline -->
+    <ul id="timeline">
+      {% for post in site.posts %}
+        <li class="time-stamp">
+          <p>{{ post.title }}</p>
+        </li>
+      {% endfor %}
+    </ul>
 
     <script src="/library/html2canvas.min.js"></script>
     <script src="/js/index.js"></script>

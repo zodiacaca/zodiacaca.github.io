@@ -6,6 +6,7 @@
   $(".menu-button").click(function () {
     $(this).removeClass("menu-button--open");
     $(".menu-wrapper").removeClass("menu-wrapper--fade");
+    $("canvas").removeClass("canvas--surface");
   });
   $(".tag-button").click(function () {
     if ($(".tags").hasClass("tags--open")) {
@@ -17,10 +18,18 @@
     }
   });
 
-  $(".menu-item").click(function () {
-    console.log(this);
+  $("#mi-timeline").click(function () {
     $(".menu-wrapper").addClass("menu-wrapper--fade");
     $(".menu-button").addClass("menu-button--open");
+    $("canvas").addClass("canvas--surface");
+  });
+  $("#mi-timeline").on("mouseenter", function () {
+    html2canvasHandler($("#timeline")[0]);
+  });
+  $("#mi-timeline").on("mouseleave", function () {
+    if (!$(".menu-wrapper").hasClass("menu-wrapper--fade")) {
+      html2canvasHandler($(".menu-wrapper")[0]);
+    }
   });
 
   html2canvasHandler($(".menu-wrapper")[0]);

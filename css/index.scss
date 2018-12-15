@@ -13,6 +13,11 @@
   src: url(/fonts/daville/Daville-Condensed-Slanted.ttf);
 }
 
+@font-face {
+  font-family: Proxima Nova;
+  src: url(/fonts/proximanova/Proxima-Nova-Regular.ttf);
+}
+
 
 // Our variables
 $durationMulti: 1;
@@ -30,6 +35,7 @@ $elementSize: (
   "mixins",
   "functions",
   "shared",
-  "index"
+  "index",
+  "index-menu"
 ;
 
