@@ -200,6 +200,16 @@ body {
     -webkit-mask: linear-gradient(-135deg, black 60%, transparent 80%);
     transform-origin: 100% 0%;
     transform: rotate3d(0, 0, 1, -90deg); }
+  .menu-wrapper::before {
+    content: '';
+    display: inline-block;
+    transform-origin: 0% 0%;
+    transform: skewY(-45deg);
+    width: 0.25rem;
+    height: 15rem;
+    background: linear-gradient(gray, #00d5ff);
+    position: absolute;
+    left: -6.5%; }
   .menu-wrapper .menu-item {
     display: block;
     margin: 5rem 0;
@@ -406,7 +416,7 @@ body {
     #timeline li::before {
       content: '';
       display: inline-block;
-      transform: skewy(45deg);
+      transform: skewY(45deg);
       width: 0.25rem;
       height: 100%;
       background: #17cfcf;
