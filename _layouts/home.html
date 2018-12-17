@@ -59,7 +59,7 @@
   <body>
 
     <div id="layer">
-      <canvas></canvas>
+      <canvas class="blur no-interact"></canvas>
     </div>
 
     <div id="cover">
@@ -150,7 +150,7 @@
 
     <!-- menu stuff -->
     <!-- timeline -->
-    <ul id="timeline">
+    <ul id="timeline" class="timeline--bg blur">
       {% for post in site.posts %}
         <li class="time-stamp">
           <p>{{ post.title }}</p>

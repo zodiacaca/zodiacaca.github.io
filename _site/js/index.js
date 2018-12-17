@@ -5,8 +5,12 @@
 
   $(".menu-button").click(function () {
     $(this).removeClass("menu-button--open");
-    $(".menu-wrapper").removeClass("menu-wrapper--fade");
-    $("canvas").removeClass("canvas--surface");
+    $(".menu-wrapper").removeClass("fade");
+    $(".menu-wrapper").removeClass("no-interact");
+    $("#timeline").removeClass("clear");
+    $("canvas").removeClass("fade");
+    $("#timeline").addClass("fade");
+    $("#timeline").removeClass("timeline--surface");
   });
   $(".tag-button").click(function () {
     if ($(".tags").hasClass("tags--open")) {
@@ -19,20 +23,25 @@
   });
 
   $("#mi-timeline").click(function () {
-    $(".menu-wrapper").addClass("menu-wrapper--fade");
     $(".menu-button").addClass("menu-button--open");
-    $("canvas").addClass("canvas--surface");
+    $(".menu-wrapper").addClass("fade");
+    $(".menu-wrapper").addClass("no-interact");
+    $("#timeline").addClass("clear");
+    $("#timeline").addClass("timeline--surface");
   });
   $("#mi-timeline").on("mouseenter", function () {
-    html2canvasHandler($("#timeline")[0]);
+    $("canvas").addClass("fade");
+    $("#timeline").removeClass("fade");
   });
   $("#mi-timeline").on("mouseleave", function () {
-    if (!$(".menu-wrapper").hasClass("menu-wrapper--fade")) {
-      html2canvasHandler($(".menu-wrapper")[0]);
+    if (!$(".menu-wrapper").hasClass("fade")) {
+      $("canvas").removeClass("fade");
+      $("#timeline").addClass("fade");
     }
   });
 
   html2canvasHandler($(".menu-wrapper")[0]);
+  $("#timeline").addClass("fade");
 } () );
 
 function html2canvasHandler(element) {
