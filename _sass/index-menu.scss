@@ -71,3 +71,22 @@ $stamp-height: 6rem;
   left: 10%;
 }
 
+#about {
+  font-family: Proxima Nova;
+  color: hsla(0, 0%, 0%, 0.55);
+  position: absolute;
+  transition: -webkit-filter 0.5s, top 0.5s, left 0.5s, font-size 0.5s;
+}
+
+.about--bg {
+  font-size: 2.5rem;
+  top: 40%;
+  left: 12%;
+}
+
+.about--surface {
+  font-size: 1.5rem;
+  top: 30%;
+  left: 10%;
+}
+
