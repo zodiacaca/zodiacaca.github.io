@@ -218,7 +218,9 @@ canvas {
     position: absolute;
     left: -6.5%; }
   .menu-wrapper .menu-item {
+    cursor: default;
     display: block;
+    color: rgba(0, 0, 0, 0.55);
     padding: 2.5rem 0;
     border-radius: 0.75rem;
     transition: background 0.25s; }
@@ -231,18 +233,6 @@ canvas {
       width: 55%; }
     .menu-wrapper .menu-item:nth-child(3) {
       width: 50%; }
-    .menu-wrapper .menu-item a {
-      text-decoration: none;
-      color: rgba(0, 0, 0, 0.55);
-      transition: color 250ms ease-out; }
-      .menu-wrapper .menu-item a:link {
-        color: rgba(0, 0, 0, 0.55); }
-      .menu-wrapper .menu-item a:visited {
-        color: rgba(0, 0, 0, 0.55); }
-      .menu-wrapper .menu-item a:hover {
-        color: rgba(0, 0, 0, 0.9); }
-      .menu-wrapper .menu-item a:active {
-        color: rgba(0, 0, 0, 0.55); }
     .menu-wrapper .menu-item span:first-child {
       font-size: 1.5rem;
       font-weight: bold; }
@@ -257,7 +247,7 @@ canvas {
       .menu-wrapper .menu-item span:last-child::after {
         content: '--------';
         float: right; }
-    .menu-wrapper .menu-item:hover a {
+    .menu-wrapper .menu-item:hover {
       color: rgba(0, 0, 0, 0.9); }
 
 .articles-wrapper {
@@ -330,7 +320,7 @@ canvas {
     .articles-widget-wrapper li:nth-child(4) {
       top: 35rem; }
     .articles-widget-wrapper li menu {
-      cursor: pointer; }
+      cursor: context-menu; }
       .articles-widget-wrapper li menu span {
         display: inline-block;
         width: 1.5rem;
@@ -442,6 +432,7 @@ canvas {
       transform-origin: 50% 50%;
       transform: rotate3d(0, 0, 1, 45deg); }
     #timeline li p {
+      cursor: pointer;
       font-family: Proxima Nova;
       font-size: 1.1rem;
       margin: 0;

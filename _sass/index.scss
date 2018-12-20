@@ -227,7 +227,9 @@ $size: 70%;
   }
 
   .menu-item {
+    cursor: default;
     display: block;
+    color: hsla(0, 0%, 0%, 0.55);
     padding: 2.5rem 0;
     border-radius: 0.75rem;
     transition: background 0.25s;
@@ -243,10 +245,6 @@ $size: 70%;
       &:nth-child(#{$i}) {
         width: #{65% - $i * 5%};
       }
-    }
-
-    a {
-      @include simple-link(hsla(0, 0%, 0%, 0.55), hsla(0, 0%, 0%, 0.9));
     }
 
     span {
@@ -274,9 +272,7 @@ $size: 70%;
     }
 
     &:hover {
-      a {
-        color: hsla(0, 0%, 0%, 0.9);
-      }
+      color: hsla(0, 0%, 0%, 0.9);
     }
   }
 }
@@ -356,7 +352,7 @@ $count: 4;
     }
 
     menu {
-      cursor: pointer;
+      cursor: context-menu;
 
       span {
         display: inline-block;
