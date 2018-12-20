@@ -219,11 +219,12 @@ canvas {
     left: -6.5%; }
   .menu-wrapper .menu-item {
     display: block;
-    margin: 5rem 0;
+    padding: 2.5rem 0;
     border-radius: 0.75rem;
     transition: background 0.25s; }
     .menu-wrapper .menu-item:first-child {
-      margin-top: 0.5rem; }
+      margin-top: 0.5rem;
+      padding-top: 0; }
     .menu-wrapper .menu-item:nth-child(1) {
       width: 60%; }
     .menu-wrapper .menu-item:nth-child(2) {
@@ -456,7 +457,7 @@ canvas {
 
 .timeline--bg {
   top: 12%;
-  left: 12%; }
+  left: 15%; }
 
 .timeline--surface {
   top: 10%;
