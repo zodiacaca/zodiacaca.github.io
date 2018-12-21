@@ -203,7 +203,8 @@ $size: 70%;
     margin-top: 0;
     padding: 0.5rem 0;
     width: 100%;
-    background: linear-gradient(180deg, $grad1, $grad2 100%);
+    background: linear-gradient(-45deg, $stripe-color 5.56%, transparent 5.56%, transparent 50%, $stripe-color 50%, $stripe-color 55.56%, transparent 55.56%, transparent 100%), linear-gradient(180deg, $grad1, $grad2 100%);
+    background-size: 11px 11px, 100% 100%;
     border-bottom: thin solid hsla(0, 0%, 50%, 1);
     position: absolute;
     left: -115%;
@@ -360,8 +361,10 @@ $count: 4;
       }
     }
 
-    menu {
+    .btn-m {
       cursor: context-menu;
+      width: 2rem;
+      height: 2rem;
 
       span {
         display: inline-block;
@@ -370,12 +373,19 @@ $count: 4;
         background: hsla(0, 0%, 0%, 1);
         border-radius: 1px;
         position: absolute;
+        transition: left 0.25s;
 
         @for $i from 1 through 3 {
           &:nth-child(#{$i}) {
             top: #{$i * 0.5rem};
             left: #{$i * 0.125rem};
           }
+        }
+      }
+
+      &:hover {
+        span {
+          left: 0.5rem;
         }
       }
     }
