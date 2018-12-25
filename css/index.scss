@@ -14,10 +14,24 @@
 }
 
 @font-face {
+  font-family: Helvetica;
+  src: url(/fonts/helvetica/Helvetica-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(/fonts/roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
   font-family: Proxima Nova;
   src: url(/fonts/proximanova/Proxima-Nova-Regular.ttf);
 }
 
+@font-face {
+  font-family: Monda;
+  src: url(/fonts/monda/Monda-Regular.ttf);
+}
 
 // Our variables
 $durationMulti: 1;

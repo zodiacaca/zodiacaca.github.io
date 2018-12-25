@@ -5,8 +5,17 @@
   font-family: Daville;
   src: url(/fonts/daville/Daville-Condensed-Slanted.ttf); }
 @font-face {
+  font-family: Helvetica;
+  src: url(/fonts/helvetica/Helvetica-Regular.ttf); }
+@font-face {
+  font-family: Roboto;
+  src: url(/fonts/roboto/Roboto-Regular.ttf); }
+@font-face {
   font-family: Proxima Nova;
   src: url(/fonts/proximanova/Proxima-Nova-Regular.ttf); }
+@font-face {
+  font-family: Monda;
+  src: url(/fonts/monda/Monda-Regular.ttf); }
 *,
 *:before,
 *:after {
@@ -42,8 +51,8 @@ body {
 canvas {
   transform: scale3d(1.2, 1.2, 1);
   position: absolute;
-  top: 20%;
-  left: 16%;
+  top: 18%;
+  left: 18%;
   transition: -webkit-filter 0.5s; }
 
 .blur {
@@ -183,20 +192,22 @@ canvas {
   left: 15%; }
 
 .menu-wrapper {
-  font-family: Lato;
+  font-family: Monda;
+  font-size: 0.9rem;
   width: 45%;
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: -5%;
   z-index: 15;
   transition: -webkit-filter 1s;
   transform-origin: 50% 50%; }
   .menu-wrapper h1 {
-    font-size: 1.9rem;
+    font-family: Monda;
+    font-size: 2.1rem;
     line-height: 1;
     text-align: right;
     margin-top: 0;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 0.4rem 0;
     width: 100%;
     background: linear-gradient(-45deg, rgba(64, 64, 64, 0.2) 5.56%, transparent 5.56%, transparent 50%, rgba(64, 64, 64, 0.2) 50%, rgba(64, 64, 64, 0.2) 55.56%, transparent 55.56%, transparent 100%), linear-gradient(180deg, #8e54e9, #4776e6 100%);
     background-size: 11px 11px, 100% 100%;
@@ -206,6 +217,7 @@ canvas {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-mask: linear-gradient(-135deg, black 60%, transparent 80%);
+    opacity: 0.9;
     transform-origin: 100% 0%;
     transform: rotate3d(0, 0, 1, -90deg); }
   .menu-wrapper::before {
@@ -215,13 +227,13 @@ canvas {
     transform: skewY(-45deg);
     width: 0.25rem;
     height: 15rem;
-    background: linear-gradient(gray, #00d5ff);
+    background: linear-gradient(#999999, #00d5ff);
     position: absolute;
     left: -6.5%; }
   .menu-wrapper .menu-item {
     cursor: default;
     display: block;
-    color: rgba(0, 0, 0, 0.55);
+    color: rgba(0, 0, 0, 0.45);
     padding: 2.5rem 0;
     border-radius: 0.75rem;
     transition: background 0.25s; }
@@ -229,11 +241,11 @@ canvas {
       margin-top: 0.5rem;
       padding-top: 0; }
     .menu-wrapper .menu-item:nth-child(1) {
-      width: 60%; }
+      width: 70%; }
     .menu-wrapper .menu-item:nth-child(2) {
-      width: 55%; }
+      width: 65%; }
     .menu-wrapper .menu-item:nth-child(3) {
-      width: 50%; }
+      width: 60%; }
     .menu-wrapper .menu-item span:first-child {
       font-size: 1.5rem;
       font-weight: bold; }
@@ -244,7 +256,7 @@ canvas {
       display: block;
       padding-top: 0.5rem;
       padding-left: 1.4rem;
-      border-top: thin solid rgba(0, 0, 0, 0.55); }
+      border-top: thin dotted rgba(0, 0, 0, 0.55); }
       .menu-wrapper .menu-item span:last-child::after {
         content: '--------';
         float: right; }
@@ -269,11 +281,12 @@ canvas {
   width: 100%;
   height: 7rem;
   background: linear-gradient(-45deg, #4776e6, #8e54e9 50%);
+  border-top: thin solid #00d5ff;
+  border-left: thin solid #00d5ff;
   border-radius: 0.5rem;
   position: relative;
   opacity: 0.5;
-  -webkit-mask: linear-gradient(45deg, transparent 3%, black 3%);
-  -webkit-filter: url(#transparentShadow); }
+  -webkit-mask: linear-gradient(45deg, transparent 3%, black 3%); }
   .article:nth-child(n+5) {
     display: none; }
   .article .article-title {
@@ -318,8 +331,10 @@ canvas {
       top: 35rem; }
     .articles-widget-wrapper li .btn-m {
       cursor: context-menu;
+      margin: 0.25rem;
       width: 2rem;
-      height: 2rem; }
+      height: 2rem;
+      position: relative; }
       .articles-widget-wrapper li .btn-m span {
         display: inline-block;
         width: 1.5rem;
