@@ -13,6 +13,9 @@
 @font-face {
   font-family: Proxima Nova;
   src: url(/fonts/proximanova/Proxima-Nova-Regular.ttf); }
+@font-face {
+  font-family: Monda;
+  src: url(/fonts/monda/Monda-Regular.ttf); }
 *,
 *:before,
 *:after {
