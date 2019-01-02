@@ -192,6 +192,7 @@ canvas {
   left: 15%; }
 
 .menu-wrapper {
+  display: none;
   font-family: Monda;
   font-size: 0.9rem;
   width: 45%;
@@ -286,7 +287,7 @@ canvas {
   border-radius: 0.5rem;
   position: relative;
   opacity: 0.5;
-  -webkit-mask: linear-gradient(45deg, transparent 3%, black 3%); }
+  -webkit-mask: linear-gradient(45deg, transparent 1.5rem, black 1.5rem); }
   .article:nth-child(n+5) {
     display: none; }
   .article .article-title {
@@ -469,6 +470,41 @@ canvas {
 
 .timeline--surface {
   top: 10%;
+  left: 10%; }
+
+#works {
+  list-style-type: none;
+  width: 25%;
+  position: absolute; }
+  #works .project {
+    width: 100%;
+    height: 14rem;
+    position: relative; }
+    #works .project::before {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 0.125rem;
+      background: linear-gradient(90deg, transparent 0%, #4d4d4d 20%, #4d4d4d 80%, transparent 100%);
+      position: absolute;
+      top: 100%;
+      transform: rotate3d(0, 0, 1, -10deg); }
+    #works .project h2 {
+      font-family: Proxima Nova;
+      color: gray;
+      position: relative;
+      top: 50%; }
+    #works .project:first-child::before {
+      transform: rotate3d(0, 0, 1, 10deg); }
+    #works .project:last-child::before {
+      transform: rotate3d(0, 0, 1, 10deg); }
+
+.works--bg {
+  top: 10%;
+  left: 15%; }
+
+.works--surface {
+  top: 5%;
   left: 10%; }
 
 #about {

@@ -187,6 +187,7 @@ $size: 70%;
 }
 
 .menu-wrapper {
+  display: none;
   font-family: Monda;
   font-size: 0.9rem;
   width: 45%;
@@ -310,7 +311,7 @@ $count: 4;
   border-radius: 0.5rem;
   position: relative;
   opacity: 0.5;
-  -webkit-mask: linear-gradient(45deg, transparent 3%, black 3%);
+  -webkit-mask: linear-gradient(45deg, transparent 1.5rem, black 1.5rem);
   // -webkit-filter: url(#transparentShadow);
 
   &:nth-child(n+5) {
