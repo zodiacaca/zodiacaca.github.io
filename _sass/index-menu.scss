@@ -74,6 +74,7 @@ $stamp-height: 6rem;
 }
 
 // works
+$project-height: 14rem;
 #works {
   list-style-type: none;
   width: 25%;
@@ -81,36 +82,44 @@ $stamp-height: 6rem;
 
   .project {
     width: 100%;
-    height: 14rem;
-    position: relative;
+    height: $project-height;
+    border-bottom: thin dashed hsla(0, 0%, 25%, 1);
+    position: absolute;
+    top: var(--project-top, 0);
+    overflow: hidden;
 
-    &::before {
-      content: '';
-      display: inline-block;
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        --project-top: #{($i - 1) * $project-height};
+      }
+    }
+
+    .project-title {
       width: 100%;
-      height: 0.125rem;
-      background: linear-gradient(90deg, transparent 0%, hsla(0, 0%, 30%, 1) 20%, hsla(0, 0%, 30%, 1) 80%, transparent 100%);
-      position: absolute;
-      top: 100%;
-      transform: rotate3d(0, 0, 1, -10deg);
-    }
 
-    h2 {
-      font-family: Proxima Nova;
-      color: hsla(0, 0%, 50%, 1);
-      position: relative;
-      top: 50%;
-    }
+      h2 {
+        font-family: Proxima Nova;
+        color: hsla(0, 0%, 40%, 1);
+        margin: 0;
+        width: 40%;
+      }
 
-    &:first-child {
-      &::before {
-        transform: rotate3d(0, 0, 1, 10deg);
+      p {
+        font-family: Lato;
+        color: hsla(0, 0%, 50%, 1);
+        margin: 0.5rem 0;
       }
     }
-    &:last-child {
-      &::before {
-        transform: rotate3d(0, 0, 1, 10deg);
-      }
+
+    .project-image {
+      width: 100%;
+      height: 100%;
+      background: url("/images/bg/2015-08-29_00021.jpg");
+      border-radius: 1rem;
+    }
+
+    .overlay {
+      @include overlay-more(white, 100%);
     }
   }
 }

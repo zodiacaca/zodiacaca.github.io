@@ -479,25 +479,39 @@ canvas {
   #works .project {
     width: 100%;
     height: 14rem;
-    position: relative; }
-    #works .project::before {
-      content: '';
-      display: inline-block;
+    border-bottom: thin dashed #404040;
+    position: absolute;
+    top: var(--project-top, 0);
+    overflow: hidden; }
+    #works .project:nth-child(1) {
+      --project-top: 0rem; }
+    #works .project:nth-child(2) {
+      --project-top: 14rem; }
+    #works .project:nth-child(3) {
+      --project-top: 28rem; }
+    #works .project .project-title {
+      width: 100%; }
+      #works .project .project-title h2 {
+        font-family: Proxima Nova;
+        color: #666666;
+        margin: 0;
+        width: 40%; }
+      #works .project .project-title p {
+        font-family: Lato;
+        color: gray;
+        margin: 0.5rem 0; }
+    #works .project .project-image {
       width: 100%;
-      height: 0.125rem;
-      background: linear-gradient(90deg, transparent 0%, #4d4d4d 20%, #4d4d4d 80%, transparent 100%);
+      height: 100%;
+      background: url("/images/bg/2015-08-29_00021.jpg");
+      border-radius: 1rem; }
+    #works .project .overlay {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, white 0%, transparent 100%);
       position: absolute;
-      top: 100%;
-      transform: rotate3d(0, 0, 1, -10deg); }
-    #works .project h2 {
-      font-family: Proxima Nova;
-      color: gray;
-      position: relative;
-      top: 50%; }
-    #works .project:first-child::before {
-      transform: rotate3d(0, 0, 1, 10deg); }
-    #works .project:last-child::before {
-      transform: rotate3d(0, 0, 1, 10deg); }
+      top: 0;
+      left: 0; }
 
 .works--bg {
   top: 10%;
