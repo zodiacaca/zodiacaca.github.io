@@ -49,6 +49,16 @@
   };
 
   html2canvasHandler($(".menu-wrapper")[0]);
+
+  $(".overlay").hover(
+    function () {
+      $(this).parent().parent().height($(this).parent().parent().height() * 1.8);
+      $(this).fadeTo(0.3, 0);
+    }, function () {
+      $(this).parent().parent().height($(this).parent().parent().height() / 1.8);
+      $(this).fadeTo(0.3, 1);
+    }
+  );
 } () );
 
 function html2canvasHandler(element) {

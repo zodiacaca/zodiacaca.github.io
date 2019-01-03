@@ -81,16 +81,20 @@ $project-height: 14rem;
   position: absolute;
 
   .project {
+    padding-bottom: 2rem;
     width: 100%;
     height: $project-height;
     border-bottom: thin dashed hsla(0, 0%, 25%, 1);
     position: absolute;
     top: var(--project-top, 0);
     overflow: hidden;
+    z-index: var(--project-z, 3);
+    transition: height 0.3s;
 
     @for $i from 1 through 3 {
       &:nth-child(#{$i}) {
         --project-top: #{($i - 1) * $project-height};
+        --project-z: #{3 - $i};
       }
     }
 
@@ -113,8 +117,8 @@ $project-height: 14rem;
 
     .project-image {
       width: 100%;
-      height: 100%;
-      background: url("/images/bg/2015-08-29_00021.jpg");
+      height: 80%;
+      background: url("https://www.w3schools.com/css/img_lights.jpg");
       border-radius: 1rem;
     }
 

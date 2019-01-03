@@ -477,18 +477,24 @@ canvas {
   width: 25%;
   position: absolute; }
   #works .project {
+    padding-bottom: 2rem;
     width: 100%;
     height: 14rem;
     border-bottom: thin dashed #404040;
     position: absolute;
     top: var(--project-top, 0);
-    overflow: hidden; }
+    overflow: hidden;
+    z-index: var(--project-z, 3);
+    transition: height 0.3s; }
     #works .project:nth-child(1) {
-      --project-top: 0rem; }
+      --project-top: 0rem;
+      --project-z: 2; }
     #works .project:nth-child(2) {
-      --project-top: 14rem; }
+      --project-top: 14rem;
+      --project-z: 1; }
     #works .project:nth-child(3) {
-      --project-top: 28rem; }
+      --project-top: 28rem;
+      --project-z: 0; }
     #works .project .project-title {
       width: 100%; }
       #works .project .project-title h2 {
@@ -502,8 +508,8 @@ canvas {
         margin: 0.5rem 0; }
     #works .project .project-image {
       width: 100%;
-      height: 100%;
-      background: url("/images/bg/2015-08-29_00021.jpg");
+      height: 80%;
+      background: url("https://www.w3schools.com/css/img_lights.jpg");
       border-radius: 1rem; }
     #works .project .overlay {
       width: 100%;

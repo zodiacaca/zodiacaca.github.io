@@ -1,7 +1,7 @@
 
 // Example of including mixin:
 // @include media-query($on-palm) {
-  
+
 // }
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
