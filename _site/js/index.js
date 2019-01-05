@@ -3,8 +3,7 @@
   var bodyWidth = window.innerWidth;
   var bodyHeight = window.innerHeight;
 
-  // var mi = ["timeline", "works", "about"];
-  var mi = ["timeline", "about"];
+  var mi = ["timeline", "works", "about"];
 
   $(".menu-button").click(function () {
     $(this).removeClass("menu-button--open");

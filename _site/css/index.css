@@ -192,7 +192,6 @@ canvas {
   left: 15%; }
 
 .menu-wrapper {
-  display: none;
   font-family: Monda;
   font-size: 0.9rem;
   width: 45%;
@@ -475,7 +474,8 @@ canvas {
 #works {
   list-style-type: none;
   width: 25%;
-  position: absolute; }
+  position: absolute;
+  transition: -webkit-filter 0.5s, top 0.5s, left 0.5s; }
   #works .project {
     padding-bottom: 2rem;
     width: 100%;
