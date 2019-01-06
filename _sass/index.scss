@@ -23,6 +23,7 @@ canvas {
 
 .fade {
   filter: blur(10rem);
+  pointer-events: none;
 }
 
 .clear {
@@ -90,38 +91,76 @@ $size: 70%;
 }
 
 .tags {
-  padding: 0 6rem;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0.5rem 6rem;
   width: 30%;
   height: 12rem;
-  border-top: thin solid hsla(0, 0%, 75%, 1);
-  border-bottom: thin solid hsla(0, 0%, 75%, 1);
+  border-top: thin dashed hsla(0, 0%, 65%, 1);
+  border-bottom: thin dashed hsla(0, 0%, 65%, 1);
   position: absolute;
   top: 700px;
   left: -30%;
   z-index: 5;
   -webkit-mask: linear-gradient(90deg, black 80%, transparent 100%);
   transition: left 0.25s;
-
-  .tag {
-    display: inline-block;
-    cursor: pointer;
-    font-family: Lato;
-    color: hsla(0, 0%, 25%, 1);
-    margin: 1.8rem 0;
-    width: 20%;
-    opacity: 0;
-    transition: opacity 1s;
-
-    &::before {
-      content: '#';
-    }
-  }
 }
 .tags--open {
   left: 0;
 }
 .tags .tag--open {
   opacity: 1;
+}
+.tag {
+  font-family: Daville;
+  font-size: 0.9rem;
+  color: hsla(190, 100%, 40%, 0.9);
+  margin: 1.8rem 1rem;
+  padding: 0.25rem 1rem;
+  background: hsla(0, 0%, 0%, 0.1) padding-box;
+  border-radius: 10rem;
+  box-shadow: 0 0 0.5rem 0.3rem white inset;
+  opacity: 0;
+  transition: opacity 1s, box-shadow 0.5s;
+
+  &::before {
+    content: '# ';
+    font-weight: bold;
+    color: hsla(0, 0%, 65%, 1);
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 14%;
+    border-bottom: thin solid darken($decorate, 10%);
+    position: absolute;
+    top: 110%;
+    left: 43%;
+    box-shadow: 0 0 0.5rem 0 $decorate;
+    transition: width 0.25s, top 0.25s, left 0.25s, box-shadow 0.25s;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0.125rem 1px hsla(0, 0%, 0%, 0.2) inset;
+
+    &::after {
+      width: 40%;
+      top: 120%;
+      left: 30%;
+    }
+  }
+  &:active {
+    box-shadow: 0 0 0.125rem 2px hsla(0, 0%, 0%, 0.2) inset;
+  }
+}
+.tag--selected {
+  &::after {
+    border-bottom-color: $decorate;
+    box-shadow: 0 0 0.5rem 1px $decorate;
+  }
 }
 
 .menu-button {
@@ -194,7 +233,7 @@ $size: 70%;
   position: absolute;
   top: 5%;
   left: -5%;
-  z-index: 15;
+  z-index: 5;
   transition: -webkit-filter 1s;
   transform-origin: 50% 50%;
 
@@ -217,6 +256,7 @@ $size: 70%;
     opacity: 0.9;
     transform-origin: 100% 0%;
     transform: rotate3d(0, 0, 1, -90deg);
+    pointer-events: none;
   }
 
   &::before {

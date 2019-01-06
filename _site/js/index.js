@@ -25,6 +25,9 @@
       $(".tag").addClass("tag--open");
     }
   });
+  $(".tag").click(function () {
+    $(this).toggleClass("tag--selected");
+  });
 
   for (var i = 0; i < mi.length; i++) {
     $("#mi-" + mi[i]).click(function () {
