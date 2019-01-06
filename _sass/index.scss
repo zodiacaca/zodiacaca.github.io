@@ -112,6 +112,7 @@ $size: 70%;
 }
 .tags .tag--open {
   opacity: 1;
+  top: 0;
 }
 .tag {
   font-family: Daville;
@@ -121,9 +122,10 @@ $size: 70%;
   padding: 0.25rem 1rem;
   background: hsla(0, 0%, 0%, 0.1) padding-box;
   border-radius: 10rem;
+  top: 0.5rem;
   box-shadow: 0 0 0.5rem 0.3rem white inset;
   opacity: 0;
-  transition: opacity 1s, box-shadow 0.5s;
+  transition: top 0.5s, opacity 1s, box-shadow 0.5s;
 
   &::before {
     content: '# ';
