@@ -95,7 +95,7 @@ $size: 70%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  padding: 0.5rem 6rem;
+  padding: 0.5rem 5rem;
   width: 30%;
   height: 12rem;
   background: white;
@@ -451,11 +451,11 @@ $count: 4;
         }
       }
 
-      &:hover {
-        span {
-          left: 0.5rem;
-        }
-      }
+      // &:hover {
+        // span {
+          // left: 0.5rem;
+        // }
+      // }
     }
   }
 }

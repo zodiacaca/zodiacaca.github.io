@@ -54,10 +54,10 @@
 
   $(".overlay").hover(
     function () {
-      $(this).parent().parent().height($(this).parent().parent().height() * 1.8);
+      $(this).parent().height($(this).parent().height() * 1.8);
       $(this).fadeTo(0.3, 0);
     }, function () {
-      $(this).parent().parent().height($(this).parent().parent().height() / 1.8);
+      $(this).parent().height($(this).parent().height() / 1.8);
       $(this).fadeTo(0.3, 1);
     }
   );
