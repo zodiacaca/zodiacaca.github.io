@@ -122,7 +122,6 @@ canvas {
   border-top: thin dashed #a6a6a6;
   border-bottom: thin dashed #a6a6a6;
   position: absolute;
-  top: 700px;
   left: -30%;
   z-index: 5;
   -webkit-mask: linear-gradient(90deg, black 80%, transparent 100%);

@@ -51,6 +51,7 @@
   };
 
   html2canvasHandler($(".menu-wrapper")[0]);
+  tagsOffset();
 
   $(".overlay").hover(
     function () {
@@ -61,6 +62,11 @@
       $(this).fadeTo(0.3, 1);
     }
   );
+
+  function tagsOffset(element) {
+    var offsetH = $(".tag-button").offset().top - $(".tags").height() / 2;
+    $(".tags").offset({ top: offsetH });
+  };
 } () );
 
 function html2canvasHandler(element) {
