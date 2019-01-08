@@ -4,58 +4,6 @@
   {% include head.p1.html %}
   {% include head.p2a.html %}
 
-  <svg width="0" height="0"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink">
-
-    <filter id="transparentShadow">
-      <feOffset
-        dx='-4'
-        dy=0
-        result='offset'
-      />
-      <feComposite
-        operator='out'
-        in='offset'
-        in2='SourceGraphic'
-        result='offset-out'
-      />
-      <feFlood
-        flood-color='hsla(180, 100%, 50%, 1)'
-        flood-opacity='1'
-        result='color'
-      />
-      <feComposite
-        operator='in'
-        in='color'
-        in2='offset-out'
-        result='color-out'
-      />
-      <feOffset
-        dx='4'
-        dy=0
-        result='offset-origin'
-      />
-      <feComposite
-        operator='over'
-        in='offset-origin'
-        in2='SourceGraphic'
-      />
-    </filter>
-
-    <filter id="blurText">
-      <feGaussianBlur
-        in='SourceGraphic'
-        stdDeviation='3'
-      />
-      <feComposite
-        operator='over'
-        in='SourceGraphic'
-      />
-    </filter>
-
-  </svg>
-
   <body>
 
     <div id="layer">
@@ -95,18 +43,21 @@
         <h1>Home</h1>
         <ul>
           <li id="mi-timeline" class="menu-item">
-            <span>01.Timeline</span>
-            <span>Posts through out time.</span>
+            <span class="mi-title">01.Timeline</span>
+            <span class="mi-describe">Posts through out time.</span>
           </li>
           <li id="mi-works" class="menu-item">
-            <span>02.Works</span>
-            <span>Stuff I'm working on.</span>
+            <span class="mi-title">02.Works</span>
+            <span class="mi-describe">Stuff I'm working on.</span>
           </li>
           <li id="mi-about" class="menu-item">
-            <span>03.About Me</span>
-            <span>Something tells me.</span>
+            <span class="mi-title">03.About Me</span>
+            <span class="mi-describe">Something tells me.</span>
           </li>
         </ul>
+        <div id="project-info">
+          {% include icon-github.html username=site.github_username %}
+        </div>
       </nav>
       <!-- post list -->
       <div class="articles-wrapper">

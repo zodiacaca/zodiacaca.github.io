@@ -118,6 +118,7 @@ canvas {
   padding: 0.5rem 6rem;
   width: 30%;
   height: 12rem;
+  background: white;
   border-top: thin dashed #a6a6a6;
   border-bottom: thin dashed #a6a6a6;
   position: absolute;
@@ -145,7 +146,7 @@ canvas {
   top: 0.5rem;
   box-shadow: 0 0 0.5rem 0.3rem white inset;
   opacity: 0;
-  transition: top 0.5s, opacity 1s, box-shadow 0.5s; }
+  transition: top 0.5s, opacity 1s, box-shadow 0.25s; }
   .tag::before {
     content: '# ';
     font-weight: bold;
@@ -281,22 +282,34 @@ canvas {
       width: 65%; }
     .menu-wrapper .menu-item:nth-child(3) {
       width: 60%; }
-    .menu-wrapper .menu-item span:first-child {
+    .menu-wrapper .menu-item .mi-title {
       font-size: 1.5rem;
       font-weight: bold; }
-      .menu-wrapper .menu-item span:first-child::after {
+      .menu-wrapper .menu-item .mi-title::after {
         content: '>>';
         float: right; }
-    .menu-wrapper .menu-item span:last-child {
+    .menu-wrapper .menu-item .mi-describe {
       display: block;
       padding-top: 0.5rem;
       padding-left: 1.4rem;
       border-top: thin dotted rgba(0, 0, 0, 0.55); }
-      .menu-wrapper .menu-item span:last-child::after {
+      .menu-wrapper .menu-item .mi-describe::after {
         content: '--------';
         float: right; }
     .menu-wrapper .menu-item:hover {
-      color: rgba(0, 0, 0, 0.9); }
+      color: rgba(0, 213, 255, 0.6); }
+
+#project-info {
+  margin-top: -1rem; }
+  #project-info .include-icon {
+    display: inline-block;
+    margin: 0.25rem; }
+    #project-info .include-icon svg {
+      width: auto;
+      height: 1.5rem;
+      opacity: 0.5; }
+    #project-info .include-icon span:last-child {
+      display: none; }
 
 .articles-wrapper {
   width: 60%;
@@ -544,7 +557,7 @@ canvas {
     #works .project .project-image {
       width: 100%;
       height: 80%;
-      background: url("https://www.w3schools.com/css/img_lights.jpg");
+      background: url("https://dailygalaxy.com/wp-content/uploads/2019/01/lead_720_405-1.jpg");
       border-radius: 1rem; }
     #works .project .overlay {
       width: 100%;
