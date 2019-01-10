@@ -3,6 +3,10 @@ html, body {
   height:100%;
 }
 
+body {
+  background: hsla(0, 0%, 0%, 0.05);
+}
+
 $line-color: hsla(0, 0%, 0%, 0.15);
 $left: 80%;
 $height: 4 * 16px;
@@ -59,6 +63,19 @@ header {
   padding: 3rem 4rem;
   width: $left;
   height: 100%;
+  position: relative;
+
+  &::before {
+    transform-origin: 0 0;
+    transform: skewX(-45deg);
+    content: '';
+    display: inline-block;
+    width: 100%;
+    border-bottom: thick solid hsla(190, 100%, 50%, 0.5);
+    position: absolute;
+    top: 0;
+    left: -50%;
+  }
 
   nav {
     span {
@@ -127,12 +144,32 @@ header {
 
     h2 {
       display: inline-block;
-      font-family: Roboto;
+      font-family: Proxima Nova;
       font-size: 1.3rem;
       color: hsla(0, 0%, 0%, 0.5);
-      text-decoration: underline;
       text-indent: 0;
       margin-bottom: 0;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 4rem;
+        border-bottom: thin solid hsla(190, 100%, 0%, 0.5);
+        position: absolute;
+        top: 1.3rem;
+        left: -5rem;
+      }
+
+      &::after {
+        content: '';
+        display: inline-block;
+        margin-left: 0.125rem;
+        width: 0.5rem;
+        border-bottom: medium solid hsla(190, 100%, 50%, 0.6);
+        position: relative;
+        top: 0.3rem;
+      }
     }
   }
 }
