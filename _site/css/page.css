@@ -43,9 +43,6 @@ svg {
 html, body {
   height: 100%; }
 
-body {
-  background: rgba(0, 0, 0, 0.05); }
-
 #page-header {
   padding: 32px 32px;
   width: 80%;
