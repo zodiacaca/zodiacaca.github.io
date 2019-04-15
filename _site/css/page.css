@@ -99,21 +99,22 @@ header {
     left: -50%; }
   #page-main nav span {
     font-family: Lato;
-    font-size: 0.9rem; }
+    font-size: 0.9rem;
+    font-weight: bold; }
     #page-main nav span * {
       opacity: 0.9; }
     #page-main nav span a {
       text-decoration: none; }
       #page-main nav span a:link {
-        color: #4776e6; }
+        color: rgba(0, 213, 255, 0.5); }
       #page-main nav span a:visited {
-        color: #4776e6; }
+        color: rgba(0, 213, 255, 0.5); }
       #page-main nav span a:hover {
-        color: #4776e6;
+        color: rgba(0, 213, 255, 0.5);
         text-decoration: underline;
         opacity: 1; }
       #page-main nav span a:active {
-        color: #4776e6; }
+        color: rgba(0, 213, 255, 0.5); }
     #page-main nav span::after {
       content: ' >';
       opacity: 0.8; }
@@ -134,9 +135,7 @@ header {
     #page-main .post-content .intro {
       color: rgba(0, 0, 0, 0.5);
       text-indent: 0;
-      padding-left: 0.5rem;
-      background-image: linear-gradient(-45deg, rgba(64, 64, 64, 0.2) 5.56%, transparent 5.56%, transparent 50%, rgba(64, 64, 64, 0.2) 50%, rgba(64, 64, 64, 0.2) 55.56%, transparent 55.56%, transparent 100%);
-      background-size: 8px 8px; }
+      padding-left: 0.5rem; }
     #page-main .post-content span {
       color: rgba(0, 0, 0, 0.4);
       margin-left: -1.5rem;
