@@ -51,8 +51,8 @@ body {
 canvas {
   transform: scale3d(1.2, 1.2, 1);
   position: absolute;
-  top: 18%;
-  left: 18%;
+  top: 16%;
+  left: 16%;
   transition: -webkit-filter 0.5s; }
 
 .blur {
