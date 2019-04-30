@@ -31,6 +31,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - server.ps1
+  - server.bat
 
   - feed.xml
