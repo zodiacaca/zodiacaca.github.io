@@ -123,8 +123,9 @@ header {
       #page-main nav span:last-child::after {
         content: ''; }
   #page-main .post-content {
-    font-family: Helvetica;
-    font-size: 0.9rem;
+    font-family: Proxima Nova;
+    font-size: 0.92rem;
+    letter-spacing: 0.1px;
     line-height: 2;
     color: rgba(0, 0, 0, 0.6);
     text-indent: 1rem;
