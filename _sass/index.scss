@@ -110,10 +110,6 @@ $size: 70%;
 .tags--open {
   left: 0;
 }
-.tags .tag--open {
-  opacity: 1;
-  top: 0;
-}
 .tag {
   font-family: Daville;
   font-size: 0.9rem;
@@ -157,6 +153,10 @@ $size: 70%;
   &:active {
     box-shadow: 0 0 0.125rem 2px hsla(0, 0%, 0%, 0.2) inset;
   }
+}
+.tag--appear {
+  top: 0;
+  opacity: 1;
 }
 .tag--selected {
   &::after {
@@ -207,15 +207,15 @@ $size: 70%;
 	transform: translate3d(0, (elementSize(menu-button-height) / 2), 0) scale3d(0.8, 1, 1);
 }
 
-.menu-button--open::before {
+.menu-button--shift::before {
 	transform: rotate3d(0, 0, 1, 45deg);
 }
 
-.menu-button--open::after {
+.menu-button--shift::after {
 	transform: rotate3d(0, 0, 1, -45deg);
 }
 
-.menu-button--open span {
+.menu-button--shift span {
 	opacity: 0;
 }
 
@@ -409,7 +409,7 @@ $count: 4;
   }
 }
 
-.articles-widget-wrapper {
+.articles-widgets-wrapper {
   list-style-type: none;
   position: absolute;
   top: -10%;

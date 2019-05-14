@@ -42,15 +42,15 @@
       <nav class="menu-wrapper">
         <h1>Home</h1>
         <ul>
-          <li id="mi-timeline" class="menu-item">
+          <li class="menu-item" id="mi-timeline">
             <span class="mi-title">01.Timeline</span>
             <span class="mi-describe">Posts through out time.</span>
           </li>
-          <li id="mi-works" class="menu-item">
+          <li class="menu-item" id="mi-works">
             <span class="mi-title">02.Works</span>
             <span class="mi-describe">Stuff I'm working on.</span>
           </li>
-          <li id="mi-about" class="menu-item">
+          <li class="menu-item" id="mi-about">
             <span class="mi-title">03.About Me</span>
             <span class="mi-describe">Something tells me.</span>
           </li>
@@ -69,9 +69,9 @@
           {% endfor %}
         </ul>
       </div>
-      <ul class="articles-widget-wrapper">
+      <ul class="articles-widgets-wrapper">
         {% for i in (1..4) %}
-          <li class="articles-widget">
+          <li class="articles-widgets">
             <div class="btn-m">
               {% for i in (1..3) %}<span></span>{% endfor %}
             </div>
@@ -95,14 +95,14 @@
 
     <!-- menu stuff -->
     <!-- timeline -->
-    <ul id="timeline" class="timeline--bg blur">
+    <ul class="timeline--bg blur" id="timeline">
       {% for post in site.posts %}
         <li class="time-stamp">
           <p>{{ post.title }}</p>
         </li>
       {% endfor %}
     </ul>
-    <ul id="works" class="works--bg blur">
+    <ul class="works--bg blur" id="works">
       <li class="project">
         <div class="project-title">
           <h2>Interstellar Fishing</h2>
@@ -114,7 +114,7 @@
       <li class="project"></li>
       <li class="project"></li>
     </ul>
-    <p id="about" class="about--bg blur">
+    <p class="about--bg blur" id="about">
       There is nothing to show here.
     </p>
 

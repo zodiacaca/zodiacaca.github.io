@@ -6,7 +6,7 @@
   var mi = ["timeline", "works", "about"];
 
   $(".menu-button").click(function () {
-    $(this).removeClass("menu-button--open");
+    $(this).removeClass("menu-button--shift");
     $(".menu-wrapper").removeClass("fade");
     $(".menu-wrapper").removeClass("no-interact");
     $("canvas").removeClass("fade");
@@ -19,10 +19,10 @@
   $(".tag-button").click(function () {
     if ($(".tags").hasClass("tags--open")) {
       $(".tags").removeClass("tags--open");
-      $(".tag").removeClass("tag--open");
+      $(".tag").removeClass("tag--appear");
     } else {
       $(".tags").addClass("tags--open");
-      $(".tag").addClass("tag--open");
+      $(".tag").addClass("tag--appear");
     }
   });
   $(".tag").click(function () {
@@ -31,7 +31,7 @@
 
   for (var i = 0; i < mi.length; i++) {
     $("#mi-" + mi[i]).click(function () {
-      $(".menu-button").addClass("menu-button--open");
+      $(".menu-button").addClass("menu-button--shift");
       $(".menu-wrapper").addClass("fade");
       $(".menu-wrapper").addClass("no-interact");
       $("#" + this.id.substring(3)).addClass("clear");
