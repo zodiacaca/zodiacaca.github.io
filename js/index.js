@@ -51,11 +51,15 @@
         $projection.addClass("fade");
       }
     });
-    $("#" + mi[i]).addClass("fade");
   };
 
-  html2canvasHandler($(".menu-wrapper")[0]);
+  var canvas = $("canvas")[0];
+  html2canvasHandler($(".menu-wrapper")[0], canvas);
+  $(canvas).removeClass("fade");
+
   tagsOffset();
+  $(".article").removeClass("blur");
+  $(".article").addClass("chamfer");
 
   $(".overlay").hover(
     function () {
@@ -73,10 +77,10 @@
   };
 } () );
 
-function html2canvasHandler(element) {
+function html2canvasHandler(element, canvas) {
   html2canvas(element, {
       async: true,
-      canvas: $("canvas")[0]
+      canvas: canvas
     }
   );
 };

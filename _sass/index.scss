@@ -369,7 +369,7 @@ $count: 4;
   border-radius: 0.5rem;
   position: relative;
   opacity: 0.5;
-  -webkit-mask: linear-gradient(45deg, transparent 1.5rem, black 1.5rem);
+  transition: -webkit-filter 0.5s;
 
   &:nth-child(n+5) {
     display: none;
@@ -408,6 +408,9 @@ $count: 4;
       color: $decorate;
     }
   }
+}
+.chamfer {
+  -webkit-mask: linear-gradient(45deg, transparent 1.5rem, black 1.5rem);
 }
 
 .articles-widgets-wrapper {
