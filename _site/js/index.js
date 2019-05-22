@@ -34,17 +34,21 @@
       $(".menu-button").addClass("menu-button--shift");
       $(".menu-wrapper").addClass("fade");
       $(".menu-wrapper").addClass("no-interact");
-      $("#" + this.id.substring(3)).addClass("clear");
-      $("#" + this.id.substring(3)).addClass(this.id.substring(3) + "--surface");
+      var $projection = $("#" + this.id.substring(3));
+      $projection.addClass("clear");
+      $projection.addClass(this.id.substring(3) + "--surface");
     });
     $("#mi-" + mi[i]).on("mouseenter", function () {
       $("canvas").addClass("fade");
-      $("#" + this.id.substring(3)).removeClass("fade");
+      var $projection = $("#" + this.id.substring(3));
+      $projection.removeClass("fade");
+      preloadImage($projection);
     });
     $("#mi-" + mi[i]).on("mouseleave", function () {
       if (!$(".menu-wrapper").hasClass("fade")) {
         $("canvas").removeClass("fade");
-        $("#" + this.id.substring(3)).addClass("fade");
+        var $projection = $("#" + this.id.substring(3));
+        $projection.addClass("fade");
       }
     });
     $("#" + mi[i]).addClass("fade");
@@ -77,3 +81,9 @@ function html2canvasHandler(element) {
   );
 };
 
+function preloadImage($element) {
+  $element.find("[data-img]").each(function (index) {
+    var src = $(this).attr("data-img");
+    $(this).attr("src", src);
+  });
+};

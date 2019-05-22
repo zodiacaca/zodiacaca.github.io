@@ -401,6 +401,7 @@ $count: 4;
     transition: color 0.25s;
 
     &:visited {
+      // color: hsl(346, 68%, 22%);
       color: hsla(0, 0%, 0%, 1);
     }
     &:hover {
