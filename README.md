@@ -1,3 +1,5 @@
+<br/>
+
 ## Main objectives:
 - [x] Build my own blog website in a way that can express myself.
 - [x] The index page must include my unique design.
