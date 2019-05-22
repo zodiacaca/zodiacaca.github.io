@@ -11,6 +11,6 @@
 <br/>
 
 ## Features I haven't been anticipating:
-- [x] Animations for menu.
-- [x] Animations for tag buttons.
-- [x] A layout for post page.
+-    Animations for menu.
+-    Animations for tag buttons.
+-    A layout for post page.
