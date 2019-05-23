@@ -57,7 +57,7 @@
   html2canvasHandler($(".menu-wrapper")[0], canvas);
   $(canvas).removeClass("fade");
 
-  tagsOffset();
+  offsetTags();
   $(".article").removeClass("blur");
   $(".article").addClass("chamfer");
 
@@ -71,7 +71,7 @@
     }
   );
 
-  function tagsOffset(element) {
+  function offsetTags() {
     var offsetH = $(".tag-button").offset().top - $(".tags").height() / 2;
     $(".tags").offset({ top: offsetH });
   };

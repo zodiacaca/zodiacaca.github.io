@@ -32,5 +32,6 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - server.bat
+  - README.md
 
   - feed.xml
