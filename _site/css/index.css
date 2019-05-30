@@ -16,6 +16,24 @@
 @font-face {
   font-family: Monda;
   src: url(/fonts/monda/Monda-Regular.ttf); }
+@font-face {
+  font-family: Abel;
+  src: url(/fonts/abel/Abel-Regular.ttf); }
+@font-face {
+  font-family: Cabin;
+  src: url(/fonts/cabin/CabinCondensed-Regular.ttf); }
+@font-face {
+  font-family: Century Gothic;
+  src: url(/fonts/centurygothic/CenturyGothic-Regular.ttf); }
+@font-face {
+  font-family: Exo;
+  src: url(/fonts/exo/Exo-Regular.ttf); }
+@font-face {
+  font-family: Rajdhani;
+  src: url(/fonts/rajdhani/Rajdhani-Regular.ttf); }
+@font-face {
+  font-family: Teko;
+  src: url(/fonts/teko/Teko-Regular.ttf); }
 *,
 *:before,
 *:after {

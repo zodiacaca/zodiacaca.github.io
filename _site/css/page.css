@@ -16,6 +16,24 @@
 @font-face {
   font-family: Monda;
   src: url(/fonts/monda/Monda-Regular.ttf); }
+@font-face {
+  font-family: Abel;
+  src: url(/fonts/abel/Abel-Regular.ttf); }
+@font-face {
+  font-family: Cabin;
+  src: url(/fonts/cabin/CabinCondensed-Regular.ttf); }
+@font-face {
+  font-family: Century Gothic;
+  src: url(/fonts/centurygothic/CenturyGothic-Regular.ttf); }
+@font-face {
+  font-family: Exo;
+  src: url(/fonts/exo/Exo-Regular.ttf); }
+@font-face {
+  font-family: Rajdhani;
+  src: url(/fonts/rajdhani/Rajdhani-Regular.ttf); }
+@font-face {
+  font-family: Teko;
+  src: url(/fonts/teko/Teko-Regular.ttf); }
 *,
 *:before,
 *:after {
@@ -123,11 +141,11 @@ header {
       #page-main nav span:last-child::after {
         content: ''; }
   #page-main .post-content {
-    font-family: Proxima Nova;
-    font-size: 0.92rem;
+    font-family: Rajdhani;
+    font-size: 1rem;
     letter-spacing: 0.1px;
     line-height: 2;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.8);
     text-indent: 1rem;
     padding-top: 0.5rem;
     padding-left: 0.5rem;
@@ -143,7 +161,7 @@ header {
       margin-right: 0.5rem; }
     #page-main .post-content h2 {
       display: inline-block;
-      font-family: Proxima Nova;
+      font-family: Monda;
       font-size: 1.3rem;
       color: rgba(0, 0, 0, 0.5);
       text-indent: 0;
