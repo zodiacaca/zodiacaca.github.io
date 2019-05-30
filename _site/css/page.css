@@ -11,7 +11,7 @@
   font-family: Roboto;
   src: url(/fonts/roboto/Roboto-Regular.ttf); }
 @font-face {
-  font-family: Proxima Nova;
+  font-family: ProximaNova;
   src: url(/fonts/proximanova/Proxima-Nova-Regular.ttf); }
 @font-face {
   font-family: Monda;
@@ -23,7 +23,7 @@
   font-family: Cabin;
   src: url(/fonts/cabin/CabinCondensed-Regular.ttf); }
 @font-face {
-  font-family: Century Gothic;
+  font-family: CenturyGothic;
   src: url(/fonts/centurygothic/CenturyGothic-Regular.ttf); }
 @font-face {
   font-family: Exo;
@@ -91,7 +91,7 @@ html, body {
     transform: rotate3d(0, 0, 1, -45deg); }
 
 header {
-  font-family: Proxima Nova; }
+  font-family: ProximaNova; }
   header .post-title {
     font-size: 1.8rem;
     color: rgba(0, 0, 0, 0.55); }
