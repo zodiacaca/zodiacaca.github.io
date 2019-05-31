@@ -576,7 +576,7 @@ canvas {
     #works .project .project-title {
       width: 100%; }
       #works .project .project-title h2 {
-        font-family: Proxima Nova;
+        font-family: ProximaNova;
         color: #666666;
         margin: 0;
         width: 40%; }
@@ -605,7 +605,7 @@ canvas {
   left: 10%; }
 
 #about {
-  font-family: Proxima Nova;
+  font-family: ProximaNova;
   color: rgba(0, 0, 0, 0.55);
   position: absolute;
   transition: -webkit-filter 0.5s, top 0.5s, left 0.5s, font-size 0.5s; }
