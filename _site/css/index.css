@@ -355,7 +355,7 @@ canvas {
   .article:nth-child(n+5) {
     display: none; }
   .article .article-title {
-    font-family: Daville;
+    font-family: Exo;
     margin: 0.5rem 0;
     padding: 0.5rem 2rem; }
     .article .article-title::after {
@@ -370,8 +370,17 @@ canvas {
       display: block; }
   .article a {
     text-decoration: none;
-    color: black;
+    color: #404040;
+    text-shadow: 0 0.9rem 0 #595959, 0 1.8rem 0 #737373;
     transition: color 0.25s; }
+    .article a::before {
+      content: '';
+      display: inline-block;
+      width: 10%;
+      border-bottom: medium solid #404040;
+      position: relative;
+      top: -0.3rem;
+      left: -0.5rem; }
     .article a:visited {
       color: black; }
     .article a:hover {
@@ -516,7 +525,7 @@ canvas {
       transform: rotate3d(0, 0, 1, 45deg); }
     #timeline li p {
       cursor: pointer;
-      font-family: Proxima Nova;
+      font-family: Rajdhani;
       font-size: 1.1rem;
       margin: 0;
       margin-top: -4px;

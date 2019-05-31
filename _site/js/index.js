@@ -80,7 +80,8 @@
 function html2canvasHandler(element, canvas) {
   html2canvas(element, {
       async: true,
-      canvas: canvas
+      canvas: canvas,
+      backgroundColor: null
     }
   );
 };
