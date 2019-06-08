@@ -120,7 +120,6 @@ header {
   .post-content {
     font-family: Rajdhani;
     font-size: 1rem;
-    letter-spacing: 0.1px;
     line-height: 2;
     color: hsla(0, 0%, 0%, 0.8);
     text-indent: 1rem;
@@ -169,6 +168,11 @@ header {
         position: relative;
         top: 0.3rem;
       }
+    }
+
+    p {
+      letter-spacing: 0.1px;
+      // text-align: justify;
     }
   }
 }
