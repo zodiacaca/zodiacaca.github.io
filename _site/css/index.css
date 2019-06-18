@@ -74,7 +74,7 @@ canvas {
   transition: -webkit-filter 0.5s; }
 
 .blur {
-  filter: blur(0.3rem); }
+  filter: blur(0.25rem); }
 
 .fade {
   filter: blur(10rem);
