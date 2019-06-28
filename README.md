@@ -14,3 +14,8 @@
 -    Animations for menu.
 -    Animations for tag buttons.
 -    A layout for post page.
+
+<br/>
+
+### Todo:
+- [ ] Redesign left side into a navigating style from which advantages like rich visual and open layout can be gained.
